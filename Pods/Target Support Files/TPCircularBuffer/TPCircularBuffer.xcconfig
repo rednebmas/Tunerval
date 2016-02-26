@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/TPCircularBuffer" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CupertinoYankee" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
+OTHER_LDFLAGS = -framework "AudioToolbox"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
