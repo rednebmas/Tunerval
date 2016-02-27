@@ -48,7 +48,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
     self.nextButton.hidden = YES;
-    self.answerDifferential = 0;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
 }
@@ -64,39 +63,43 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     // if different, reset game info
     NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
+    
+    // high scores are unique to interval sets
+    NSUInteger hash = [self intervalSetHash:intervals];
+    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
+    float highScoreFloat = [[NSUserDefaults standardUserDefaults]
+                            floatForKey:self.highScoreKey];
+    
+    // if new game type
+    if (highScoreFloat == 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setFloat:MAX_DIFFERENCE forKey:self.highScoreKey];
+        highScoreFloat = MAX_DIFFERENCE;
+    }
+    
     if (![self.intervals isEqual:intervals])
     {
         // kinda like game reset
-        differenceInCents = MAX_DIFFERENCE;
-        self.answerDifferential = 0;
-        [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+        float highScoreAnswerDifferetial = [[NSUserDefaults standardUserDefaults]
+                                       floatForKey:[NSString stringWithFormat:@"%@-answerdifferential",
+                                                    self.highScoreKey]];
+        // start them close to high score
+        if (highScoreAnswerDifferetial > 8)
+        {
+            self.answerDifferential = highScoreAnswerDifferetial - 8;
+        }
+        else
+        {
+            self.answerDifferential = 0;
+        }
+        [self calculateDifferenceInCents];
+        
         [self.intervalDirectionLabel setText:@""];
         [self.intervalNameLabel setText:@""];
         [self hideHearAnswersLabel:YES];
         [self delayAskQuestion];
     }
     self.intervals = intervals;
-    
-    if (self.intervals.count == 1)
-    {
-        MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
-    }
-    else
-    {
-        MAX_DIFFERENCE = MAX_DIFF_TWO_OR_MORE_INTERVALS;
-    }
-    
-    // high scores are unique to interval sets
-    NSUInteger hash = [self intervalSetHash:self.intervals];
-    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
-    float highScoreFloat = [[NSUserDefaults standardUserDefaults]
-                            floatForKey:self.highScoreKey];
-    // new game type
-    if (highScoreFloat == 0)
-    {
-        [[NSUserDefaults standardUserDefaults] setFloat:MAX_DIFFERENCE forKey:self.highScoreKey];
-        highScoreFloat = MAX_DIFFERENCE;
-    }
     
     // change label text
     NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
