@@ -55,14 +55,39 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9f-Au-4Jb">
-                                <rect key="frame" x="20" y="543" width="476" height="28.5"/>
+                                <rect key="frame" x="20" y="518" width="476" height="28.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="±25c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGW-rB-CCq">
-                                <rect key="frame" x="525.5" y="291.5" width="44" height="23"/>
+                                <rect key="frame" x="525" y="291" width="44" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1z-NZ-kGQ">
+                                <rect key="frame" x="20" y="475" width="118" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="6CJ-Ju-FGK"/>
+                                    <constraint firstAttribute="height" constant="35" id="Nx6-fy-6Xg"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.38431372549999998" green="0.74901960779999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1C-BP-ZxE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To hear the correct interval, press the target button" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWx-yW-gdZ">
+                                <rect key="frame" x="20" y="554.5" width="476" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,27 +95,37 @@
                         <color key="backgroundColor" red="0.41176470588235292" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="centerX" secondItem="K9p-jY-efI" secondAttribute="centerX" id="3vp-8F-kKR"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Cy-Rj-exc"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8Ja-zx-JsU"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="leading" secondItem="X9f-Au-4Jb" secondAttribute="trailing" constant="8" id="BTC-BG-1va"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GGr-7b-jSe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X9f-Au-4Jb" secondAttribute="bottom" constant="28.5" id="HyJ-H6-A73"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X9f-Au-4Jb" secondAttribute="bottom" constant="128" id="HyJ-H6-A73"/>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MZy-R0-2QO"/>
+                            <constraint firstItem="X9f-Au-4Jb" firstAttribute="top" secondItem="q1z-NZ-kGQ" secondAttribute="bottom" constant="8" id="MpF-1P-HC1"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="height" secondItem="K9p-jY-efI" secondAttribute="height" id="Mya-Qv-rbp"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMD-6N-lgR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OWx-yW-gdZ" secondAttribute="bottom" constant="28.5" id="ThH-p5-IXc"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tqx-hC-7Yl"/>
                             <constraint firstItem="vGW-rB-CCq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="U1W-1F-sch"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UNN-bu-O8Z"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="XR4-x0-MBt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vGW-rB-CCq" secondAttribute="trailing" constant="18" id="Xhm-eu-E7O"/>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="top" secondItem="XSq-hc-bFe" secondAttribute="bottom" constant="6" id="ZXm-Ez-FCp"/>
                             <constraint firstItem="vGW-rB-CCq" firstAttribute="centerX" secondItem="K9p-jY-efI" secondAttribute="centerX" id="ZeK-ne-Uxl"/>
+                            <constraint firstItem="q1z-NZ-kGQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cCl-hD-J6t"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dCa-ji-oyx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K9p-jY-efI" secondAttribute="bottom" constant="20" id="eMN-be-hJA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X9f-Au-4Jb" secondAttribute="trailing" constant="84" id="gkB-am-Dy8"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="top" secondItem="K9p-jY-efI" secondAttribute="bottom" constant="32" id="h64-M7-DlX"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="top" secondItem="1aF-ce-DWW" secondAttribute="bottom" constant="8" id="hGh-Vj-UWV"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hTn-Km-xQ1"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pFE-PW-SIb"/>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q9r-Md-ltQ"/>
                             <constraint firstItem="vGW-rB-CCq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rRU-mo-yoG"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="top" secondItem="vGW-rB-CCq" secondAttribute="bottom" constant="8.5" id="rzg-nT-dbT"/>
+                            <constraint firstItem="OWx-yW-gdZ" firstAttribute="top" secondItem="X9f-Au-4Jb" secondAttribute="bottom" constant="8" id="sHz-KD-Zpm"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-15" id="seQ-mn-8wV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OWx-yW-gdZ" secondAttribute="trailing" constant="84" id="tMi-xc-uqk"/>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="top" secondItem="XSq-hc-bFe" secondAttribute="bottom" constant="8" id="udg-Bn-p1K"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="centerX" secondItem="K9p-jY-efI" secondAttribute="centerX" id="uov-1A-d9J"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="top" secondItem="1aF-ce-DWW" secondAttribute="bottom" constant="8" id="wGG-lS-kwG"/>
@@ -101,11 +136,16 @@
                                 <exclude reference="8Ja-zx-JsU"/>
                                 <exclude reference="GGr-7b-jSe"/>
                                 <exclude reference="h64-M7-DlX"/>
-                                <exclude reference="RMD-6N-lgR"/>
-                                <exclude reference="xj8-h5-YNm"/>
+                                <exclude reference="Tqx-hC-7Yl"/>
+                                <exclude reference="UNN-bu-O8Z"/>
+                                <exclude reference="XR4-x0-MBt"/>
+                                <exclude reference="pFE-PW-SIb"/>
+                                <exclude reference="HyJ-H6-A73"/>
                                 <exclude reference="U1W-1F-sch"/>
                                 <exclude reference="Xhm-eu-E7O"/>
                                 <exclude reference="rRU-mo-yoG"/>
+                                <exclude reference="RMD-6N-lgR"/>
+                                <exclude reference="xj8-h5-YNm"/>
                                 <exclude reference="MZy-R0-2QO"/>
                                 <exclude reference="ZXm-Ez-FCp"/>
                                 <exclude reference="q9r-Md-ltQ"/>
@@ -117,7 +157,9 @@
                     </view>
                     <connections>
                         <outlet property="centsDifference" destination="vGW-rB-CCq" id="dbU-Xo-iWQ"/>
+                        <outlet property="hearAgainIntervalLabel" destination="OWx-yW-gdZ" id="YaD-wF-syC"/>
                         <outlet property="label" destination="X9f-Au-4Jb" id="1Uu-ff-tOf"/>
+                        <outlet property="nextButton" destination="q1z-NZ-kGQ" id="USm-T2-yRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

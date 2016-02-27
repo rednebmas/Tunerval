@@ -15,6 +15,9 @@
 		2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219495C1C80E956004D0155 /* LaunchScreen.storyboard */; };
 		221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949661C80ECC1004D0155 /* AudioPlayer.m */; };
 		2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949691C80ED29004D0155 /* SBPlayableNote.m */; };
+		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
+		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
+		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
 		55D855E2EA4CBA7F0EBA70CB /* libPods-Tunerval.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE894E259233312D23E8C010 /* libPods-Tunerval.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,12 @@
 		221949661C80ECC1004D0155 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = ../../Pitch/Pitch/AudioPlayer.m; sourceTree = "<group>"; };
 		221949681C80ED29004D0155 /* SBPlayableNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBPlayableNote.h; path = ../../Pitch/Pitch/SBPlayableNote.h; sourceTree = "<group>"; };
 		221949691C80ED29004D0155 /* SBPlayableNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBPlayableNote.m; path = ../../Pitch/Pitch/SBPlayableNote.m; sourceTree = "<group>"; };
+		22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNoteGenerator.h; path = ../../Pitch/Pitch/RandomNoteGenerator.h; sourceTree = "<group>"; };
+		22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNoteGenerator.m; path = ../../Pitch/Pitch/RandomNoteGenerator.m; sourceTree = "<group>"; };
+		22F68ED91C813B650040541F /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Helpers.h"; path = "../../Cast 2/Cast 2/UIView+Helpers.h"; sourceTree = "<group>"; };
+		22F68EDA1C813B650040541F /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Helpers.m"; path = "../../Cast 2/Cast 2/UIView+Helpers.m"; sourceTree = "<group>"; };
+		22F68EDC1C813D7B0040541F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		22F68EDD1C813D7B0040541F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
 		CE894E259233312D23E8C010 /* libPods-Tunerval.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tunerval.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,14 +80,13 @@
 		2219494D1C80E956004D0155 /* Tunerval */ = {
 			isa = PBXGroup;
 			children = (
-				221949651C80ECC1004D0155 /* AudioPlayer.h */,
-				221949661C80ECC1004D0155 /* AudioPlayer.m */,
-				221949681C80ED29004D0155 /* SBPlayableNote.h */,
-				221949691C80ED29004D0155 /* SBPlayableNote.m */,
+				22F68ED81C8136BF0040541F /* Imported */,
 				221949511C80E956004D0155 /* AppDelegate.h */,
 				221949521C80E956004D0155 /* AppDelegate.m */,
 				221949541C80E956004D0155 /* ViewController.h */,
 				221949551C80E956004D0155 /* ViewController.m */,
+				22F68EDC1C813D7B0040541F /* Question.h */,
+				22F68EDD1C813D7B0040541F /* Question.m */,
 				221949571C80E956004D0155 /* Main.storyboard */,
 				2219495A1C80E956004D0155 /* Assets.xcassets */,
 				2219495C1C80E956004D0155 /* LaunchScreen.storyboard */,
@@ -94,6 +102,21 @@
 				2219494F1C80E956004D0155 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22F68ED81C8136BF0040541F /* Imported */ = {
+			isa = PBXGroup;
+			children = (
+				221949651C80ECC1004D0155 /* AudioPlayer.h */,
+				221949661C80ECC1004D0155 /* AudioPlayer.m */,
+				221949681C80ED29004D0155 /* SBPlayableNote.h */,
+				221949691C80ED29004D0155 /* SBPlayableNote.m */,
+				22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */,
+				22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */,
+				22F68ED91C813B650040541F /* UIView+Helpers.h */,
+				22F68EDA1C813B650040541F /* UIView+Helpers.m */,
+			);
+			name = Imported;
 			sourceTree = "<group>";
 		};
 		F7DB47371C1FB60DC26A151A /* Pods */ = {
@@ -234,9 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */,
 				221949561C80E956004D0155 /* ViewController.m in Sources */,
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
+				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
+				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
 				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
 				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,
 			);

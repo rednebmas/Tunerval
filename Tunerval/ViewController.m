@@ -9,6 +9,11 @@
 #import <PitchEstimator/SBNote.h>
 #import "ViewController.h"
 #import "AudioPlayer.h"
+#import "RandomNoteGenerator.h"
+#import "UIView+Helpers.h"
+#import "Question.h"
+
+#define MAX_DIFFERENCE 35.0
 
 @interface ViewController ()
 {
@@ -16,7 +21,10 @@
     double differenceInCents;
 }
 
+@property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
+@property (nonatomic, retain) Question *currentQuestion;
 @property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) RandomNoteGenerator *randomNoteGenerator;
 
 @end
 
@@ -28,8 +36,16 @@
     
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
     [self delayAskQuestion];
-    differenceInCents = 25.0;
+    differenceInCents = MAX_DIFFERENCE;
     self.backgroundColor = self.view.backgroundColor;
+    self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
+    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"G3"] to:[SBNote noteWithName:@"E4"]];
+    [[AudioPlayer sharedInstance] setGain:1.0];
+    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    [self hideHearAnswersLabel:YES];
+    [self.label setText:@""];
+    self.nextButton.hidden = YES;
+    self.answerDifferential = 0;
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -72,47 +88,71 @@
 
 - (void) askQuestion {
     [self.label setText:@""];
-    
-    SBNote *a4 = [SBNote noteWithName:@"A4"];
-    a4.duration = 1.0;
-    
-    SBNote *smallDiff;
-    int random = arc4random_uniform(3);
-    answer = random;
-    if (random == 0) {
-        smallDiff = [a4 noteWithDifferenceInCents:100.0 + differenceInCents];
-        NSLog(@"higher");
-    } else if (random == 1) {
-        smallDiff = [a4 noteWithDifferenceInCents:100.0];
-        NSLog(@"on it");
-    } else {
-        smallDiff = [a4 noteWithDifferenceInCents:100.0 - differenceInCents];
-        NSLog(@"lower");
+    if (self.hearAgainIntervalLabel.hidden == NO) {
+        [self hideHearAnswersLabel:NO];
     }
     
-    [[AudioPlayer sharedInstance] play:a4];
+    self.currentQuestion = [self generateQuestion];
     
-    NSLog(@"%@", smallDiff);
+    [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+    NSLog(@"%@", self.currentQuestion.questionNote);
+}
+
+- (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
+{
+    [[AudioPlayer sharedInstance] play:firstNote];
     
     double delayTimeInSeconds = 1.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [[AudioPlayer sharedInstance] play:smallDiff];
+        [[AudioPlayer sharedInstance] play:secondNote];
     });
+}
+
+- (Question*) generateQuestion
+{
+    SBNote *referenceNote = [self.randomNoteGenerator nextNote];
+    referenceNote.duration = 1.0;
+    
+    SBNote *smallDiff;
+    IntervalType interval = IntervalTypeMinorSecondAscending;
+    int random = arc4random_uniform(3);
+    answer = random;
+    if (random == 0)
+    {
+        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0 + differenceInCents];
+        NSLog(@"higher");
+    }
+    else if (random == 1)
+    {
+        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0];
+        NSLog(@"on it");
+    }
+    else
+    {
+        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0 - differenceInCents];
+        NSLog(@"lower");
+    }
+    
+    Question *question = [[Question alloc] init];
+    question.referenceNote = referenceNote;
+    question.questionNote = smallDiff;
+    question.interval = interval;
+    
+    return question;
 }
 
 - (void) answer:(int)value {
     if (value == answer) {
         [self correct];
+        [self delayAskQuestion];
     } else {
         [self incorrect:value];
     }
-    
-    [self delayAskQuestion];
 }
 
 - (void) incorrect:(int)value {
-    
     NSString *correctAnswer;
+    self.answerDifferential--;
     switch (answer) {
         case 0:
             correctAnswer = @"higher";
@@ -132,15 +172,36 @@
     }
     
     [self.label setText:[NSString stringWithFormat:@"Incorrect (answer was %@)", correctAnswer]];
-    differenceInCents = 25.0;
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
     [self flashBackgroundColor:[UIColor redColor]];
+    [self hideHearAnswersLabel:NO];
+    [self.nextButton setHidden:NO animated:YES];
+    NSLog(@"%d", self.answerDifferential);
 }
 
 - (void) correct {
+    self.answerDifferential++;
     [self.label setText:@"Correct"];
-    differenceInCents = differenceInCents * .9;
+    if (self.answerDifferential > 0) {
+        differenceInCents = differenceInCents * pow(.925, (double)self.answerDifferential);
+    } else {
+        differenceInCents = MAX_DIFFERENCE;
+    }
     [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    NSLog(@"%d", self.answerDifferential);
+}
+
+- (void) hideHearAnswersLabel:(BOOL)makeHidden
+{
+    if (makeHidden)
+    {
+        self.hearAgainIntervalLabel.hidden = YES;
+        [self.hearAgainIntervalLabel setText:@""];
+    }
+    else
+    {
+        self.hearAgainIntervalLabel.hidden = NO;
+        [self.hearAgainIntervalLabel setText:@"To hear the correct interval, press the target button"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -151,16 +212,55 @@
 #pragma mark - Actions
 
 - (IBAction)up:(id)sender {
-    [self answer:0];
+    if (self.nextButton.hidden)
+    {
+        [self answer:0];
+    }
+    else
+    {
+        double difference = self.currentQuestion.interval * 100.0 + differenceInCents;
+        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+    }
 }
 
 - (IBAction)center:(id)sender {
-    [self answer:1];
+    if (self.nextButton.hidden)
+    {
+        [self answer:1];
+    }
+    else
+    {
+        double difference = self.currentQuestion.interval * 100.0;
+        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+    }
 }
 
 - (IBAction)down:(id)sender {
-    [self answer:2];
+    if (self.nextButton.hidden)
+    {
+        [self answer:2];
+    }
+    else
+    {
+        double difference = self.currentQuestion.interval * 100.0 - differenceInCents;
+        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+    }
 }
 
+- (IBAction)nextButtonPressed:(UIButton*)sender
+{
+    [self askQuestion];
+    if (self.answerDifferential > 0) {
+        differenceInCents = MAX_DIFFERENCE * pow(.925, (double)self.answerDifferential);
+    } else {
+        differenceInCents = MAX_DIFFERENCE;
+    }
+    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    sender.hidden = YES;
+    [self hideHearAnswersLabel:YES];
+}
 
 @end

@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UILabel *centsDifference;
+@property (weak, nonatomic) IBOutlet UILabel *hearAgainIntervalLabel;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
