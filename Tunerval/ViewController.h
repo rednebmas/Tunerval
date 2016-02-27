@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *replayButton;
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *intervalDirectionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *intervalNameLabel;
 
 @end
 

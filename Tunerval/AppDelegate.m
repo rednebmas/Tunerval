@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <PitchEstimator/SBNote.h>
 
 @interface AppDelegate ()
 
@@ -15,8 +16,17 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // if there is no set of selected intervals, set it.
+    NSMutableArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
+    if (intervals == nil)
+    {
+        intervals = [[NSMutableArray alloc] init];
+        [intervals addObject:[NSNumber numberWithInteger:IntervalTypeMinorSecondAscending]];
+        [[NSUserDefaults standardUserDefaults] setObject:intervals forKey:@"selected_intervals"];
+    }
+    
     return YES;
 }
 

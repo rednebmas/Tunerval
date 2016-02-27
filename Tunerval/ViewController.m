@@ -13,7 +13,9 @@
 #import "UIView+Helpers.h"
 #import "Question.h"
 
-#define MAX_DIFFERENCE 200.0
+#define MAX_DIFF_ONE_INTERVAL 200.0
+#define MAX_DIFF_TWO_OR_MORE_INTERVALS 200.0
+static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 @interface ViewController ()
 {
@@ -22,6 +24,8 @@
 }
 
 @property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
+@property (nonatomic, retain) NSString *highScoreKey;
+@property (nonatomic, retain) NSArray *intervals;
 @property (nonatomic, retain) Question *currentQuestion;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) RandomNoteGenerator *randomNoteGenerator;
@@ -35,20 +39,78 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
-    [self delayAskQuestion];
-    differenceInCents = MAX_DIFFERENCE;
+    [self reloadIntervals];
+    // [self delayAskQuestion];
     self.backgroundColor = self.view.backgroundColor;
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
     [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"E4"] to:[SBNote noteWithName:@"C5"]];
     [[AudioPlayer sharedInstance] setGain:1.0];
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
     self.nextButton.hidden = YES;
     self.answerDifferential = 0;
-    float highScoreFloat = [[NSUserDefaults standardUserDefaults] floatForKey:@"highscore"];
-    NSString *highScore = [NSString stringWithFormat:@"±%.1f\ncents", highScoreFloat];
+    [self.intervalDirectionLabel setText:@""];
+    [self.intervalNameLabel setText:@""];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    // Called when dismissing settings
+    [self reloadIntervals];
+    
+}
+
+- (void) reloadIntervals
+{
+    // if different, reset game info
+    NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
+    if (![self.intervals isEqual:intervals])
+    {
+        // kinda like game reset
+        differenceInCents = MAX_DIFFERENCE;
+        self.answerDifferential = 0;
+        [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+        [self.intervalDirectionLabel setText:@""];
+        [self.intervalNameLabel setText:@""];
+        [self hideHearAnswersLabel:YES];
+        [self delayAskQuestion];
+    }
+    self.intervals = intervals;
+    
+    if (self.intervals.count == 1)
+    {
+        MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
+    }
+    else
+    {
+        MAX_DIFFERENCE = MAX_DIFF_TWO_OR_MORE_INTERVALS;
+    }
+    
+    // high scores are unique to interval sets
+    NSUInteger hash = [self intervalSetHash:self.intervals];
+    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
+    float highScoreFloat = [[NSUserDefaults standardUserDefaults]
+                            floatForKey:self.highScoreKey];
+    // new game type
+    if (highScoreFloat == 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setFloat:MAX_DIFFERENCE forKey:self.highScoreKey];
+        highScoreFloat = MAX_DIFFERENCE;
+    }
+    
+    // change label text
+    NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
     [self.highScoreLabel setText:highScore];
+}
+
+- (NSUInteger) intervalSetHash:(NSArray*)intervalSet
+{
+    NSUInteger hash = 17;
+    for (NSNumber *interval in intervalSet)
+    {
+        hash = hash * 31 + [interval integerValue];
+    }
+    return hash;
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -117,7 +179,8 @@
     referenceNote.duration = 1.0;
     
     SBNote *smallDiff;
-    IntervalType interval = IntervalTypeMajorSecondAscending;
+    NSNumber *randomIntervalObject = self.intervals[arc4random_uniform((uint)self.intervals.count)];
+    IntervalType interval = [randomIntervalObject integerValue];
     int random = arc4random_uniform(3);
     answer = random;
     if (random == 0)
@@ -141,7 +204,26 @@
     question.questionNote = smallDiff;
     question.interval = interval;
     
+    [self.intervalDirectionLabel setText:[self directionLabelTextForInterval:interval]];
+    [self.intervalNameLabel setText:[SBNote intervalTypeToIntervalName:interval]];
+    
     return question;
+}
+
+- (NSString*) directionLabelTextForInterval:(IntervalType)interval
+{
+    if (interval > 0)
+    {
+        return @"ascending";
+    }
+    else if (interval == 0)
+    {
+        return @"";
+    }
+    else
+    {
+        return @"descending";
+    }
 }
 
 - (void) answer:(int)value {
@@ -177,7 +259,6 @@
     [self.label setText:[NSString stringWithFormat:@"Incorrect (answer was %@)", correctAnswer]];
     [self flashBackgroundColor:[UIColor redColor]];
     [self hideHearAnswersLabel:NO];
-    [self.nextButton setHidden:NO animated:YES];
     NSLog(@"%d", self.answerDifferential);
 }
 
@@ -195,12 +276,14 @@
         self.hearAgainIntervalLabel.hidden = YES;
         [self.hearAgainIntervalLabel setText:@""];
         self.replayButton.hidden = NO;
+        self.nextButton.hidden = YES;
     }
     else
     {
         self.hearAgainIntervalLabel.hidden = NO;
         [self.hearAgainIntervalLabel setText:@"To hear the correct interval, press the target button"];
         self.replayButton.hidden = YES;
+        self.nextButton.hidden = NO;
     }
 }
 
@@ -216,15 +299,15 @@
     }
     
     // check for high score
-    if (differenceInCents < [[NSUserDefaults standardUserDefaults] floatForKey:@"highscore"])
+    if (differenceInCents < [[NSUserDefaults standardUserDefaults] floatForKey:self.highScoreKey])
     {
         // difference in cents high score
         [[NSUserDefaults standardUserDefaults] setFloat:differenceInCents
-                                                 forKey:@"highscore"];
+                                                 forKey:self.highScoreKey];
         // answer differential so we can calculate size of growing text
         [[NSUserDefaults standardUserDefaults] setInteger:self.answerDifferential
-                                                   forKey:@"highscore-answerdifferential"];
-        [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1f\ncents", differenceInCents]];
+                                                   forKey:[NSString stringWithFormat:@"%@-answerdifferential", self.highScoreKey]];
+        [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
     }
     
     NSLog(@"calculated diff: %.2f", differenceInCents);
