@@ -13,7 +13,7 @@
 #import "UIView+Helpers.h"
 #import "Question.h"
 
-#define MAX_DIFFERENCE 35.0
+#define MAX_DIFFERENCE 200.0
 
 @interface ViewController ()
 {
@@ -39,13 +39,16 @@
     differenceInCents = MAX_DIFFERENCE;
     self.backgroundColor = self.view.backgroundColor;
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
-    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"G3"] to:[SBNote noteWithName:@"E4"]];
+    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"E4"] to:[SBNote noteWithName:@"C5"]];
     [[AudioPlayer sharedInstance] setGain:1.0];
     [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
     self.nextButton.hidden = YES;
     self.answerDifferential = 0;
+    float highScoreFloat = [[NSUserDefaults standardUserDefaults] floatForKey:@"highscore"];
+    NSString *highScore = [NSString stringWithFormat:@"±%.1f\ncents", highScoreFloat];
+    [self.highScoreLabel setText:highScore];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -95,7 +98,7 @@
     self.currentQuestion = [self generateQuestion];
     
     [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
-    NSLog(@"%@", self.currentQuestion.questionNote);
+    NSLog(@"%@\n%@", self.currentQuestion.referenceNote, self.currentQuestion.questionNote);
 }
 
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
@@ -114,22 +117,22 @@
     referenceNote.duration = 1.0;
     
     SBNote *smallDiff;
-    IntervalType interval = IntervalTypeMinorSecondAscending;
+    IntervalType interval = IntervalTypeMajorSecondAscending;
     int random = arc4random_uniform(3);
     answer = random;
     if (random == 0)
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0 + differenceInCents];
+        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + differenceInCents];
         NSLog(@"higher");
     }
     else if (random == 1)
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0];
+        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0];
         NSLog(@"on it");
     }
     else
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:interval * 100.0 - differenceInCents];
+        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - differenceInCents];
         NSLog(@"lower");
     }
     
@@ -181,12 +184,7 @@
 - (void) correct {
     self.answerDifferential++;
     [self.label setText:@"Correct"];
-    if (self.answerDifferential > 0) {
-        differenceInCents = differenceInCents * pow(.925, (double)self.answerDifferential);
-    } else {
-        differenceInCents = MAX_DIFFERENCE;
-    }
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    [self calculateDifferenceInCents];
     NSLog(@"%d", self.answerDifferential);
 }
 
@@ -196,12 +194,42 @@
     {
         self.hearAgainIntervalLabel.hidden = YES;
         [self.hearAgainIntervalLabel setText:@""];
+        self.replayButton.hidden = NO;
     }
     else
     {
         self.hearAgainIntervalLabel.hidden = NO;
         [self.hearAgainIntervalLabel setText:@"To hear the correct interval, press the target button"];
+        self.replayButton.hidden = YES;
     }
+}
+
+- (void) calculateDifferenceInCents
+{
+    if (self.answerDifferential > 0)
+    {
+        differenceInCents = MAX_DIFFERENCE * pow(.965, (double)self.answerDifferential);
+    }
+    else
+    {
+        differenceInCents = MAX_DIFFERENCE;
+    }
+    
+    // check for high score
+    if (differenceInCents < [[NSUserDefaults standardUserDefaults] floatForKey:@"highscore"])
+    {
+        // difference in cents high score
+        [[NSUserDefaults standardUserDefaults] setFloat:differenceInCents
+                                                 forKey:@"highscore"];
+        // answer differential so we can calculate size of growing text
+        [[NSUserDefaults standardUserDefaults] setInteger:self.answerDifferential
+                                                   forKey:@"highscore-answerdifferential"];
+        [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1f\ncents", differenceInCents]];
+    }
+    
+    NSLog(@"calculated diff: %.2f", differenceInCents);
+    
+    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -253,14 +281,15 @@
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
     [self askQuestion];
-    if (self.answerDifferential > 0) {
-        differenceInCents = MAX_DIFFERENCE * pow(.925, (double)self.answerDifferential);
-    } else {
-        differenceInCents = MAX_DIFFERENCE;
-    }
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    [self calculateDifferenceInCents];
     sender.hidden = YES;
     [self hideHearAnswersLabel:YES];
 }
+
+- (IBAction)replayButtonPressed:(id)sender
+{
+    [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+}
+
 
 @end
