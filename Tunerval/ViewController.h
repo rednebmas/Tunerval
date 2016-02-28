@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *intervalDirectionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *intervalNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *spotOnButton;
+@property (weak, nonatomic) IBOutlet UIButton *flatButton;
+@property (weak, nonatomic) IBOutlet UIButton *sharpButton;
 
 @end
 

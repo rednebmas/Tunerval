@@ -50,7 +50,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     self.nextButton.hidden = YES;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
-    self.highScoreLabel.layer.anchorPoint = CGPointMake(0, 0);
+//    self.highScoreLabel.layer.anchorPoint = CGPointMake(0, 0);
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -243,15 +243,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     self.answerDifferential--;
     switch (answer) {
         case 0:
-            correctAnswer = @"higher";
+            correctAnswer = @"sharp";
+            [self scaleAnimateView:self.sharpButton];
             break;
             
         case 1:
-            correctAnswer = @"on it";
+            correctAnswer = @"spot on";
+            [self scaleAnimateView:self.spotOnButton];
             break;
             
         case 2:
-            correctAnswer = @"lower";
+            correctAnswer = @"flat";
+            [self scaleAnimateView:self.flatButton];
             break;
             
         default:
@@ -330,6 +333,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                                           animations:^{
                              self.highScoreLabel.transform = CGAffineTransformMakeScale(1, 1);
                          } completion:^(BOOL finished){
+                         }];
+                     }];
+}
+
+- (void) scaleAnimateView:(UIView*)view
+{
+    [UIView animateWithDuration:0.25
+                     animations:^{
+        view.transform = CGAffineTransformMakeScale(1.20, 1.20);
+    }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.25
+                                          animations:^{
+                             view.transform = CGAffineTransformMakeScale(1, 1);
                          }];
                      }];
 }
