@@ -13,14 +13,14 @@
 #import "UIView+Helpers.h"
 #import "Question.h"
 
-#define MAX_DIFF_ONE_INTERVAL 200.0
-#define MAX_DIFF_TWO_OR_MORE_INTERVALS 200.0
+#define MAX_DIFF_ONE_INTERVAL 100.0
+#define MAX_DIFF_TWO_OR_MORE_INTERVALS 100.0
 static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 @interface ViewController ()
 {
     int answer;
-    double differenceInCents;
+    float differenceInCents;
 }
 
 @property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
@@ -40,17 +40,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
     [self reloadIntervals];
-    // [self delayAskQuestion];
     self.backgroundColor = self.view.backgroundColor;
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
-    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"E4"] to:[SBNote noteWithName:@"C5"]];
+    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"D4"] to:[SBNote noteWithName:@"C5"]];
     [[AudioPlayer sharedInstance] setGain:1.0];
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
     self.nextButton.hidden = YES;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
-//    self.highScoreLabel.layer.anchorPoint = CGPointMake(0, 0);
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -207,10 +205,22 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     question.questionNote = smallDiff;
     question.interval = interval;
     
-    [self.intervalDirectionLabel setText:[self directionLabelTextForInterval:interval]];
+    
+    [self setDirectionLabelTextForInterval:interval];
     [self.intervalNameLabel setText:[SBNote intervalTypeToIntervalName:interval]];
     
     return question;
+}
+
+- (void) setDirectionLabelTextForInterval:(IntervalType)interval
+{
+    NSString *newDirection = [self directionLabelTextForInterval:interval];
+    if ([newDirection isEqualToString:self.intervalDirectionLabel.text] == NO)
+    {
+        [self scaleAnimateView:self.intervalDirectionLabel];
+    }
+    
+    [self.intervalDirectionLabel setText:newDirection];
 }
 
 - (NSString*) directionLabelTextForInterval:(IntervalType)interval
@@ -236,6 +246,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     } else {
         [self incorrect:value];
     }
+    
+    NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
+    [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
 }
 
 - (void) incorrect:(int)value {
@@ -326,7 +339,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     [UIView animateWithDuration:0.25
                      animations:^{
-        self.highScoreLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+        self.highScoreLabel.transform = CGAffineTransformMakeScale(2.0, 2.0);
     }
                      completion:^(BOOL finished){
                          [UIView animateWithDuration:0.25

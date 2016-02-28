@@ -13,6 +13,7 @@
 @interface SettingsTableViewController ()
 
 @property (nonatomic, retain) NSMutableArray *intervals;
+@property (nonatomic, retain) UILabel *usageLabel;
 
 @end
 
@@ -22,6 +23,26 @@
     [super viewDidLoad];
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
     [self.navigationItem setTitle:@"Settings"];
+    
+    // create info section
+    UIView *footerView = [[UIView alloc] init];
+    CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60);
+    footerView.frame = frame;
+    self.usageLabel = [[UILabel alloc] init];
+    self.usageLabel.textColor = [UIColor darkGrayColor];
+    self.usageLabel.numberOfLines = 0;
+    self.usageLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    frame.origin.y = - 12;
+    frame.size.width -= 35;
+    frame.origin.x += 35.0 / 2.0;
+    self.usageLabel.frame = frame;
+    [self.usageLabel setTextAlignment:NSTextAlignmentCenter];
+    [footerView addSubview:self.usageLabel];
+    self.tableView.tableFooterView = footerView;
+    
+    NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
+    NSString *text = [NSString stringWithFormat:@"%lu questions answered in total", questionsAnsweredTotal];
+    [self.usageLabel setText:text];
 }
 
 - (void)didReceiveMemoryWarning {
