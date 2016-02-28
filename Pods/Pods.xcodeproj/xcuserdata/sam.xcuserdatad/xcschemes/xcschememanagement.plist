@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CupertinoYankee.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>EZAudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,22 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DDC66DA561BD901D19884F71F4A9D15</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4C312D9C93330AF994238E9757B4BAC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BBA1F70B3906FDDB6D06D2A90B40722</key>
+		<key>A6E11BF7336CD28C740B564DF9F5797E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6E11BF7336CD28C740B564DF9F5797E</key>
+		<key>C7B0D783D73EBA43FD5173E6EBB6BE24</key>
 		<dict>
 			<key>primary</key>
 			<true/>

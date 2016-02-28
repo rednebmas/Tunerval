@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CupertinoYankee" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CupertinoYankee" -isystem "${PODS_ROOT}/Headers/Public/EZAudio" -isystem "${PODS_ROOT}/Headers/Public/PitchEstimator" -isystem "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"CupertinoYankee" -l"EZAudio" -l"PitchEstimator" -l"TPCircularBuffer" -framework "AVFoundation" -framework "Accelerate" -framework "AudioToolbox" -framework "GLKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/EZAudio" -isystem "${PODS_ROOT}/Headers/Public/PitchEstimator" -isystem "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"EZAudio" -l"PitchEstimator" -l"TPCircularBuffer" -framework "AVFoundation" -framework "Accelerate" -framework "AudioToolbox" -framework "GLKit"
 PODS_ROOT = ${SRCROOT}/Pods

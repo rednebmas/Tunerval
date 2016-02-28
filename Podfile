@@ -6,6 +6,5 @@
 target 'Tunerval' do
 	pod 'EZAudio', :git => 'https://github.com/rednebmas/EZAudio.git'
 	pod 'PitchEstimator', :path => '~/code/iOS/PitchEstimator'
-	pod 'CupertinoYankee', '~> 1.0'
 end
 

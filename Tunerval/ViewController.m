@@ -50,13 +50,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     self.nextButton.hidden = YES;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
+    self.highScoreLabel.layer.anchorPoint = CGPointMake(0, 0);
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     // Called when dismissing settings
     [self reloadIntervals];
-    
 }
 
 - (void) reloadIntervals
@@ -311,11 +311,27 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         [[NSUserDefaults standardUserDefaults] setInteger:self.answerDifferential
                                                    forKey:[NSString stringWithFormat:@"%@-answerdifferential", self.highScoreKey]];
         [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+        [self animateHighScoreLabel];
     }
     
     NSLog(@"calculated diff: %.2f", differenceInCents);
     
     [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+}
+
+- (void) animateHighScoreLabel
+{
+    [UIView animateWithDuration:0.25
+                     animations:^{
+        self.highScoreLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+    }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.25
+                                          animations:^{
+                             self.highScoreLabel.transform = CGAffineTransformMakeScale(1, 1);
+                         } completion:^(BOOL finished){
+                         }];
+                     }];
 }
 
 - (void)didReceiveMemoryWarning {

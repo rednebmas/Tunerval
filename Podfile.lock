@@ -1,5 +1,4 @@
 PODS:
-  - CupertinoYankee (1.0.2)
   - EZAudio (1.1.2):
     - EZAudio/Full (= 1.1.2)
   - EZAudio/Core (1.1.2)
@@ -11,7 +10,6 @@ PODS:
   - TPCircularBuffer (1.3)
 
 DEPENDENCIES:
-  - CupertinoYankee (~> 1.0)
   - EZAudio (from `https://github.com/rednebmas/EZAudio.git`)
   - PitchEstimator (from `~/code/iOS/PitchEstimator`)
 
@@ -27,7 +25,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/rednebmas/EZAudio.git
 
 SPEC CHECKSUMS:
-  CupertinoYankee: c288994087c791657fce35a43d2a604e64eef23e
   EZAudio: 9d03bc21577de307de51b9a6f40d7129353d218f
   PitchEstimator: 288145081c8401e33fa45498445297c50322de23
   TPCircularBuffer: d2f604324ce1d293175046db3f67420be1091994
