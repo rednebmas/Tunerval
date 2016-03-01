@@ -168,7 +168,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     [[AudioPlayer sharedInstance] play:firstNote];
     
-    double delayTimeInSeconds = 1.0;
+    double delayTimeInSeconds = 1.1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [[AudioPlayer sharedInstance] play:secondNote];
     });
@@ -200,6 +200,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         NSLog(@"lower");
     }
     
+    // randomly change loudness to be between .7 and 1.0 and always have one note at 1.0
+    float upOrDown = drand48();
+    if (upOrDown > .5)
+    {
+        referenceNote.loudness = 1.0 - .3 * drand48();
+    }
+    else
+    {
+        smallDiff.loudness = 1.0 - .3 * drand48();
+    }
+    
+    // create question object
     Question *question = [[Question alloc] init];
     question.referenceNote = referenceNote;
     question.questionNote = smallDiff;
@@ -207,7 +219,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     
     [self setDirectionLabelTextForInterval:interval];
-    [self.intervalNameLabel setText:[SBNote intervalTypeToIntervalName:interval]];
+    [self setIntervalNameLabelTextForInterval:interval];
     
     return question;
 }
@@ -221,6 +233,17 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     [self.intervalDirectionLabel setText:newDirection];
+}
+
+- (void) setIntervalNameLabelTextForInterval:(IntervalType)interval
+{
+    NSString *newIntervalName = [SBNote intervalTypeToIntervalName:interval];
+    if ([newIntervalName isEqualToString:self.intervalNameLabel.text] == NO)
+    {
+        [self rotateWiggleView:self.intervalNameLabel];
+    }
+    
+    [self.intervalNameLabel setText:newIntervalName];
 }
 
 - (NSString*) directionLabelTextForInterval:(IntervalType)interval
@@ -253,7 +276,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) incorrect:(int)value {
     NSString *correctAnswer;
-    self.answerDifferential--;
     switch (answer) {
         case 0:
             correctAnswer = @"sharp";
@@ -275,13 +297,17 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
             break;
     }
     
+    // if the user chooses sharp when flat or flat when sharp this will subtract two
+    self.answerDifferential -= abs(value - answer);
+    
     [self.label setText:[NSString stringWithFormat:@"Incorrect (answer was %@)", correctAnswer]];
     [self flashBackgroundColor:[UIColor redColor]];
     [self hideHearAnswersLabel:NO];
     NSLog(@"%d", self.answerDifferential);
 }
 
-- (void) correct {
+- (void) correct
+{
     self.answerDifferential++;
     [self.label setText:@"Correct"];
     [self calculateDifferenceInCents];
@@ -364,6 +390,27 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                      }];
 }
 
+- (void) rotateWiggleView:(UIView*)view
+{
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         view.transform = CGAffineTransformMakeRotation(-M_PI/32);
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:.25
+                                          animations:^{
+                                              view.transform = CGAffineTransformMakeRotation(M_PI/32);
+                                          }
+                                          completion:^(BOOL finshed){
+                                              [UIView animateWithDuration:.25
+                                                               animations:^{
+                                                                   view.transform = CGAffineTransformMakeRotation(0);
+                                                               }];
+                                          }];
+                         
+                     }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -380,6 +427,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         double difference = self.currentQuestion.interval * 100.0 + differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        up.loudness = self.currentQuestion.questionNote.loudness;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }
@@ -393,6 +441,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         double difference = self.currentQuestion.interval * 100.0;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        up.loudness = self.currentQuestion.questionNote.loudness;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }
@@ -406,6 +455,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         double difference = self.currentQuestion.interval * 100.0 - differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+        up.loudness = self.currentQuestion.questionNote.loudness;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }

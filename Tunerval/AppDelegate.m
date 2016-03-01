@@ -18,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // seed randomness only once
+    // http://nshipster.com/random/
+    // used for duration of note
+    srand48(arc4random());
+    
     // if there is no set of selected intervals, set it.
     NSMutableArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
     if (intervals == nil)

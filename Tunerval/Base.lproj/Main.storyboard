@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Major Second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVd-IG-fpt">
-                                <rect key="frame" x="20" y="320" width="476" height="54"/>
+                                <rect key="frame" x="20" y="320" width="267.5" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                             <constraint firstItem="BVd-IG-fpt" firstAttribute="top" secondItem="xgp-Oh-lgV" secondAttribute="bottom" constant="-3" id="8r6-IQ-QbS"/>
                             <constraint firstItem="OIS-SA-4R9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="8wV-Uo-oW1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kOU-BR-FGo" secondAttribute="leading" id="9OQ-TA-Vxz"/>
+                            <constraint firstItem="XSq-hc-bFe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BVd-IG-fpt" secondAttribute="trailing" constant="25" id="A6v-w4-Xx1"/>
                             <constraint firstItem="BVd-IG-fpt" firstAttribute="bottom" secondItem="XSq-hc-bFe" secondAttribute="top" id="A9q-Dv-Udh"/>
                             <constraint firstItem="kOU-BR-FGo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BVd-IG-fpt" secondAttribute="trailing" constant="25" id="AWM-Kh-Pe1"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="leading" secondItem="X9f-Au-4Jb" secondAttribute="trailing" constant="8" id="BTC-BG-1va"/>
@@ -287,6 +288,7 @@
                                 <exclude reference="pFE-PW-SIb"/>
                                 <exclude reference="HyJ-H6-A73"/>
                                 <exclude reference="gtp-9q-9Lw"/>
+                                <exclude reference="4at-Ql-nAt"/>
                                 <exclude reference="JS6-BA-4In"/>
                                 <exclude reference="RMD-6N-lgR"/>
                                 <exclude reference="f0f-xb-Tkq"/>
