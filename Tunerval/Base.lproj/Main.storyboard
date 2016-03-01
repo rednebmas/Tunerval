@@ -135,8 +135,8 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQX-a8-Iyj">
-                                <rect key="frame" x="378" y="545" width="118" height="29"/>
-                                <color key="backgroundColor" red="0.31764705882352939" green="0.69019607843137254" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="378" y="539" width="118" height="35"/>
+                                <color key="backgroundColor" red="0.2898043692111969" green="0.70468437671661377" blue="0.034279435873031616" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="9Kb-P4-6Hx"/>
                                     <constraint firstAttribute="height" constant="64" id="AJE-Pj-aUB"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="17"/>
                                 <state key="normal" title="Replay">
-                                    <color key="titleColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.99989593029022217" blue="0.99996614456176758" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -188,6 +188,7 @@
                             <constraint firstItem="K9p-jY-efI" firstAttribute="leading" secondItem="X9f-Au-4Jb" secondAttribute="trailing" constant="8" id="BTC-BG-1va"/>
                             <constraint firstItem="xgp-Oh-lgV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kOU-BR-FGo" secondAttribute="bottom" priority="999" constant="20" id="Dca-8M-XxW"/>
                             <constraint firstItem="xgp-Oh-lgV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kOU-BR-FGo" secondAttribute="bottom" constant="25" id="Dj9-hg-aAh"/>
+                            <constraint firstItem="FQX-a8-Iyj" firstAttribute="height" secondItem="q1z-NZ-kGQ" secondAttribute="height" id="F1v-2p-iQz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OIS-SA-4R9" secondAttribute="leading" id="FiI-hJ-kgo"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GGr-7b-jSe"/>
                             <constraint firstItem="FQX-a8-Iyj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HAj-dx-yaa"/>
