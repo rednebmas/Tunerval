@@ -91,38 +91,6 @@
                                     <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1C-BP-ZxE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQX-a8-Iyj">
-                                <rect key="frame" x="378" y="540" width="118" height="35"/>
-                                <color key="backgroundColor" red="0.31764705882352939" green="0.69019607843137254" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="9Kb-P4-6Hx"/>
-                                    <constraint firstAttribute="height" constant="64" id="AJE-Pj-aUB"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="F4u-FZ-hw4"/>
-                                    <constraint firstAttribute="width" constant="118" id="QAQ-s4-d5t"/>
-                                    <constraint firstAttribute="width" constant="64" id="qgM-bv-vOW"/>
-                                    <constraint firstAttribute="height" constant="35" id="xCZ-jQ-bXh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="17"/>
-                                <state key="normal" title="Replay">
-                                    <color key="titleColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9Kb-P4-6Hx"/>
-                                        <exclude reference="AJE-Pj-aUB"/>
-                                        <exclude reference="F4u-FZ-hw4"/>
-                                        <exclude reference="qgM-bv-vOW"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="replayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8iv-c4-Oea"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Major Second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVd-IG-fpt">
                                 <rect key="frame" x="20" y="320" width="267.5" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="45"/>
@@ -166,6 +134,39 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQX-a8-Iyj">
+                                <rect key="frame" x="378" y="545" width="118" height="29"/>
+                                <color key="backgroundColor" red="0.31764705882352939" green="0.69019607843137254" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="9Kb-P4-6Hx"/>
+                                    <constraint firstAttribute="height" constant="64" id="AJE-Pj-aUB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="F4u-FZ-hw4"/>
+                                    <constraint firstAttribute="width" constant="118" id="QAQ-s4-d5t"/>
+                                    <constraint firstAttribute="width" constant="64" id="qgM-bv-vOW"/>
+                                    <constraint firstAttribute="height" constant="35" id="xCZ-jQ-bXh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="17"/>
+                                <state key="normal" title="Replay">
+                                    <color key="titleColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9Kb-P4-6Hx"/>
+                                        <exclude reference="AJE-Pj-aUB"/>
+                                        <exclude reference="F4u-FZ-hw4"/>
+                                        <exclude reference="qgM-bv-vOW"/>
+                                        <exclude reference="xCZ-jQ-bXh"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="replayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8iv-c4-Oea"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470588235292" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -202,6 +203,7 @@
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="top" secondItem="q1z-NZ-kGQ" secondAttribute="bottom" constant="8" id="MpF-1P-HC1"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="height" secondItem="K9p-jY-efI" secondAttribute="height" id="Mya-Qv-rbp"/>
                             <constraint firstItem="xgp-Oh-lgV" firstAttribute="bottom" secondItem="XSq-hc-bFe" secondAttribute="top" constant="4" id="OJq-9Q-XpL"/>
+                            <constraint firstItem="FQX-a8-Iyj" firstAttribute="height" secondItem="q1z-NZ-kGQ" secondAttribute="height" id="OK6-KA-2LK"/>
                             <constraint firstItem="Khp-Xz-c4E" firstAttribute="leading" secondItem="BVd-IG-fpt" secondAttribute="trailing" constant="8" id="OgY-eR-Soi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xgp-Oh-lgV" secondAttribute="leading" id="OxT-rc-WGC"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMD-6N-lgR"/>
@@ -225,12 +227,15 @@
                             <constraint firstItem="K9p-jY-efI" firstAttribute="leading" secondItem="FQX-a8-Iyj" secondAttribute="trailing" constant="13" id="eyC-HW-eak"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="leading" secondItem="BVd-IG-fpt" secondAttribute="trailing" constant="13" id="f0f-xb-Tkq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OIS-SA-4R9" secondAttribute="trailing" id="fqH-W0-sQO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FQX-a8-Iyj" secondAttribute="bottom" constant="26" id="gJF-cP-De3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FQX-a8-Iyj" secondAttribute="leading" id="gdy-Cy-dbQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X9f-Au-4Jb" secondAttribute="trailing" constant="84" id="gkB-am-Dy8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FQX-a8-Iyj" secondAttribute="bottom" constant="20" id="gtp-9q-9Lw"/>
+                            <constraint firstItem="FQX-a8-Iyj" firstAttribute="centerY" secondItem="K9p-jY-efI" secondAttribute="centerY" id="gxY-Td-ik9"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="top" secondItem="K9p-jY-efI" secondAttribute="bottom" constant="32" id="h64-M7-DlX"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="top" secondItem="1aF-ce-DWW" secondAttribute="bottom" constant="8" id="hGh-Vj-UWV"/>
                             <constraint firstItem="X9f-Au-4Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hTn-Km-xQ1"/>
+                            <constraint firstItem="FQX-a8-Iyj" firstAttribute="height" secondItem="K9p-jY-efI" secondAttribute="height" id="hcf-Uj-6Lf"/>
                             <constraint firstItem="xgp-Oh-lgV" firstAttribute="bottom" secondItem="vGW-rB-CCq" secondAttribute="bottom" priority="250" id="kj9-A4-M5b"/>
                             <constraint firstItem="xgp-Oh-lgV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="lkN-TA-8Fa"/>
                             <constraint firstItem="BVd-IG-fpt" firstAttribute="baseline" secondItem="XSq-hc-bFe" secondAttribute="baseline" id="mQw-w1-B6z"/>
@@ -287,6 +292,7 @@
                                 <exclude reference="XR4-x0-MBt"/>
                                 <exclude reference="pFE-PW-SIb"/>
                                 <exclude reference="HyJ-H6-A73"/>
+                                <exclude reference="M60-5c-uFd"/>
                                 <exclude reference="gtp-9q-9Lw"/>
                                 <exclude reference="4at-Ql-nAt"/>
                                 <exclude reference="JS6-BA-4In"/>
@@ -303,7 +309,10 @@
                                 <exclude reference="ZXm-Ez-FCp"/>
                                 <exclude reference="q9r-Md-ltQ"/>
                                 <exclude reference="HAj-dx-yaa"/>
+                                <exclude reference="OK6-KA-2LK"/>
                                 <exclude reference="gdy-Cy-dbQ"/>
+                                <exclude reference="gxY-Td-ik9"/>
+                                <exclude reference="hcf-Uj-6Lf"/>
                                 <exclude reference="BTC-BG-1va"/>
                                 <exclude reference="dCa-ji-oyx"/>
                                 <exclude reference="hGh-Vj-UWV"/>

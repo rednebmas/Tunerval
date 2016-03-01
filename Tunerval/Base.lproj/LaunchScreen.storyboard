@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-logo" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-bc-vFM">
-                                <rect key="frame" x="0.0" y="-11" width="600" height="621"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tunerval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJe-vW-Ahp">
                                 <rect key="frame" x="192" y="94" width="216" height="72"/>
@@ -30,13 +30,16 @@
                         <color key="backgroundColor" red="0.41176470588235292" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UJe-vW-Ahp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-170" id="0dI-Zi-0fG"/>
+                            <constraint firstItem="fbN-bc-vFM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Dto-oY-t5g"/>
                             <constraint firstItem="UJe-vW-Ahp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MMs-gF-61T"/>
                             <constraint firstItem="fbN-bc-vFM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cPQ-3U-6Mf"/>
                             <constraint firstAttribute="trailing" secondItem="fbN-bc-vFM" secondAttribute="trailing" id="ibz-Yk-GB8"/>
                             <constraint firstItem="fbN-bc-vFM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nR0-sP-aia"/>
                             <constraint firstItem="fbN-bc-vFM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="v12-Md-A3V"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="fbN-bc-vFM" secondAttribute="bottom" id="xo4-8Q-mdf"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-logo" width="621" height="621"/>
+        <image name="launch-logo" width="414" height="414"/>
     </resources>
 </document>
