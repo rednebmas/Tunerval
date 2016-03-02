@@ -23,9 +23,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     int answer;
     float differenceInCents;
     NSInteger dailyProgressGoal;
+    NSUserDefaults *defaults;
 }
 
+@property (nonatomic) BOOL speakInterval;
 @property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
+@property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
 @property (nonatomic, retain) NSString *highScoreKey;
 @property (nonatomic, retain) NSArray *intervals;
 @property (nonatomic, retain) Question *currentQuestion;
@@ -40,6 +43,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    defaults = [NSUserDefaults standardUserDefaults];
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
     [self reloadIntervals];
     self.backgroundColor = self.view.backgroundColor;
@@ -60,6 +64,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self reloadNoteRange];
     [self reloadDailyProgressGoal];
     [self reloadDailyProgress];
+    [self reloadSpeakInterval];
+}
+
+- (void) reloadSpeakInterval
+{
+    self.speakInterval = [[defaults objectForKey:@"speak-interval-on"] boolValue];
 }
 
 - (void) reloadDailyProgressGoal
@@ -205,8 +215,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self setDirectionLabelTextForInterval:self.currentQuestion.interval];
     [self setIntervalNameLabelTextForInterval:self.currentQuestion.interval];
     
+    if (self.speakInterval)
+    {
+        IntervalType interval = self.currentQuestion.interval;
+        NSString *intervalDirection = [self directionLabelTextForInterval:interval];
+        NSString *fullIntervalName = [NSString stringWithFormat:@"%@ %@",
+                                      intervalDirection,
+                                      [SBNote intervalTypeToIntervalName:interval]];
+        [self speak:fullIntervalName];
+    }
+    
     // gives player time to read interval name
-    double delayTimeInSeconds = 0.5;
+    double delayTimeInSeconds = self.speakInterval ? 1.8 : .5;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
     });
@@ -323,14 +343,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) incorrect:(int)value {
     NSString *correctAnswer;
-    switch (answer) {
+    switch (answer)
+    {
         case 0:
             correctAnswer = @"sharp";
             [self scaleAnimateView:self.sharpButton];
             break;
             
         case 1:
-            correctAnswer = @"spot on";
+            correctAnswer = @"in tune";
             [self scaleAnimateView:self.spotOnButton];
             break;
             
@@ -344,24 +365,63 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
             break;
     }
     
+    if (self.speakInterval)
+    {
+        [self speak:@"Incorrect"];
+    }
+    
     // if the user chooses sharp when flat or flat when sharp this will subtract two
     self.answerDifferential -= abs(value - answer);
+    self.correctStreak = 0;
     
-    [self rotateDownOverXAxis:self.centsDifference];
-    
-    [self.label setText:[NSString stringWithFormat:@"Incorrect\nAnswer: %@", correctAnswer]];
+    [self.label setAttributedText:[self correctAnswerBolded:correctAnswer]];
     [self flashBackgroundColor:[UIColor redColor]];
     [self hideHearAnswersLabel:NO];
     NSLog(@"%d", self.answerDifferential);
 }
 
+- (NSAttributedString*) correctAnswerBolded:(NSString*)correctAnswer
+{
+    NSString *concat = [NSString stringWithFormat:@"Incorrect\nAnswer: %@", correctAnswer];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]
+                                             initWithString:concat];
+    
+    CGFloat fontSize = self.label.font.pointSize;
+    [attrString addAttribute:NSFontAttributeName
+                       value:[UIFont boldSystemFontOfSize:fontSize]
+                       range:NSMakeRange(18, correctAnswer.length)];
+    
+    return attrString;
+}
+
 - (void) correct
 {
     [self rotateUpOverXAxis:self.centsDifference];
-    self.answerDifferential++;
+    
+    // move faster if we have got several correct in a row
+    self.correctStreak++;
+    if (self.correctStreak > 7)
+    {
+        int speed = 2;
+        if (self.correctStreak > 10)
+        {
+            speed = 3;
+        }
+        else if (self.correctStreak > 15)
+        {
+            speed = 4;
+        }
+        
+        self.answerDifferential += speed;
+    }
+    else
+    {
+        self.answerDifferential++;
+    }
     [self.label setText:@"Correct"];
     [self calculateDifferenceInCents];
     NSLog(@"%d", self.answerDifferential);
+    
 }
 
 - (void) hideHearAnswersLabel:(BOOL)makeHidden
@@ -502,6 +562,16 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [layer addAnimation:animation forKey:animation.keyPath];
 }
 
+- (void) speak:(NSString*)text
+{
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance
+                                    speechUtteranceWithString:text];
+    [utterance setRate:0.5f];
+    utterance.volume = .9f;
+    [synthesizer speakUtterance:utterance];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -553,6 +623,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
+    [self rotateDownOverXAxis:self.centsDifference];
     [self askQuestion];
     [self calculateDifferenceInCents];
     sender.hidden = YES;

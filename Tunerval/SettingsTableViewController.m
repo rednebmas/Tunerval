@@ -12,9 +12,13 @@
 #import "NSAttributedString+Utilities.h"
 
 @interface SettingsTableViewController ()
+{
+    NSUserDefaults *defaults;
+}
 
 @property (nonatomic, retain) NSMutableArray *intervals;
 @property (nonatomic, retain) UILabel *usageLabel;
+
 
 @end
 
@@ -22,12 +26,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    defaults = [NSUserDefaults standardUserDefaults];
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
     [self.navigationItem setTitle:@"Settings"];
     [self createFooter];
     
     self.dailyGoalProgressTextField.delegate = self;
     [self addDoneButtonToTextField];
+    
+    [self.speakIntervalSwitch setOn:[[defaults objectForKey:@"speak-interval-on"] boolValue]];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -149,6 +157,13 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)speakIntervalValueChanged:(UISwitch *)sender
+{
+    NSNumber *on = [NSNumber numberWithBool:sender.on];
+    [defaults setObject:on forKey:@"speak-interval-on"];
+}
+
 
 - (void) doneEditingDailyProgress
 {

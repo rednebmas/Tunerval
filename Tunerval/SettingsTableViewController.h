@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *intervalsSelectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteRangeSelectedLabel;
 @property (weak, nonatomic) IBOutlet UITextField *dailyGoalProgressTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *speakIntervalSwitch;
 
 @end
