@@ -128,7 +128,9 @@
     self.tableView.tableFooterView = footerView;
     
     NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
-    NSString *text = [NSString stringWithFormat:@"%lu questions answered in total", questionsAnsweredTotal];
+    NSNumber *questionsAnsweredTotalNumber = [NSNumber numberWithInteger:questionsAnsweredTotal];
+    NSString *text = [NSString
+                      localizedStringWithFormat:@"%@ questions answered in total", questionsAnsweredTotalNumber];
     [self.usageLabel setText:text];
 }
 

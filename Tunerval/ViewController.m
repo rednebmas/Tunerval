@@ -158,8 +158,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (NSUInteger) intervalSetHash:(NSArray*)intervalSet
 {
+    NSArray *sorted = [intervalSet sortedArrayUsingSelector:@selector(compare:)];
     NSUInteger hash = 17;
-    for (NSNumber *interval in intervalSet)
+    for (NSNumber *interval in sorted)
     {
         hash = hash * 31 + [interval integerValue];
     }
