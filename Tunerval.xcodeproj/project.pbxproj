@@ -15,7 +15,9 @@
 		2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219495C1C80E956004D0155 /* LaunchScreen.storyboard */; };
 		221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949661C80ECC1004D0155 /* AudioPlayer.m */; };
 		2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949691C80ED29004D0155 /* SBPlayableNote.m */; };
+		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
+		229641151C858E200010F740 /* SettingsIntervalsTableViewController copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController copy.m */; };
 		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
@@ -37,8 +39,12 @@
 		221949661C80ECC1004D0155 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = ../../Pitch/Pitch/AudioPlayer.m; sourceTree = "<group>"; };
 		221949681C80ED29004D0155 /* SBPlayableNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBPlayableNote.h; path = ../../Pitch/Pitch/SBPlayableNote.h; sourceTree = "<group>"; };
 		221949691C80ED29004D0155 /* SBPlayableNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBPlayableNote.m; path = ../../Pitch/Pitch/SBPlayableNote.m; sourceTree = "<group>"; };
+		221E41B01C863DD8008A6255 /* MBRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRoundProgressView.h; sourceTree = "<group>"; };
+		221E41B11C863DD8008A6255 /* MBRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRoundProgressView.m; sourceTree = "<group>"; };
 		221F245A1C82424500DA4950 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		229641131C858E200010F740 /* SettingsIntervalsTableViewController copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SettingsIntervalsTableViewController copy.m"; sourceTree = "<group>"; };
+		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
 		22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNoteGenerator.h; path = ../../Pitch/Pitch/RandomNoteGenerator.h; sourceTree = "<group>"; };
 		22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNoteGenerator.m; path = ../../Pitch/Pitch/RandomNoteGenerator.m; sourceTree = "<group>"; };
 		22F68ED91C813B650040541F /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Helpers.h"; path = "../../Cast 2/Cast 2/UIView+Helpers.h"; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 				2219494E1C80E956004D0155 /* Supporting Files */,
 				221F245A1C82424500DA4950 /* SettingsTableViewController.h */,
 				221F245B1C82424500DA4950 /* SettingsTableViewController.m */,
+				229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */,
+				229641131C858E200010F740 /* SettingsIntervalsTableViewController copy.m */,
 			);
 			path = Tunerval;
 			sourceTree = "<group>";
@@ -120,6 +128,8 @@
 				22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */,
 				22F68ED91C813B650040541F /* UIView+Helpers.h */,
 				22F68EDA1C813B650040541F /* UIView+Helpers.m */,
+				221E41B01C863DD8008A6255 /* MBRoundProgressView.h */,
+				221E41B11C863DD8008A6255 /* MBRoundProgressView.m */,
 			);
 			name = Imported;
 			sourceTree = "<group>";
@@ -270,8 +280,10 @@
 				221949501C80E956004D0155 /* main.m in Sources */,
 				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
+				229641151C858E200010F740 /* SettingsIntervalsTableViewController copy.m in Sources */,
 				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
 				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,
+				221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

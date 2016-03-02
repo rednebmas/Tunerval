@@ -160,7 +160,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     self.currentQuestion = [self generateQuestion];
     
-    [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+    [self setDirectionLabelTextForInterval:self.currentQuestion.interval];
+    [self setIntervalNameLabelTextForInterval:self.currentQuestion.interval];
+    
+    // gives player time to read interval name
+    double delayTimeInSeconds = 0.5;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+    });
+    
     NSLog(@"%@\n%@", self.currentQuestion.referenceNote, self.currentQuestion.questionNote);
 }
 
@@ -216,10 +224,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     question.referenceNote = referenceNote;
     question.questionNote = smallDiff;
     question.interval = interval;
-    
-    
-    [self setDirectionLabelTextForInterval:interval];
-    [self setIntervalNameLabelTextForInterval:interval];
     
     return question;
 }
@@ -300,7 +304,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // if the user chooses sharp when flat or flat when sharp this will subtract two
     self.answerDifferential -= abs(value - answer);
     
-    [self.label setText:[NSString stringWithFormat:@"Incorrect (answer was %@)", correctAnswer]];
+    [self rotateDownOverXAxis:self.centsDifference];
+    
+    [self.label setText:[NSString stringWithFormat:@"Incorrect\nAnswer: %@", correctAnswer]];
     [self flashBackgroundColor:[UIColor redColor]];
     [self hideHearAnswersLabel:NO];
     NSLog(@"%d", self.answerDifferential);
@@ -308,6 +314,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) correct
 {
+    [self rotateUpOverXAxis:self.centsDifference];
     self.answerDifferential++;
     [self.label setText:@"Correct"];
     [self calculateDifferenceInCents];
@@ -409,6 +416,47 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                                           }];
                          
                      }];
+}
+
+
+- (void) rotateDownOverXAxis:(UIView*)view
+{
+    // http://stackoverflow.com/questions/11571420/catransform3drotate-rotate-for-360-degrees
+    CALayer *layer = view.layer;
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = 1.0 / -50;
+    layer.transform = transform;
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    animation.values = [NSArray arrayWithObjects:
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 0 * -M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 1 * -M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 2 * -M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 3 * -M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 4 * -M_PI / 2, 1, 0, 0)],
+                        nil];
+    animation.duration = .75;
+    [layer addAnimation:animation forKey:animation.keyPath];
+}
+
+- (void) rotateUpOverXAxis:(UIView*)view
+{
+    // http://stackoverflow.com/questions/11571420/catransform3drotate-rotate-for-360-degrees
+    CALayer *layer = view.layer;
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = 1.0 / -50;
+    layer.transform = transform;
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    animation.values = [NSArray arrayWithObjects:
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 0 * M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 1 * M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 2 * M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 3 * M_PI / 2, 1, 0, 0)],
+                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 4 * M_PI / 2, 1, 0, 0)],
+                        nil];
+    animation.duration = .75;
+    [layer addAnimation:animation forKey:animation.keyPath];
 }
 
 - (void)didReceiveMemoryWarning {
