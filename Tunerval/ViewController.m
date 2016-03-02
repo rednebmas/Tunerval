@@ -42,7 +42,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self reloadIntervals];
     self.backgroundColor = self.view.backgroundColor;
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
-    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:@"D4"] to:[SBNote noteWithName:@"C5"]];
+    [self reloadNoteRange];
     [[AudioPlayer sharedInstance] setGain:1.0];
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
@@ -55,6 +55,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     // Called when dismissing settings
     [self reloadIntervals];
+    [self reloadNoteRange];
+}
+
+- (void) reloadNoteRange
+{
+    NSString *fromNote = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
+    NSString *toNote = [[NSUserDefaults standardUserDefaults] objectForKey:@"to-note"];
+    [self.randomNoteGenerator setRangeFrom:[SBNote noteWithName:fromNote]
+                                        to:[SBNote noteWithName:toNote]];
 }
 
 - (void) reloadIntervals

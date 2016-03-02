@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
-
 @interface SettingsIntervalsTableViewController : UITableViewController
-
-@property (nonatomic, retain) ViewController *sender;
 
 @end

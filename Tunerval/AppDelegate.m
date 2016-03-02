@@ -25,11 +25,20 @@
     
     // if there is no set of selected intervals, set it.
     NSMutableArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
+    
     if (intervals == nil)
     {
         intervals = [[NSMutableArray alloc] init];
         [intervals addObject:[NSNumber numberWithInteger:IntervalTypeMinorSecondAscending]];
         [[NSUserDefaults standardUserDefaults] setObject:intervals forKey:@"selected_intervals"];
+    }
+    
+    // this needs to be done seperately for compatibility
+    NSString *fromNote = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
+    if (fromNote == nil)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"C4" forKey:@"from-note"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"C5" forKey:@"to-note"];
     }
     
     return YES;

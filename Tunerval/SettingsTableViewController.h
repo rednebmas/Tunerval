@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
-
 @interface SettingsTableViewController : UITableViewController
 
-@property (nonatomic, retain) ViewController *sender;
+@property (weak, nonatomic) IBOutlet UILabel *intervalsSelectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noteRangeSelectedLabel;
 
 @end
