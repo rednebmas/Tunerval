@@ -360,6 +360,7 @@
                     </view>
                     <connections>
                         <outlet property="centsDifference" destination="vGW-rB-CCq" id="dbU-Xo-iWQ"/>
+                        <outlet property="dailyProgressView" destination="DCM-KJ-d5J" id="DP4-21-dCb"/>
                         <outlet property="flatButton" destination="K9p-jY-efI" id="Iy9-y5-NVw"/>
                         <outlet property="hearAgainIntervalLabel" destination="OWx-yW-gdZ" id="YaD-wF-syC"/>
                         <outlet property="highScoreLabel" destination="kOU-BR-FGo" id="k2U-fX-cGk"/>
@@ -450,7 +451,7 @@
                                             <segue destination="RKJ-40-d2S" kind="show" id="sDj-ff-RIG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultCell" id="N2j-Nx-9dC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultCell" id="N2j-Nx-9dC">
                                         <rect key="frame" x="0.0" y="187" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2j-Nx-9dC" id="LYr-ys-qGh">
@@ -469,8 +470,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="e4A-MO-ne6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -499,6 +501,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dailyGoalProgressTextField" destination="a8N-34-flc" id="y9b-RB-NX6"/>
                         <outlet property="intervalsSelectedLabel" destination="fK0-TT-nEy" id="REV-4w-xX4"/>
                         <outlet property="noteRangeSelectedLabel" destination="jAi-vF-2gJ" id="QhA-KR-X8K"/>
                     </connections>

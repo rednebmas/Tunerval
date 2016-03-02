@@ -39,6 +39,8 @@
     {
         [[NSUserDefaults standardUserDefaults] setObject:@"C4" forKey:@"from-note"];
         [[NSUserDefaults standardUserDefaults] setObject:@"C5" forKey:@"to-note"];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@100 forKey:@"daily-goal"];
     }
     
     return YES;

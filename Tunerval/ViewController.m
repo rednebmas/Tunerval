@@ -12,6 +12,7 @@
 #import "RandomNoteGenerator.h"
 #import "UIView+Helpers.h"
 #import "Question.h"
+#import "MBRoundProgressView.h"
 
 #define MAX_DIFF_ONE_INTERVAL 100.0
 #define MAX_DIFF_TWO_OR_MORE_INTERVALS 100.0
@@ -21,6 +22,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     int answer;
     float differenceInCents;
+    NSInteger dailyProgressGoal;
 }
 
 @property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
@@ -56,6 +58,37 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // Called when dismissing settings
     [self reloadIntervals];
     [self reloadNoteRange];
+    [self reloadDailyProgressGoal];
+    [self reloadDailyProgress];
+}
+
+- (void) reloadDailyProgressGoal
+{
+    dailyProgressGoal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"daily-goal"] integerValue];
+}
+
+- (void) reloadDailyProgress
+{
+    NSInteger questionsAnswered = [[[NSUserDefaults standardUserDefaults]
+                                    objectForKey:[self dailyProgressKey]] integerValue];
+    self.dailyProgressView.progress = (float)questionsAnswered / (float)dailyProgressGoal;
+}
+
+- (NSString*) dailyProgressKey
+{
+    NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
+    return [NSString stringWithFormat:@"questions-answered-%f", beginningOfDay.timeIntervalSince1970];
+}
+
+
+- (void) incrementDailyProgress
+{
+    NSString *dailyProgressKey = [self dailyProgressKey];
+    NSInteger questionsAnswered = [[[NSUserDefaults standardUserDefaults]
+                                    objectForKey:dailyProgressKey] integerValue];
+    NSNumber *incremented = [NSNumber numberWithInteger:questionsAnswered+1];
+    [[NSUserDefaults standardUserDefaults] setObject:incremented forKey:dailyProgressKey];
+    [self reloadDailyProgress];
 }
 
 - (void) reloadNoteRange
@@ -285,6 +318,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
     [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
+    [self incrementDailyProgress];
 }
 
 - (void) incorrect:(int)value {

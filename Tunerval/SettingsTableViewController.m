@@ -25,6 +25,9 @@
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
     [self.navigationItem setTitle:@"Settings"];
     [self createFooter];
+    
+    self.dailyGoalProgressTextField.delegate = self;
+    [self addDoneButtonToTextField];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -32,6 +35,14 @@
     [super viewWillAppear:animated];
     [self setIntervalsSelectedLabelText];
     [self setNoteRangeSelectedLabelText];
+    [self setContentForDailyProgressTextField];
+}
+
+- (void) setContentForDailyProgressTextField
+{
+    NSNumber *goal = [[NSUserDefaults standardUserDefaults] objectForKey:@"daily-goal"];
+    NSInteger goalInteger = [goal integerValue];
+    [self.dailyGoalProgressTextField setText:[NSString stringWithFormat:@"%lu", goalInteger]];
 }
 
 - (void) setNoteRangeSelectedLabelText
@@ -113,6 +124,20 @@
     [self.usageLabel setText:text];
 }
 
+- (void) addDoneButtonToTextField
+{
+    UIToolbar* keyboardToolbar = [[UIToolbar alloc] init];
+    [keyboardToolbar sizeToFit];
+    UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                      target:nil action:nil];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                      target:self action:@selector(doneEditingDailyProgress)];
+    keyboardToolbar.items = @[flexBarButton, doneBarButton];
+    self.dailyGoalProgressTextField.inputAccessoryView = keyboardToolbar;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -124,5 +149,24 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void) doneEditingDailyProgress
+{
+    [self.view endEditing:YES];
+    
+    NSInteger dailyGoalIntegerVal = [self.dailyGoalProgressTextField.text integerValue];
+    if (dailyGoalIntegerVal < 25)
+    {
+        [self setContentForDailyProgressTextField];
+        return;
+    }
+    
+    NSNumber *numberVal = [NSNumber numberWithInteger:dailyGoalIntegerVal];
+    [[NSUserDefaults standardUserDefaults] setObject:numberVal forKey:@"daily-goal"];
+}
+
+#pragma mark - Text field delegate
+
+
 
 @end

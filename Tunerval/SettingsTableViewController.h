@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *intervalsSelectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteRangeSelectedLabel;
+@property (weak, nonatomic) IBOutlet UITextField *dailyGoalProgressTextField;
 
 @end

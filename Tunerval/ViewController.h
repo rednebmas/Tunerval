@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MBRoundProgressView;
+
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *spotOnButton;
 @property (weak, nonatomic) IBOutlet UIButton *flatButton;
 @property (weak, nonatomic) IBOutlet UIButton *sharpButton;
+@property (weak, nonatomic) IBOutlet MBRoundProgressView *dailyProgressView;
 
 @end
 
