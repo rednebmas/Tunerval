@@ -10,6 +10,8 @@
 #import "SettingsTableViewController.h"
 #import "ViewController.h"
 #import "NSAttributedString+Utilities.h"
+#import "SettingsNumberPickerTableViewController.h"
+#import "SecondsPickerView.h"
 
 @interface SettingsTableViewController ()
 {
@@ -44,6 +46,17 @@
     [self setIntervalsSelectedLabelText];
     [self setNoteRangeSelectedLabelText];
     [self setContentForDailyProgressTextField];
+    [self setNoteDurationAndVariationValueLabels];
+}
+
+- (void) setNoteDurationAndVariationValueLabels
+{
+    double noteDuration = [defaults doubleForKey:@"note-duration"];
+    double noteDurationVariation = [defaults doubleForKey:@"note-duration-variation"];
+    
+    [self.noteDurationValueLabel setText:[NSString stringWithFormat:@"%.1fs", noteDuration]];
+    [self.noteDurationVariationValueLabel setText:[NSString
+                                                   stringWithFormat:@"%.1fs", noteDurationVariation]];
 }
 
 - (void) setContentForDailyProgressTextField
@@ -183,6 +196,38 @@
 }
 
 #pragma mark - Text field delegate
+
+#pragma mark - Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"NoteDurationSegue"])
+    {
+        SettingsNumberPickerTableViewController *vc = (SettingsNumberPickerTableViewController*)segue.destinationViewController;
+        [vc.navigationItem setTitle:@"Note Duration"];
+        [vc loadViewIfNeeded];
+        vc.numberPicker.min = 0.1;
+        vc.numberPicker.max = 2.0;
+        vc.numberPicker.step = .05;
+        vc.numberPicker.defaultValue = 0.8;
+        vc.numberPicker.settingsKey = @"note-duration";
+        
+        [vc.numberPicker generateSecondsList];
+    }
+    else if ([segue.identifier isEqualToString:@"NoteDurationVariationSegue"])
+    {
+        SettingsNumberPickerTableViewController *vc = (SettingsNumberPickerTableViewController*)segue.destinationViewController;
+        [vc.navigationItem setTitle:@"Note Variation Duration"];
+        [vc loadViewIfNeeded];
+        vc.numberPicker.min = 0.0;
+        vc.numberPicker.max = 2.0;
+        vc.numberPicker.step = .1;
+        vc.numberPicker.defaultValue = 0.1;
+        vc.numberPicker.settingsKey = @"note-duration-variation";
+        
+        [vc.numberPicker generateSecondsList];
+    }
+}
 
 
 

@@ -23,6 +23,9 @@
     // used for duration of note
     srand48(arc4random());
     
+    // get defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     // if there is no set of selected intervals, set it.
     NSMutableArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
     
@@ -41,6 +44,13 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"C5" forKey:@"to-note"];
         
         [[NSUserDefaults standardUserDefaults] setObject:@100 forKey:@"daily-goal"];
+    }
+    
+    double noteDuration = [defaults doubleForKey:@"note-duration"];
+    if (noteDuration == 0.0)
+    {
+        [defaults setDouble:0.8 forKey:@"note-duration"];
+        [defaults setDouble:0.1 forKey:@"note-duration-variation"];
     }
     
     return YES;

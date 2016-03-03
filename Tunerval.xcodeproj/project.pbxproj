@@ -21,6 +21,8 @@
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
 		22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */; };
+		22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */; };
+		22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */; };
 		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
@@ -54,6 +56,10 @@
 		22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Utilities.m"; sourceTree = "<group>"; };
 		22D178D81C86C3B800B204C1 /* SettingsNoteRangeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNoteRangeTableViewController.h; sourceTree = "<group>"; };
 		22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNoteRangeTableViewController.m; sourceTree = "<group>"; };
+		22F0C5C71C882DB8002C6F1C /* SecondsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondsPickerView.h; sourceTree = "<group>"; };
+		22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondsPickerView.m; sourceTree = "<group>"; };
+		22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNumberPickerTableViewController.h; sourceTree = "<group>"; };
+		22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNumberPickerTableViewController.m; sourceTree = "<group>"; };
 		22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNoteGenerator.h; path = ../../Pitch/Pitch/RandomNoteGenerator.h; sourceTree = "<group>"; };
 		22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNoteGenerator.m; path = ../../Pitch/Pitch/RandomNoteGenerator.m; sourceTree = "<group>"; };
 		22F68ED91C813B650040541F /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Helpers.h"; path = "../../Cast 2/Cast 2/UIView+Helpers.h"; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 				22D178D71C86C39500B204C1 /* Settings */,
 				221949541C80E956004D0155 /* ViewController.h */,
 				221949551C80E956004D0155 /* ViewController.m */,
+				22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */,
+				22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +146,8 @@
 			children = (
 				22D178C91C86B5F000B204C1 /* NotePickerView.h */,
 				22D178CA1C86B5F000B204C1 /* NotePickerView.m */,
+				22F0C5C71C882DB8002C6F1C /* SecondsPickerView.h */,
+				22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -323,8 +333,10 @@
 				22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */,
 				221949561C80E956004D0155 /* ViewController.m in Sources */,
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
+				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
+				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
 				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,

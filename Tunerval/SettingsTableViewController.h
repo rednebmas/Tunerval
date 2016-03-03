@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *noteRangeSelectedLabel;
 @property (weak, nonatomic) IBOutlet UITextField *dailyGoalProgressTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *speakIntervalSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *noteDurationValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noteDurationVariationValueLabel;
 
 @end

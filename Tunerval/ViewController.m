@@ -239,7 +239,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     [[AudioPlayer sharedInstance] play:firstNote];
     
-    double delayTimeInSeconds = 1.1;
+    double delayTimeInSeconds = firstNote.duration + .1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [[AudioPlayer sharedInstance] play:secondNote];
     });
@@ -281,6 +281,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         smallDiff.loudness = 1.0 - .3 * drand48();
     }
+    double duration = [defaults doubleForKey:@"note-duration"];
+    double durationVariation = [defaults doubleForKey:@"note-duration-variation"];
+    smallDiff.duration = duration + (drand48() * durationVariation - durationVariation/2);
+    referenceNote.duration = duration + (drand48() * durationVariation - durationVariation/2);
     
     // create question object
     Question *question = [[Question alloc] init];
@@ -573,6 +577,16 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [synthesizer speakUtterance:utterance];
 }
 
+- (void) durationOffset
+{
+    
+}
+
+- (void) durationVariability
+{
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -590,6 +604,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         double difference = self.currentQuestion.interval * 100.0 + differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
         up.loudness = self.currentQuestion.questionNote.loudness;
+        up.duration = self.currentQuestion.questionNote.duration;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }
@@ -604,6 +619,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         double difference = self.currentQuestion.interval * 100.0;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
         up.loudness = self.currentQuestion.questionNote.loudness;
+        up.duration = self.currentQuestion.questionNote.duration;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }
@@ -618,6 +634,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         double difference = self.currentQuestion.interval * 100.0 - differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
         up.loudness = self.currentQuestion.questionNote.loudness;
+        up.duration = self.currentQuestion.questionNote.duration;
         [self playNote:self.currentQuestion.referenceNote thenPlay:up];
     }
 }
