@@ -40,7 +40,19 @@
 {
     if (pickerView == self.fromPickerView)
     {
-        [[NSUserDefaults standardUserDefaults] setObject:note.nameWithOctave forKey:@"from-note"];
+        // we need to ensure that the to note is greater than or equal to the from note
+        NSString *toNoteName = [[NSUserDefaults standardUserDefaults] objectForKey:@"to-note"];
+        SBNote *toNote = [SBNote noteWithName:toNoteName];
+        if (note.frequency <= toNote.frequency)
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:note.nameWithOctave forKey:@"from-note"];
+        }
+        else
+        {
+            NSString *fromNoteName = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
+            SBNote *fromNote = [SBNote noteWithName:fromNoteName];
+            [self.toPickerView selectNote:fromNote animated:YES];
+        }
     }
     else
     {
