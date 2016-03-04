@@ -13,6 +13,7 @@
 #import "UIView+Helpers.h"
 #import "Question.h"
 #import "MBRoundProgressView.h"
+#import "Animation.h"
 
 #define MAX_DIFF_ONE_INTERVAL 100.0
 #define MAX_DIFF_TWO_OR_MORE_INTERVALS 100.0
@@ -32,7 +33,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @property (nonatomic, retain) NSString *highScoreKey;
 @property (nonatomic, retain) NSArray *intervals;
 @property (nonatomic, retain) Question *currentQuestion;
-@property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) RandomNoteGenerator *randomNoteGenerator;
 
 @end
@@ -46,7 +46,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     defaults = [NSUserDefaults standardUserDefaults];
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
     [self reloadIntervals];
-    self.backgroundColor = self.view.backgroundColor;
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
     [self reloadNoteRange];
     [[AudioPlayer sharedInstance] setGain:1.0];
@@ -172,31 +171,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     return UIStatusBarStyleLightContent;
 }
 
-- (void) flashBackgroundColor:(UIColor*)color {
-    __weak typeof (self) weakSelf = self;
-    [UIView animateWithDuration: 0.25
-                     animations: ^{
-                         weakSelf.view.backgroundColor = color;
-                     }
-                     completion: ^(BOOL finished) {
-                         dispatch_async(dispatch_get_main_queue(), ^{
-                             [weakSelf unflashBackgroundColor];
-                         });
-                     }
-     ];
-}
-
-- (void) unflashBackgroundColor {
-    __weak typeof (self) weakSelf = self;
-    [UIView animateWithDuration: 0.25
-                     animations: ^{
-                         weakSelf.view.backgroundColor = weakSelf.backgroundColor;
-                     }
-                     completion: ^(BOOL finished) {
-                     }
-     ];
-}
-
 - (void) delayAskQuestion {
     double delayTimeInSeconds = 1.0;
     __weak id weakSelf = self;
@@ -300,7 +274,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSString *newDirection = [self directionLabelTextForInterval:interval];
     if ([newDirection isEqualToString:self.intervalDirectionLabel.text] == NO)
     {
-        [self scaleAnimateView:self.intervalDirectionLabel];
+        [Animation scalePop:self.intervalDirectionLabel toScale:1.2];
     }
     
     [self.intervalDirectionLabel setText:newDirection];
@@ -311,7 +285,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSString *newIntervalName = [SBNote intervalTypeToIntervalName:interval];
     if ([newIntervalName isEqualToString:self.intervalNameLabel.text] == NO)
     {
-        [self rotateWiggleView:self.intervalNameLabel];
+        [Animation rotateWiggle:self.intervalNameLabel];
     }
     
     [self.intervalNameLabel setText:newIntervalName];
@@ -352,17 +326,17 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         case 0:
             correctAnswer = @"sharp";
-            [self scaleAnimateView:self.sharpButton];
+            [Animation scalePop:self.sharpButton toScale:1.2];
             break;
             
         case 1:
             correctAnswer = @"in tune";
-            [self scaleAnimateView:self.spotOnButton];
+            [Animation scalePop:self.spotOnButton toScale:1.2];
             break;
             
         case 2:
             correctAnswer = @"flat";
-            [self scaleAnimateView:self.flatButton];
+            [Animation scalePop:self.flatButton toScale:1.2];
             break;
             
         default:
@@ -380,7 +354,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     self.correctStreak = 0;
     
     [self.label setAttributedText:[self correctAnswerBolded:correctAnswer]];
-    [self flashBackgroundColor:[UIColor redColor]];
+    [Animation flashBackgroundColor:[UIColor redColor] ofView:self.view];
     [self hideHearAnswersLabel:NO];
     NSLog(@"%d", self.answerDifferential);
 }
@@ -401,7 +375,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) correct
 {
-    [self rotateUpOverXAxis:self.centsDifference];
+    [Animation rotateOverXAxis:self.centsDifference forwards:YES];
     
     // move faster if we have got several correct in a row
     self.correctStreak++;
@@ -468,103 +442,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         [[NSUserDefaults standardUserDefaults] setInteger:self.answerDifferential
                                                    forKey:[NSString stringWithFormat:@"%@-answerdifferential", self.highScoreKey]];
         [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
-        [self animateHighScoreLabel];
+        [Animation scalePop:self.highScoreLabel toScale:2.5];
     }
     
     NSLog(@"calculated diff: %.2f", differenceInCents);
     
     [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
-}
-
-- (void) animateHighScoreLabel
-{
-    [UIView animateWithDuration:0.25
-                     animations:^{
-        self.highScoreLabel.transform = CGAffineTransformMakeScale(2.0, 2.0);
-    }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.25
-                                          animations:^{
-                             self.highScoreLabel.transform = CGAffineTransformMakeScale(1, 1);
-                         } completion:^(BOOL finished){
-                         }];
-                     }];
-}
-
-- (void) scaleAnimateView:(UIView*)view
-{
-    [UIView animateWithDuration:0.25
-                     animations:^{
-        view.transform = CGAffineTransformMakeScale(1.20, 1.20);
-    }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.25
-                                          animations:^{
-                             view.transform = CGAffineTransformMakeScale(1, 1);
-                         }];
-                     }];
-}
-
-- (void) rotateWiggleView:(UIView*)view
-{
-    [UIView animateWithDuration:0.25
-                     animations:^{
-                         view.transform = CGAffineTransformMakeRotation(-M_PI/32);
-                     }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:.25
-                                          animations:^{
-                                              view.transform = CGAffineTransformMakeRotation(M_PI/32);
-                                          }
-                                          completion:^(BOOL finshed){
-                                              [UIView animateWithDuration:.25
-                                                               animations:^{
-                                                                   view.transform = CGAffineTransformMakeRotation(0);
-                                                               }];
-                                          }];
-                         
-                     }];
-}
-
-
-- (void) rotateDownOverXAxis:(UIView*)view
-{
-    // http://stackoverflow.com/questions/11571420/catransform3drotate-rotate-for-360-degrees
-    CALayer *layer = view.layer;
-    CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = 1.0 / -50;
-    layer.transform = transform;
-    
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-    animation.values = [NSArray arrayWithObjects:
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 0 * -M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 1 * -M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 2 * -M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 3 * -M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 4 * -M_PI / 2, 1, 0, 0)],
-                        nil];
-    animation.duration = .75;
-    [layer addAnimation:animation forKey:animation.keyPath];
-}
-
-- (void) rotateUpOverXAxis:(UIView*)view
-{
-    // http://stackoverflow.com/questions/11571420/catransform3drotate-rotate-for-360-degrees
-    CALayer *layer = view.layer;
-    CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = 1.0 / -50;
-    layer.transform = transform;
-    
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-    animation.values = [NSArray arrayWithObjects:
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 0 * M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 1 * M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 2 * M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 3 * M_PI / 2, 1, 0, 0)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 4 * M_PI / 2, 1, 0, 0)],
-                        nil];
-    animation.duration = .75;
-    [layer addAnimation:animation forKey:animation.keyPath];
 }
 
 - (void) speak:(NSString*)text
@@ -575,16 +458,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [utterance setRate:0.5f];
     utterance.volume = .9f;
     [synthesizer speakUtterance:utterance];
-}
-
-- (void) durationOffset
-{
-    
-}
-
-- (void) durationVariability
-{
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -641,7 +514,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
-    [self rotateDownOverXAxis:self.centsDifference];
+    [Animation rotateOverXAxis:self.centsDifference forwards:NO];
     [self askQuestion];
     [self calculateDifferenceInCents];
     sender.hidden = YES;

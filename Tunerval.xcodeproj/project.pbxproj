@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220CC9D51C89608A00EFF7DA /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 220CC9D41C89608A00EFF7DA /* Animation.m */; };
 		221949501C80E956004D0155 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2219494F1C80E956004D0155 /* main.m */; };
 		221949531C80E956004D0155 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949521C80E956004D0155 /* AppDelegate.m */; };
 		221949561C80E956004D0155 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949551C80E956004D0155 /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220CC9D31C89608A00EFF7DA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		220CC9D41C89608A00EFF7DA /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
 		2219494B1C80E956004D0155 /* Tunerval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunerval.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219494F1C80E956004D0155 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		221949511C80E956004D0155 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				22D178CA1C86B5F000B204C1 /* NotePickerView.m */,
 				22F0C5C71C882DB8002C6F1C /* SecondsPickerView.h */,
 				22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */,
+				220CC9D31C89608A00EFF7DA /* Animation.h */,
+				220CC9D41C89608A00EFF7DA /* Animation.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
 				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
+				220CC9D51C89608A00EFF7DA /* Animation.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
