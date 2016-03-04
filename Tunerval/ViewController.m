@@ -379,7 +379,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     // if the user chooses sharp when flat or flat when sharp this will subtract two
-    NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
+    // NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
+    
+    // if answer was on par and you chose something else, increase by two
+    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1 ? 2 : 1);
     [defaults setInteger:newAnswerDifferential forKey:self.answerDifferentialKey];
     self.correctStreak = 0;
     
