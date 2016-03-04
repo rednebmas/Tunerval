@@ -15,6 +15,7 @@
 #import "MBRoundProgressView.h"
 #import "Animation.h"
 
+#define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
 #define MAX_DIFF_TWO_OR_MORE_INTERVALS 100.0
 static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
@@ -22,15 +23,17 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @interface ViewController ()
 {
     int answer;
-    float differenceInCents;
     NSInteger dailyProgressGoal;
     NSUserDefaults *defaults;
 }
 
 @property (nonatomic) BOOL speakInterval;
-@property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
+//@property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
+@property (nonatomic) NSInteger renameAnswerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
+@property (nonatomic) float differenceInCents;
 @property (nonatomic, retain) NSString *highScoreKey;
+@property (nonatomic, retain) NSString *answerDifferentialKey;
 @property (nonatomic, retain) NSArray *intervals;
 @property (nonatomic, retain) Question *currentQuestion;
 @property (nonatomic, retain) RandomNoteGenerator *randomNoteGenerator;
@@ -45,7 +48,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     defaults = [NSUserDefaults standardUserDefaults];
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
-    [self reloadIntervals];
     self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
     [self reloadNoteRange];
     [[AudioPlayer sharedInstance] setGain:1.0];
@@ -59,8 +61,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) viewWillAppear:(BOOL)animated
 {
     // Called when dismissing settings
-    [self reloadIntervals];
     [self reloadNoteRange];
+    [self reloadIntervals];
     [self reloadDailyProgressGoal];
     [self reloadDailyProgress];
     [self reloadSpeakInterval];
@@ -112,47 +114,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     // if different, reset game info
     NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
-    
-    // high scores are unique to interval sets
-    NSUInteger hash = [self intervalSetHash:intervals];
-    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
-    float highScoreFloat = [[NSUserDefaults standardUserDefaults]
-                            floatForKey:self.highScoreKey];
-    
-    // if new game type
-    if (highScoreFloat == 0)
-    {
-        [[NSUserDefaults standardUserDefaults] setFloat:MAX_DIFFERENCE forKey:self.highScoreKey];
-        highScoreFloat = MAX_DIFFERENCE;
-    }
+    intervals = [intervals sortedArrayUsingSelector:@selector(compare:)];
     
     if (![self.intervals isEqual:intervals])
     {
-        // kinda like game reset
-        float highScoreAnswerDifferetial = [[NSUserDefaults standardUserDefaults]
-                                       floatForKey:[NSString stringWithFormat:@"%@-answerdifferential",
-                                                    self.highScoreKey]];
-        // start them close to high score
-        if (highScoreAnswerDifferetial > 8)
-        {
-            self.answerDifferential = highScoreAnswerDifferetial - 8;
-        }
-        else
-        {
-            self.answerDifferential = 0;
-        }
-        [self calculateDifferenceInCents];
-        
+        self.intervals = intervals;
+        [self.centsDifference setText:@""];
+        [self.highScoreLabel setText:@""];
         [self.intervalDirectionLabel setText:@""];
         [self.intervalNameLabel setText:@""];
         [self hideHearAnswersLabel:YES];
-        [self delayAskQuestion];
+        [self askQuestion:ASK_QUESTION_DELAY];
     }
-    self.intervals = intervals;
-    
-    // change label text
-    NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
-    [self.highScoreLabel setText:highScore];
 }
 
 - (NSUInteger) intervalSetHash:(NSArray*)intervalSet
@@ -171,24 +144,29 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     return UIStatusBarStyleLightContent;
 }
 
-- (void) delayAskQuestion {
-    double delayTimeInSeconds = 1.0;
+- (void) askQuestion:(double)delayTimeInSeconds
+{
+    IntervalType oldInterval = self.currentQuestion.interval;
+    self.currentQuestion = [self generateQuestion];
+    [self setDirectionLabelTextForInterval:self.currentQuestion.interval];
+    [self setIntervalNameLabelTextForInterval:self.currentQuestion.interval];
+    if (oldInterval != self.currentQuestion.interval)
+    {
+        [Animation rotateWiggle:self.centsDifference];
+        [Animation rotateWiggle:self.highScoreLabel];
+    }
+    
     __weak id weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [weakSelf askQuestion];
+        [weakSelf _askQuestion];
     });
 }
 
-- (void) askQuestion {
+- (void) _askQuestion {
     [self.label setText:@""];
     if (self.hearAgainIntervalLabel.hidden == NO) {
         [self hideHearAnswersLabel:NO];
     }
-    
-    self.currentQuestion = [self generateQuestion];
-    
-    [self setDirectionLabelTextForInterval:self.currentQuestion.interval];
-    [self setIntervalNameLabelTextForInterval:self.currentQuestion.interval];
     
     if (self.speakInterval)
     {
@@ -209,6 +187,30 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSLog(@"%@\n%@", self.currentQuestion.referenceNote, self.currentQuestion.questionNote);
 }
 
+- (void) loadScoreForInterval:(IntervalType)interval
+{
+    // high score is unique to interval
+    NSUInteger hash = [self intervalSetHash:@[@(interval)]];
+    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
+    float highScoreFloat = [defaults floatForKey:self.highScoreKey];
+    
+    // if new game type
+    if (highScoreFloat == 0)
+    {
+        [defaults setFloat:MAX_DIFFERENCE forKey:self.highScoreKey];
+        highScoreFloat = MAX_DIFFERENCE;
+    }
+    
+    self.answerDifferentialKey = [NSString
+                                  stringWithFormat:@"answer-differential-%lu", hash];
+    self.renameAnswerDifferential = [defaults integerForKey:self.answerDifferentialKey];
+    [self calculateDifferenceInCents];
+    
+    // chAnge label text
+    NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
+    [self.highScoreLabel setText:highScore];
+}
+
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
 {
     [[AudioPlayer sharedInstance] play:firstNote];
@@ -227,11 +229,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     SBNote *smallDiff;
     NSNumber *randomIntervalObject = self.intervals[arc4random_uniform((uint)self.intervals.count)];
     IntervalType interval = [randomIntervalObject integerValue];
+    [self loadScoreForInterval:interval];
     int random = arc4random_uniform(3);
     answer = random;
     if (random == 0)
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + differenceInCents];
+        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents];
         NSLog(@"higher");
     }
     else if (random == 1)
@@ -241,7 +244,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - differenceInCents];
+        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents];
         NSLog(@"lower");
     }
     
@@ -308,10 +311,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 }
 
 - (void) answer:(int)value {
-    if (value == answer) {
+    if (value == answer)
+    {
         [self correct];
-        [self delayAskQuestion];
-    } else {
+        [self askQuestion:ASK_QUESTION_DELAY];
+    }
+    else
+    {
         [self incorrect:value];
     }
     
@@ -350,13 +356,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     // if the user chooses sharp when flat or flat when sharp this will subtract two
-    self.answerDifferential -= abs(value - answer);
+    NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
+    [defaults setInteger:newAnswerDifferential forKey:self.answerDifferentialKey];
     self.correctStreak = 0;
     
     [self.label setAttributedText:[self correctAnswerBolded:correctAnswer]];
     [Animation flashBackgroundColor:[UIColor redColor] ofView:self.view];
     [self hideHearAnswersLabel:NO];
-    NSLog(@"%d", self.answerDifferential);
 }
 
 - (NSAttributedString*) correctAnswerBolded:(NSString*)correctAnswer
@@ -375,32 +381,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) correct
 {
-    [Animation rotateOverXAxis:self.centsDifference forwards:YES];
+    // [Animation rotateOverXAxis:self.centsDifference forwards:YES];
     
-    // move faster if we have got several correct in a row
+    NSInteger newHS = [self differenceInCentsForAnswerDifferential:(self.renameAnswerDifferential + 1)];
+    if ([defaults floatForKey:self.highScoreKey] > newHS)
+    {
+        [defaults setFloat:newHS forKey:self.highScoreKey];
+    }
+    
     self.correctStreak++;
-    if (self.correctStreak > 7)
-    {
-        int speed = 2;
-        if (self.correctStreak > 10)
-        {
-            speed = 3;
-        }
-        else if (self.correctStreak > 15)
-        {
-            speed = 4;
-        }
-        
-        self.answerDifferential += speed;
-    }
-    else
-    {
-        self.answerDifferential++;
-    }
-    [self.label setText:@"Correct"];
-    [self calculateDifferenceInCents];
-    NSLog(@"%d", self.answerDifferential);
+    [defaults setInteger:++self.renameAnswerDifferential forKey:self.answerDifferentialKey];
     
+    [self.label setText:@"Correct"];
 }
 
 - (void) hideHearAnswersLabel:(BOOL)makeHidden
@@ -423,16 +415,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) calculateDifferenceInCents
 {
-    if (self.answerDifferential > 0)
-    {
-        differenceInCents = MAX_DIFFERENCE * pow(.965, (double)self.answerDifferential);
-    }
-    else
-    {
-        differenceInCents = MAX_DIFFERENCE;
-    }
     
     // check for high score
+    /*
     if (differenceInCents < [[NSUserDefaults standardUserDefaults] floatForKey:self.highScoreKey])
     {
         // difference in cents high score
@@ -444,10 +429,30 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
         [Animation scalePop:self.highScoreLabel toScale:2.5];
     }
+     */
     
-    NSLog(@"calculated diff: %.2f", differenceInCents);
+    self.differenceInCents = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
     
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
+    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
+    __weak ViewController *weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", weakSelf.differenceInCents]];
+    });
+}
+        
+- (float) differenceInCentsForAnswerDifferential:(float)answerDifferential
+{
+    float differenceInCents;
+    if (answerDifferential > 0)
+    {
+        differenceInCents = MAX_DIFFERENCE * pow(.965, (double)self.renameAnswerDifferential);
+    }
+    else
+    {
+        differenceInCents = MAX_DIFFERENCE;
+    }
+    
+    return differenceInCents;
 }
 
 - (void) speak:(NSString*)text
@@ -474,7 +479,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        double difference = self.currentQuestion.interval * 100.0 + differenceInCents;
+        double difference = self.currentQuestion.interval * 100.0 + self.differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
         up.loudness = self.currentQuestion.questionNote.loudness;
         up.duration = self.currentQuestion.questionNote.duration;
@@ -504,7 +509,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        double difference = self.currentQuestion.interval * 100.0 - differenceInCents;
+        double difference = self.currentQuestion.interval * 100.0 - self.differenceInCents;
         SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
         up.loudness = self.currentQuestion.questionNote.loudness;
         up.duration = self.currentQuestion.questionNote.duration;
@@ -514,9 +519,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
-    [Animation rotateOverXAxis:self.centsDifference forwards:NO];
-    [self askQuestion];
-    [self calculateDifferenceInCents];
+    // [Animation rotateOverXAxis:self.centsDifference forwards:NO];
+    [self askQuestion:0.0];
     sender.hidden = YES;
     [self hideHearAnswersLabel:YES];
 }

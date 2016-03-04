@@ -15,7 +15,7 @@
 {
     [UIView animateWithDuration:0.25
                      animations:^{
-                         view.transform = CGAffineTransformMakeScale(2.0, 2.0);
+                         view.transform = CGAffineTransformMakeScale(scale, scale);
                      }
                      completion:^(BOOL finished){
                          [UIView animateWithDuration:0.25
