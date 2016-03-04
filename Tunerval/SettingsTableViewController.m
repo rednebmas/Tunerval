@@ -54,9 +54,9 @@
     double noteDuration = [defaults doubleForKey:@"note-duration"];
     double noteDurationVariation = [defaults doubleForKey:@"note-duration-variation"];
     
-    [self.noteDurationValueLabel setText:[NSString stringWithFormat:@"%.1fs", noteDuration]];
+    [self.noteDurationValueLabel setText:[NSString stringWithFormat:@"%.2fs", noteDuration]];
     [self.noteDurationVariationValueLabel setText:[NSString
-                                                   stringWithFormat:@"%.1fs", noteDurationVariation]];
+                                                   stringWithFormat:@"%.2fs", noteDurationVariation]];
 }
 
 - (void) setContentForDailyProgressTextField
