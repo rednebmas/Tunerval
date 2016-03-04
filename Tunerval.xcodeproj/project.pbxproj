@@ -19,6 +19,7 @@
 		2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949691C80ED29004D0155 /* SBPlayableNote.m */; };
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
+		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
@@ -54,6 +55,8 @@
 		221E41B11C863DD8008A6255 /* MBRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRoundProgressView.m; sourceTree = "<group>"; };
 		221F245A1C82424500DA4950 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		2235BDDF1C8A363700285EA9 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsIntervalsTableViewController.m; sourceTree = "<group>"; };
 		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
@@ -151,8 +154,8 @@
 				22D178D71C86C39500B204C1 /* Settings */,
 				221949541C80E956004D0155 /* ViewController.h */,
 				221949551C80E956004D0155 /* ViewController.m */,
-				22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */,
-				22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */,
+				2235BDDF1C8A363700285EA9 /* InformationViewController.h */,
+				2235BDE01C8A363700285EA9 /* InformationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,8 @@
 		22D178D71C86C39500B204C1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */,
+				22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */,
 				221F245A1C82424500DA4950 /* SettingsTableViewController.h */,
 				221F245B1C82424500DA4950 /* SettingsTableViewController.m */,
 				229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */,
@@ -360,6 +365,7 @@
 				220CC9D51C89608A00EFF7DA /* Animation.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
+				2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */,
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
 				220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */,
 				229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */,
