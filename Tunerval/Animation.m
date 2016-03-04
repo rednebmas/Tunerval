@@ -11,6 +11,20 @@
 
 @implementation Animation
 
++ (void) slideInAndOut:(UIView*)view amount:(CGFloat)amount
+{
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         view.transform = CGAffineTransformTranslate(view.transform, view.frame.size.width * amount, 0);
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.5
+                                          animations:^{
+                                              view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0);
+                                          }];
+                     }];
+}
+
 + (void) scalePop:(UIView*)view toScale:(CGFloat)scale
 {
     [UIView animateWithDuration:0.25

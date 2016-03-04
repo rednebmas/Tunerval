@@ -151,10 +151,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
 }
 
-- (NSUInteger) intervalSetHash:(NSArray*)intervalSet
+- (NSInteger) intervalSetHash:(NSArray*)intervalSet
 {
     NSArray *sorted = [intervalSet sortedArrayUsingSelector:@selector(compare:)];
-    NSUInteger hash = 17;
+    NSInteger hash = 17;
     for (NSNumber *interval in sorted)
     {
         hash = hash * 31 + [interval integerValue];
@@ -175,8 +175,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self setIntervalNameLabelTextForInterval:self.currentQuestion.interval];
     if (oldInterval != self.currentQuestion.interval)
     {
-        [Animation rotateWiggle:self.centsDifference];
-        [Animation rotateWiggle:self.highScoreLabel];
+        [Animation slideInAndOut:self.centsDifference amount:2.0];
+        [Animation slideInAndOut:self.highScoreLabel amount:-1.3];
     }
     
     __weak id weakSelf = self;
@@ -213,8 +213,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) loadScoreForInterval:(IntervalType)interval
 {
     // high score is unique to interval
-    NSUInteger hash = [self intervalSetHash:@[@(interval)]];
-    self.highScoreKey = [NSString stringWithFormat:@"highscore-%lu", hash];
+    NSInteger hash = [self intervalSetHash:@[@(interval)]];
+    self.highScoreKey = [NSString stringWithFormat:@"highscore-%ld", (long)hash];
     float highScoreFloat = [defaults floatForKey:self.highScoreKey];
     
     // if new game type
@@ -225,11 +225,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     self.answerDifferentialKey = [NSString
-                                  stringWithFormat:@"answer-differential-%lu", hash];
+                                  stringWithFormat:@"answer-differential-%ld", (long)hash];
     self.renameAnswerDifferential = [defaults integerForKey:self.answerDifferentialKey];
     [self calculateDifferenceInCents];
     
-    // chAnge label text
+    // change label text
     NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
     [self.highScoreLabel setText:highScore];
 }
@@ -337,7 +337,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     if (value == answer)
     {
         [self correct];
-        [self askQuestion:ASK_QUESTION_DELAY];
     }
     else
     {
@@ -408,15 +407,34 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) correct
 {
     // [Animation rotateOverXAxis:self.centsDifference forwards:YES];
-    
-    NSInteger newHS = [self differenceInCentsForAnswerDifferential:(self.renameAnswerDifferential + 1)];
-    if ([defaults floatForKey:self.highScoreKey] > newHS)
-    {
-        [defaults setFloat:newHS forKey:self.highScoreKey];
-    }
-    
     self.correctStreak++;
     [defaults setInteger:++self.renameAnswerDifferential forKey:self.answerDifferentialKey];
+    
+    float newHS = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
+    if ([defaults floatForKey:self.highScoreKey] > newHS)
+    {
+        // save value
+        [defaults setFloat:newHS forKey:self.highScoreKey];
+        
+        // change label text
+        NSString *highScore = [NSString stringWithFormat:@"±%.1fc", newHS];
+        [self.highScoreLabel setText:highScore];
+        
+        // animate
+        [Animation scalePop:self.highScoreLabel toScale:2.75];
+    }
+    
+    [Animation rotateOverXAxis:self.centsDifference forwards:YES];
+    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
+    __weak ViewController *weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", newHS]];
+    });
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self askQuestion:ASK_QUESTION_DELAY/2];
+    });
     
     [self.label setText:@"Correct"];
 }
@@ -441,29 +459,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) calculateDifferenceInCents
 {
-    
-    // check for high score
-    /*
-    if (differenceInCents < [[NSUserDefaults standardUserDefaults] floatForKey:self.highScoreKey])
-    {
-        // difference in cents high score
-        [[NSUserDefaults standardUserDefaults] setFloat:differenceInCents
-                                                 forKey:self.highScoreKey];
-        // answer differential so we can calculate size of growing text
-        [[NSUserDefaults standardUserDefaults] setInteger:self.answerDifferential
-                                                   forKey:[NSString stringWithFormat:@"%@-answerdifferential", self.highScoreKey]];
-        [self.highScoreLabel setText:[NSString stringWithFormat:@"±%.1fc", differenceInCents]];
-        [Animation scalePop:self.highScoreLabel toScale:2.5];
-    }
-     */
-    
     self.differenceInCents = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
-    
-    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
-    __weak ViewController *weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", weakSelf.differenceInCents]];
-    });
+    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", self.differenceInCents]];
 }
         
 - (float) differenceInCentsForAnswerDifferential:(float)answerDifferential
@@ -471,7 +468,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     float differenceInCents;
     if (answerDifferential > 0)
     {
-        differenceInCents = MAX_DIFFERENCE * pow(.965, (double)self.renameAnswerDifferential);
+        differenceInCents = MAX_DIFFERENCE * pow(.965, (double)answerDifferential);
     }
     else
     {

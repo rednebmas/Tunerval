@@ -10,6 +10,8 @@
 
 @interface Animation : NSObject
 
+// negative values for amount make the view move left
++ (void) slideInAndOut:(UIView*)view amount:(CGFloat)amount;
 + (void) scalePop:(UIView*)view toScale:(CGFloat)scale;
 + (void) rotateWiggle:(UIView*)view;
 + (void) rotateOverXAxis:(UIView*)view forwards:(BOOL)isForwards;
