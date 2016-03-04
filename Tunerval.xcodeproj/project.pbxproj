@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220CC9D51C89608A00EFF7DA /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 220CC9D41C89608A00EFF7DA /* Animation.m */; };
+		220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 220CC9D81C8A1CE800EFF7DA /* Colors.m */; };
 		221949501C80E956004D0155 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2219494F1C80E956004D0155 /* main.m */; };
 		221949531C80E956004D0155 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949521C80E956004D0155 /* AppDelegate.m */; };
 		221949561C80E956004D0155 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949551C80E956004D0155 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		220CC9D31C89608A00EFF7DA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		220CC9D41C89608A00EFF7DA /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
+		220CC9D71C8A1CE800EFF7DA /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		220CC9D81C8A1CE800EFF7DA /* Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
 		2219494B1C80E956004D0155 /* Tunerval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunerval.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219494F1C80E956004D0155 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		221949511C80E956004D0155 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220CC9D61C8A1CD400EFF7DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				220CC9D71C8A1CE800EFF7DA /* Colors.h */,
+				220CC9D81C8A1CE800EFF7DA /* Colors.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		221949421C80E956004D0155 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 		2219494D1C80E956004D0155 /* Tunerval */ = {
 			isa = PBXGroup;
 			children = (
+				220CC9D61C8A1CD400EFF7DA /* Model */,
 				22D178D31C86C2AE00B204C1 /* Lib */,
 				22D178C81C86B5E100B204C1 /* Views */,
 				22D178C71C86ABE000B204C1 /* Controllers */,
@@ -348,6 +361,7 @@
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
+				220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */,
 				229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */,
 				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
 				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,

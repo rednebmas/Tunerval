@@ -14,6 +14,7 @@
 #import "Question.h"
 #import "MBRoundProgressView.h"
 #import "Animation.h"
+#import "Colors.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -56,6 +57,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     self.nextButton.hidden = YES;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
+    [self theme:[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]]];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -82,7 +84,38 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     NSInteger questionsAnswered = [[[NSUserDefaults standardUserDefaults]
                                     objectForKey:[self dailyProgressKey]] integerValue];
-    self.dailyProgressView.progress = (float)questionsAnswered / (float)dailyProgressGoal;
+    float progress = (float)questionsAnswered / (float)dailyProgressGoal;
+    self.dailyProgressView.progress = progress;
+    
+    NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
+    NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
+                            beginningOfDay.timeIntervalSince1970];
+    if (progress >= 1.0 && [defaults boolForKey:goalMetKey] == NO)
+    {
+        [defaults setBool:YES forKey:goalMetKey];
+        NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
+        daysGoalMet++;
+        [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
+        
+        __weak id weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:1.0 animations:^(void){
+                [weakSelf theme:[Colors colorSetForDay:daysGoalMet]];
+            }];
+        });
+    }
+}
+
+/**
+ * Colors contains two UIColor objects. The first being the main color and the second being the 
+ * background color for the replay button
+ */
+- (void) theme:(NSArray*)colors
+{
+    UIColor *mainColor = colors[0];
+    self.view.backgroundColor = mainColor;
+    [self.nextButton setTitleColor:mainColor forState:UIControlStateNormal];
+    [self.replayButton setBackgroundColor:colors[1]];
 }
 
 - (NSString*) dailyProgressKey
@@ -91,16 +124,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     return [NSString stringWithFormat:@"questions-answered-%f", beginningOfDay.timeIntervalSince1970];
 }
 
-
-- (void) incrementDailyProgress
-{
-    NSString *dailyProgressKey = [self dailyProgressKey];
-    NSInteger questionsAnswered = [[[NSUserDefaults standardUserDefaults]
-                                    objectForKey:dailyProgressKey] integerValue];
-    NSNumber *incremented = [NSNumber numberWithInteger:questionsAnswered+1];
-    [[NSUserDefaults standardUserDefaults] setObject:incremented forKey:dailyProgressKey];
-    [self reloadDailyProgress];
-}
 
 - (void) reloadNoteRange
 {
@@ -469,6 +492,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Model
+
+- (void) incrementDailyProgress
+{
+    NSString *dailyProgressKey = [self dailyProgressKey];
+    NSInteger questionsAnswered = [[[NSUserDefaults standardUserDefaults]
+                                    objectForKey:dailyProgressKey] integerValue];
+    NSNumber *incremented = [NSNumber numberWithInteger:questionsAnswered+1];
+    [[NSUserDefaults standardUserDefaults] setObject:incremented forKey:dailyProgressKey];
+    [self reloadDailyProgress];
+}
+
+#pragma mark - Game logic
 
 #pragma mark - Actions
 

@@ -106,7 +106,7 @@
         // Draw progress
         if (isPreiOS7 == NO)
         {
-            CGFloat radius = (CGRectGetWidth(self.bounds) / 2.f) - lineWidth;
+            CGFloat radius = (CGRectGetWidth(self.bounds) / 2.f);
             CGFloat endAngle = (self.progress * 2.f * (float)M_PI) + startAngle;
             [_progressTintColor setFill];
             CGContextMoveToPoint(context, center.x, center.y);
