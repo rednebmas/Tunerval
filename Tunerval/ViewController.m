@@ -250,8 +250,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     referenceNote.duration = 1.0;
     
     SBNote *smallDiff;
-    NSNumber *randomIntervalObject = self.intervals[arc4random_uniform((uint)self.intervals.count)];
-    IntervalType interval = [randomIntervalObject integerValue];
+    IntervalType interval = [self randomIntervalForWeightedDistribution];
     [self loadScoreForInterval:interval];
     int random = arc4random_uniform(3);
     answer = random;
@@ -463,7 +462,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", self.differenceInCents]];
 }
         
-- (float) differenceInCentsForAnswerDifferential:(float)answerDifferential
+- (float) differenceInCentsForAnswerDifferential:(NSInteger)answerDifferential
 {
     float differenceInCents;
     if (answerDifferential > 0)
@@ -503,6 +502,36 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSNumber *incremented = [NSNumber numberWithInteger:questionsAnswered+1];
     [[NSUserDefaults standardUserDefaults] setObject:incremented forKey:dailyProgressKey];
     [self reloadDailyProgress];
+}
+
+- (IntervalType) randomIntervalForWeightedDistribution
+{
+    if (self.intervals.count == 1) return [self.intervals[0] integerValue];
+    
+    float scoreSum = 0.0;
+    NSMutableArray *scores = [[NSMutableArray alloc] init];
+    for (NSNumber *interval in self.intervals)
+    {
+        NSInteger hash = [self intervalSetHash:@[interval]];
+        NSString *answerDifferentialKey = [NSString stringWithFormat:@"answer-differential-%ld", (long)hash];
+        float intervalScore = [self differenceInCentsForAnswerDifferential:[defaults integerForKey:answerDifferentialKey]];
+        scoreSum += powf(intervalScore, 2);
+        [scores addObject:@(intervalScore)];
+    }
+    
+    // pick a random number within the sum of the high scores
+    float rand = drand48() * scoreSum;
+    float cumulativeSum = 0.0;
+    for (int i = 0; i < scores.count; i++)
+    {
+        cumulativeSum += powf([scores[i] floatValue], 2);
+        if (rand <= cumulativeSum)
+        {
+            return [self.intervals[i] integerValue];
+        }
+    }
+    
+    return 0;
 }
 
 #pragma mark - Game logic
