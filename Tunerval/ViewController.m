@@ -26,6 +26,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     int answer;
     NSInteger dailyProgressGoal;
     NSUserDefaults *defaults;
+    BOOL previousAnswerWasCorrect;
 }
 
 @property (nonatomic) BOOL speakInterval;
@@ -177,6 +178,27 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         [Animation slideInAndOut:self.centsDifference amount:2.0];
         [Animation slideInAndOut:self.highScoreLabel amount:-1.3];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", self.differenceInCents]];
+        });
+    }
+    else
+    {
+        // same interval as last time
+        if (!previousAnswerWasCorrect)
+        {
+            [Animation rotateOverXAxis:self.centsDifference forwards:NO];
+            double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
+            __weak ViewController *weakSelf = self;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", weakSelf.differenceInCents]];
+            });
+        }
+        else
+        {
+            [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", self.differenceInCents]];
+        }
     }
     
     __weak id weakSelf = self;
@@ -333,7 +355,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 }
 
 - (void) answer:(int)value {
-    if (value == answer)
+    previousAnswerWasCorrect = value == answer;
+    if (previousAnswerWasCorrect)
     {
         [self correct];
     }
@@ -424,12 +447,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     [Animation rotateOverXAxis:self.centsDifference forwards:YES];
-    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
+    double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
     __weak ViewController *weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", newHS]];
     });
-    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self askQuestion:ASK_QUESTION_DELAY/2];
@@ -459,7 +481,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) calculateDifferenceInCents
 {
     self.differenceInCents = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
-    [self.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", self.differenceInCents]];
 }
         
 - (float) differenceInCentsForAnswerDifferential:(NSInteger)answerDifferential
