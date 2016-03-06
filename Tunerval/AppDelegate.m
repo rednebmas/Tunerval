@@ -40,8 +40,8 @@
     NSString *fromNote = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
     if (fromNote == nil)
     {
-        [[NSUserDefaults standardUserDefaults] setObject:@"C4" forKey:@"from-note"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"C5" forKey:@"to-note"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"A3" forKey:@"from-note"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"E5" forKey:@"to-note"];
         
         [[NSUserDefaults standardUserDefaults] setObject:@200 forKey:@"daily-goal"];
     }
@@ -49,8 +49,8 @@
     double noteDuration = [defaults doubleForKey:@"note-duration"];
     if (noteDuration == 0.0)
     {
-        [defaults setDouble:0.8 forKey:@"note-duration"];
-        [defaults setDouble:0.1 forKey:@"note-duration-variation"];
+        [defaults setDouble:0.65 forKey:@"note-duration"];
+        [defaults setDouble:0.2 forKey:@"note-duration-variation"];
     }
     
     return YES;

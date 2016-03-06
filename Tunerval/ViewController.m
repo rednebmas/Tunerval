@@ -27,6 +27,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSInteger dailyProgressGoal;
     NSUserDefaults *defaults;
     BOOL previousAnswerWasCorrect;
+    BOOL loopAnimateTarget;
 }
 
 @property (nonatomic) BOOL speakInterval;
@@ -252,8 +253,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self calculateDifferenceInCents];
     
     // change label text
-    NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
-    [self.highScoreLabel setText:highScore];
+    if (self.currentQuestion == nil)
+    {
+        __weak ViewController *weakSelf = self;
+        [weakSelf.highScoreLabel setText:@" "];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
+            [weakSelf.highScoreLabel setText:highScore];
+        });
+    }
+    else
+    {
+        NSString *highScore = [NSString stringWithFormat:@"±%.1fc", highScoreFloat];
+        [self.highScoreLabel setText:highScore];
+    }
 }
 
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
@@ -372,21 +385,28 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) incorrect:(int)value {
     NSString *correctAnswer;
+    
+    // loop animate
+    loopAnimateTarget = YES;
+    
     switch (answer)
     {
         case 0:
             correctAnswer = @"sharp";
             [Animation scalePop:self.sharpButton toScale:1.2];
+            [self loopScalePop:self.sharpButton toScale:1.05];
             break;
             
         case 1:
             correctAnswer = @"in tune";
             [Animation scalePop:self.spotOnButton toScale:1.2];
+            [self loopScalePop:self.spotOnButton toScale:1.05];
             break;
             
         case 2:
             correctAnswer = @"flat";
             [Animation scalePop:self.flatButton toScale:1.2];
+            [self loopScalePop:self.flatButton toScale:1.05];
             break;
             
         default:
@@ -403,7 +423,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
     
     // if answer was on par and you chose something else, increase by two
-    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1 ? 2 : 1);
+    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1
+                                                                       || value == 1 ? 2 : 1);
     [defaults setInteger:newAnswerDifferential forKey:self.answerDifferentialKey];
     self.correctStreak = 0;
     
@@ -557,6 +578,44 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 #pragma mark - Game logic
 
+#pragma mark - Animations
+
+- (void) loopScalePop:(UIView*)view toScale:(CGFloat)scale
+{
+    if (!loopAnimateTarget)
+    {
+        return;
+    }
+    
+    [UIView animateWithDuration:.25
+                          delay:0.0
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:
+     ^
+     {
+         view.transform = CGAffineTransformMakeScale(scale, scale);
+     }
+                     completion:
+     ^(BOOL finished)
+    {
+         if (!loopAnimateTarget)
+         {
+             return;
+         }
+         
+         [UIView animateWithDuration:0.25
+                               delay:0.0
+                        options:UIViewAnimationOptionAllowUserInteraction
+                          animations:^{
+                              view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                          }
+                          completion:^(BOOL finished) {
+                              [self loopScalePop:view toScale:scale];
+                          }];
+     }];
+}
+
+
 #pragma mark - Actions
 
 - (IBAction)up:(id)sender {
@@ -607,6 +666,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
     // [Animation rotateOverXAxis:self.centsDifference forwards:NO];
+    loopAnimateTarget = NO;
+    
+    [self loopScalePop:self.spotOnButton toScale:1.1];
     [self askQuestion:0.0];
     sender.hidden = YES;
     [self hideHearAnswersLabel:YES];

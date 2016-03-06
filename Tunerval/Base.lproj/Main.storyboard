@@ -253,7 +253,9 @@
                             <constraint firstItem="vGW-rB-CCq" firstAttribute="centerX" secondItem="XSq-hc-bFe" secondAttribute="centerX" id="tcQ-yz-gHJ"/>
                             <constraint firstItem="1aF-ce-DWW" firstAttribute="top" secondItem="XSq-hc-bFe" secondAttribute="bottom" constant="8" id="udg-Bn-p1K"/>
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="centerX" secondItem="K9p-jY-efI" secondAttribute="centerX" id="uov-1A-d9J"/>
-                            <constraint firstItem="qIY-n3-AHC" firstAttribute="leading" secondItem="OIS-SA-4R9" secondAttribute="trailing" constant="80.5" id="vBH-2N-sQP"/>
+                            <constraint firstItem="qIY-n3-AHC" firstAttribute="leading" secondItem="OIS-SA-4R9" secondAttribute="trailing" constant="80.5" id="vBH-2N-sQP">
+                                <variation key="heightClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstItem="kOU-BR-FGo" firstAttribute="top" secondItem="OIS-SA-4R9" secondAttribute="bottom" id="vTl-Xq-w77"/>
                             <constraint firstItem="K9p-jY-efI" firstAttribute="top" secondItem="1aF-ce-DWW" secondAttribute="bottom" constant="8" id="wGG-lS-kwG"/>
                             <constraint firstItem="DCM-KJ-d5J" firstAttribute="top" secondItem="qIY-n3-AHC" secondAttribute="bottom" constant="8" id="xiw-UX-8D7"/>
@@ -445,8 +447,12 @@
                                             <segue destination="UbW-Ok-tAg" kind="show" identifier="NoteDurationVariationSegue" id="K4z-32-ZLf"/>
                                         </connections>
                                     </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="JVy-aF-RmC">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultCell" id="dud-HQ-aAa">
-                                        <rect key="frame" x="0.0" y="275" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="311" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dud-HQ-aAa" id="tC6-37-m90">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -476,7 +482,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultCell" id="N2j-Nx-9dC">
-                                        <rect key="frame" x="0.0" y="319" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="355" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2j-Nx-9dC" id="LYr-ys-qGh">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
