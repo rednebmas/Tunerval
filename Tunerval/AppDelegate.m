@@ -43,7 +43,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"A3" forKey:@"from-note"];
         [[NSUserDefaults standardUserDefaults] setObject:@"E5" forKey:@"to-note"];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@200 forKey:@"daily-goal"];
+        [[NSUserDefaults standardUserDefaults] setObject:@125 forKey:@"daily-goal"];
     }
     
     double noteDuration = [defaults doubleForKey:@"note-duration"];

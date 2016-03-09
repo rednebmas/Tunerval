@@ -393,20 +393,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         case 0:
             correctAnswer = @"sharp";
-            [Animation scalePop:self.sharpButton toScale:1.2];
-            [self loopScalePop:self.sharpButton toScale:1.05];
+            // [Animation scalePop:self.sharpButton toScale:1.2];
+            [self loopScalePop:self.sharpButton toScale:1.1];
             break;
             
         case 1:
             correctAnswer = @"in tune";
-            [Animation scalePop:self.spotOnButton toScale:1.2];
-            [self loopScalePop:self.spotOnButton toScale:1.05];
+            // [Animation scalePop:self.spotOnButton toScale:1.2];
+            [self loopScalePop:self.spotOnButton toScale:1.1];
             break;
             
         case 2:
             correctAnswer = @"flat";
-            [Animation scalePop:self.flatButton toScale:1.2];
-            [self loopScalePop:self.flatButton toScale:1.05];
+            // [Animation scalePop:self.flatButton toScale:1.2];
+            [self loopScalePop:self.flatButton toScale:1.1];
             break;
             
         default:
@@ -423,8 +423,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
     
     // if answer was on par and you chose something else, increase by two
-    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1
-                                                                       || value == 1 ? 2 : 1);
+    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1 ? 2 : 1);
     [defaults setInteger:newAnswerDifferential forKey:self.answerDifferentialKey];
     self.correctStreak = 0;
     
@@ -598,11 +597,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                      completion:
      ^(BOOL finished)
     {
-         if (!loopAnimateTarget)
-         {
-             return;
-         }
-         
          [UIView animateWithDuration:0.25
                                delay:0.0
                         options:UIViewAnimationOptionAllowUserInteraction
@@ -668,7 +662,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // [Animation rotateOverXAxis:self.centsDifference forwards:NO];
     loopAnimateTarget = NO;
     
-    [self loopScalePop:self.spotOnButton toScale:1.1];
+    // [self loopScalePop:self.spotOnButton toScale:1.1];
     [self askQuestion:0.0];
     sender.hidden = YES;
     [self hideHearAnswersLabel:YES];
