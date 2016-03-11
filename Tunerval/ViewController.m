@@ -227,6 +227,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // gives player time to read interval name
     double delayTimeInSeconds = self.speakInterval ? 1.8 : .5;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self.currentQuestion markStartTime];
         [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
     });
     
@@ -369,6 +370,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) answer:(int)value {
     previousAnswerWasCorrect = value == answer;
+    
+    [self.currentQuestion logToDBWithUserAnswer:value
+                                  correctAnswer:answer
+                                     difficulty:self.differenceInCents
+                                  noteRangeFrom:self.randomNoteGenerator.fromNote.halfStepsFromA4
+                                    noteRangeTo:self.randomNoteGenerator.toNote.halfStepsFromA4];
+    
     if (previousAnswerWasCorrect)
     {
         [self correct];
@@ -377,6 +385,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         [self incorrect:value];
     }
+    
     
     NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
     [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];

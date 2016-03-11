@@ -20,6 +20,7 @@
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
+		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
@@ -29,6 +30,7 @@
 		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
+		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
 		55D855E2EA4CBA7F0EBA70CB /* libPods-Tunerval.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE894E259233312D23E8C010 /* libPods-Tunerval.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2235BDDF1C8A363700285EA9 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		224747651C92AA45004E41D7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		224747661C92AA45004E41D7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsIntervalsTableViewController.m; sourceTree = "<group>"; };
 		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		22F68EDA1C813B650040541F /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Helpers.m"; path = "../../Cast 2/Cast 2/UIView+Helpers.m"; sourceTree = "<group>"; };
 		22F68EDC1C813D7B0040541F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		22F68EDD1C813D7B0040541F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		22FF37DC1C90D6DD0040C8AA /* MigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationManager.h; sourceTree = "<group>"; };
+		22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationManager.m; sourceTree = "<group>"; };
 		B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
 		CE894E259233312D23E8C010 /* libPods-Tunerval.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tunerval.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +103,12 @@
 			children = (
 				220CC9D71C8A1CE800EFF7DA /* Colors.h */,
 				220CC9D81C8A1CE800EFF7DA /* Colors.m */,
+				224747651C92AA45004E41D7 /* Constants.h */,
+				224747661C92AA45004E41D7 /* Constants.m */,
+				22FF37DC1C90D6DD0040C8AA /* MigrationManager.h */,
+				22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */,
+				22F68EDC1C813D7B0040541F /* Question.h */,
+				22F68EDD1C813D7B0040541F /* Question.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -129,8 +141,6 @@
 				22F68ED81C8136BF0040541F /* Imported */,
 				221949511C80E956004D0155 /* AppDelegate.h */,
 				221949521C80E956004D0155 /* AppDelegate.m */,
-				22F68EDC1C813D7B0040541F /* Question.h */,
-				22F68EDD1C813D7B0040541F /* Question.m */,
 				221949571C80E956004D0155 /* Main.storyboard */,
 				2219495A1C80E956004D0155 /* Assets.xcassets */,
 				2219495C1C80E956004D0155 /* LaunchScreen.storyboard */,
@@ -358,6 +368,7 @@
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
+				224747671C92AA45004E41D7 /* Constants.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
 				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
@@ -371,6 +382,7 @@
 				229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */,
 				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
 				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,
+				22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */,
 				221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

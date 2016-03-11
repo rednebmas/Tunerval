@@ -1,4 +1,4 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PitchEstimator" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PitchEstimator" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

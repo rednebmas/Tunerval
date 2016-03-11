@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <PitchEstimator/SBNote.h>
+#import "MigrationManager.h"
 
 @interface AppDelegate ()
 
@@ -52,6 +53,9 @@
         [defaults setDouble:0.65 forKey:@"note-duration"];
         [defaults setDouble:0.2 forKey:@"note-duration-variation"];
     }
+    
+    // database stuff
+    [MigrationManager checkForAndPerformPendingMigrations];
     
     return YES;
 }

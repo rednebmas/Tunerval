@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PitchEstimator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6E11BF7336CD28C740B564DF9F5797E</key>
+		<key>770E2BF3759C42D5F8112BC05E907BFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7B0D783D73EBA43FD5173E6EBB6BE24</key>
+		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A6E11BF7336CD28C740B564DF9F5797E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
