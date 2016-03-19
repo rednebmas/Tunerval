@@ -50,7 +50,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="173.45208"
+     inkscape:cx="58.094937"
      inkscape:cy="193.2742"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
@@ -69,7 +69,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -89,59 +89,59 @@
        id="path4140"
        d="m 180,83.634 0,173.74624"
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:0.66666667"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:0.66666667"
        d="m 255,83.634 0,173.74624"
        id="path4144"
        inkscape:connector-curvature="0"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:0.66666667"
        d="m 105,83.634 0,173.74624"
        id="path3336"
        inkscape:connector-curvature="0"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <circle
        r="8.1532211"
        cy="185.3231"
        cx="180"
        id="circle4152"
        style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.51445085"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <circle
        style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.50289017"
        id="circle4154"
        cx="255"
        cy="205.18022"
        r="8.1532202"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 105.07133,122.03734 75.17857,63.39285 74.64286,20.17858"
        id="path4170"
        inkscape:connector-curvature="0"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <path
        inkscape:connector-curvature="0"
        id="path4172"
        d="m 105.07133,122.03734 75.17857,63.39285 74.64286,20.17858 0,46.78571 -149.82143,0 z"
        style="display:inline;fill:url(#linearGradient4181);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
     <circle
        style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.53725493"
        id="path4150"
        cx="104.99999"
        cy="121.89452"
        r="8.1532202"
-       inkscape:export-xdpi="38.429104"
-       inkscape:export-ydpi="38.429104" />
+       inkscape:export-xdpi="57.41"
+       inkscape:export-ydpi="57.41" />
   </g>
 </svg>
