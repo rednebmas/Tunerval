@@ -32,7 +32,7 @@
                                     <segment title="Month"/>
                                     <segment title="All"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer spread" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbg-15-1vb">
                                 <rect key="frame" x="20" y="176" width="220" height="40.5"/>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All interval average ±25c" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2Y-DY-7Du">
-                                <rect key="frame" x="20" y="293.5" width="233" height="27.5"/>
+                                <rect key="frame" x="20" y="293" width="233" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -64,12 +64,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqp-Yh-sS4">
-                                <rect key="frame" x="132" y="255" width="36" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akP-3Y-ikd">
+                                <rect key="frame" x="136" y="258.5" width="28" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Abe-A9-FBr"/>
+                                    <constraint firstAttribute="width" constant="28" id="hWr-82-XmO"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="graph-icon"/>
                                 <connections>
-                                    <segue destination="z6j-CT-g8O" kind="show" id="Psf-HJ-s1F"/>
+                                    <segue destination="z6j-CT-g8O" kind="show" id="zJS-ni-BgC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,16 +83,16 @@
                             <constraint firstItem="E2Y-DY-7Du" firstAttribute="leading" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="3Pf-Qf-BGU"/>
                             <constraint firstItem="Bbg-15-1vb" firstAttribute="leading" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="3rB-Jc-d2G"/>
                             <constraint firstItem="E2Y-DY-7Du" firstAttribute="top" secondItem="DCx-te-v3l" secondAttribute="bottom" id="AN2-By-MeF"/>
+                            <constraint firstItem="akP-3Y-ikd" firstAttribute="leading" secondItem="DCx-te-v3l" secondAttribute="trailing" constant="13.5" id="J4e-J0-Wie"/>
                             <constraint firstItem="15A-uY-fW2" firstAttribute="leading" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="LhG-ea-qDH"/>
                             <constraint firstItem="DCx-te-v3l" firstAttribute="top" secondItem="15A-uY-fW2" secondAttribute="bottom" constant="9" id="LlY-8V-pvs"/>
                             <constraint firstItem="Bbg-15-1vb" firstAttribute="top" secondItem="rFD-52-ZPf" secondAttribute="bottom" constant="9" id="Nuz-XK-Xs1"/>
+                            <constraint firstItem="akP-3Y-ikd" firstAttribute="centerY" secondItem="DCx-te-v3l" secondAttribute="centerY" id="Oeo-VO-Vfa"/>
                             <constraint firstItem="WcI-lU-nJ1" firstAttribute="top" secondItem="qJ5-4S-5yt" secondAttribute="bottom" constant="20" id="RTL-rK-xps"/>
                             <constraint firstItem="15A-uY-fW2" firstAttribute="top" secondItem="Bbg-15-1vb" secondAttribute="bottom" id="aM4-oL-xXu"/>
-                            <constraint firstItem="Zqp-Yh-sS4" firstAttribute="leading" secondItem="DCx-te-v3l" secondAttribute="trailing" constant="9.5" id="bza-b3-o44"/>
                             <constraint firstItem="qJ5-4S-5yt" firstAttribute="leading" secondItem="2Vv-Bd-Jsk" secondAttribute="leadingMargin" id="ciK-dm-XcI"/>
                             <constraint firstItem="rFD-52-ZPf" firstAttribute="top" secondItem="9w2-yQ-2P0" secondAttribute="bottom" id="dSE-9k-Wpz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="k5N-fT-99s"/>
-                            <constraint firstItem="Zqp-Yh-sS4" firstAttribute="centerY" secondItem="DCx-te-v3l" secondAttribute="centerY" id="ngz-AC-MKt"/>
                             <constraint firstItem="9w2-yQ-2P0" firstAttribute="leading" secondItem="rFD-52-ZPf" secondAttribute="trailing" constant="-200" id="oBQ-fa-3dR"/>
                             <constraint firstItem="rFD-52-ZPf" firstAttribute="leading" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="qZh-C7-i1z"/>
                             <constraint firstItem="qJ5-4S-5yt" firstAttribute="trailing" secondItem="2Vv-Bd-Jsk" secondAttribute="trailingMargin" id="rgE-AI-0RW"/>
@@ -107,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1918" y="-383"/>
         </scene>
-        <!--View Controller-->
+        <!--Chart View Controller-->
         <scene sceneID="azo-yh-S3e">
             <objects>
-                <viewController id="z6j-CT-g8O" sceneMemberID="viewController">
+                <viewController id="z6j-CT-g8O" customClass="ChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ivg-oo-9h7"/>
                         <viewControllerLayoutGuide type="bottom" id="50T-Ik-ecT"/>
@@ -121,7 +125,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="84" width="560" height="396"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,6 +136,9 @@
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="20" id="tfh-J5-SR8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="BqC-Rs-FHf" id="lR5-bE-W7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq3-gx-T4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

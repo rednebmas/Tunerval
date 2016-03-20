@@ -21,12 +21,6 @@
 
 + (void) checkForAndPerformPendingMigrations
 {
-    FMResultSet *s = [[Constants dbConnection] executeQuery:@"SELECT * FROM answer_history"];
-    while ([s next]) {
-        // NSLog(@"%d, %f", [s intForColumnIndex:0], [s doubleForColumn:@"time_to_answer"]);
-        NSLog(@"%@", [s resultDictionary]);
-    }
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger migrationsCompleted = [defaults integerForKey:@"migrationsCompleted"];
     switch (migrationsCompleted)

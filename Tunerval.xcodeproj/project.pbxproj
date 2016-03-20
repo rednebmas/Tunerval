@@ -25,6 +25,8 @@
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
 		22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */; };
+		22E3C7441C9E278F00CD11C5 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E3C7431C9E278F00CD11C5 /* ChartViewController.m */; };
+		22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E3C7461C9E397F00CD11C5 /* ScoresData.m */; };
 		22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */; };
 		22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */; };
 		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
@@ -69,6 +71,10 @@
 		22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Utilities.m"; sourceTree = "<group>"; };
 		22D178D81C86C3B800B204C1 /* SettingsNoteRangeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNoteRangeTableViewController.h; sourceTree = "<group>"; };
 		22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNoteRangeTableViewController.m; sourceTree = "<group>"; };
+		22E3C7421C9E278F00CD11C5 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		22E3C7431C9E278F00CD11C5 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		22E3C7451C9E397F00CD11C5 /* ScoresData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresData.h; sourceTree = "<group>"; };
+		22E3C7461C9E397F00CD11C5 /* ScoresData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresData.m; sourceTree = "<group>"; };
 		22F0C5C71C882DB8002C6F1C /* SecondsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondsPickerView.h; sourceTree = "<group>"; };
 		22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondsPickerView.m; sourceTree = "<group>"; };
 		22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNumberPickerTableViewController.h; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 				22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */,
 				22F68EDC1C813D7B0040541F /* Question.h */,
 				22F68EDD1C813D7B0040541F /* Question.m */,
+				22E3C7451C9E397F00CD11C5 /* ScoresData.h */,
+				22E3C7461C9E397F00CD11C5 /* ScoresData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 		22D178C71C86ABE000B204C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22E3C7411C9E278700CD11C5 /* Charts */,
 				22D178D71C86C39500B204C1 /* Settings */,
 				221949541C80E956004D0155 /* ViewController.h */,
 				221949551C80E956004D0155 /* ViewController.m */,
@@ -205,6 +214,15 @@
 				22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		22E3C7411C9E278700CD11C5 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				22E3C7421C9E278F00CD11C5 /* ChartViewController.h */,
+				22E3C7431C9E278F00CD11C5 /* ChartViewController.m */,
+			);
+			name = Charts;
 			sourceTree = "<group>";
 		};
 		22F68ED81C8136BF0040541F /* Imported */ = {
@@ -365,6 +383,7 @@
 			files = (
 				22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */,
 				221949561C80E956004D0155 /* ViewController.m in Sources */,
+				22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */,
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
@@ -374,6 +393,7 @@
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
 				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
 				220CC9D51C89608A00EFF7DA /* Animation.m in Sources */,
+				22E3C7441C9E278F00CD11C5 /* ChartViewController.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
 				2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */,
