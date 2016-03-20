@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3D616053AF1B31F36B5DDE7D'
+               BlueprintIdentifier = 'EAAB929C1A95D7874AF24E63'
                BlueprintName = 'Pods-Tunerval'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Tunerval.a'>
+               BuildableName = 'Pods_Tunerval.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

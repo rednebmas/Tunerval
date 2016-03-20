@@ -1,5 +1,8 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EZAudio" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/PitchEstimator" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/EZAudio" -isystem "${PODS_ROOT}/Headers/Public/FMDB" -isystem "${PODS_ROOT}/Headers/Public/PitchEstimator" -isystem "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"EZAudio" -l"FMDB" -l"PitchEstimator" -l"TPCircularBuffer" -l"sqlite3" -framework "AVFoundation" -framework "Accelerate" -framework "AudioToolbox" -framework "GLKit"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Charts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/EZAudio.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FMDB.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PitchEstimator.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/TPCircularBuffer.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Charts" -framework "EZAudio" -framework "FMDB" -framework "PitchEstimator" -framework "TPCircularBuffer"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Tunerval
 PODS_ROOT = ${SRCROOT}/Pods
