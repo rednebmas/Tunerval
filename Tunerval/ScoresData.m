@@ -8,7 +8,7 @@
 
 #import "ScoresData.h"
 #import "Constants.h"
-@import FMDB;
+#import <FMDB/FMDB.h>
 
 @implementation ScoresData
 

@@ -8,9 +8,9 @@
 
 #import "ChartViewController.h"
 #import "ScoresData.h"
-@import Charts;
+#import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
 
-@interface ChartViewController () <ChartViewDelegate>
+@interface ChartViewController () <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
 
 @end
 
@@ -20,6 +20,9 @@
 {
     [super viewDidLoad];
     
+    [self configureLineGraph];
+    
+    /*
     _chartView.delegate = self;
     
     _chartView.descriptionText = @"";
@@ -62,10 +65,12 @@
     [_chartView animateWithXAxisDuration:2.0 easingOption:ChartEasingOptionEaseInOutQuart];
     
     [self setDataCount:10 range:20.0];
+     */
 }
 
 - (void)setDataCount:(int)count range:(double)range
 {
+    /*
     NSArray *yValsData = [ScoresData data];
     count = (int)[yValsData count];
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
@@ -116,11 +121,58 @@
     LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
     
     _chartView.data = data;
+    */
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Line graph configuration
+
+- (void) configureLineGraph
+{
+    self.lineGraph.delegate = self;
+    self.lineGraph.dataSource = self;
+    self.lineGraph.colorTop = [UIColor clearColor];
+    self.lineGraph.colorBottom = [UIColor clearColor];
+    
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    size_t num_locations = 2;
+    CGFloat locations[2] = { 0.0, 1.0 };
+    CGFloat components[8] = {
+        1.0, 1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0, 0.0
+    };
+    
+    // Apply the gradient to the bottom portion of the graph
+    self.lineGraph.gradientBottom = CGGradientCreateWithColorComponents(colorspace, components, locations, num_locations);
+ 
+}
+
+#pragma mark - Line graph delegate
+
+- (NSInteger) numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 100;
+}
+
+- (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index
+{
+    return (CGFloat)arc4random() + .5;
+}
+
+#pragma mark - Actions
+
+- (IBAction) dismiss:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

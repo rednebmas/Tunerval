@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class LineChartView;
+@class BEMSimpleLineGraphView;
 
 @interface ChartViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet LineChartView *chartView;
+@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *lineGraph;
 
 @end

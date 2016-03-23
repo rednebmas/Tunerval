@@ -27,13 +27,14 @@
 		22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */; };
 		22E3C7441C9E278F00CD11C5 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E3C7431C9E278F00CD11C5 /* ChartViewController.m */; };
 		22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E3C7461C9E397F00CD11C5 /* ScoresData.m */; };
+		22EA19301C9E4EF00006B576 /* ChartsOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA192F1C9E4EF00006B576 /* ChartsOverviewViewController.m */; };
 		22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */; };
 		22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */; };
 		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
 		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
-		2513BECE5B90B76013794E5B /* Pods_Tunerval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB24C2622249B8522442EFB /* Pods_Tunerval.framework */; };
+		2DB00903A239A44BBC6521F8 /* libPods-Tunerval.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE36E416F7211E50060455B5 /* libPods-Tunerval.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		22E3C7431C9E278F00CD11C5 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
 		22E3C7451C9E397F00CD11C5 /* ScoresData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresData.h; sourceTree = "<group>"; };
 		22E3C7461C9E397F00CD11C5 /* ScoresData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresData.m; sourceTree = "<group>"; };
+		22EA192E1C9E4EF00006B576 /* ChartsOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartsOverviewViewController.h; sourceTree = "<group>"; };
+		22EA192F1C9E4EF00006B576 /* ChartsOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartsOverviewViewController.m; sourceTree = "<group>"; };
 		22F0C5C71C882DB8002C6F1C /* SecondsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondsPickerView.h; sourceTree = "<group>"; };
 		22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondsPickerView.m; sourceTree = "<group>"; };
 		22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNumberPickerTableViewController.h; sourceTree = "<group>"; };
@@ -87,8 +90,8 @@
 		22F68EDD1C813D7B0040541F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		22FF37DC1C90D6DD0040C8AA /* MigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationManager.h; sourceTree = "<group>"; };
 		22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationManager.m; sourceTree = "<group>"; };
-		4FB24C2622249B8522442EFB /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
+		BE36E416F7211E50060455B5 /* libPods-Tunerval.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tunerval.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2513BECE5B90B76013794E5B /* Pods_Tunerval.framework in Frameworks */,
+				2DB00903A239A44BBC6521F8 /* libPods-Tunerval.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +224,8 @@
 			children = (
 				22E3C7421C9E278F00CD11C5 /* ChartViewController.h */,
 				22E3C7431C9E278F00CD11C5 /* ChartViewController.m */,
+				22EA192E1C9E4EF00006B576 /* ChartsOverviewViewController.h */,
+				22EA192F1C9E4EF00006B576 /* ChartsOverviewViewController.m */,
 			);
 			name = Charts;
 			sourceTree = "<group>";
@@ -254,7 +259,7 @@
 		FD32B24027F848E86F4F215E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4FB24C2622249B8522442EFB /* Pods_Tunerval.framework */,
+				BE36E416F7211E50060455B5 /* libPods-Tunerval.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */,
 				229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */,
 				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
+				22EA19301C9E4EF00006B576 /* ChartsOverviewViewController.m in Sources */,
 				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,
 				22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */,
 				221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */,

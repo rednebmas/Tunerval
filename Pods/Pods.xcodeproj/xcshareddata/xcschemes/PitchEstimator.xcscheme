@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '71865A50B2247AD6DE8239B5'
+               BlueprintIdentifier = '37449EE845427720F8196922'
                BlueprintName = 'PitchEstimator'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PitchEstimator.framework'>
+               BuildableName = 'libPitchEstimator.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

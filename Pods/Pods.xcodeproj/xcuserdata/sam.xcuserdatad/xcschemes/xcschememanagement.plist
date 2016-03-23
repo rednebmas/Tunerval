@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Charts.xcscheme</key>
+		<key>BEMSimpleLineGraph.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<key>0D3A2255DD8FDD12BBA7AF5EC328AB34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>461728B66952B7D76FC7548FF08363CD</key>
+		<key>28C32BAF3C85D658B305CE9618EC83AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D2F3C0DDDAB222DFC9313A43E965CA4</key>
+		<key>4C312D9C93330AF994238E9757B4BAC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D51BA33694B6B995929285EA7A7D86A</key>
+		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
+		<key>A6E11BF7336CD28C740B564DF9F5797E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC9797F35880C4E9FB46A282364F0ADC</key>
+		<key>CAA71CBD24C81349D11155A537FF9B52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
