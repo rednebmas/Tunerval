@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     _colorTop = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
     _colorLine = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
     _colorBottom = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
-    _colorPoint = [UIColor whiteColor];
+    _colorPoint = [UIColor colorWithWhite:1.0 alpha:0.7];
     _colorTouchInputLine = [UIColor grayColor];
     _colorBackgroundPopUplabel = [UIColor whiteColor];
     _alphaTouchInputLine = 0.2;
@@ -174,6 +174,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     
     // Set Default Feature Values
     _enableTouchReport = NO;
+    _touchReportFingersRequired = 1;
     _enablePopUpReport = NO;
     _enableBezierCurve = NO;
     _enableXAxisLabel = YES;
@@ -539,13 +540,12 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                     if (self.displayDotsOnly == YES) circleDot.alpha = 1.0;
                     else {
                         if (self.alwaysDisplayDots == NO) circleDot.alpha = 0;
-                        else circleDot.alpha = 0.7;
+                        else circleDot.alpha = 1.0;
                     }
                 } else {
                     if (self.displayDotsWhileAnimating) {
                         [UIView animateWithDuration:(float)self.animationGraphEntranceTime/numberOfPoints delay:(float)i*((float)self.animationGraphEntranceTime/numberOfPoints) options:UIViewAnimationOptionCurveLinear animations:^{
-                            if (self.displayDotsOnly == YES) circleDot.alpha = 1.0;
-                            else circleDot.alpha = 0.7;
+                            circleDot.alpha = 1.0;
                         } completion:^(BOOL finished) {
                             if (self.alwaysDisplayDots == NO && self.displayDotsOnly == NO) {
                                 [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -941,6 +941,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
         if ([self.delegate respondsToSelector:@selector(baseValueForYAxisOnLineGraph:)] && [self.delegate respondsToSelector:@selector(incrementValueForYAxisOnLineGraph:)]) {
             CGFloat baseValue = [self.delegate baseValueForYAxisOnLineGraph:self];
             CGFloat increment = [self.delegate incrementValueForYAxisOnLineGraph:self];
+            CGFloat maxValue  = [self.delegate maxValueForLineGraph:self];
             
             float yAxisPosition = baseValue;
             if (baseValue + increment * 100 < maximumValue.doubleValue) {
@@ -948,7 +949,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 return;
             }
             
-            while(yAxisPosition < maximumValue.floatValue + increment) {
+            while(yAxisPosition < maxValue) {
                 [dotValues addObject:@(yAxisPosition)];
                 yAxisPosition += increment;
             }
@@ -1293,7 +1294,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if ([gestureRecognizer isEqual:self.panGesture]) {
-        if (gestureRecognizer.numberOfTouches > 0) {
+        if (gestureRecognizer.numberOfTouches >= self.touchReportFingersRequired) {
             CGPoint translation = [self.panGesture velocityInView:self.panView];
             return fabs(translation.y) < fabs(translation.x);
         } else return NO;
@@ -1301,13 +1302,13 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     } else return NO;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-	    return YES;
-}
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
 	    return YES;
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+	    return YES;
+}
 
 - (void)handleGestureAction:(UIGestureRecognizer *)recognizer {
     CGPoint translation = [recognizer locationInView:self.viewForBaselineLayout];
@@ -1421,7 +1422,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     
     if (!self.usingCustomPopupView) {
         [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.popUpView.alpha = 0.7;
+            // self.popUpView.alpha = 0.7;
             self.popUpLabel.alpha = 1;
         } completion:nil];
         NSString *prefix = @"";

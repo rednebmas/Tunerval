@@ -78,8 +78,6 @@
             [referenceFramePath moveToPoint:CGPointMake(self.frame.size.width - self.referenceLineWidth/4, self.frame.size.height)];
             [referenceFramePath addLineToPoint:CGPointMake(self.frame.size.width - self.referenceLineWidth/4, 0)];
         }
-
-        [referenceFramePath closePath];
     }
 
     if (self.enableRefrenceLines == YES) {
@@ -100,8 +98,6 @@
                 [verticalReferenceLinesPath moveToPoint:initialPoint];
                 [verticalReferenceLinesPath addLineToPoint:finalPoint];
             }
-
-            [verticalReferenceLinesPath closePath];
         }
 
         if (self.arrayOfHorizontalRefrenceLinePoints.count > 0) {
@@ -112,8 +108,6 @@
                 [horizontalReferenceLinesPath moveToPoint:initialPoint];
                 [horizontalReferenceLinesPath addLineToPoint:finalPoint];
             }
-
-            [horizontalReferenceLinesPath closePath];
         }
     }
 
@@ -131,8 +125,6 @@
 
         [averageLinePath moveToPoint:initialPoint];
         [averageLinePath addLineToPoint:finalPoint];
-
-        [averageLinePath closePath];
     }
 
 
@@ -154,11 +146,14 @@
         }
     }
 
-    if (!self.disableMainLine && self.bezierCurveIsEnabled) {
+    BOOL bezierStatus = self.bezierCurveIsEnabled;
+    if (self.arrayOfPoints.count <= 2 && self.bezierCurveIsEnabled == YES) bezierStatus = NO;
+    
+    if (!self.disableMainLine && bezierStatus) {
         line = [BEMLine quadCurvedPathWithPoints:self.points];
         fillBottom = [BEMLine quadCurvedPathWithPoints:self.bottomPointsArray];
         fillTop = [BEMLine quadCurvedPathWithPoints:self.topPointsArray];
-    } else if (!self.disableMainLine && !self.bezierCurveIsEnabled) {
+    } else if (!self.disableMainLine && !bezierStatus) {
         line = [BEMLine linesToPoints:self.points];
         fillBottom = [BEMLine linesToPoints:self.bottomPointsArray];
         fillTop = [BEMLine linesToPoints:self.topPointsArray];

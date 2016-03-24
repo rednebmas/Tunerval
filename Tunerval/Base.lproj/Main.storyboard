@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="5" y="72" width="585" height="408"/>
+                                <rect key="frame" x="0.0" y="72" width="590" height="408"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
@@ -220,7 +220,7 @@
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
                             <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="10" id="HLa-B7-SCA"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="5" id="SLS-sY-J8m"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="10" id="Y2W-K3-O0O"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>

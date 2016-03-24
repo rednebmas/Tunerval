@@ -111,12 +111,10 @@
     self.lineGraph.colorBottom = [UIColor clearColor];
     self.lineGraph.colorYaxisLabel = [UIColor whiteColor];
     self.lineGraph.colorTouchInputLine = [UIColor whiteColor];
-    self.lineGraph.lineDashPatternForReferenceYAxisLines = @[@(2),@(2)];
     self.lineGraph.enableYAxisLabel = YES;
     self.lineGraph.enableReferenceYAxisLines = YES;
     self.lineGraph.enablePopUpReport = YES;
     self.lineGraph.enableReferenceYAxisLines = YES;
-    // self.lineGraph.autoScaleYAxis = NO;
     
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     size_t num_locations = 2;
@@ -166,6 +164,11 @@
 - (CGFloat) incrementValueForYAxisOnLineGraph:(BEMSimpleLineGraphView *)graph
 {
     return 25.0;
+}
+
+- (CGFloat) staticPaddingForLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 10.0;
 }
 
 - (NSString*) yAxisPrefixOnLineGraph:(BEMSimpleLineGraphView *)graph
