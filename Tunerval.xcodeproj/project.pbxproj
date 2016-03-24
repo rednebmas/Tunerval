@@ -35,7 +35,7 @@
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
 		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
-		2DB00903A239A44BBC6521F8 /* libPods-Tunerval.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE36E416F7211E50060455B5 /* libPods-Tunerval.a */; };
+		E7E72F7CEE80BA5F79B1ABD6 /* Pods_Tunerval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +94,7 @@
 		22FF37DC1C90D6DD0040C8AA /* MigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationManager.h; sourceTree = "<group>"; };
 		22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationManager.m; sourceTree = "<group>"; };
 		B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
-		BE36E416F7211E50060455B5 /* libPods-Tunerval.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tunerval.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB00903A239A44BBC6521F8 /* libPods-Tunerval.a in Frameworks */,
+				E7E72F7CEE80BA5F79B1ABD6 /* Pods_Tunerval.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +264,7 @@
 		FD32B24027F848E86F4F215E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE36E416F7211E50060455B5 /* libPods-Tunerval.a */,
+				C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

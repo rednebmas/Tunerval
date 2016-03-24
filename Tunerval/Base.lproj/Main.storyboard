@@ -155,11 +155,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="20" y="75" width="560" height="405"/>
+                                <rect key="frame" x="5" y="72" width="585" height="408"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
-                                <rect key="frame" x="20" y="35" width="88" height="30"/>
+                                <rect key="frame" x="20" y="32" width="88" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="ALS-Xv-Dly"/>
@@ -190,7 +190,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNq-qb-4iq">
-                                <rect key="frame" x="101" y="505" width="479" height="30"/>
+                                <rect key="frame" x="105" y="505.5" width="475" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.082435344827586202" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Descending Perfect Fifth">
@@ -206,7 +206,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-2y-G0O">
-                                <rect key="frame" x="20" y="508" width="57.5" height="24"/>
+                                <rect key="frame" x="20" y="508" width="61.5" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -215,12 +215,12 @@
                         <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="imk-kA-b97" secondAttribute="leading" id="3PW-Zb-XeL"/>
-                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="15" id="7Ne-MQ-fdv"/>
+                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="12" id="7Ne-MQ-fdv"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" constant="120" id="EIB-Az-irh"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
-                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="20" id="HLa-B7-SCA"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="20" id="SLS-sY-J8m"/>
+                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="10" id="HLa-B7-SCA"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="5" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="10" id="Y2W-K3-O0O"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>

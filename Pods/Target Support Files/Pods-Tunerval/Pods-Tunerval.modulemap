@@ -1,0 +1,6 @@
+framework module Pods_Tunerval {
+  umbrella header "Pods-Tunerval-umbrella.h"
+
+  export *
+  module * { export * }
+}

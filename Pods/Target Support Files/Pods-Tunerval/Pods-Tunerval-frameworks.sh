@@ -82,3 +82,18 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Tunerval/BEMSimpleLineGraph.framework"
+  install_framework "Pods-Tunerval/EZAudio.framework"
+  install_framework "Pods-Tunerval/FMDB.framework"
+  install_framework "Pods-Tunerval/PitchEstimator.framework"
+  install_framework "Pods-Tunerval/TPCircularBuffer.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Tunerval/BEMSimpleLineGraph.framework"
+  install_framework "Pods-Tunerval/EZAudio.framework"
+  install_framework "Pods-Tunerval/FMDB.framework"
+  install_framework "Pods-Tunerval/PitchEstimator.framework"
+  install_framework "Pods-Tunerval/TPCircularBuffer.framework"
+fi
