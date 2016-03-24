@@ -11,6 +11,7 @@
 
 @interface ScoresData : NSObject
 
-+ (NSArray*) difficultyDataForInterval:(IntervalType)interval;
++ (NSArray*) difficultyDataForInterval:(IntervalType)interval afterUnixTimestamp:(double)timestamp;
++ (NSArray*) runningAverageDifficultyAfterUnixTimeStamp:(double)timestamp;
 
 @end

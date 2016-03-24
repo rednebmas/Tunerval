@@ -558,6 +558,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     if (self.intervals.count == 1) return [self.intervals[0] integerValue];
     
+    float learningSpeed = 4.0;
     float scoreSum = 0.0;
     NSMutableArray *scores = [[NSMutableArray alloc] init];
     for (NSNumber *interval in self.intervals)
@@ -565,7 +566,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         NSInteger hash = [self intervalSetHash:@[interval]];
         NSString *answerDifferentialKey = [NSString stringWithFormat:@"answer-differential-%ld", (long)hash];
         float intervalScore = [self differenceInCentsForAnswerDifferential:[defaults integerForKey:answerDifferentialKey]];
-        scoreSum += powf(intervalScore, 2);
+        scoreSum += powf(intervalScore, learningSpeed);
         [scores addObject:@(intervalScore)];
     }
     
@@ -574,7 +575,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     float cumulativeSum = 0.0;
     for (int i = 0; i < scores.count; i++)
     {
-        cumulativeSum += powf([scores[i] floatValue], 2);
+        cumulativeSum += powf([scores[i] floatValue], learningSpeed);
         if (rand <= cumulativeSum)
         {
             return [self.intervals[i] integerValue];

@@ -21,25 +21,74 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self configureLineGraph];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger dataRange = [defaults integerForKey:@"graph-data-range"];
+    [self.dataRangeSegmentedControl setSelectedSegmentIndex:dataRange];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self loadInterval];
+    [self loadData];
     [self.lineGraph reloadGraph];
 }
 
-- (void) loadInterval
+- (void) loadData
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    IntervalType interval = [defaults integerForKey:@"graph-selected-interval"];
     
+    // interval
+    IntervalType interval = [defaults integerForKey:@"graph-selected-interval"];
     [self.pickIntervalButton setTitle:[SBNote intervalTypeToIntervalName:interval]
                              forState:UIControlStateNormal];
-    self.data = [ScoresData difficultyDataForInterval:interval];
+    
+    // data duration
+    NSInteger dataRange = [defaults integerForKey:@"graph-data-range"];
+    NSDate *dateForRange = [self dateForDataRange:dataRange];
+    
+    // get data
+    self.data = [ScoresData difficultyDataForInterval:interval
+                                   afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
+    
+//    self.data = [ScoresData runningAverageDifficultyAfterUnixTimeStamp:[dateForRange timeIntervalSince1970]];
+}
+
+/**
+ * @param range
+ * 0 = today
+ * 1 = week
+ * 2 = month
+ * 3 = all
+ */
+- (NSDate*) dateForDataRange:(NSInteger)range
+{
+    NSDate *date = [NSDate date];
+    switch (range) {
+        case 0:
+            date = [date dateByAddingTimeInterval:-60*60*24];
+            break;
+            
+        case 1:
+            date = [date dateByAddingTimeInterval:-60*60*24*7];
+            break;
+            
+        case 2:
+            date = [date dateByAddingTimeInterval:-60*60*24*31];
+            break;
+            
+        case 3:
+            date = [NSDate dateWithTimeIntervalSince1970:0];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return date;
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -61,16 +110,19 @@
     self.lineGraph.colorTop = [UIColor clearColor];
     self.lineGraph.colorBottom = [UIColor clearColor];
     self.lineGraph.colorYaxisLabel = [UIColor whiteColor];
+    self.lineGraph.colorTouchInputLine = [UIColor whiteColor];
     self.lineGraph.lineDashPatternForReferenceYAxisLines = @[@(2),@(2)];
     self.lineGraph.enableYAxisLabel = YES;
     self.lineGraph.enableReferenceYAxisLines = YES;
     self.lineGraph.enablePopUpReport = YES;
+    self.lineGraph.enableReferenceYAxisLines = YES;
+    // self.lineGraph.autoScaleYAxis = NO;
     
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0 };
     CGFloat components[8] = {
-        1.0, 1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0, 0.6,
         1.0, 1.0, 1.0, 0.0
     };
     
@@ -91,6 +143,51 @@
     return [self.data[index] floatValue];
 }
 
+- (CGFloat) maxValueForLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 101.0;
+}
+
+- (CGFloat) minValueForLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 0.0;
+}
+
+- (NSInteger) numberOfYAxisLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 4;
+}
+
+- (CGFloat) baseValueForYAxisOnLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 0.0;
+}
+
+- (CGFloat) incrementValueForYAxisOnLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return 25.0;
+}
+
+- (NSString*) yAxisPrefixOnLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return @"±";
+}
+
+- (NSString*) yAxisSuffixOnLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return @"c";
+}
+
+- (NSString*) popUpPrefixForlineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return @"±";
+}
+
+- (NSString*) popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return @"c";
+}
+
 #pragma mark - Actions
 
 - (IBAction) dismiss:(id)sender
@@ -98,14 +195,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)dataRangeValueChanged:(UISegmentedControl *)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:sender.selectedSegmentIndex forKey:@"graph-data-range"];
+    
+    [self loadData];
+    [self.lineGraph reloadGraph];
 }
-*/
 
 @end
