@@ -186,6 +186,28 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNq-qb-4iq">
+                                <rect key="frame" x="101" y="505" width="479" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.082435344827586202" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Descending Perfect Fifth">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yFj-S9-40L" kind="presentation" id="Azy-tE-QYw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-2y-G0O">
+                                <rect key="frame" x="20" y="508" width="57.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -196,9 +218,14 @@
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
                             <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="20" id="HLa-B7-SCA"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="20" id="SLS-sY-J8m"/>
+                            <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="10" id="Y2W-K3-O0O"/>
+                            <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>
+                            <constraint firstItem="xNq-qb-4iq" firstAttribute="leading" secondItem="vd8-2y-G0O" secondAttribute="trailing" constant="23.5" id="gwE-RT-eHp"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailingMargin" id="iO6-92-EsG"/>
+                            <constraint firstItem="xNq-qb-4iq" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailingMargin" id="qeL-13-Fdf"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="20" id="tfh-J5-SR8"/>
+                            <constraint firstItem="xNq-qb-4iq" firstAttribute="centerY" secondItem="vd8-2y-G0O" secondAttribute="centerY" id="uLu-as-JRj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -208,6 +235,7 @@
                     </view>
                     <connections>
                         <outlet property="lineGraph" destination="BqC-Rs-FHf" id="Cqo-jv-hUG"/>
+                        <outlet property="pickIntervalButton" destination="xNq-qb-4iq" id="RSN-4i-xLB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq3-gx-T4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -855,6 +883,41 @@
             </objects>
             <point key="canvasLocation" x="3363" y="1084"/>
         </scene>
+        <!--Interval-->
+        <scene sceneID="XpA-Dp-uTB">
+            <objects>
+                <tableViewController id="YEV-zh-AOh" customClass="ChartPickIntervalTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hO1-1d-WzD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultCell" id="3RL-8j-sGb">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3RL-8j-sGb" id="gqq-Kz-7Wu">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YEV-zh-AOh" id="gW2-NS-FhY"/>
+                            <outlet property="delegate" destination="YEV-zh-AOh" id="CX6-eg-zVe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Interval" id="bA3-9N-9Xm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gK2-Vr-eNc">
+                            <connections>
+                                <action selector="dismiss:" destination="YEV-zh-AOh" id="uq0-7H-fBr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOo-PZ-l9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4316" y="-1178"/>
+        </scene>
         <!--Settings Number Picker Table View Controller-->
         <scene sceneID="NJA-9H-hsY">
             <objects>
@@ -1036,6 +1099,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mx6-Es-sL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="-383"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SE4-T9-w0o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yFj-S9-40L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGh-8p-1j6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YEV-zh-AOh" kind="relationship" relationship="rootViewController" id="xyJ-fO-iA9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHL-rE-EdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3504" y="-1178"/>
         </scene>
     </scenes>
     <resources>

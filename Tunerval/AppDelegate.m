@@ -54,6 +54,7 @@
         [defaults setDouble:0.2 forKey:@"note-duration-variation"];
     }
     
+    
     // database stuff
     [MigrationManager checkForAndPerformPendingMigrations];
     

@@ -12,14 +12,14 @@
 
 @implementation ScoresData
 
-+ (NSArray*) data
++ (NSArray*) difficultyDataForInterval:(IntervalType)interval
 {
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
     
     FMResultSet *s = [[Constants dbConnection] executeQuery:@"SELECT * FROM answer_history"];
     while ([s next])
     {
-        if ([s intForColumn:@"interval"] == -4)
+        if ([s intForColumn:@"interval"] == interval)
         {
             [yVals addObject:@([s doubleForColumn:@"difficulty"])];
         }

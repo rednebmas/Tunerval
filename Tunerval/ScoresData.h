@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PitchEstimator/SBNote.h>
 
 @interface ScoresData : NSObject
 
-+ (NSArray*) data;
++ (NSArray*) difficultyDataForInterval:(IntervalType)interval;
 
 @end

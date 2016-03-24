@@ -13,5 +13,6 @@
 @interface ChartViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *lineGraph;
+@property (weak, nonatomic) IBOutlet UIButton *pickIntervalButton;
 
 @end

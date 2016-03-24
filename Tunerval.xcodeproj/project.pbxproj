@@ -21,6 +21,7 @@
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
+		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
@@ -64,6 +65,8 @@
 		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		224747651C92AA45004E41D7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		224747661C92AA45004E41D7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		2253CD771CA36A37001630FE /* ChartPickIntervalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPickIntervalTableViewController.h; sourceTree = "<group>"; };
+		2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPickIntervalTableViewController.m; sourceTree = "<group>"; };
 		229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsIntervalsTableViewController.m; sourceTree = "<group>"; };
 		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				22E3C7431C9E278F00CD11C5 /* ChartViewController.m */,
 				22EA192E1C9E4EF00006B576 /* ChartsOverviewViewController.h */,
 				22EA192F1C9E4EF00006B576 /* ChartsOverviewViewController.m */,
+				2253CD771CA36A37001630FE /* ChartPickIntervalTableViewController.h */,
+				2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */,
 			);
 			name = Charts;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 			files = (
 				22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */,
 				221949561C80E956004D0155 /* ViewController.m in Sources */,
+				2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */,
 				22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */,
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
