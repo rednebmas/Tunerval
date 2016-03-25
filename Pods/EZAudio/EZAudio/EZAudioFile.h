@@ -377,4 +377,6 @@ typedef void (^EZAudioWaveformDataCompletionBlock)(float **waveformData, int len
 
 //------------------------------------------------------------------------------
 
+- (EZAudioFloatData *) getFramesFromCurrentFrameIndexWithNumberOfFrames:(UInt32)numberOfFrames;
+
 @end

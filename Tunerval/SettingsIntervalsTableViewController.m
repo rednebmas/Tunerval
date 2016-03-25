@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import <PitchEstimator/SBNote.h>
+#import <SBMusicUtilities/SBNote.h>
 #import "SettingsIntervalsTableViewController.h"
 #import "ViewController.h"
 

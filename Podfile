@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'Tunerval' do
 	pod 'EZAudio', :git => 'https://github.com/rednebmas/EZAudio.git'
-	pod 'PitchEstimator', :path => '~/code/iOS/PitchEstimator'
+	pod 'SBMusicUtilities', :path => '~/code/iOS/SBMusicUtilities'
 	pod 'BEMSimpleLineGraph', :git => 'https://github.com/rednebmas/BEMSimpleLineGraph.git'
 	pod 'FMDB'
 end

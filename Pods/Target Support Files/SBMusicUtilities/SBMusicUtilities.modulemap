@@ -1,0 +1,6 @@
+framework module SBMusicUtilities {
+  umbrella header "SBMusicUtilities-umbrella.h"
+
+  export *
+  module * { export * }
+}

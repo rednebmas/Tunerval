@@ -6,10 +6,10 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import <PitchEstimator/SBNote.h>
+#import <SBMusicUtilities/SBNote.h>
+#import <SBMusicUtilities/SBAudioPlayer.h>
+#import <SBMusicUtilities/SBRandomNoteGenerator.h>
 #import "ViewController.h"
-#import "AudioPlayer.h"
-#import "RandomNoteGenerator.h"
 #import "UIView+Helpers.h"
 #import "Question.h"
 #import "MBRoundProgressView.h"
@@ -39,7 +39,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @property (nonatomic, retain) NSString *answerDifferentialKey;
 @property (nonatomic, retain) NSArray *intervals;
 @property (nonatomic, retain) Question *currentQuestion;
-@property (nonatomic, retain) RandomNoteGenerator *randomNoteGenerator;
+@property (nonatomic, retain) SBRandomNoteGenerator *randomNoteGenerator;
 
 @end
 
@@ -51,9 +51,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     defaults = [NSUserDefaults standardUserDefaults];
     [SBNote setDefaultInstrumenType:InstrumentTypeSineWave];
-    self.randomNoteGenerator = [[RandomNoteGenerator alloc] init];
+    self.randomNoteGenerator = [[SBRandomNoteGenerator alloc] init];
     [self reloadNoteRange];
-    [[AudioPlayer sharedInstance] setGain:1.0];
+    [[SBAudioPlayer sharedInstance] setGain:1.0];
     [self hideHearAnswersLabel:YES];
     [self.label setText:@""];
     self.nextButton.hidden = YES;
@@ -272,11 +272,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
 {
-    [[AudioPlayer sharedInstance] play:firstNote];
+    [[SBAudioPlayer sharedInstance] play:firstNote];
     
     double delayTimeInSeconds = firstNote.duration + .1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [[AudioPlayer sharedInstance] play:secondNote];
+        [[SBAudioPlayer sharedInstance] play:secondNote];
     });
 }
 

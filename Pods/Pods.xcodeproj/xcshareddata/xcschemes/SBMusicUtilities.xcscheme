@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8D77638193ED05F2D6BC6E35'
-               BlueprintName = 'PitchEstimator'
+               BlueprintIdentifier = '36A04DC7FB4160EDD504CB27'
+               BlueprintName = 'SBMusicUtilities'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PitchEstimator.framework'>
+               BuildableName = 'SBMusicUtilities.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

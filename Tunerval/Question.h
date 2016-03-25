@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PitchEstimator/SBNote.h>
+#import <SBMusicUtilities/SBNote.h>
 
 @interface Question : NSObject
 

@@ -56,7 +56,6 @@ FOUNDATION_EXPORT const unsigned char EZAudioVersionString[];
 //------------------------------------------------------------------------------
 
 #import "EZAudioFFT.h"
-#import "EZAudioWindowFunctions.h"
 #import "EZAudioFloatConverter.h"
 #import "EZAudioFloatData.h"
 #import "EZAudioUtilities.h"

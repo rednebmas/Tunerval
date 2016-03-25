@@ -29,6 +29,16 @@
 @class EZAudioFFT;
 
 //------------------------------------------------------------------------------
+#pragma mark - Data Structures
+//------------------------------------------------------------------------------
+
+typedef NS_ENUM(NSInteger, EZAudioFFTWindowFunction)
+{
+    EZAudioFFTWindowFunctionNone,
+    EZAudioFFTWindowFunctionGaussian
+};
+
+//------------------------------------------------------------------------------
 #pragma mark - EZAudioFFTDelegate
 //------------------------------------------------------------------------------
 
@@ -201,10 +211,12 @@
  */
 @property (readwrite, nonatomic) float sampleRate;
 
+//------------------------------------------------------------------------------
+
 /**
- If YES, a gaussian window will be applied before peforming the FFT.
+ Indicates which window function to apply to signal before performing FFT. Default is none.
  */
-@property (readwrite, nonatomic) BOOL shouldApplyGaussianWindow;
+@property (readwrite, nonatomic) EZAudioFFTWindowFunction windowFunction;
 
 //------------------------------------------------------------------------------
 #pragma mark - Actions

@@ -1,15 +1,22 @@
+This fork adds the ability to apply a gaussian window function before performing a FFT, and the ability to get audio frames from a file *sequentially* at a certain index.
+----------------------------------------------------------
+----------------------------------------------------------
+----------------------------------------------------------
+
 ![alt text](http://i.imgur.com/ll5q68r.png "EZAudioLogo")
 
 A simple, intuitive audio framework for iOS and OSX.
 
-## Welcome to 1.0.0! 
+## Welcome to 1.0.0!
 Thank you guys for being so patient over the last year - I've been working like crazy the last few weeks rewriting and extending the EZAudio core and interface components and squashing bugs. Finally, EZAudio is now at its 1.0.0 release with all new updated components, examples, and documentation. Happy coding!
 
 ## Apps Using EZAudio
-I'd really like to start creating a list of projects made using EZAudio. If you've used EZAudio to make something cool, whether it's an app or open source visualization or whatever, please email me at syedhali07[at]gmail.com and I'll add it to our wall of fame! 
+I'd really like to start creating a list of projects made using EZAudio. If you've used EZAudio to make something cool, whether it's an app or open source visualization or whatever, please email me at syedhali07[at]gmail.com and I'll add it to our wall of fame!
 To start it off:
+- [Analog Synth ](https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1076476110&mt=8) - Matt Fecher's analog synthesizer for iPad created entirely with the new [AudioKit 3.0](https://github.com/audiokit/AudioKit) framework [and EZAudio plots].
 - [Detour](https://www.detour.com/) - Gorgeous location-aware audio walks
 - [Jumpshare](https://jumpshare.com/) - Incredibly fast, real-time file sharing
+- [Tunerval](https://itunes.apple.com/ie/app/tunerval-learn-to-hear-musical/id1088620067?mt=8) - Learn to hear musical intervals in your head
 
 ##Features
 
@@ -27,11 +34,11 @@ A microphone class that provides its delegate audio data from the default device
 
 [EZOutput](#EZOutput)
 
-An output class that will playback any audio it is provided by its datasource. 
+An output class that will playback any audio it is provided by its datasource.
 
 [EZAudioFile](#EZAudioFile)
 
-An audio file class that reads/seeks through audio files and provides useful delegate callbacks. 
+An audio file class that reads/seeks through audio files and provides useful delegate callbacks.
 
 [EZAudioPlayer](#EZAudioPlayer)
 
@@ -59,50 +66,50 @@ Within this repo you'll find the examples for iOS and OSX to get you up to speed
 
 ### Example Projects
 
-**_EZAudioCoreGraphicsWaveformExample_** 
+**_CoreGraphicsWaveform_**
 
 ![CoreGraphicsWaveformExampleGif](https://cloud.githubusercontent.com/assets/1275640/8516226/1eb885ec-2366-11e5-8d76-3a4b4d982eb0.gif)
 
-Shows how to use the `EZMicrophone` and `EZAudioPlot` to visualize the audio data from the microphone in real-time. The waveform can be displayed as a buffer or a rolling waveform plot (traditional waveform look). 
+Shows how to use the `EZMicrophone` and `EZAudioPlot` to visualize the audio data from the microphone in real-time. The waveform can be displayed as a buffer or a rolling waveform plot (traditional waveform look).
 
-**_EZAudioOpenGLWaveformExample_**
+**_OpenGLWaveform_**
 
 ![OpenGLWaveformExampleGif](https://cloud.githubusercontent.com/assets/1275640/8516234/499f6fd2-2366-11e5-9771-7d0afae59391.gif)
 
 Shows how to use the `EZMicrophone` and `EZAudioPlotGL` to visualize the audio data from the microphone in real-time. The drawing is using OpenGL so the performance much better for plots needing a lot of points.
 
-**_EZAudioPlayFileExample_**
+**_PlayFile_**
 
 ![PlayFileExample](https://cloud.githubusercontent.com/assets/1275640/8516245/711ca232-2366-11e5-8d20-2538164f3307.gif)
 
 Shows how to use the `EZAudioPlayer` and `EZAudioPlotGL` to playback, pause, and seek through an audio file while displaying its waveform as a buffer or a rolling waveform plot.
 
-**_EZAudioRecordWaveformExample_**
+**_RecordFile_**
 
 ![RecordWaveformExample](https://cloud.githubusercontent.com/assets/1275640/8516310/86da80f2-2367-11e5-84aa-aea25a439a76.gif)
 
 Shows how to use the `EZMicrophone`, `EZRecorder`, and `EZAudioPlotGL` to record the audio from the microphone input to a file while displaying the audio waveform of the incoming data. You can then playback the newly recorded audio file using AVFoundation and keep adding more audio data to the tail of the file.
 
-**_EZAudioWaveformFromFileExample_**
+**_WaveformFromFile_**
 
 ![WaveformExample](https://cloud.githubusercontent.com/assets/1275640/8516597/f27240ea-236a-11e5-8ecd-68cf05b7ce40.gif)
 
-Shows how to use the `EZAudioFile` and `EZAudioPlot` to animate in an audio waveform for an entire audio file. 
+Shows how to use the `EZAudioFile` and `EZAudioPlot` to animate in an audio waveform for an entire audio file.
 
-**_EZAudioPassThroughExample_**
+**_PassThrough_**
 
 ![PassthroughExample](https://cloud.githubusercontent.com/assets/1275640/8516692/7abfbe36-236c-11e5-9d69-4f82956177b3.gif)
 
-Shows how to use the `EZMicrophone`, `EZOutput`, and the `EZAudioPlotGL` to pass the microphone input to the output for playback while displaying the audio waveform (as a buffer or rolling plot) in real-time. 
+Shows how to use the `EZMicrophone`, `EZOutput`, and the `EZAudioPlotGL` to pass the microphone input to the output for playback while displaying the audio waveform (as a buffer or rolling plot) in real-time.
 
-**_EZAudioFFTExample_**
+**_FFT_**
 
 ![FFTExample](https://cloud.githubusercontent.com/assets/1275640/8662077/5621705a-2971-11e5-88ed-9a865e422ade.gif)
 
 Shows how to calculate the real-time FFT of the audio data coming from the `EZMicrophone` and the Accelerate framework. The audio data is plotted using two `EZAudioPlots` for the time and frequency displays.
 
 ### Documentation
-The official documentation for EZAudio can be found here: http://cocoadocs.org/docsets/EZAudio/1.1.2/
+The official documentation for EZAudio can be found here: http://cocoadocs.org/docsets/EZAudio/1.1.4/
 <br>You can also generate the docset yourself using appledocs by running the appledocs on the EZAudio source folder.
 
 ##<a name="GettingStarted">Getting Started
@@ -135,24 +142,27 @@ To begin using `EZAudio` you must first make sure you have the proper build requ
 You can add EZAudio to your project in a few ways: <br><br>1.) The easiest way to use EZAudio is via <a href="http://cocoapods.org/", target="_blank">Cocoapods</a>. Simply add EZAudio to your <a href="http://guides.cocoapods.org/using/the-podfile.html", target="_blank">Podfile</a> like so:
 
 `
-pod 'EZAudio', '~> 1.1.2'
+pod 'EZAudio', '~> 1.1.4'
 `
 
 ####<a name="AmazingAudioEngineCocoapod">Using EZAudio & The Amazing Audio Engine
 If you're also using the Amazing Audio Engine then use the `EZAudio/Core` subspec like so:
 
 `
-pod 'EZAudio/Core', '~> 1.1.2'
+pod 'EZAudio/Core', '~> 1.1.4'
 `
 
-2.) Alternatively, you could clone or fork this repo and just drag and drop the source into your project. 
+2.) EZAudio now supports Carthage (thanks Andrew and Tommaso!). You can refer to Carthage's installation for a how-to guide:
+https://github.com/Carthage/Carthage
+
+3.) Alternatively, you can check out the iOS/Mac examples for how to setup a project using the EZAudio project as an embedded project and utilizing the frameworks. Be sure to set your header search path to the folder containing the EZAudio source.
 
 ##<a name="CoreComponents"></a>Core Components
 
 `EZAudio` currently offers six audio components that encompass a wide range of functionality. In addition to the functional aspects of these components such as pulling audio data, reading/writing from files, and performing playback they also take special care to hook into the interface components to allow developers to display visual feedback (see the [Interface Components](#InterfaceComponents) below).
 
 ###<a name="EZAudioDevice"></a>EZAudioDevice
-Provides a simple interface for obtaining the current and all available inputs and output for any Apple device. For instance, the iPhone 6 has three microphones available for input, while on OSX you can choose the Built-In Microphone or any available HAL device on your system. Similarly, for iOS you can choose from a pair of headphones connected or speaker, while on OSX you can choose from the Built-In Output, any available HAL device, or Airplay. 
+Provides a simple interface for obtaining the current and all available inputs and output for any Apple device. For instance, the iPhone 6 has three microphones available for input, while on OSX you can choose the Built-In Microphone or any available HAL device on your system. Similarly, for iOS you can choose from a pair of headphones connected or speaker, while on OSX you can choose from the Built-In Output, any available HAL device, or Airplay.
 
 ![EZAudioDeviceInputsExample](https://cloud.githubusercontent.com/assets/1275640/8535722/51e8f702-23fd-11e5-9f1c-8c45e80d19ef.gif)
 
@@ -177,7 +187,7 @@ NSArray *outputDevices = [EZAudioDevice outputDevices];
 
 or to just get the currently selected output device use the `currentInputDevice` method:
 ```objectivec
-// On iOS this will default to the headset speaker, while on OSX this will be your selected 
+// On iOS this will default to the headset speaker, while on OSX this will be your selected
 // output device from the Sound preferences
 EZAudioDevice *currentOutputDevice = [EZAudioDevice currentOutputDevice];
 ```
@@ -186,16 +196,16 @@ EZAudioDevice *currentOutputDevice = [EZAudioDevice currentOutputDevice];
 Provides access to the default device microphone in one line of code and provides delegate callbacks to receive the audio data as an AudioBufferList and float arrays.
 
 **_Relevant Example Projects_**
-- EZAudioCoreGraphicsWaveformExample (iOS)
-- EZAudioCoreGraphicsWaveformExample (OSX)
-- EZAudioOpenGLWaveformExample (iOS)
-- EZAudioOpenGLWaveformExample (OSX)
-- EZAudioRecordExample (iOS)
-- EZAudioRecordExample (OSX)
-- EZAudioPassThroughExample (iOS)
-- EZAudioPassThroughExample (OSX)
-- EZAudioFFTExample (iOS)
-- EZAudioFFTExample (OSX)
+- CoreGraphicsWaveform (iOS)
+- CoreGraphicsWaveform (OSX)
+- OpenGLWaveform (iOS)
+- OpenGLWaveform (OSX)
+- RecordFile (iOS)
+- RecordFile (OSX)
+- PassThrough (iOS)
+- PassThrough (OSX)
+- FFT (iOS)
+- FFT (OSX)
 
 ####Creating A Microphone
 
@@ -213,13 +223,13 @@ self.microphone = [EZMicrophone microphoneWithDelegate:self];
 ```
 Alternatively, you could also use the shared `EZMicrophone` instance and just assign its `EZMicrophoneDelegate`.
 ```objectivec
-// Assign a delegate to the shared instance of the microphone to receive the audio data 
+// Assign a delegate to the shared instance of the microphone to receive the audio data
 // callbacks
 [EZMicrophone sharedMicrophone].delegate = self;
 ```
 
 ####Setting The Device
-The `EZMicrophone` uses an `EZAudioDevice` instance to select what specific hardware destination it will use to pull audio data. You'd use this if you wanted to change the input device like in the EZAudioCoreGraphicsWaveformExample for [iOS](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/iOS/EZAudioCoreGraphicsWaveformExample) or [OSX](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/EZAudioCoreGraphicsWaveformExample). At any time you can change which input device is used by setting the device property:
+The `EZMicrophone` uses an `EZAudioDevice` instance to select what specific hardware destination it will use to pull audio data. You'd use this if you wanted to change the input device like in the CoreGraphicsWaveform for [iOS](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/iOS/CoreGraphicsWaveform) or [OSX](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/CoreGraphicsWaveform). At any time you can change which input device is used by setting the device property:
 ```objectivec
 NSArray *inputs = [EZAudioDevice inputDevices];
 [self.microphone setDevice:[inputs lastObject]];
@@ -230,7 +240,7 @@ Anytime the `EZMicrophone` changes its device it will trigger the `EZMicrophoneD
 
 - (void)microphone:(EZMicrophone *)microphone changedDevice:(EZAudioDevice *)device
 {
-    // This is not always guaranteed to occur on the main thread so make sure you 
+    // This is not always guaranteed to occur on the main thread so make sure you
     // wrap it in a GCD block
     dispatch_async(dispatch_get_main_queue(), ^{
         // Update UI here
@@ -259,11 +269,11 @@ An array of float arrays:
 -(void)   microphone:(EZMicrophone *)microphone
     hasAudioReceived:(float **)buffer
       withBufferSize:(UInt32)bufferSize
-withNumberOfChannels:(UInt32)numberOfChannels 
+withNumberOfChannels:(UInt32)numberOfChannels
 {
     __weak typeof (self) weakSelf = self;
-	// Getting audio data as an array of float buffer arrays that can be fed into the 
-	// EZAudioPlot, EZAudioPlotGL, or whatever visualization you would like to do with 
+	// Getting audio data as an array of float buffer arrays that can be fed into the
+	// EZAudioPlot, EZAudioPlotGL, or whatever visualization you would like to do with
 	// the microphone data.
 	dispatch_async(dispatch_get_main_queue(),^{
 		// Visualize this data brah, buffer[0] = left channel, buffer[1] = right channel
@@ -277,14 +287,14 @@ or the AudioBufferList representation:
  The microphone data represented as CoreAudio's AudioBufferList useful for:
     - Appending data to an audio file via the EZRecorder
     - Playback via the EZOutput
-    
+
  */
 -(void)    microphone:(EZMicrophone *)microphone
         hasBufferList:(AudioBufferList *)bufferList
        withBufferSize:(UInt32)bufferSize
- withNumberOfChannels:(UInt32)numberOfChannels 
+ withNumberOfChannels:(UInt32)numberOfChannels
 {
-	// Getting audio data as an AudioBufferList that can be directly fed into the EZRecorder 
+	// Getting audio data as an AudioBufferList that can be directly fed into the EZRecorder
 	// or EZOutput. Say whattt...
 }
 ```
@@ -311,8 +321,8 @@ self.microphone.microphoneOn = YES;
 ###<a name="EZOutput"></a>EZOutput
 Provides flexible playback to the default output device by asking the `EZOutputDataSource` for audio data to play. Doesn't care where the buffers come from (microphone, audio file, streaming audio, etc). As of 1.0.0 the `EZOutputDataSource` has been simplified to have only one method to provide audio data to your `EZOutput` instance.
 ```objectivec
-// The EZOutputDataSource should fill out the audioBufferList with the given frame count. 
-// The timestamp is provided for sample accurate calculation, but for basic use cases can 
+// The EZOutputDataSource should fill out the audioBufferList with the given frame count.
+// The timestamp is provided for sample accurate calculation, but for basic use cases can
 // be ignored.
 - (OSStatus)        output:(EZOutput *)output
  shouldFillAudioBufferList:(AudioBufferList *)audioBufferList
@@ -321,10 +331,10 @@ Provides flexible playback to the default output device by asking the `EZOutputD
 ```
 
 **_Relevant Example Projects_**
-- EZAudioPlayFileExample (iOS)
-- EZAudioPlayFileExample (OSX)
-- EZAudioPassThroughExample (iOS)
-- EZAudioPassThroughExample (OSX)
+- PlayFile (iOS)
+- PlayFile (OSX)
+- PassThrough (iOS)
+- PassThrough (OSX)
 
 ####Creating An Output
 
@@ -344,7 +354,7 @@ Alternatively, you could also use the shared output instance and just assign it 
 [EZOutput sharedOutput].delegate = self;
 ```
 ####Setting The Device
-The `EZOutput` uses an `EZAudioDevice` instance to select what specific hardware destination it will output audio to. You'd use this if you wanted to change the output device like in the [EZAudioPlayFileExample](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/EZAudioPlayFileExample) for OSX. At any time you can change which output device is used by setting the `device` property:
+The `EZOutput` uses an `EZAudioDevice` instance to select what specific hardware destination it will output audio to. You'd use this if you wanted to change the output device like in the [PlayFile](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/PlayFile) for OSX. At any time you can change which output device is used by setting the `device` property:
 ```objectivec
 // By default the EZOutput uses the default output device, but you can change this at any time
 EZAudioDevice *currentOutputDevice = [EZAudioDevice currentOutputDevice];
@@ -386,7 +396,7 @@ An example of implementing the `EZOutputDataSource` is done internally in the `E
                    audioBufferList:audioBufferList
                         bufferSize:&bufferSize
                                eof:&eof];
-        if (eof && [self.delegate respondsToSelector:@selector(audioPlayer:reachedEndOfAudioFile:)]) 
+        if (eof && [self.delegate respondsToSelector:@selector(audioPlayer:reachedEndOfAudioFile:)])
         {
             [self.delegate audioPlayer:self reachedEndOfAudioFile:self.audioFile];
         }
@@ -414,7 +424,7 @@ double const SAMPLE_RATE = 44100.0;
 - (void)awakeFromNib
 {
     //
-    // Create EZOutput to play audio data with mono format (EZOutput will convert 
+    // Create EZOutput to play audio data with mono format (EZOutput will convert
     // this mono, float "inputFormat" to a clientFormat, i.e. the stereo output format).
     //
     AudioStreamBasicDescription inputFormat = [EZAudioUtilities monoFloatFormatWithSampleRate:SAMPLE_RATE];
@@ -488,8 +498,8 @@ Pause or resume the output component at any time like so:
 Internally the `EZOutput` is using an AUGraph to chain together a converter, mixer, and output audio units. You can hook into this graph by subclassing `EZOutput` and implementing the method:
 ```objectivec
 // By default this method connects the AUNode representing the input format converter to
-// the mixer node. In subclasses you can add effects in the chain between the converter 
-// and mixer by creating additional AUNodes, adding them to the AUGraph provided below, 
+// the mixer node. In subclasses you can add effects in the chain between the converter
+// and mixer by creating additional AUNodes, adding them to the AUGraph provided below,
 // and then connecting them together.
 - (OSStatus)connectOutputOfSourceNode:(AUNode)sourceNode
                   sourceNodeOutputBus:(UInt32)sourceNodeOutputBus
@@ -498,7 +508,7 @@ Internally the `EZOutput` is using an AUGraph to chain together a converter, mix
                               inGraph:(AUGraph)graph;
 ```
 
-This was inspired by the audio processing graph from CocoaLibSpotify (Daniel Kennett of Spotify has [an excellent blog post](http://ikennd.ac/blog/2012/04/augraph-basics-in-cocoalibspotify/) explaining how to add an EQ to the CocoaLibSpotify AUGraph). 
+This was inspired by the audio processing graph from CocoaLibSpotify (Daniel Kennett of Spotify has [an excellent blog post](http://ikennd.ac/blog/2012/04/augraph-basics-in-cocoalibspotify/) explaining how to add an EQ to the CocoaLibSpotify AUGraph).
 
 Here's an example of how to add a delay audio unit (`kAudioUnitSubType_Delay`):
 ```objectivec
@@ -513,7 +523,7 @@ Here's an example of how to add a delay audio unit (`kAudioUnitSubType_Delay`):
                               inGraph:(AUGraph)graph
 {
     self.delayNodeInfo = (EZAudioNodeInfo *)malloc(sizeof(EZAudioNodeInfo));
-    
+
     // A description for the time/pitch shifter Device
     AudioComponentDescription delayComponentDescription;
     delayComponentDescription.componentType = kAudioUnitType_Effect;
@@ -521,19 +531,19 @@ Here's an example of how to add a delay audio unit (`kAudioUnitSubType_Delay`):
     delayComponentDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
     delayComponentDescription.componentFlags = 0;
     delayComponentDescription.componentFlagsMask = 0;
-    
+
     [EZAudioUtilities checkResult:AUGraphAddNode(graph,
                                                  &delayComponentDescription,
                                                  &self.delayNodeInfo->node)
                         operation:"Failed to add node for time shift"];
-    
+
     // Get the time/pitch shifter Audio Unit from the node
     [EZAudioUtilities checkResult:AUGraphNodeInfo(graph,
                                                   self.delayNodeInfo->node,
                                                   NULL,
                                                   &self.delayNodeInfo->audioUnit)
                         operation:"Failed to get audio unit for delay node"];
-    
+
     // connect the output of the input source node to the input of the time/pitch shifter node
     [EZAudioUtilities checkResult:AUGraphConnectNodeInput(graph,
                                                           sourceNode,
@@ -541,7 +551,7 @@ Here's an example of how to add a delay audio unit (`kAudioUnitSubType_Delay`):
                                                           self.delayNodeInfo->node,
                                                           0)
                         operation:"Failed to connect source node into delay node"];
-    
+
     // connect the output of the time/pitch shifter node to the input of the destination node, thus completing the chain.
     [EZAudioUtilities checkResult:AUGraphConnectNodeInput(graph,
                                                           self.delayNodeInfo->node,
@@ -563,8 +573,8 @@ Here's an example of how to add a delay audio unit (`kAudioUnitSubType_Delay`):
 Provides simple read/seek operations, pulls waveform amplitude data, and provides the `EZAudioFileDelegate` to notify of any read/seek action occuring on the `EZAudioFile`. This can be thought of as the NSImage/UIImage equivalent of the audio world.
 
 **_Relevant Example Projects_**
-- EZAudioWaveformFromFileExample (iOS)
-- EZAudioWaveformFromFileExample (OSX)
+- WaveformFromFile (iOS)
+- WaveformFromFile (OSX)
 
 ####Opening An Audio File
 To open an audio file create a new instance of the `EZAudioFile` class.
@@ -583,7 +593,7 @@ self.audioFile = [EZAudioFile audioFileWithURL:[NSURL fileURLWithPath:@"/path/to
 The EZAudioFile allows you to quickly fetch waveform data from an audio file with as much or little detail as you'd like.
 ```objectivec
 __weak typeof (self) weakSelf = self;
-// Get a waveform with 1024 points of data. We can adjust the number of points to whatever level 
+// Get a waveform with 1024 points of data. We can adjust the number of points to whatever level
 // of detail is needed by the application
 [self.audioFile getWaveformDataWithNumberOfPoints:1024
                                   completionBlock:^(float **waveformData,
@@ -601,7 +611,7 @@ Reading audio data from a file requires you to create an AudioBufferList to hold
 **Note: You have to free the AudioBufferList, even in ARC.**
 ```objectivec
 // Allocate an AudioBufferList to hold the audio data (the client format is the non-compressed
-// in-app format that is used for reading, it's different than the file format which is usually 
+// in-app format that is used for reading, it's different than the file format which is usually
 // something compressed like an mp3 or m4a)
 AudioStreamBasicDescription clientFormat = [self.audioFile clientFormat];
 UInt32 numberOfFramesToRead = 512;
@@ -673,7 +683,7 @@ When a seek occurs the `EZAudioFileDelegate` receives the seek event:
 ```
 
 ###<a name="EZAudioPlayer"></a>EZAudioPlayer
-Provides a class that combines the `EZAudioFile` and `EZOutput` for file playback of all Core Audio supported formats to any hardware device. Because the `EZAudioPlayer` internally hooks into the `EZAudioFileDelegate` and `EZOutputDelegate`, you should implement the `EZAudioPlayerDelegate` to receive the `playedAudio:...` and `updatedPosition:` events. The EZAudioPlayFileExample projects for [iOS](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/iOS/EZAudioPlayFileExample) and [OSX](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/EZAudioPlayFileExample) shows how to use the `EZAudioPlayer` to play audio files, visualize the samples with an audio plot, adjust the volume, and change the output device using the `EZAudioDevice` class. The `EZAudioPlayer` primarily uses `NSNotificationCenter` to post notifications because often times you have one audio player and multiple UI elements that need to listen for player events to properly update.
+Provides a class that combines the `EZAudioFile` and `EZOutput` for file playback of all Core Audio supported formats to any hardware device. Because the `EZAudioPlayer` internally hooks into the `EZAudioFileDelegate` and `EZOutputDelegate`, you should implement the `EZAudioPlayerDelegate` to receive the `playedAudio:...` and `updatedPosition:` events. The PlayFile projects for [iOS](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/iOS/PlayFile) and [OSX](https://github.com/syedhali/EZAudio/tree/master/EZAudioExamples/OSX/PlayFile) shows how to use the `EZAudioPlayer` to play audio files, visualize the samples with an audio plot, adjust the volume, and change the output device using the `EZAudioDevice` class. The `EZAudioPlayer` primarily uses `NSNotificationCenter` to post notifications because often times you have one audio player and multiple UI elements that need to listen for player events to properly update.
 
 ####Creating An Audio Player
 ```objectivec
@@ -687,7 +697,7 @@ self.player = [EZAudioPlayer audioPlayerWithDelegate:self];
 ```
 
 ####Playing An Audio File
-The `EZAudioPlayer` uses an internal `EZAudioFile` to provide data to its `EZOutput` for output via the `EZOutputDataSource`. You can provide an `EZAudioFile` by just setting the `audioFile` property on the `EZAudioPlayer` will make a copy of the `EZAudioFile` at that file path url for its own use. 
+The `EZAudioPlayer` uses an internal `EZAudioFile` to provide data to its `EZOutput` for output via the `EZOutputDataSource`. You can provide an `EZAudioFile` by just setting the `audioFile` property on the `EZAudioPlayer` will make a copy of the `EZAudioFile` at that file path url for its own use.
 ```objectivec
 // Set the EZAudioFile for playback by setting the `audioFile` property
 EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:[NSURL fileURLWithPath:@"/path/to/your/file"]];
@@ -820,25 +830,25 @@ FOUNDATION_EXPORT NSString * const EZAudioPlayerDidSeekNotification;
 Provides a way to record any audio source to an audio file. This hooks into the other components quite nicely to do something like plot the audio waveform while recording to give visual feedback as to what is happening. The `EZRecorderDelegate` provides methods to listen to write events and a final close event on the `EZRecorder` (explained [below](#EZRecorderDelegateExplanation)).
 
 *Relevant Example Projects*
-- EZAudioRecordExample (iOS)
-- EZAudioRecordExample (OSX)
+- RecordFile (iOS)
+- RecordFile (OSX)
 
 ####Creating A Recorder
 
-To create an `EZRecorder` you must provide at least 3 things: an NSURL representing the file path of where the audio file should be written to (an existing file will be overwritten), a `clientFormat` representing the format in which you will be providing the audio data, and either an `EZRecorderFileType` or an `AudioStreamBasicDescription` representing the file format of the audio data on disk. 
+To create an `EZRecorder` you must provide at least 3 things: an NSURL representing the file path of where the audio file should be written to (an existing file will be overwritten), a `clientFormat` representing the format in which you will be providing the audio data, and either an `EZRecorderFileType` or an `AudioStreamBasicDescription` representing the file format of the audio data on disk.
 
 ```objectivec
-// Provide a file path url to write to, a client format (always linear PCM, this is the format 
-// coming from another component like the EZMicrophone's audioStreamBasicDescription property), 
-// and a EZRecorderFileType constant representing either a wav (EZRecorderFileTypeWAV), 
-// aiff (EZRecorderFileTypeAIFF), or m4a (EZRecorderFileTypeM4A) file format. The advantage of 
+// Provide a file path url to write to, a client format (always linear PCM, this is the format
+// coming from another component like the EZMicrophone's audioStreamBasicDescription property),
+// and a EZRecorderFileType constant representing either a wav (EZRecorderFileTypeWAV),
+// aiff (EZRecorderFileTypeAIFF), or m4a (EZRecorderFileTypeM4A) file format. The advantage of
 // this is that the `fileFormat` property will be automatically filled out for you.
 + (instancetype)recorderWithURL:(NSURL *)url
                    clientFormat:(AudioStreamBasicDescription)clientFormat
                        fileType:(EZRecorderFileType)fileType;
-                       
-// Alternatively, you can provide a file path url to write to, a client format (always linear 
-// PCM, this is the format coming from another component like the EZMicrophone's 
+
+// Alternatively, you can provide a file path url to write to, a client format (always linear
+// PCM, this is the format coming from another component like the EZMicrophone's
 // audioStreamBasicDescription property), a `fileFormat` representing your custom
 // AudioStreamBasicDescription, and an AudioFileTypeID that corresponds with your `fileFormat`.
 + (instancetype)recorderWithURL:(NSURL *)url
@@ -883,19 +893,19 @@ Once you've initialized your `EZRecorder` you can append data by passing in an A
 -(void)    microphone:(EZMicrophone *)microphone
         hasBufferList:(AudioBufferList *)bufferList
        withBufferSize:(UInt32)bufferSize
- withNumberOfChannels:(UInt32)numberOfChannels 
+ withNumberOfChannels:(UInt32)numberOfChannels
 {
-    // Getting audio data as a buffer list that can be directly fed into the EZRecorder. This is 
+    // Getting audio data as a buffer list that can be directly fed into the EZRecorder. This is
     // happening on the audio thread - any UI updating needs a GCD main queue block.
     if (self.isRecording)
     {
-        // Since we set the recorder's client format to be that of the EZMicrophone instance, 
-        // the audio data coming in represented by the AudioBufferList can directly be provided 
-        // to the EZRecorder. The EZRecorder will internally convert the audio data from the 
+        // Since we set the recorder's client format to be that of the EZMicrophone instance,
+        // the audio data coming in represented by the AudioBufferList can directly be provided
+        // to the EZRecorder. The EZRecorder will internally convert the audio data from the
         // `clientFormat` to `fileFormat`.
         [self.recorder appendDataFromBufferList:bufferList
                                  withBufferSize:bufferSize];
-    } 
+    }
 }
 ```
 
@@ -908,9 +918,9 @@ Once audio data has been successfully written with the `EZRecorder` it will noti
 - (void)recorderUpdatedCurrentTime:(EZRecorder *)recorder
 {
     __weak typeof (self) weakSelf = self;
-    // This will get triggerd on the thread that the write occured on so be sure to wrap your UI 
-    // updates in a GCD main queue block! However, I highly recommend you first pull the values 
-    // you'd like to update the interface with before entering the GCD block to avoid trying to 
+    // This will get triggerd on the thread that the write occured on so be sure to wrap your UI
+    // updates in a GCD main queue block! However, I highly recommend you first pull the values
+    // you'd like to update the interface with before entering the GCD block to avoid trying to
     // fetch a value after the audio file has been closed.
     NSString *formattedCurrentTime = [recorder formattedCurrentTime]; // MM:SS formatted
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -943,14 +953,14 @@ This will trigger the EZRecorder's delegate method:
 Provides an audio waveform plot that uses CoreGraphics to perform the drawing. On iOS this is a subclass of UIView while on OSX this is a subclass of NSView. As of the 1.0.0 release, the waveforms are drawn using CALayers where compositing is done on the GPU. As a result, there have been some huge performance gains and CPU usage per real-time (i.e. 60 frames per second redrawing) plot is now about 2-3% CPU as opposed to the 20-30% we were experiencing before.
 
 *Relevant Example Projects*
-- EZAudioCoreGraphicsWaveformExample (iOS)
-- EZAudioCoreGraphicsWaveformExample (OSX)
-- EZAudioRecordExample (iOS)
-- EZAudioRecordExample (OSX)
-- EZAudioWaveformFromFileExample (iOS)
-- EZAudioWaveformFromFileExample (OSX)
-- EZAudioFFTExample (iOS)
-- EZAudioFFTExample (OSX)
+- CoreGraphicsWaveform (iOS)
+- CoreGraphicsWaveform (OSX)
+- RecordFile (iOS)
+- RecordFile (OSX)
+- WaveformFromFile (iOS)
+- WaveformFromFile (OSX)
+- FFT (iOS)
+- FFT (OSX)
 
 ####Creating An Audio Plot
 
@@ -972,13 +982,13 @@ All plots offer the ability to change the background color, waveform color, plot
 
 ```objectivec
 // Background color (use UIColor for iOS)
-audioPlot.backgroundColor = [NSColor colorWithCalibratedRed:0.816 
-                                                      green:0.349 
-                                                       blue:0.255 
+audioPlot.backgroundColor = [NSColor colorWithCalibratedRed:0.816
+                                                      green:0.349
+                                                       blue:0.255
                                                       alpha:1];
 // Waveform color (use UIColor for iOS)
-audioPlot.color = [NSColor colorWithCalibratedRed:1.000 
-                                            green:1.000 
+audioPlot.color = [NSColor colorWithCalibratedRed:1.000
+                                            green:1.000
                                              blue:1.000
                                             alpha:1];
 // Plot type
@@ -1003,9 +1013,9 @@ All plots have only one update function, `updateBuffer:withBufferSize:`, which e
 - (void)   microphone:(EZMicrophone *)microphone
      hasAudioReceived:(float **)buffer
        withBufferSize:(UInt32)bufferSize
- withNumberOfChannels:(UInt32)numberOfChannels 
+ withNumberOfChannels:(UInt32)numberOfChannels
 {
-    /** 
+    /**
      Update the audio plot using the float array provided by the microphone:
        buffer[0] = left channel
        buffer[1] = right channel
@@ -1020,17 +1030,17 @@ All plots have only one update function, `updateBuffer:withBufferSize:`, which e
 ```
 
 ###<a name="EZAudioPlotGL"></a>EZAudioPlotGL
-Provides an audio waveform plot that uses OpenGL to perform the drawing. The API this class are exactly the same as those for the EZAudioPlot above. On iOS this is a subclass of the GLKView while on OSX this is a subclass of the NSOpenGLView. In most cases this is the plot you want to use, it's GPU-accelerated, can handle lots of points  while displaying 60 frames per second (the EZAudioPlot starts to choke on anything greater than 1024), and performs amazingly on all devices. The only downside is that you can only have one OpenGL plot onscreen at a time. However, you can combine OpenGL plots with Core Graphics plots in the view hierachy (see the EZAudioRecordExample for an example of how to do this).
+Provides an audio waveform plot that uses OpenGL to perform the drawing. The API this class are exactly the same as those for the EZAudioPlot above. On iOS this is a subclass of the GLKView while on OSX this is a subclass of the NSOpenGLView. In most cases this is the plot you want to use, it's GPU-accelerated, can handle lots of points  while displaying 60 frames per second (the EZAudioPlot starts to choke on anything greater than 1024), and performs amazingly on all devices. The only downside is that you can only have one OpenGL plot onscreen at a time. However, you can combine OpenGL plots with Core Graphics plots in the view hierachy (see the RecordFile for an example of how to do this).
 
 *Relevant Example Projects*
-- EZAudioOpenGLWaveformExample (iOS)
-- EZAudioOpenGLWaveformExample (OSX)
-- EZAudioPlayFileExample (iOS)
-- EZAudioPlayFileExample (OSX)
-- EZAudioRecordExample (iOS)
-- EZAudioRecordExample (OSX)
-- EZAudioPassThroughExample (iOS)
-- EZAudioPassThroughExample (OSX)
+- OpenGLWaveform (iOS)
+- OpenGLWaveform (OSX)
+- PlayFile (iOS)
+- PlayFile (OSX)
+- RecordFile (iOS)
+- RecordFile (OSX)
+- PassThrough (iOS)
+- PassThrough (OSX)
 
 ####Creating An OpenGL Audio Plot
 
@@ -1050,13 +1060,13 @@ EZAudioPlotGL *audioPlotGL = [[EZAudioPlotGL alloc] initWithFrame:self.view.fram
 All plots offer the ability to change the background color, waveform color, plot type (buffer or rolling), toggle between filled and stroked, and toggle between mirrored and unmirrored (about the x-axis). For iOS colors are of the type UIColor while on OSX colors are of the type NSColor.
 ```objectivec
 // Background color (use UIColor for iOS)
-audioPlotGL.backgroundColor = [NSColor colorWithCalibratedRed:0.816 
-                                                        green:0.349 
-                                                         blue:0.255 
+audioPlotGL.backgroundColor = [NSColor colorWithCalibratedRed:0.816
+                                                        green:0.349
+                                                         blue:0.255
                                                         alpha:1];
 // Waveform color (use UIColor for iOS)
-audioPlotGL.color = [NSColor colorWithCalibratedRed:1.000 
-                                              green:1.000 
+audioPlotGL.color = [NSColor colorWithCalibratedRed:1.000
+                                              green:1.000
                                                blue:1.000
                                               alpha:1];
 // Plot type
@@ -1081,9 +1091,9 @@ All plots have only one update function, `updateBuffer:withBufferSize:`, which e
 - (void)   microphone:(EZMicrophone *)microphone
      hasAudioReceived:(float **)buffer
        withBufferSize:(UInt32)bufferSize
- withNumberOfChannels:(UInt32)numberOfChannels 
+ withNumberOfChannels:(UInt32)numberOfChannels
 {
-    /** 
+    /**
      Update the audio plot using the float array provided by the microphone:
        buffer[0] = left channel
        buffer[1] = right channel

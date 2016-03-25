@@ -15,8 +15,6 @@
 		221949591C80E956004D0155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221949571C80E956004D0155 /* Main.storyboard */; };
 		2219495B1C80E956004D0155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2219495A1C80E956004D0155 /* Assets.xcassets */; };
 		2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219495C1C80E956004D0155 /* LaunchScreen.storyboard */; };
-		221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949661C80ECC1004D0155 /* AudioPlayer.m */; };
-		2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 221949691C80ED29004D0155 /* SBPlayableNote.m */; };
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
@@ -31,7 +29,6 @@
 		22EA19301C9E4EF00006B576 /* ChartsOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA192F1C9E4EF00006B576 /* ChartsOverviewViewController.m */; };
 		22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */; };
 		22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */; };
-		22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */; };
 		22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDA1C813B650040541F /* UIView+Helpers.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
 		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
@@ -53,10 +50,6 @@
 		2219495A1C80E956004D0155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2219495D1C80E956004D0155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2219495F1C80E956004D0155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		221949651C80ECC1004D0155 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPlayer.h; path = ../../Pitch/Pitch/AudioPlayer.h; sourceTree = "<group>"; };
-		221949661C80ECC1004D0155 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = ../../Pitch/Pitch/AudioPlayer.m; sourceTree = "<group>"; };
-		221949681C80ED29004D0155 /* SBPlayableNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBPlayableNote.h; path = ../../Pitch/Pitch/SBPlayableNote.h; sourceTree = "<group>"; };
-		221949691C80ED29004D0155 /* SBPlayableNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBPlayableNote.m; path = ../../Pitch/Pitch/SBPlayableNote.m; sourceTree = "<group>"; };
 		221E41B01C863DD8008A6255 /* MBRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRoundProgressView.h; sourceTree = "<group>"; };
 		221E41B11C863DD8008A6255 /* MBRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRoundProgressView.m; sourceTree = "<group>"; };
 		221F245A1C82424500DA4950 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -85,8 +78,6 @@
 		22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondsPickerView.m; sourceTree = "<group>"; };
 		22F0C5CD1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNumberPickerTableViewController.h; sourceTree = "<group>"; };
 		22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNumberPickerTableViewController.m; sourceTree = "<group>"; };
-		22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNoteGenerator.h; path = ../../Pitch/Pitch/RandomNoteGenerator.h; sourceTree = "<group>"; };
-		22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNoteGenerator.m; path = ../../Pitch/Pitch/RandomNoteGenerator.m; sourceTree = "<group>"; };
 		22F68ED91C813B650040541F /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Helpers.h"; path = "../../Cast 2/Cast 2/UIView+Helpers.h"; sourceTree = "<group>"; };
 		22F68EDA1C813B650040541F /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Helpers.m"; path = "../../Cast 2/Cast 2/UIView+Helpers.m"; sourceTree = "<group>"; };
 		22F68EDC1C813D7B0040541F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -238,12 +229,6 @@
 		22F68ED81C8136BF0040541F /* Imported */ = {
 			isa = PBXGroup;
 			children = (
-				221949651C80ECC1004D0155 /* AudioPlayer.h */,
-				221949661C80ECC1004D0155 /* AudioPlayer.m */,
-				221949681C80ED29004D0155 /* SBPlayableNote.h */,
-				221949691C80ED29004D0155 /* SBPlayableNote.m */,
-				22F68ED51C8136BC0040541F /* RandomNoteGenerator.h */,
-				22F68ED61C8136BC0040541F /* RandomNoteGenerator.m */,
 				22F68ED91C813B650040541F /* UIView+Helpers.h */,
 				22F68EDA1C813B650040541F /* UIView+Helpers.m */,
 				221E41B01C863DD8008A6255 /* MBRoundProgressView.h */,
@@ -391,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22F68ED71C8136BC0040541F /* RandomNoteGenerator.m in Sources */,
 				221949561C80E956004D0155 /* ViewController.m in Sources */,
 				2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */,
 				22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */,
@@ -411,9 +395,7 @@
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
 				220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */,
 				229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */,
-				221949671C80ECC1004D0155 /* AudioPlayer.m in Sources */,
 				22EA19301C9E4EF00006B576 /* ChartsOverviewViewController.m in Sources */,
-				2219496A1C80ED29004D0155 /* SBPlayableNote.m in Sources */,
 				22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */,
 				221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */,
 			);

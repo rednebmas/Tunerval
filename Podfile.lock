@@ -1,45 +1,45 @@
 PODS:
   - BEMSimpleLineGraph (4.1.1)
-  - EZAudio (1.1.2):
-    - EZAudio/Full (= 1.1.2)
-  - EZAudio/Core (1.1.2)
-  - EZAudio/Full (1.1.2):
+  - EZAudio (1.1.5):
+    - EZAudio/Full (= 1.1.5)
+  - EZAudio/Core (1.1.5)
+  - EZAudio/Full (1.1.5):
     - EZAudio/Core
-    - TPCircularBuffer (~> 1.1)
+    - TPCircularBuffer (= 1.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - PitchEstimator (0.0.1):
-    - EZAudio (~> 1.1.2)
-  - TPCircularBuffer (1.3)
+  - SBMusicUtilities (0.0.1):
+    - EZAudio
+  - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
   - BEMSimpleLineGraph (from `https://github.com/rednebmas/BEMSimpleLineGraph.git`)
   - EZAudio (from `https://github.com/rednebmas/EZAudio.git`)
   - FMDB
-  - PitchEstimator (from `~/code/iOS/PitchEstimator`)
+  - SBMusicUtilities (from `~/code/iOS/SBMusicUtilities`)
 
 EXTERNAL SOURCES:
   BEMSimpleLineGraph:
     :git: https://github.com/rednebmas/BEMSimpleLineGraph.git
   EZAudio:
     :git: https://github.com/rednebmas/EZAudio.git
-  PitchEstimator:
-    :path: "~/code/iOS/PitchEstimator"
+  SBMusicUtilities:
+    :path: "~/code/iOS/SBMusicUtilities"
 
 CHECKOUT OPTIONS:
   BEMSimpleLineGraph:
     :commit: 21056f465af20853c68179b6730c19e7900300f9
     :git: https://github.com/rednebmas/BEMSimpleLineGraph.git
   EZAudio:
-    :commit: 4011e0614fcac1eba3d2dce1f4c730f6152afe30
+    :commit: 217eb92c38bca97d4726bab733f153ed9f8da7f5
     :git: https://github.com/rednebmas/EZAudio.git
 
 SPEC CHECKSUMS:
   BEMSimpleLineGraph: 90d30ff3111380f93a0ea25db0eaaf41a5fc8579
-  EZAudio: 9d03bc21577de307de51b9a6f40d7129353d218f
+  EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  PitchEstimator: 288145081c8401e33fa45498445297c50322de23
-  TPCircularBuffer: d2f604324ce1d293175046db3f67420be1091994
+  SBMusicUtilities: a409977dd4f260175fb27eb691caf2f0a5ae0cfd
+  TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
 COCOAPODS: 0.39.0

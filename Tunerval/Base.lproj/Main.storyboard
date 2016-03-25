@@ -35,25 +35,25 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer spread" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbg-15-1vb">
-                                <rect key="frame" x="20" y="167" width="220" height="40.5"/>
+                                <rect key="frame" x="20" y="172.5" width="220" height="40.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+100 this week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15A-uY-fW2">
-                                <rect key="frame" x="20" y="207" width="148.5" height="27.5"/>
+                                <rect key="frame" x="20" y="212.5" width="148.5" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All interval average ±25c" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2Y-DY-7Du">
-                                <rect key="frame" x="20" y="284" width="233" height="27.5"/>
+                                <rect key="frame" x="20" y="295" width="233" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-te-v3l">
-                                <rect key="frame" x="20" y="244" width="102.5" height="40.5"/>
+                                <rect key="frame" x="20" y="255" width="102.5" height="40.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akP-3Y-ikd">
-                                <rect key="frame" x="136" y="249" width="28" height="30"/>
+                                <rect key="frame" x="136" y="260" width="28" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Abe-A9-FBr"/>
                                     <constraint firstAttribute="width" constant="28" id="hWr-82-XmO"/>
@@ -113,9 +113,9 @@
                             <constraint firstAttribute="leadingMargin" secondItem="Ak7-UO-PI9" secondAttribute="leading" id="CjN-KM-ZPp"/>
                             <constraint firstItem="akP-3Y-ikd" firstAttribute="leading" secondItem="DCx-te-v3l" secondAttribute="trailing" constant="13.5" id="J4e-J0-Wie"/>
                             <constraint firstItem="15A-uY-fW2" firstAttribute="leading" secondItem="9w2-yQ-2P0" secondAttribute="leading" id="LhG-ea-qDH"/>
-                            <constraint firstItem="DCx-te-v3l" firstAttribute="top" secondItem="15A-uY-fW2" secondAttribute="bottom" constant="9" id="LlY-8V-pvs"/>
+                            <constraint firstItem="DCx-te-v3l" firstAttribute="top" secondItem="15A-uY-fW2" secondAttribute="bottom" constant="15" id="LlY-8V-pvs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1d-5S-DF7" secondAttribute="trailing" constant="8" id="MIC-XL-XIi"/>
-                            <constraint firstItem="Bbg-15-1vb" firstAttribute="top" secondItem="rFD-52-ZPf" secondAttribute="bottom" constant="9" id="Nuz-XK-Xs1"/>
+                            <constraint firstItem="Bbg-15-1vb" firstAttribute="top" secondItem="rFD-52-ZPf" secondAttribute="bottom" constant="15" id="Nuz-XK-Xs1"/>
                             <constraint firstItem="akP-3Y-ikd" firstAttribute="centerY" secondItem="DCx-te-v3l" secondAttribute="centerY" id="Oeo-VO-Vfa"/>
                             <constraint firstItem="Ak7-UO-PI9" firstAttribute="top" secondItem="Nat-Yq-K7s" secondAttribute="bottom" constant="8" id="QKi-pq-AF6"/>
                             <constraint firstItem="WcI-lU-nJ1" firstAttribute="top" secondItem="qJ5-4S-5yt" secondAttribute="bottom" constant="20" id="RTL-rK-xps"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="0.0" y="72" width="590" height="408"/>
+                                <rect key="frame" x="2" y="72" width="588" height="408"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
@@ -220,7 +220,7 @@
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
                             <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="10" id="HLa-B7-SCA"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" id="SLS-sY-J8m"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="2" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="10" id="Y2W-K3-O0O"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>

@@ -6,8 +6,9 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import <PitchEstimator/SBNote.h>
+#import <SBMusicUtilities/SBNote.h>
 #import "ChartPickIntervalTableViewController.h"
+#import "Constants.h"
 
 @interface ChartPickIntervalTableViewController ()
 
@@ -50,7 +51,7 @@
     NSInteger rows;
     if (section == 0)
     {
-        rows = 1;
+        rows = 2;
     }
     else
     {
@@ -95,7 +96,14 @@
     }
     else
     {
-        [cell.textLabel setText:@"Unison"];
+        if (indexPath.row == 0)
+        {
+            [cell.textLabel setText:@"All intervals average"];
+        }
+        else
+        {
+            [cell.textLabel setText:@"Unison"];
+        }
     }
     
     if (self.selectedInterval == [interval integerValue])
@@ -136,7 +144,14 @@
     NSNumber *interval;
     if (indexPath.section == 0)
     {
-        interval = [NSNumber numberWithInteger:IntervalTypeUnison];
+        if (indexPath.row == 0)
+        {
+            interval = [NSNumber numberWithInteger:ALL_INTERVALS_VALUE];
+        }
+        else
+        {
+            interval = [NSNumber numberWithInteger:IntervalTypeUnison];
+        }
     }
     else if (indexPath.section == 1)
     {
@@ -154,9 +169,14 @@
 {
     NSIndexPath *indexPath;
     
-    if (interval == 0)
+    IntervalType all = ALL_INTERVALS_VALUE;
+    if (interval == all)
     {
         indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    }
+    else if (interval == 0)
+    {
+        indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     }
     else if (interval > 0)
     {

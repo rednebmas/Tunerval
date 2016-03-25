@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <PitchEstimator/SBNote.h>
+#import <SBMusicUtilities/SBNote.h>
 #import "MigrationManager.h"
 
 @interface AppDelegate ()

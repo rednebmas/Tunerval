@@ -8,6 +8,7 @@
 
 #import "ChartViewController.h"
 #import "ScoresData.h"
+#import "Constants.h"
 #import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
 
 @interface ChartViewController () <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
@@ -43,18 +44,26 @@
     
     // interval
     IntervalType interval = [defaults integerForKey:@"graph-selected-interval"];
-    [self.pickIntervalButton setTitle:[SBNote intervalTypeToIntervalName:interval]
-                             forState:UIControlStateNormal];
     
     // data duration
     NSInteger dataRange = [defaults integerForKey:@"graph-data-range"];
     NSDate *dateForRange = [self dateForDataRange:dataRange];
     
     // get data
-    self.data = [ScoresData difficultyDataForInterval:interval
-                                   afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
-    
-//    self.data = [ScoresData runningAverageDifficultyAfterUnixTimeStamp:[dateForRange timeIntervalSince1970]];
+    IntervalType all = ALL_INTERVALS_VALUE;
+    if (interval == all)
+    {
+        [self.pickIntervalButton setTitle:@"All intervals average"
+                                 forState:UIControlStateNormal];
+        self.data = [ScoresData runningAverageDifficultyAfterUnixTimeStamp:[dateForRange timeIntervalSince1970]];
+    }
+    else
+    {
+        [self.pickIntervalButton setTitle:[SBNote intervalTypeToIntervalName:interval]
+                                 forState:UIControlStateNormal];
+        self.data = [ScoresData difficultyDataForInterval:interval
+                                       afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
+    }
 }
 
 /**
@@ -69,7 +78,7 @@
     NSDate *date = [NSDate date];
     switch (range) {
         case 0:
-            date = [date dateByAddingTimeInterval:-60*60*24];
+            date = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
             break;
             
         case 1:

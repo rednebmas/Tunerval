@@ -1,0 +1,30 @@
+{
+  "name": "SBMusicUtilities",
+  "version": "0.0.1",
+  "summary": "Basic classes for music apps.",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "Sam Bender",
+  "homepage": "https://github.com/rednebmas/SBMusicUtilities",
+  "social_media_url": "https://www.facebook.com/sambndr",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/rednebmas/SBMusicUtilities.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "SBMusicUtilities",
+    "SBMusicUtilities/*.{h,m}"
+  ],
+  "exclude_files": "Classes/Exclude",
+  "requires_arc": true,
+  "dependencies": {
+    "EZAudio": [
+
+    ]
+  }
+}

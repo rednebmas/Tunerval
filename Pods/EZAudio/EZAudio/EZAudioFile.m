@@ -425,11 +425,9 @@ typedef struct
         }
         
         // seek to 0
-        /*
         [EZAudioUtilities checkResult:ExtAudioFileSeek(self.info->extAudioFileRef,
                                                        0)
                             operation:"Failed to seek frame position within audio file"];
-        */
         
         // calculate the required number of frames per buffer
         SInt64 framesPerBuffer = ((SInt64) self.totalClientFrames / numberOfPoints);
@@ -477,11 +475,9 @@ typedef struct
         [EZAudioUtilities freeBufferList:audioBufferList];
         
         // seek back to previous position
-        /*
         [EZAudioUtilities checkResult:ExtAudioFileSeek(self.info->extAudioFileRef,
                                                        currentFrame)
                             operation:"Failed to seek frame position within audio file"];
-         */
         
         pthread_mutex_unlock(&_lock);
         
@@ -525,6 +521,79 @@ typedef struct
             completion(waveformData.buffers, waveformData.bufferSize);
         });
     });
+}
+
+//------------------------------------------------------------------------------
+
+- (EZAudioFloatData *) getFramesFromCurrentFrameIndexWithNumberOfFrames:(UInt32)numberOfFrames
+{
+    EZAudioFloatData *waveformData;
+    if (pthread_mutex_trylock(&_lock) == 0)
+    {
+        // store current frame
+        SInt64 currentFrame = self.frameIndex;
+        BOOL interleaved = [EZAudioUtilities isInterleaved:self.clientFormat];
+        UInt32 channels = self.clientFormat.mChannelsPerFrame;
+        if (channels == 0)
+        {
+            // prevent division by zero
+            pthread_mutex_unlock(&_lock);
+            return nil;
+        }
+        float **data = (float **)malloc( sizeof(float*) * channels );
+        for (int i = 0; i < channels; i++)
+        {
+            data[i] = (float *)malloc( sizeof(float) * numberOfFrames );
+        }
+        
+        // allocate an audio buffer list
+        AudioBufferList *audioBufferList = [EZAudioUtilities audioBufferListWithNumberOfFrames:numberOfFrames
+                                                                              numberOfChannels:self.info->clientFormat.mChannelsPerFrame
+                                                                                   interleaved:interleaved];
+        
+        UInt32 numberOfFramesToRead = numberOfFrames;
+        [EZAudioUtilities checkResult:ExtAudioFileRead(self.info->extAudioFileRef,
+                                                       &numberOfFramesToRead,
+                                                       audioBufferList)
+                            operation:"Failed to read audio data from file waveform"];
+        
+        if (numberOfFramesToRead != numberOfFrames)
+        {
+            NSLog(@"Number of of frames read was not the specified number of frames");
+        }
+        
+        for (int channel = 0; channel < channels; channel++)
+        {
+            float *bufferData = audioBufferList->mBuffers[channel].mData;
+            for (int i = 0; i < numberOfFramesToRead; i++)
+            {
+                data[channel][i] = bufferData[i];
+                // printf("%f\n", data[channel][i]);
+            }
+        }
+        
+        // clean up
+        [EZAudioUtilities freeBufferList:audioBufferList];
+        
+        // seek back to previous position
+        [EZAudioUtilities checkResult:ExtAudioFileSeek(self.info->extAudioFileRef,
+                                                       currentFrame)
+                            operation:"Failed to seek frame position within audio file"];
+        
+        pthread_mutex_unlock(&_lock);
+        
+        waveformData = [EZAudioFloatData dataWithNumberOfChannels:channels
+                                                          buffers:(float **)data
+                                                       bufferSize:numberOfFramesToRead];
+        
+        // cleanup
+        for (int i = 0; i < channels; i++)
+        {
+            free(data[i]);
+        }
+        free(data);
+    }
+    return waveformData;
 }
 
 //------------------------------------------------------------------------------

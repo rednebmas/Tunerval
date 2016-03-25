@@ -13,7 +13,6 @@
 #import "EZAudioPlot.h"
 #import "EZAudioPlotGL.h"
 #import "EZAudioUtilities.h"
-#import "EZAudioWindowFunctions.h"
 #import "EZMicrophone.h"
 #import "EZOutput.h"
 #import "EZPlot.h"
