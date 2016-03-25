@@ -6,10 +6,11 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
+#import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
 #import "ChartViewController.h"
 #import "ScoresData.h"
 #import "Constants.h"
-#import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
+#import "Colors.h"
 
 @interface ChartViewController () <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
 
@@ -28,6 +29,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger dataRange = [defaults integerForKey:@"graph-data-range"];
     [self.dataRangeSegmentedControl setSelectedSegmentIndex:dataRange];
+    
+    UIColor *bgColor = [[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]] firstObject];
+    self.view.backgroundColor = bgColor;
+    self.lineGraph.backgroundColor = bgColor;
+    [self.exitButton setTitleColor:bgColor forState:UIControlStateNormal];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -204,7 +210,8 @@
 
 - (IBAction) dismiss:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    // [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)dataRangeValueChanged:(UISegmentedControl *)sender

@@ -155,27 +155,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="2" y="72" width="588" height="408"/>
+                                <rect key="frame" x="6" y="58" width="579" height="447"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
-                                <rect key="frame" x="20" y="32" width="88" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="ALS-Xv-Dly"/>
-                                </constraints>
-                                <state key="normal" title="&lt; Back">
-                                    <color key="titleColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="dismiss:" destination="pq3-gx-T4e" eventType="touchUpInside" id="Fp4-qe-P3S"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="9QZ-k0-0Gb">
                                 <rect key="frame" x="20" y="552" width="560" height="29"/>
                                 <segments>
@@ -190,7 +172,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNq-qb-4iq">
-                                <rect key="frame" x="105" y="505.5" width="475" height="29"/>
+                                <rect key="frame" x="105" y="505" width="475" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.082435344827586202" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Descending Perfect Fifth">
@@ -211,18 +193,47 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
+                                <rect key="frame" x="555" y="28" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="ALS-Xv-Dly"/>
+                                    <constraint firstAttribute="width" constant="30" id="WAV-6F-5s1"/>
+                                    <constraint firstAttribute="height" constant="30" id="j2x-zf-4zE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ALS-Xv-Dly"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="dismiss:" destination="z6j-CT-g8O" eventType="touchUpInside" id="Com-rE-62D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="imk-kA-b97" secondAttribute="leading" id="3PW-Zb-XeL"/>
+                            <constraint firstItem="imk-kA-b97" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailing" constant="-15" id="4Vq-nw-M1E"/>
                             <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="12" id="7Ne-MQ-fdv"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" constant="120" id="EIB-Az-irh"/>
+                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="8" id="EME-Oi-LsU"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
-                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="10" id="HLa-B7-SCA"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="2" id="SLS-sY-J8m"/>
+                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="15" id="HLa-B7-SCA"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="6" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="10" id="Y2W-K3-O0O"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" id="Y2W-K3-O0O"/>
+                            <constraint firstItem="xNq-qb-4iq" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" id="efh-5M-kyX"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>
                             <constraint firstItem="xNq-qb-4iq" firstAttribute="leading" secondItem="vd8-2y-G0O" secondAttribute="trailing" constant="23.5" id="gwE-RT-eHp"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailingMargin" id="iO6-92-EsG"/>
@@ -233,11 +244,15 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="tfh-J5-SR8"/>
+                                <exclude reference="3PW-Zb-XeL"/>
+                                <exclude reference="7Ne-MQ-fdv"/>
+                                <exclude reference="EIB-Az-irh"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="dataRangeSegmentedControl" destination="9QZ-k0-0Gb" id="aaE-tt-Fvr"/>
+                        <outlet property="exitButton" destination="imk-kA-b97" id="f92-DE-xeh"/>
                         <outlet property="lineGraph" destination="BqC-Rs-FHf" id="Cqo-jv-hUG"/>
                         <outlet property="pickIntervalButton" destination="xNq-qb-4iq" id="RSN-4i-xLB"/>
                     </connections>
@@ -454,7 +469,7 @@
                                 <rect key="frame" x="455" y="31.5" width="36" height="36"/>
                                 <state key="normal" image="graph-icon"/>
                                 <connections>
-                                    <segue destination="FEf-2g-ZUo" kind="presentation" id="80p-JA-mCI"/>
+                                    <segue destination="z6j-CT-g8O" kind="presentation" id="3QR-JR-J7r"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1130,6 +1145,7 @@
         <image name="question-circle" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3QR-JR-J7r"/>
         <segue reference="K4z-32-ZLf"/>
     </inferredMetricsTieBreakers>
 </document>

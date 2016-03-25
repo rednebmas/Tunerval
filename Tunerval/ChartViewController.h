@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *lineGraph;
 @property (weak, nonatomic) IBOutlet UIButton *pickIntervalButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *dataRangeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 @end
