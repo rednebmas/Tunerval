@@ -32,7 +32,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 @property (nonatomic) BOOL speakInterval;
 //@property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
-@property (nonatomic) NSInteger renameAnswerDifferential; // positive values means you got x more correct than incorrect
+@property (nonatomic) NSInteger answerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
 @property (nonatomic) float differenceInCents;
 @property (nonatomic, retain) NSString *highScoreKey;
@@ -190,7 +190,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         if (!previousAnswerWasCorrect)
         {
             [Animation rotateOverXAxis:self.centsDifference forwards:NO];
-            double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
+            double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
             __weak ViewController *weakSelf = self;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", weakSelf.differenceInCents]];
@@ -250,7 +250,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     
     self.answerDifferentialKey = [NSString
                                   stringWithFormat:@"answer-differential-%ld", (long)hash];
-    self.renameAnswerDifferential = [defaults integerForKey:self.answerDifferentialKey];
+    self.answerDifferential = [defaults integerForKey:self.answerDifferentialKey];
     [self calculateDifferenceInCents];
     
     // change label text
@@ -428,12 +428,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         [self speak:@"Incorrect"];
     }
     
-    // if the user chooses sharp when flat or flat when sharp this will subtract two
-    // NSInteger newAnswerDifferential = self.renameAnswerDifferential - abs(value - answer);
-    
     // if answer was on par and you chose something else, increase by two
-    NSInteger newAnswerDifferential = self.renameAnswerDifferential - (answer == 1 ? 2 : 1);
-    [defaults setInteger:newAnswerDifferential forKey:self.answerDifferentialKey];
+    self.answerDifferential--;
+    if (self.answerDifferential < 0) self.answerDifferential = 0;
+    [defaults setInteger:self.answerDifferential forKey:self.answerDifferentialKey];
     self.correctStreak = 0;
     
     [self.label setAttributedText:[self correctAnswerBolded:correctAnswer]];
@@ -459,9 +457,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     // [Animation rotateOverXAxis:self.centsDifference forwards:YES];
     self.correctStreak++;
-    [defaults setInteger:++self.renameAnswerDifferential forKey:self.answerDifferentialKey];
+    [defaults setInteger:++self.answerDifferential forKey:self.answerDifferentialKey];
     
-    float newHS = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
+    float newHS = [self differenceInCentsForAnswerDifferential:self.answerDifferential];
     if ([defaults floatForKey:self.highScoreKey] > newHS)
     {
         // save value
@@ -476,7 +474,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     [Animation rotateOverXAxis:self.centsDifference forwards:YES];
-    double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
+    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
     __weak ViewController *weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", newHS]];
@@ -509,7 +507,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) calculateDifferenceInCents
 {
-    self.differenceInCents = [self differenceInCentsForAnswerDifferential:self.renameAnswerDifferential];
+    self.differenceInCents = [self differenceInCentsForAnswerDifferential:self.answerDifferential];
 }
         
 - (float) differenceInCentsForAnswerDifferential:(NSInteger)answerDifferential
@@ -680,7 +678,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)replayButtonPressed:(id)sender
 {
-    [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+    SBAudioPlayer *audioPlayer = [SBAudioPlayer sharedInstance];
+    if (audioPlayer.notes.count == 0)
+    {
+        [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
+    }
 }
 
 
