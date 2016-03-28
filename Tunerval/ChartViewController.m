@@ -41,7 +41,10 @@
     [super viewWillAppear:animated];
     
     [self loadData];
-    [self.lineGraph reloadGraph];
+    if (self.data != nil && self.data.count > 0)
+    {
+        [self.lineGraph reloadGraph];
+    }
 }
 
 - (void) loadData
@@ -204,6 +207,11 @@
 - (NSString*) popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph
 {
     return @"c";
+}
+
+- (NSString*) noDataLabelTextForLineGraph:(BEMSimpleLineGraphView *)graph
+{
+    return @"No data yet. Answer some questions!";
 }
 
 #pragma mark - Actions

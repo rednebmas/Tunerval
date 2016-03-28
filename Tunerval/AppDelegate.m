@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <SBMusicUtilities/SBNote.h>
 #import "MigrationManager.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -28,32 +29,59 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // if there is no set of selected intervals, set it.
-    NSMutableArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
+    NSMutableArray *intervals = [defaults objectForKey:@"selected_intervals"];
     
     if (intervals == nil)
     {
         intervals = [[NSMutableArray alloc] init];
-        [intervals addObject:[NSNumber numberWithInteger:IntervalTypeMinorSecondAscending]];
-        [[NSUserDefaults standardUserDefaults] setObject:intervals forKey:@"selected_intervals"];
+        [intervals addObject:[NSNumber numberWithInteger:IntervalTypeUnison]];
+        [intervals addObject:[NSNumber numberWithInteger:IntervalTypeMajorSecondAscending]];
+        [defaults setObject:intervals forKey:@"selected_intervals"];
     }
     
     // this needs to be done seperately for compatibility
-    NSString *fromNote = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
+    NSString *fromNote = [defaults objectForKey:@"from-note"];
     if (fromNote == nil)
     {
-        [[NSUserDefaults standardUserDefaults] setObject:@"A3" forKey:@"from-note"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"E5" forKey:@"to-note"];
+        [defaults setObject:@"A4" forKey:@"from-note"];
+        [defaults setObject:@"A6" forKey:@"to-note"];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@125 forKey:@"daily-goal"];
+        [defaults setObject:@100 forKey:@"daily-goal"];
     }
     
     double noteDuration = [defaults doubleForKey:@"note-duration"];
     if (noteDuration == 0.0)
     {
         [defaults setDouble:0.65 forKey:@"note-duration"];
-        [defaults setDouble:0.2 forKey:@"note-duration-variation"];
+        [defaults setDouble:0.3 forKey:@"note-duration-variation"];
+        [defaults setObject:@(YES) forKey:@"speak-interval-on"];
     }
     
+    NSString *lastVersion = [defaults stringForKey:@"version-last"];
+    if (lastVersion == nil)
+    {
+        [defaults setObject:@"1.2" forKey:@"version-last"];
+        [defaults setInteger:ALL_INTERVALS_VALUE forKey:@"graph-selected-interval"];
+        [defaults setInteger:3 forKey:@"graph-data-range"];
+        
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"New stuff!"
+                                    message:@"From now on, Tunerval will track your progress. Tap the new graph icon in the upper right to see how you're doing."
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction
+                             actionWithTitle:@"Ok"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self.window makeKeyAndVisible]; // hacky?
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    }
     
     // database stuff
     [MigrationManager checkForAndPerformPendingMigrations];

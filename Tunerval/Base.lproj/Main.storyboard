@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="6" y="58" width="579" height="451.5"/>
+                                <rect key="frame" x="6" y="55" width="579" height="454.5"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="9QZ-k0-0Gb">
@@ -194,7 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
-                                <rect key="frame" x="555" y="28" width="30" height="30"/>
+                                <rect key="frame" x="555" y="25" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="ALS-Xv-Dly"/>
@@ -226,7 +226,7 @@
                             <constraint firstItem="imk-kA-b97" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailing" constant="-15" id="4Vq-nw-M1E"/>
                             <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="12" id="7Ne-MQ-fdv"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" constant="120" id="EIB-Az-irh"/>
-                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="8" id="EME-Oi-LsU"/>
+                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="5" id="EME-Oi-LsU"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
                             <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="15" id="HLa-B7-SCA"/>
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq3-gx-T4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2624" y="-383"/>
+            <point key="canvasLocation" x="2626" y="-383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -909,7 +909,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hO1-1d-WzD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultCell" id="3RL-8j-sGb">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
