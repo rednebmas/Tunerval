@@ -43,11 +43,7 @@
         "reference_note_loudness,"
         "created_at,"                // unix epoch
         /// game settings ///
-        "note_range_from,"
-        "note_range_to,"
-        "note_range_span,"
-        "note_default_duration,"
-        "note_duration_variation"
+        "note_range_span"
     ")"
     "VALUES"
     "("
@@ -64,11 +60,7 @@
         "%f,"  // reference note loudness
         "%f," // created at
         /// game settings ///
-        "%d,"   // note range from
-        "%d,"   // note range to
-        "%d,"   // note range span
-        "%f,"  // note default duration
-        "%f"  // note duration variation
+        "%d"   // note range span
     ");"
     ,
         (int)self.interval,
@@ -83,14 +75,10 @@
         self.questionNote.loudness,
         self.referenceNote.loudness,
         [[NSDate date] timeIntervalSince1970],
-        noteRangeFrom,
-        noteRangeTo,
-        noteRangeTo - noteRangeFrom,
-        [defaults doubleForKey:@"note-duration"],
-        [defaults doubleForKey:@"note-duration-variation"]
+        noteRangeTo - noteRangeFrom
     ];
     
-    NSLog(@"%@", query);
+    // NSLog(@"%@", query);
     
     FMDatabase *db = [Constants dbConnection];
     if (![db executeUpdate:query])

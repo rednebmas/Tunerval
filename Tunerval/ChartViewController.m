@@ -33,6 +33,8 @@
     UIColor *bgColor = [[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]] firstObject];
     self.view.backgroundColor = bgColor;
     self.lineGraph.backgroundColor = bgColor;
+    [self.pickIntervalButton setBackgroundColor:[UIColor whiteColor]];
+    [self.pickIntervalButton setTitleColor:self.view.backgroundColor forState:UIControlStateNormal];
     [self.exitButton setTitleColor:bgColor forState:UIControlStateNormal];
 }
 

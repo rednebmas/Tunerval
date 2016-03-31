@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController <UITextFieldDelegate>
+@interface SettingsTableViewController : UITableViewController <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *intervalsSelectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteRangeSelectedLabel;

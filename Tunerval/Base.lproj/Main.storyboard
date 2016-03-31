@@ -783,6 +783,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="Zp9-68-qt2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DefaultCell" id="HLN-YF-MXR">
+                                        <rect key="frame" x="0.0" y="435" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HLN-YF-MXR" id="GVT-eN-Qc3">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Cb-GJu">
+                                                    <rect key="frame" x="15" y="11.5" width="75.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f7u-Cb-GJu" firstAttribute="leading" secondItem="GVT-eN-Qc3" secondAttribute="leading" constant="15" id="VKC-GH-77p"/>
+                                                <constraint firstItem="f7u-Cb-GJu" firstAttribute="centerY" secondItem="GVT-eN-Qc3" secondAttribute="centerY" id="d0z-1H-SCc"/>
+                                                <constraint firstItem="f7u-Cb-GJu" firstAttribute="centerY" secondItem="GVT-eN-Qc3" secondAttribute="centerY" id="dD4-Ky-Mff"/>
+                                                <constraint firstItem="f7u-Cb-GJu" firstAttribute="leading" secondItem="GVT-eN-Qc3" secondAttribute="leading" constant="15" id="fV2-gE-WeI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="1mr-Oa-Wk3" id="ezC-O1-Etd"/>

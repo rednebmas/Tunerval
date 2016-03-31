@@ -57,11 +57,7 @@
         "reference_note_loudness    DOUBLE,"
         "created_at     DOUBLE,"                // unix epoch
         /// game settings ///
-        "note_range_from            INTEGER,"
-        "note_range_to              INTEGER,"
-        "note_range_span            INTEGER,"
-        "note_default_duration      DOUBLE,"
-        "note_duration_variation    DOUBLE"
+        "note_range_span            INTEGER"
     ");";
     
     FMDatabase *db = [Constants dbConnection];

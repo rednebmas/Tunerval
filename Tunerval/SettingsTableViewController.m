@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
+@import MessageUI;
 #import <SBMusicUtilities/SBNote.h>
 #import "SettingsTableViewController.h"
 #import "ViewController.h"
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.delegate = self;
     defaults = [NSUserDefaults standardUserDefaults];
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
     [self.navigationItem setTitle:@"Settings"];
@@ -195,7 +197,31 @@
     [[NSUserDefaults standardUserDefaults] setObject:numberVal forKey:@"daily-goal"];
 }
 
-#pragma mark - Text field delegate
+#pragma mark - Table view
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 2 && indexPath.row == 0)
+    {
+        if ([MFMailComposeViewController canSendMail])
+        {
+            NSString *messageBody = [NSString stringWithFormat:@"\n\n--\nI've answered %d questions.",
+                                     (int)[defaults integerForKey:@"questions-answered-total"]];
+            
+            MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+            mail.mailComposeDelegate = self;
+            [mail setSubject:@"Tunerval Feedback"];
+            [mail setMessageBody:messageBody isHTML:NO];
+            [mail setToRecipients:@[@"rednebmas+tunerval@gmail.com"]];
+            
+            [self presentViewController:mail animated:YES completion:nil];
+        }
+        else
+        {
+            NSLog(@"This device cannot send email");
+        }
+    }
+}
 
 #pragma mark - Navigation
 
@@ -229,6 +255,14 @@
     }
 }
 
+#pragma mark - Mail delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    // Dismiss the mail compose view controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end
