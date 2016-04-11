@@ -1,15 +1,18 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F1E8328DE749C093A8B99B873CD798AC37B5C4A5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "A5FBCCBCA39A23B741657E7FAFA5C269B9AB8831" : 0,
-    "15E525C4FC3E115B8B0FAA3A26A79BED3A1264E3" : 0
+    "15E525C4FC3E115B8B0FAA3A26A79BED3A1264E3" : 0,
+    "F1E8328DE749C093A8B99B873CD798AC37B5C4A5" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "19276C37-093E-45EE-8561-B92122C8047F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "A5FBCCBCA39A23B741657E7FAFA5C269B9AB8831" : "PitchEstimator\/",
-    "15E525C4FC3E115B8B0FAA3A26A79BED3A1264E3" : "SBMusicUtilities\/"
+    "15E525C4FC3E115B8B0FAA3A26A79BED3A1264E3" : "SBMusicUtilities\/",
+    "F1E8328DE749C093A8B99B873CD798AC37B5C4A5" : "Tunerval\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Tunerval",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -24,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rednebmas\/PitchEstimator.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A5FBCCBCA39A23B741657E7FAFA5C269B9AB8831"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rednebmas\/Tunerval.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1E8328DE749C093A8B99B873CD798AC37B5C4A5"
     }
   ]
 }

@@ -171,6 +171,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) askQuestion:(double)delayTimeInSeconds
 {
+    loopAnimateTarget = NO;
     IntervalType oldInterval = self.currentQuestion.interval;
     self.currentQuestion = [self generateQuestion];
     [self setDirectionLabelTextForInterval:self.currentQuestion.interval];

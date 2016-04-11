@@ -44,7 +44,7 @@
     if (fromNote == nil)
     {
         [defaults setObject:@"A4" forKey:@"from-note"];
-        [defaults setObject:@"A6" forKey:@"to-note"];
+        [defaults setObject:@"A5" forKey:@"to-note"];
         
         [defaults setObject:@100 forKey:@"daily-goal"];
     }
