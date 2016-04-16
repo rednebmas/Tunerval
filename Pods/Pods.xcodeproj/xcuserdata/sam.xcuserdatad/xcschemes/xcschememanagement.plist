@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BEMSimpleLineGraph.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>EZAudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +15,16 @@
 			<false/>
 		</dict>
 		<key>Pods-Tunerval.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SBGraph-SBGraph.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SBGraph.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<key>11B5ACCD3D01AF812C30AF74CB5B4B77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D6F1BFCC9319D2BF1D2D56CD351B2D4</key>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78DD729E6F6BE3C1326232CD5DFFFBB7</key>
+		<key>8D526B9081DFA0B0BE789CF6D1D55E89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95D4E8EBEE3D1561E00FE61CE328C2FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBACF1DE8B5C88E19D0372E7695AE4D4</key>
+		<key>F42A42C2E752111D88B943461E01664C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

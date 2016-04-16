@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '987050B1CE23C94C90F4C7B7'
-               BlueprintName = 'TPCircularBuffer'
+               BlueprintIdentifier = '7B4D37E43C2A2ECF50F60A72'
+               BlueprintName = 'SBGraph-SBGraph'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TPCircularBuffer.framework'>
+               BuildableName = 'SBGraph.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BF61B4533B626610A16DD205'
-               BlueprintName = 'BEMSimpleLineGraph'
+               BlueprintIdentifier = '105F8C4E8C33287D1D34847C'
+               BlueprintName = 'SBGraph'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'BEMSimpleLineGraph.framework'>
+               BuildableName = 'SBGraph.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

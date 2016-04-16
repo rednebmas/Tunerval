@@ -1,0 +1,30 @@
+Box size: (100, 100)
+
+screen: (25, -10)
+graph:  (25, 110)
+—
+screen: (25, 0)
+graph:  (25, 100)
+—
+screen: (25, 25)
+graph:  (25, 75)
+—
+screen: (25, 35)
+graph:  (25, 65)
+—
+screen: (25, 100)
+graph:  (25, 0)
+
+screen_y(graph_y) = screen_y_height - graph_y;
+- tests -
+screen_y(graph_y = 0)   = 100 - 0  = 100;
+screen_y(graph_y = 65)  = 100 - 65 = 35;
+screen_y(graph_y = 100) = 100 - 0  = 35;
+
+graph_y(screen_y) = -(screen_y - screen_y_height);
+- tests -
+graph_y(screen_y = 100) = -(100 - 100) = 0;
+graph_y(screen_y = 35)  = -(35 - 100)  = 65;
+graph_y(screen_y = 25)  = -(25 - 100)  = 75;
+graph_y(screen_y = 0)   = -(0 - 100)   = 100;
+graph_y(screen_y = 0)   = -(-10 - 100) = 110;

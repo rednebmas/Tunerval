@@ -210,6 +210,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 }
 
 - (void) _askQuestion {
+    [self.sharpButton.layer removeAllAnimations];
+    [self.flatButton.layer removeAllAnimations];
+    [self.spotOnButton.layer removeAllAnimations];
+    
     [self.label setText:@""];
     if (self.hearAgainIntervalLabel.hidden == NO) {
         [self hideHearAnswersLabel:NO];
@@ -557,7 +561,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     if (self.intervals.count == 1) return [self.intervals[0] integerValue];
     
-    float learningSpeed = 6.0;
+    float learningSpeed = 5.0;
     float scoreSum = 0.0;
     NSMutableArray *scores = [[NSMutableArray alloc] init];
     for (NSNumber *interval in self.intervals)

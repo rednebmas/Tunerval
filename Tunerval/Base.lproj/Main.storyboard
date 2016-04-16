@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -154,8 +154,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="6" y="55" width="579" height="454.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="SBGraphView">
+                                <rect key="frame" x="0.0" y="55" width="600" height="448.5"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="9QZ-k0-0Gb">
@@ -229,11 +229,11 @@
                             <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="5" id="EME-Oi-LsU"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
-                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" constant="15" id="HLa-B7-SCA"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" constant="6" id="SLS-sY-J8m"/>
+                            <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" id="HLa-B7-SCA"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" id="Y2W-K3-O0O"/>
-                            <constraint firstItem="xNq-qb-4iq" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" constant="-6" id="efh-5M-kyX"/>
+                            <constraint firstItem="xNq-qb-4iq" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" id="efh-5M-kyX"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>
                             <constraint firstItem="xNq-qb-4iq" firstAttribute="leading" secondItem="vd8-2y-G0O" secondAttribute="trailing" constant="23.5" id="gwE-RT-eHp"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailingMargin" id="iO6-92-EsG"/>

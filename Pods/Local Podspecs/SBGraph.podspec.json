@@ -1,0 +1,25 @@
+{
+  "name": "SBGraph",
+  "version": "0.1.0",
+  "summary": "A short description of SBGraph.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SBGraph",
+  "license": "MIT",
+  "authors": {
+    "Sam Bender": "rednebmas@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SBGraph.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "SBGraph/*.{h,m}",
+  "resource_bundles": {
+    "SBGraph": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

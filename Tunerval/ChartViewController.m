@@ -6,15 +6,16 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
+#import <SBGraph/SBGraphView.h>
 #import "ChartViewController.h"
 #import "ScoresData.h"
 #import "Constants.h"
 #import "Colors.h"
 
-@interface ChartViewController () <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
+@interface ChartViewController () <SBGraphViewDelegate>
 
 @property (nonatomic, retain) NSArray *data;
+@property (nonatomic, retain) NSMutableArray *xReferenceIndices;
 
 @end
 
@@ -45,7 +46,7 @@
     [self loadData];
     if (self.data != nil && self.data.count > 0)
     {
-        [self.lineGraph reloadGraph];
+        [self.lineGraph reloadData];
     }
 }
 
@@ -74,6 +75,20 @@
                                  forState:UIControlStateNormal];
         self.data = [ScoresData difficultyDataForInterval:interval
                                        afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
+    }
+    
+    //
+    // X reference indices
+    //
+    self.xReferenceIndices = [[NSMutableArray alloc] init];
+    
+    NSInteger increment = (self.data.count + 1) / 3;
+    NSInteger i = increment;
+    while (i < self.data.count) {
+        NSNumber *index = [NSNumber numberWithInteger:i];
+        i += increment;
+        
+        [self.xReferenceIndices addObject:index];
     }
 }
 
@@ -126,95 +141,61 @@
 - (void) configureLineGraph
 {
     self.lineGraph.delegate = self;
-    self.lineGraph.dataSource = self;
-    self.lineGraph.colorTop = [UIColor clearColor];
-    self.lineGraph.colorBottom = [UIColor clearColor];
-    self.lineGraph.colorYaxisLabel = [UIColor whiteColor];
-    self.lineGraph.colorTouchInputLine = [UIColor whiteColor];
-    self.lineGraph.enableYAxisLabel = YES;
-    self.lineGraph.enableReferenceYAxisLines = YES;
-    self.lineGraph.enablePopUpReport = YES;
-    self.lineGraph.enableReferenceYAxisLines = YES;
+    self.lineGraph.enableXAxisLabels = NO;
     
-    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    size_t num_locations = 2;
-    CGFloat locations[2] = { 0.0, 1.0 };
-    CGFloat components[8] = {
-        1.0, 1.0, 1.0, 0.6,
-        1.0, 1.0, 1.0, 0.0
-    };
+    // gradient
+    UIColor *gradientFrom = [[UIColor whiteColor] colorWithAlphaComponent:.5];
+    UIColor *gradientTo = [[UIColor whiteColor] colorWithAlphaComponent:0.0];
+    [self.lineGraph setGradientFromColor:gradientFrom  toColor:gradientTo];
     
-    // Apply the gradient to the bottom portion of the graph
-    self.lineGraph.gradientBottom = CGGradientCreateWithColorComponents(colorspace, components, locations, num_locations);
- 
+    // margins
+    SBGraphMargins margins = self.lineGraph.margins;
+    margins.top += 10;
+    margins.left += 12;
+    margins.right = 12;
+    self.lineGraph.margins = margins;
 }
 
-#pragma mark - Line graph delegate
+#pragma mark - SBGraphView delegate
 
-- (NSInteger) numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph
+- (CGFloat) yMin
 {
-    return self.data.count;
+    return 0;
 }
 
-- (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index
+- (CGFloat) yMax
 {
-    return [self.data[index] floatValue];
+    return 100;
 }
 
-- (CGFloat) maxValueForLineGraph:(BEMSimpleLineGraphView *)graph
+- (NSArray*) yValues
 {
-    return 101.0;
+    return self.data;
 }
 
-- (CGFloat) minValueForLineGraph:(BEMSimpleLineGraphView *)graph
+- (NSArray*) yValuesForReferenceLines
 {
-    return 0.0;
+    return @[ @(25.0f), @(50.0f), @(75.0f) ];
 }
 
-- (NSInteger) numberOfYAxisLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph
+- (NSArray*) xIndicesForReferenceLines
 {
-    return 4;
+    return self.xReferenceIndices;
 }
 
-- (CGFloat) baseValueForYAxisOnLineGraph:(BEMSimpleLineGraphView *)graph
+- (void) label:(UILabel *)label forYValue:(CGFloat)yValue
 {
-    return 0.0;
+    UIFont *font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightThin];
+    [label setFont:font];
+    [label setText:[NSString stringWithFormat:@"±%.0fc", yValue]];
 }
 
-- (CGFloat) incrementValueForYAxisOnLineGraph:(BEMSimpleLineGraphView *)graph
+- (void) noDataLabel:(UILabel *)noDataLabel
 {
-    return 25.0;
+    [noDataLabel setTextColor:[UIColor whiteColor]];
 }
 
-- (CGFloat) staticPaddingForLineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return 10.0;
-}
-
-- (NSString*) yAxisPrefixOnLineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return @"±";
-}
-
-- (NSString*) yAxisSuffixOnLineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return @"c";
-}
-
-- (NSString*) popUpPrefixForlineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return @"±";
-}
-
-- (NSString*) popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return @"c";
-}
-
-- (NSString*) noDataLabelTextForLineGraph:(BEMSimpleLineGraphView *)graph
-{
-    return @"No data yet. Answer some questions!";
-}
+//- (void) 
 
 #pragma mark - Actions
 
@@ -230,7 +211,7 @@
     [defaults setInteger:sender.selectedSegmentIndex forKey:@"graph-data-range"];
     
     [self loadData];
-    [self.lineGraph reloadGraph];
+    [self.lineGraph reloadData];
 }
 
 @end

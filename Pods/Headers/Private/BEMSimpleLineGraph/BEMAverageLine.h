@@ -1,1 +1,0 @@
-../../../BEMSimpleLineGraph/Classes/BEMAverageLine.h

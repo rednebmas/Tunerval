@@ -25,8 +25,6 @@
                  noteRangeFrom:(int)noteRangeFrom
                    noteRangeTo:(int)noteRangeTo
 {
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *query = [NSString stringWithFormat:
     @"INSERT INTO answer_history"
     "("

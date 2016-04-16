@@ -1,0 +1,6 @@
+framework module SBGraph {
+  umbrella header "SBGraph-umbrella.h"
+
+  export *
+  module * { export * }
+}
