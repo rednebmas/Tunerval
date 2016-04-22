@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSArray *data;
 @property (nonatomic, retain) NSMutableArray *xReferenceIndices;
+@property (nonatomic, retain) ScoresData *scoreData;
 
 @end
 
@@ -63,18 +64,22 @@
     
     // get data
     IntervalType all = ALL_INTERVALS_VALUE;
+    ScoresData *scoresData = [[ScoresData alloc] init];
     if (interval == all)
     {
         [self.pickIntervalButton setTitle:@"All intervals average"
                                  forState:UIControlStateNormal];
-        self.data = [ScoresData runningAverageDifficultyAfterUnixTimeStamp:[dateForRange timeIntervalSince1970]];
+        [scoresData loadRunningAverageDifficultyAfterUnixTimeStamp:[dateForRange timeIntervalSince1970]];
+        self.scoreData = scoresData;
+        self.data = scoresData.dataYVals;
     }
     else
     {
         [self.pickIntervalButton setTitle:[SBNote intervalTypeToIntervalName:interval]
                                  forState:UIControlStateNormal];
-        self.data = [ScoresData difficultyDataForInterval:interval
-                                       afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
+        [scoresData loadDataForInterval:interval afterUnixTimestamp:[dateForRange timeIntervalSince1970]];
+        self.scoreData = scoresData;
+        self.data = scoresData.dataYVals;
     }
     
     //
@@ -142,6 +147,8 @@
 {
     self.lineGraph.delegate = self;
     self.lineGraph.enableXAxisLabels = NO;
+    self.lineGraph.touchInputPointRadius = 6.0;
+    self.lineGraph.colorTouchInputPoint = [[UIColor whiteColor] colorWithAlphaComponent:.65];
     
     // gradient
     UIColor *gradientFrom = [[UIColor whiteColor] colorWithAlphaComponent:.5];
@@ -195,7 +202,40 @@
     [noDataLabel setTextColor:[UIColor whiteColor]];
 }
 
-//- (void) 
+- (void) touchInputInfoLabel:(UILabel *)label forXIndex:(NSInteger)index
+{
+    NSDictionary *resultDict = self.scoreData.data[index];
+    [label setTextAlignment:NSTextAlignmentLeft];
+    
+    IntervalType selectedIntervals = [[NSUserDefaults standardUserDefaults]
+                                      integerForKey:@"graph-selected-interval"];
+    IntervalType all = ALL_INTERVALS_VALUE;
+    NSMutableString *text = [[NSMutableString alloc] init];
+    if (selectedIntervals == all)
+    {
+        IntervalType interval = [resultDict[@"interval"] integerValue];
+        NSString *intervalName = [SBNote intervalTypeToIntervalShorthand:interval];
+        [text appendFormat:
+         @"  Average value: ±%.1fc\n"
+         @"  --\n"
+         @"  Interval: %@\n",
+         // insertions
+         [self.data[index] floatValue],
+         intervalName
+         ];
+    }
+    
+    [text appendFormat:
+     @"  Difficulty: ±%.1fc\n"
+     @"  Duration to answer: %.1fs\n"
+     @"  Date: %@",
+     [resultDict[@"difficulty"] floatValue],
+     [resultDict[@"time_to_answer"] floatValue],
+     [self formattedDateStringForUnixTimestamp:resultDict[@"created_at"]]
+     ];
+    
+    [label setText:text];
+}
 
 #pragma mark - Actions
 
@@ -212,6 +252,17 @@
     
     [self loadData];
     [self.lineGraph reloadData];
+}
+
+#pragma mark - Misc
+
+- (NSString*) formattedDateStringForUnixTimestamp:(NSString*)timestamp
+{
+    NSDate *time = [NSDate dateWithTimeIntervalSince1970:(NSTimeInterval)[timestamp doubleValue]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"M/dd/yy h:mm a"];
+    
+    return [dateFormatter stringFromDate:time];
 }
 
 @end

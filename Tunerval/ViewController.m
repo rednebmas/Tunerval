@@ -315,11 +315,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     float upOrDown = drand48();
     if (upOrDown > .5)
     {
-        referenceNote.loudness = 1.0 - .3 * drand48();
+        referenceNote.loudness = 1.0 - .4 * drand48();
     }
     else
     {
-        smallDiff.loudness = 1.0 - .3 * drand48();
+        smallDiff.loudness = 1.0 - .4 * drand48();
     }
     double duration = [defaults doubleForKey:@"note-duration"];
     double durationVariation = [defaults doubleForKey:@"note-duration-variation"];

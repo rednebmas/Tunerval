@@ -11,7 +11,11 @@
 
 @interface ScoresData : NSObject
 
-+ (NSArray*) difficultyDataForInterval:(IntervalType)interval afterUnixTimestamp:(double)timestamp;
-+ (NSArray*) runningAverageDifficultyAfterUnixTimeStamp:(double)timestamp;
+// An array of dictionaries which represent a score
+@property (nonatomic, retain) NSArray *data;
+@property (nonatomic, retain) NSArray *dataYVals;
+
+- (void) loadDataForInterval:(IntervalType)interval afterUnixTimestamp:(double)timestamp;
+- (void) loadRunningAverageDifficultyAfterUnixTimeStamp:(double)timestamp;
 
 @end

@@ -12,32 +12,39 @@
 
 @implementation ScoresData
 
-+ (NSArray*) difficultyDataForInterval:(IntervalType)interval afterUnixTimestamp:(double)timestamp
+- (void) loadDataForInterval:(IntervalType)interval afterUnixTimestamp:(double)timestamp;
 {
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
+    NSMutableArray *data = [[NSMutableArray alloc] init];
     
-    FMResultSet *s = [[Constants dbConnection] executeQuery:@"SELECT * FROM answer_history"];
+    FMDatabase *db = [Constants dbConnection];
+    FMResultSet *s = [db executeQuery:@"SELECT * FROM answer_history"];
     while ([s next])
     {
         if ([s intForColumn:@"interval"] == interval
             && [s doubleForColumn:@"created_at"] > timestamp)
         {
             [yVals addObject:@([s doubleForColumn:@"difficulty"])];
+            [data addObject:[s resultDictionary]];
         }
     }
-    return yVals;
+    
+    self.dataYVals = yVals;
+    self.data = data;
+    
+    [db close];
 }
 
-+ (NSArray*) runningAverageDifficultyAfterUnixTimeStamp:(double)timestamp
+- (void) loadRunningAverageDifficultyAfterUnixTimeStamp:(double)timestamp
 {
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
+    NSMutableArray *data = [[NSMutableArray alloc] init];
     NSMutableDictionary *intervalScores = [[NSMutableDictionary alloc] init];
-    [self fillDictionaryWithScores:intervalScores afterUnixTimestamp:timestamp];
+    [ScoresData fillDictionaryWithScores:intervalScores afterUnixTimestamp:timestamp];
     
     FMDatabase *db = [Constants dbConnection];
     FMResultSet *s = [db executeQuery:@"SELECT * FROM answer_history"];
     
-    double count = 1.0;
     while ([s next])
     {
         if ([s doubleForColumn:@"created_at"] < timestamp)
@@ -47,12 +54,14 @@
         
         [intervalScores setObject:@([s doubleForColumn:@"difficulty"])
                           forKey:@([s intForColumn:@"interval"])];
-        [yVals addObject:@([self dictionaryAverage:intervalScores])];
+        [yVals addObject:@([ScoresData dictionaryAverage:intervalScores])];
+        [data addObject:[s resultDictionary]];
     }
     
     [db close];
     
-    return yVals;
+    self.dataYVals = yVals;
+    self.data = data;
 }
 
 + (double) dictionaryAverage:(NSDictionary*)dict
