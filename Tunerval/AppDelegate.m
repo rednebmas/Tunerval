@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <SBMusicUtilities/SBNote.h>
+#import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import "MigrationManager.h"
 #import "Constants.h"
 
@@ -20,6 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Mobile analytics
+    AWSMobileAnalytics *analytics = [AWSMobileAnalytics
+                                     mobileAnalyticsForAppId: @"e935bfef1bc740439c176775a6dd4de9" //Amazon Mobile Analytics App ID
+                                     identityPoolId: @"us-east-1:cf791845-cefb-4594-8a2a-888f4553a2d1"]; //Amazon Cognito Identity Pool ID
+    
     // seed randomness only once
     // http://nshipster.com/random/
     // used for duration of note

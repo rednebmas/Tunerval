@@ -1,4 +1,7 @@
 PODS:
+  - AWSCore (2.3.6)
+  - AWSMobileAnalytics (2.3.6):
+    - AWSCore (= 2.3.6)
   - EZAudio (1.1.5):
     - EZAudio/Full (= 1.1.5)
   - EZAudio/Core (1.1.5)
@@ -14,6 +17,7 @@ PODS:
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
+  - AWSMobileAnalytics (~> 2.3.2)
   - EZAudio (from `https://github.com/rednebmas/EZAudio.git`)
   - FMDB
   - SBGraph (from `~/code/iOS/SBGraph`)
@@ -33,6 +37,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/rednebmas/EZAudio.git
 
 SPEC CHECKSUMS:
+  AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
+  AWSMobileAnalytics: 56ce9e671640fbd702f8ce52b0f128e525f3e51c
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   SBGraph: 0875adebf1d22d2bdc452bf2f88695a42d5b004b

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSMobileAnalytics.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EZAudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11B5ACCD3D01AF812C30AF74CB5B4B77</key>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<key>245AB2D890D9BA90BE85B31CFA76D091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>29E8FE0B316EE83946F48C4684185D90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D526B9081DFA0B0BE789CF6D1D55E89</key>
+		<key>63A2B70CD13FFB7C60AF5BEB9EB2CE03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95D4E8EBEE3D1561E00FE61CE328C2FD</key>
+		<key>813899E24D6CC07DFB622F74E0AF36FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F42A42C2E752111D88B943461E01664C</key>
+		<key>C53FB5CD2D8558E77B4C04C845EF620D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8AEFCF4024E58CC82BB6B21620073C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

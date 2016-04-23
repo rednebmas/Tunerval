@@ -159,7 +159,8 @@
     SBGraphMargins margins = self.lineGraph.margins;
     margins.top += 10;
     margins.left += 12;
-    margins.right = 12;
+    margins.right = 15;
+    margins.bottom = 15;
     self.lineGraph.margins = margins;
 }
 

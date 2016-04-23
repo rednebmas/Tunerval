@@ -8,5 +8,6 @@ target 'Tunerval' do
 	pod 'SBMusicUtilities', :path => '~/code/iOS/SBMusicUtilities'
 	pod 'SBGraph', :path => '~/code/iOS/SBGraph'
 	pod 'FMDB'
+	pod 'AWSMobileAnalytics', '~> 2.3.2'
 end
 
