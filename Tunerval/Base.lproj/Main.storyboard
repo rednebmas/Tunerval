@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqC-Rs-FHf" customClass="SBGraphView">
-                                <rect key="frame" x="0.0" y="55" width="600" height="448.5"/>
+                                <rect key="frame" x="0.0" y="62" width="600" height="441.5"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="9QZ-k0-0Gb">
@@ -172,7 +172,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNq-qb-4iq">
-                                <rect key="frame" x="110.5" y="503.5" width="469.5" height="32"/>
+                                <rect key="frame" x="110" y="504" width="470" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.082435344827586202" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Descending Perfect Fifth">
@@ -194,7 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imk-kA-b97">
-                                <rect key="frame" x="555" y="25" width="30" height="30"/>
+                                <rect key="frame" x="555" y="29" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="ALS-Xv-Dly"/>
@@ -207,7 +207,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -219,6 +219,12 @@
                                     <action selector="dismiss:" destination="z6j-CT-g8O" eventType="touchUpInside" id="Com-rE-62D"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbM-zh-mUC">
+                                <rect key="frame" x="228.5" y="31" width="142.5" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470590000003" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -226,13 +232,15 @@
                             <constraint firstItem="imk-kA-b97" firstAttribute="trailing" secondItem="r6L-gF-IGR" secondAttribute="trailing" constant="-15" id="4Vq-nw-M1E"/>
                             <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="12" id="7Ne-MQ-fdv"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" constant="120" id="EIB-Az-irh"/>
-                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="5" id="EME-Oi-LsU"/>
+                            <constraint firstItem="imk-kA-b97" firstAttribute="top" secondItem="ivg-oo-9h7" secondAttribute="bottom" constant="9" id="EME-Oi-LsU"/>
                             <constraint firstItem="50T-Ik-ecT" firstAttribute="top" secondItem="9QZ-k0-0Gb" secondAttribute="bottom" constant="20" id="EUP-9U-piJ"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Gb7-HU-2Oy"/>
                             <constraint firstAttribute="trailing" secondItem="BqC-Rs-FHf" secondAttribute="trailing" id="HLa-B7-SCA"/>
+                            <constraint firstItem="nbM-zh-mUC" firstAttribute="centerY" secondItem="imk-kA-b97" secondAttribute="centerY" id="NGI-He-E4o"/>
                             <constraint firstItem="BqC-Rs-FHf" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leading" id="SLS-sY-J8m"/>
                             <constraint firstItem="vd8-2y-G0O" firstAttribute="leading" secondItem="r6L-gF-IGR" secondAttribute="leadingMargin" id="Xgi-Td-prD"/>
-                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" id="Y2W-K3-O0O"/>
+                            <constraint firstItem="BqC-Rs-FHf" firstAttribute="top" secondItem="imk-kA-b97" secondAttribute="bottom" constant="3" id="Y2W-K3-O0O"/>
+                            <constraint firstItem="nbM-zh-mUC" firstAttribute="centerX" secondItem="r6L-gF-IGR" secondAttribute="centerX" id="aNm-CK-4Vn"/>
                             <constraint firstItem="xNq-qb-4iq" firstAttribute="top" secondItem="BqC-Rs-FHf" secondAttribute="bottom" id="efh-5M-kyX"/>
                             <constraint firstItem="9QZ-k0-0Gb" firstAttribute="top" secondItem="vd8-2y-G0O" secondAttribute="bottom" constant="20" id="g21-gP-B6N"/>
                             <constraint firstItem="xNq-qb-4iq" firstAttribute="leading" secondItem="vd8-2y-G0O" secondAttribute="trailing" constant="23.5" id="gwE-RT-eHp"/>
