@@ -285,11 +285,14 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
 {
-    [[SBAudioPlayer sharedInstance] play:firstNote];
+    SBAudioPlayer *audioPlayer = [SBAudioPlayer sharedInstance];
+    if (audioPlayer.notes.count != 0) return; // return if there are already notes playing
+
+    [audioPlayer play:firstNote];
     
     double delayTimeInSeconds = firstNote.duration + .1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [[SBAudioPlayer sharedInstance] play:secondNote];
+        [audioPlayer play:secondNote];
     });
 }
 
@@ -691,11 +694,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)replayButtonPressed:(id)sender
 {
-    SBAudioPlayer *audioPlayer = [SBAudioPlayer sharedInstance];
-    if (audioPlayer.notes.count == 0)
-    {
-        [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
-    }
+    [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
 }
 
 
