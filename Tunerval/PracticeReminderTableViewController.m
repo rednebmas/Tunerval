@@ -224,7 +224,7 @@
 
 - (void) createNotification
 {
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [appDelegate createNotification];
 }
 

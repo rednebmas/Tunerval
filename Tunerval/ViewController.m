@@ -93,7 +93,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     // cancel notifications if we just completed our daily progress goal
     if (questionsAnswered == dailyProgressGoal)
     {
-        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication];
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         [appDelegate createNotification];
     }
     
