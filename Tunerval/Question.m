@@ -7,6 +7,7 @@
 //
 
 #import <FMDB/FMDB.h>
+#import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import "Question.h"
 #import "Constants.h"
 
@@ -25,6 +26,18 @@
                  noteRangeFrom:(int)noteRangeFrom
                    noteRangeTo:(int)noteRangeTo
 {
+    // record to AWS analytics
+    if (DEBUGMODE == NO)
+    {
+        id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
+        id<AWSMobileAnalyticsEvent> questionEvent = [eventClient
+                                                      createEventWithEventType:@"QuestionAnswered"];
+        
+        [questionEvent addMetric:@((int)self.interval) forKey:@"Interval"];
+        [questionEvent addMetric:@(difficulty) forKey:@"Difficulty"];
+        [eventClient recordEvent:questionEvent];
+    }
+
     NSString *query = [NSString stringWithFormat:
     @"INSERT INTO answer_history"
     "("

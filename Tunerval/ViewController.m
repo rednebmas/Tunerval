@@ -9,6 +9,7 @@
 #import <SBMusicUtilities/SBNote.h>
 #import <SBMusicUtilities/SBAudioPlayer.h>
 #import <SBMusicUtilities/SBRandomNoteGenerator.h>
+#import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import "ViewController.h"
 #import "UIView+Helpers.h"
 #import "Question.h"
@@ -17,6 +18,7 @@
 #import "Colors.h"
 #import "AppDelegate.h"
 #import "SettingsTableViewController.h"
+#import "Constants.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -106,6 +108,16 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
         daysGoalMet++;
         [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
+        
+        // record amazon event
+        if (DEBUGMODE == NO)
+        {
+            id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
+            id<AWSMobileAnalyticsEvent> dailyGoalEvent = [eventClient
+                                                          createEventWithEventType:@"DailyGoalComplete"];
+            [dailyGoalEvent addMetric:@(dailyProgressGoal) forKey:@"DailyQuestionGoal"];
+            [eventClient recordEvent:dailyGoalEvent];
+        }
         
         __weak id weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{

@@ -21,17 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#ifdef DEBUG
-#define DEBUGMODE YES
-#else
-#define DEBUGMODE NO
-#endif
-    if (DEBUGMODE) {
-        // Mobile analytics
-        AWSMobileAnalytics *analytics = [AWSMobileAnalytics
-                                         mobileAnalyticsForAppId: @"e935bfef1bc740439c176775a6dd4de9" //Amazon Mobile Analytics App ID
-                                         identityPoolId: @"us-east-1:cf791845-cefb-4594-8a2a-888f4553a2d1"]; //Amazon Cognito Identity Pool ID
-        
+    if (DEBUGMODE == NO)
+    {
+        // Start mobile analytics
+        MOBILE_ANALYTICS;
     }
     
     // seed randomness only once
@@ -123,6 +116,17 @@
                              style:UIAlertActionStyleDefault
                              handler:^(UIAlertAction * action)
                              {
+                                 // record to AWS analytics
+                                 if (DEBUGMODE == NO)
+                                 {
+                                     id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
+                                     id<AWSMobileAnalyticsEvent> askForReminderEvent = [eventClient
+                                                                                  createEventWithEventType:@"AskForReminder"];
+                                     
+                                     [askForReminderEvent addMetric:@(1.0) forKey:@"Answer"];
+                                     [eventClient recordEvent:askForReminderEvent];
+                                 }
+
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                                  [self.window.rootViewController performSegueWithIdentifier:@"SettingsSegue" sender:self];
                              }];
@@ -133,6 +137,17 @@
                                    
                              handler:^(UIAlertAction * action)
                              {
+                                 // record to AWS analytics
+                                 if (DEBUGMODE == NO)
+                                 {
+                                     id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
+                                     id<AWSMobileAnalyticsEvent> askForReminderEvent = [eventClient
+                                                                                        createEventWithEventType:@"AskForReminder"];
+                                     
+                                     [askForReminderEvent addMetric:@(0.0) forKey:@"Answer"];
+                                     [eventClient recordEvent:askForReminderEvent];
+                                 }
+
                                  UIAlertController *alert = [UIAlertController
                                                              alertControllerWithTitle:@"That's quite alright!"
                                                              message:@"You can enable practice reminders in settings at any time."
