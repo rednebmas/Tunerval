@@ -368,7 +368,7 @@
                                 </constraints>
                                 <state key="normal" image="cog"/>
                                 <connections>
-                                    <segue destination="y82-Jj-np5" kind="presentation" id="B6k-F7-Zoi"/>
+                                    <segue destination="y82-Jj-np5" kind="presentation" identifier="SettingsSegue" id="B6k-F7-Zoi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Interval High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIS-SA-4R9">
@@ -890,7 +890,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ebf-Bf-Z9B" kind="show" id="Gjq-Nj-5U5"/>
+                                            <segue destination="ebf-Bf-Z9B" kind="show" identifier="PracticeRemindersSegue" id="Gjq-Nj-5U5"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1370,6 +1370,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3QR-JR-J7r"/>
-        <segue reference="K4z-32-ZLf"/>
+        <segue reference="uY3-sD-inf"/>
     </inferredMetricsTieBreakers>
 </document>

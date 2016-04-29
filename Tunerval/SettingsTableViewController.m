@@ -52,6 +52,19 @@
     [self setPracticeRemindersLabelValue];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.selectPracticeRemindersOnLoad)
+    {
+        self.selectPracticeRemindersOnLoad = NO;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:1];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self performSegueWithIdentifier:@"PracticeRemindersSegue" sender:self];
+    }
+}
+
 - (void) setNoteDurationAndVariationValueLabels
 {
     double noteDuration = [defaults doubleForKey:@"note-duration"];

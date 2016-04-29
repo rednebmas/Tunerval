@@ -78,6 +78,7 @@
         [defaults setInteger:ALL_INTERVALS_VALUE forKey:@"graph-selected-interval"];
         [defaults setInteger:3 forKey:@"graph-data-range"];
         
+        /*
         UIAlertController *alert = [UIAlertController
                                     alertControllerWithTitle:@"New stuff!"
                                     message:@"From now on, Tunerval will track your progress. Tap the new graph icon in the upper right to see how you're doing."
@@ -95,10 +96,12 @@
         
         [self.window makeKeyAndVisible]; // hacky?
         [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+         */
     }
     
     if ([defaults objectForKey:@"practice-reminder-time"] == nil)
     {
+        // set default practice reminder time
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setHour:18];
@@ -108,6 +111,49 @@
         NSDate *dateToFire = [calendar dateFromComponents:components];
         
         [defaults setObject:dateToFire forKey:@"practice-reminder-time"];
+        
+        // ask user for practice reminders
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"New feature: Practice Reminders"
+                                    message:@"Daily practice is essential to improve your ear. Tunerval can now remind you to hit your daily goal."
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction
+                             actionWithTitle:@"Remind me!"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 [self.window.rootViewController performSegueWithIdentifier:@"SettingsSegue" sender:self];
+                             }];
+        
+        UIAlertAction *noThanks = [UIAlertAction
+                             actionWithTitle:@"No thanks"
+                             style:UIAlertActionStyleDestructive
+                                   
+                             handler:^(UIAlertAction * action)
+                             {
+                                 UIAlertController *alert = [UIAlertController
+                                                             alertControllerWithTitle:@"That's quite alright!"
+                                                             message:@"You can enable practice reminders in settings at any time."
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+                                 
+                                 UIAlertAction *ok = [UIAlertAction
+                                                      actionWithTitle:@"Ok"
+                                                      style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action)
+                                                      {
+                                                          [alert dismissViewControllerAnimated:YES completion:nil];
+                                                      }];
+                                 [alert addAction:ok];
+                                 [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+                             }];
+        
+        [alert addAction:noThanks];
+        [alert addAction:ok];
+        
+        [self.window makeKeyAndVisible]; // hacky?
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }
     
     // database stuff

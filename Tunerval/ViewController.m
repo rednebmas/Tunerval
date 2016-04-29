@@ -16,6 +16,7 @@
 #import "Animation.h"
 #import "Colors.h"
 #import "AppDelegate.h"
+#import "SettingsTableViewController.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -32,7 +33,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 }
 
 @property (nonatomic) BOOL speakInterval;
-//@property (nonatomic) int answerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) NSInteger answerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
 @property (nonatomic) float differenceInCents;
@@ -697,5 +697,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self playNote:self.currentQuestion.referenceNote thenPlay:self.currentQuestion.questionNote];
 }
 
+#pragma mark - Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SettingsSegue"])
+    {
+        // app delegate is sender if practice reminder is shown first
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        if (sender == appDelegate)
+        {
+            SettingsTableViewController *stvc = (SettingsTableViewController*)[segue.destinationViewController topViewController];
+            stvc.selectPracticeRemindersOnLoad = YES;
+        }
+    }
+}
 
 @end
