@@ -199,7 +199,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         if (!previousAnswerWasCorrect)
         {
             [Animation rotateOverXAxis:self.centsDifference forwards:NO];
-            double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
+            double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
             __weak ViewController *weakSelf = self;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", weakSelf.differenceInCents]];
@@ -490,7 +490,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     
     [Animation rotateOverXAxis:self.centsDifference forwards:YES];
-    double delayTimeInSeconds = .75 / 4; // quarter of the way through flip
+    double delayTimeInSeconds = .75 / 4 * 3; // quarter of the way through flip
     __weak ViewController *weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayTimeInSeconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [weakSelf.centsDifference setText:[NSString stringWithFormat:@"±%.1fc", newHS]];

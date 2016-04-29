@@ -89,7 +89,7 @@
         [processPath stroke];
     } else {
         // Draw background
-        CGFloat lineWidth = 2.f;
+        CGFloat lineWidth = 1.5f;
         CGRect allRect = self.bounds;
         CGRect circleRect = CGRectInset(allRect, lineWidth/2.f, lineWidth/2.f);
         CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
