@@ -8,6 +8,7 @@
 
 #import "PracticeReminderTableViewController.h"
 #import "PracticeRemindersNotificationsDisabledView.h"
+#import "AppDelegate.h"
 
 @interface PracticeReminderTableViewController ()
 {
@@ -156,6 +157,7 @@
         else
         {
             self.notificationsDisabledView.hidden = YES;
+            [self createNotification];
         }
     }
     else
@@ -169,6 +171,10 @@
 - (IBAction) timePickerValueChanged:(id)sender
 {
     [defaults setObject:self.timePicker.date forKey:@"practice-reminder-time"];
+    if (self.remindersEnabledSwitch.on && [self localNotificationsEnabled])
+    {
+        [self createNotification];
+    }
 }
 
 #pragma mark - Getters
@@ -214,6 +220,12 @@
     }
     
     [self.tableView endUpdates];
+}
+
+- (void) createNotification
+{
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication];
+    [appDelegate createNotification];
 }
 
 @end

@@ -147,4 +147,34 @@
                                                       userInfo:nil];
 }
 
+- (void) createNotification
+{
+    UILocalNotification *notifyAlarm = [[UILocalNotification alloc] init];
+    if (notifyAlarm)
+    {
+        // get reminder time
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDate *practiceReminderTime = [defaults objectForKey:@"practice-reminder-time"];
+    
+        // if they've met their goal, reschedule to start tomorrow
+        NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
+        NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
+                                beginningOfDay.timeIntervalSince1970];
+        if ([defaults boolForKey:goalMetKey])
+        {
+            practiceReminderTime = [practiceReminderTime dateByAddingTimeInterval:60.0*60.0*24.0];
+        }
+        
+        // configure notification
+        notifyAlarm.fireDate = practiceReminderTime;
+        notifyAlarm.timeZone = [NSTimeZone defaultTimeZone];
+        notifyAlarm.repeatInterval = NSCalendarUnitDay;
+        notifyAlarm.alertBody = @"Daily practice is needed to improve your ear!";
+        
+        // create notification
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notifyAlarm];
+    }
+}
+
 @end

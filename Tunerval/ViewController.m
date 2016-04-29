@@ -15,6 +15,7 @@
 #import "MBRoundProgressView.h"
 #import "Animation.h"
 #import "Colors.h"
+#import "AppDelegate.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -88,6 +89,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                                     objectForKey:[self dailyProgressKey]] integerValue];
     float progress = (float)questionsAnswered / (float)dailyProgressGoal;
     self.dailyProgressView.progress = progress;
+    
+    // cancel notifications if we just completed our daily progress goal
+    if (questionsAnswered == dailyProgressGoal)
+    {
+        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication];
+        [appDelegate createNotification];
+    }
     
     NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
     NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
