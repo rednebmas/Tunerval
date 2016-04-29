@@ -15,12 +15,15 @@
 		221949591C80E956004D0155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221949571C80E956004D0155 /* Main.storyboard */; };
 		2219495B1C80E956004D0155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2219495A1C80E956004D0155 /* Assets.xcassets */; };
 		2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219495C1C80E956004D0155 /* LaunchScreen.storyboard */; };
+		221CBBDB1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */; };
+		221CBBDE1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBBDD1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m */; };
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
+		22A302E51CCFC8A900340DE9 /* PracticeReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
 		22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */; };
@@ -50,6 +53,9 @@
 		2219495A1C80E956004D0155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2219495D1C80E956004D0155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2219495F1C80E956004D0155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PracticeRemindersNotificationsDisabledView.xib; sourceTree = "<group>"; };
+		221CBBDC1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeRemindersNotificationsDisabledView.h; sourceTree = "<group>"; };
+		221CBBDD1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeRemindersNotificationsDisabledView.m; sourceTree = "<group>"; };
 		221E41B01C863DD8008A6255 /* MBRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRoundProgressView.h; sourceTree = "<group>"; };
 		221E41B11C863DD8008A6255 /* MBRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRoundProgressView.m; sourceTree = "<group>"; };
 		221F245A1C82424500DA4950 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 		2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPickIntervalTableViewController.m; sourceTree = "<group>"; };
 		229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsIntervalsTableViewController.m; sourceTree = "<group>"; };
 		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
+		22A302E31CCFC8A900340DE9 /* PracticeReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeReminderTableViewController.h; sourceTree = "<group>"; };
+		22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeReminderTableViewController.m; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
 		22D178CA1C86B5F000B204C1 /* NotePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotePickerView.m; sourceTree = "<group>"; };
 		22D178D41C86C2BD00B204C1 /* NSAttributedString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Utilities.h"; sourceTree = "<group>"; };
@@ -185,6 +193,9 @@
 				22F0C5C81C882DB8002C6F1C /* SecondsPickerView.m */,
 				220CC9D31C89608A00EFF7DA /* Animation.h */,
 				220CC9D41C89608A00EFF7DA /* Animation.m */,
+				221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */,
+				221CBBDC1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.h */,
+				221CBBDD1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -209,6 +220,8 @@
 				229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */,
 				22D178D81C86C3B800B204C1 /* SettingsNoteRangeTableViewController.h */,
 				22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */,
+				22A302E31CCFC8A900340DE9 /* PracticeReminderTableViewController.h */,
+				22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -315,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221CBBDB1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib in Resources */,
 				2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */,
 				2219495B1C80E956004D0155 /* Assets.xcassets in Resources */,
 				221949591C80E956004D0155 /* Main.storyboard in Resources */,
@@ -386,11 +400,13 @@
 				221949501C80E956004D0155 /* main.m in Sources */,
 				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
+				22A302E51CCFC8A900340DE9 /* PracticeReminderTableViewController.m in Sources */,
 				22F68EDB1C813B650040541F /* UIView+Helpers.m in Sources */,
 				220CC9D51C89608A00EFF7DA /* Animation.m in Sources */,
 				22E3C7441C9E278F00CD11C5 /* ChartViewController.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
+				221CBBDE1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m in Sources */,
 				2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */,
 				22F68EDE1C813D7B0040541F /* Question.m in Sources */,
 				220CC9D91C8A1CE800EFF7DA /* Colors.m in Sources */,

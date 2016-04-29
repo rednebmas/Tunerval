@@ -21,10 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Mobile analytics
-    AWSMobileAnalytics *analytics = [AWSMobileAnalytics
-                                     mobileAnalyticsForAppId: @"e935bfef1bc740439c176775a6dd4de9" //Amazon Mobile Analytics App ID
-                                     identityPoolId: @"us-east-1:cf791845-cefb-4594-8a2a-888f4553a2d1"]; //Amazon Cognito Identity Pool ID
+#ifdef DEBUG
+#define DEBUGMODE YES
+#else
+#define DEBUGMODE NO
+#endif
+    if (DEBUGMODE) {
+        // Mobile analytics
+        AWSMobileAnalytics *analytics = [AWSMobileAnalytics
+                                         mobileAnalyticsForAppId: @"e935bfef1bc740439c176775a6dd4de9" //Amazon Mobile Analytics App ID
+                                         identityPoolId: @"us-east-1:cf791845-cefb-4594-8a2a-888f4553a2d1"]; //Amazon Cognito Identity Pool ID
+        
+    }
     
     // seed randomness only once
     // http://nshipster.com/random/
@@ -89,6 +97,19 @@
         [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }
     
+    if ([defaults objectForKey:@"practice-reminder-time"] == nil)
+    {
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setHour:18];
+        [components setMinute:0];
+        [components setSecond:0];
+        [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
+        NSDate *dateToFire = [calendar dateFromComponents:components];
+        
+        [defaults setObject:dateToFire forKey:@"practice-reminder-time"];
+    }
+    
     // database stuff
     [MigrationManager checkForAndPerformPendingMigrations];
     
@@ -115,6 +136,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Notifications
+
+- (void) application:(UIApplication*)application didRegisterUserNotificationSettings:(nonnull UIUserNotificationSettings *)notificationSettings
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DidRegisterLocalNotificationWithSettings"
+                                                        object:notificationSettings
+                                                      userInfo:nil];
 }
 
 @end

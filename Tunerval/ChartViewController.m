@@ -87,7 +87,7 @@
     //
     self.xReferenceIndices = [[NSMutableArray alloc] init];
     
-    NSInteger increment = (self.data.count + 1) / 3;
+    NSInteger increment = MAX(1, (self.data.count + 1) / 3); // increment must be at least 1!
     NSInteger i = increment;
     while (i < self.data.count) {
         NSNumber *index = [NSNumber numberWithInteger:i];

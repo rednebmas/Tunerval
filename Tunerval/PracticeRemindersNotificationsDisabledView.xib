@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PracticeRemindersNotificationsDisabledView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notifications are disabled for Tunverval." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-KH-Jdx">
+                    <rect key="frame" x="15" y="8" width="570" height="52"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.93614906072616577" green="0.10361265391111374" blue="0.15748682618141174" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-ow-HL6">
+                    <rect key="frame" x="15" y="68" width="570" height="35"/>
+                    <color key="backgroundColor" red="0.76032143831253052" green="0.25500288605690002" blue="0.30828651785850525" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="sbe-uW-zS1"/>
+                    </constraints>
+                    <state key="normal" title="Take me to Settings to enable">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="takeMeToSettings:" destination="iN0-l3-epB" eventType="touchUpInside" id="5fv-1G-Yau"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="bzn-ow-HL6" firstAttribute="top" secondItem="Nln-KH-Jdx" secondAttribute="bottom" constant="8" id="B3E-T6-OQf"/>
+                <constraint firstAttribute="bottom" secondItem="Nln-KH-Jdx" secondAttribute="bottom" constant="8" id="CA4-1T-cTX"/>
+                <constraint firstAttribute="trailing" secondItem="bzn-ow-HL6" secondAttribute="trailing" constant="15" id="CVV-jL-AHO"/>
+                <constraint firstAttribute="trailing" secondItem="Nln-KH-Jdx" secondAttribute="trailing" constant="15" id="Dxa-kQ-a3b"/>
+                <constraint firstItem="Nln-KH-Jdx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="J4l-Yq-l63"/>
+                <constraint firstItem="Nln-KH-Jdx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="dZK-fv-a8E"/>
+                <constraint firstItem="bzn-ow-HL6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="lRx-kF-MM6"/>
+                <constraint firstAttribute="bottom" secondItem="bzn-ow-HL6" secondAttribute="bottom" constant="12" id="u8y-4O-B5p"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="CA4-1T-cTX"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="label" destination="Nln-KH-Jdx" id="VLV-ow-WYg"/>
+            </connections>
+            <point key="canvasLocation" x="304" y="149.5"/>
+        </view>
+    </objects>
+</document>

@@ -49,6 +49,7 @@
     [self setNoteRangeSelectedLabelText];
     [self setContentForDailyProgressTextField];
     [self setNoteDurationAndVariationValueLabels];
+    [self setPracticeRemindersLabelValue];
 }
 
 - (void) setNoteDurationAndVariationValueLabels
@@ -122,6 +123,25 @@
     }
     
     [self.intervalsSelectedLabel setText:[intervalNames componentsJoinedByString:@", "]];
+}
+
+- (void) setPracticeRemindersLabelValue
+{
+    BOOL remindersEnabled = [defaults boolForKey:@"practice-reminders-enabled"];
+    
+    if (remindersEnabled && [self localNotificationsEnabled])
+    {
+        NSDate *practiceReminderTime = [defaults objectForKey:@"practice-reminder-time"];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"h:mm a"];
+        
+        [self.practiceRemindersLabel setText:[dateFormatter stringFromDate:practiceReminderTime]];
+    }
+    else
+    {
+        [self.practiceRemindersLabel setText:@"Disabled"];
+    }
 }
 
 - (void) createFooter
@@ -262,6 +282,15 @@
 {
     // Dismiss the mail compose view controller.
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Misc
+
+- (BOOL) localNotificationsEnabled
+{
+    UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    
+    return grantedSettings.types != UIUserNotificationTypeNone;
 }
 
 

@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *speakIntervalSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *noteDurationValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteDurationVariationValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *practiceRemindersLabel;
 
 @end
