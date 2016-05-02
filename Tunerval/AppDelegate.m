@@ -171,6 +171,19 @@
         [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }
     
+    if ([defaults integerForKey:@"last-build-number"] == 0)
+    {
+        [defaults setInteger:12 forKey:@"last-build-number"];
+        
+        // fix not registering for notifications
+        UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+        if ([defaults boolForKey:@"practice-reminders-enabled"]
+            && grantedSettings.types != UIUserNotificationTypeNone)
+        {
+            [self createNotification];
+        }
+    }
+    
     // database stuff
     [MigrationManager checkForAndPerformPendingMigrations];
     
