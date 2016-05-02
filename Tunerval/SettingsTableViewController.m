@@ -220,7 +220,7 @@
     [self.view endEditing:YES];
     
     NSInteger dailyGoalIntegerVal = [self.dailyGoalProgressTextField.text integerValue];
-    if (dailyGoalIntegerVal < 25)
+    if (dailyGoalIntegerVal < 9)
     {
         [self setContentForDailyProgressTextField];
         return;

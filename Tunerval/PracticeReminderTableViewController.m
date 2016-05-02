@@ -73,10 +73,12 @@
 
 - (void) userNotificationSettingsUpdate:(NSNotification*)notification
 {
-    if (self.remindersEnabledSwitch.on)
+    if (self.remindersEnabledSwitch.on && [self localNotificationsEnabled] == YES)
     {
-        [self determineNotificationsDisabledViewVisibility];
+        [self createNotification];
     }
+    
+    [self determineNotificationsDisabledViewVisibility];
 }
 
 #pragma mark - Tableview

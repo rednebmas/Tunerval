@@ -92,13 +92,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     float progress = (float)questionsAnswered / (float)dailyProgressGoal;
     self.dailyProgressView.progress = progress;
     
-    // cancel notifications if we just completed our daily progress goal
-    if (questionsAnswered == dailyProgressGoal)
-    {
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-        [appDelegate createNotification];
-    }
-    
     NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
     NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
                             beginningOfDay.timeIntervalSince1970];
@@ -125,6 +118,13 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                 [weakSelf theme:[Colors colorSetForDay:daysGoalMet]];
             }];
         });
+    }
+    
+    // cancel notifications if we just completed our daily progress goal
+    if (questionsAnswered == dailyProgressGoal)
+    {
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [appDelegate createNotification];
     }
 }
 

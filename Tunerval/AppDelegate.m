@@ -223,7 +223,7 @@
                                 beginningOfDay.timeIntervalSince1970];
         if ([defaults boolForKey:goalMetKey])
         {
-            practiceReminderTime = [practiceReminderTime dateByAddingTimeInterval:60.0*60.0*24.0];
+            practiceReminderTime = [self dateTomorrowForTime:practiceReminderTime];
         }
         
         // configure notification
@@ -236,6 +236,26 @@
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [[UIApplication sharedApplication] scheduleLocalNotification:notifyAlarm];
     }
+}
+
+#pragma mark - Misc
+
+- (NSDate*) dateTomorrowForTime:(NSDate*)dateTime
+{
+    // time components
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSDateComponents *timeComponents = [calendar components:NSUIntegerMax fromDate:dateTime];
+    
+    // tomorrow components
+    NSDate *tomorrow = [[NSDate date] dateByAddingTimeInterval:60*60*24];
+    NSDateComponents *tomorrowComponents = [calendar components:NSUIntegerMax fromDate:tomorrow];
+    
+    // change time of tomorrow components
+    [tomorrowComponents setHour:timeComponents.hour];
+    [tomorrowComponents setMinute:timeComponents.minute];
+    
+    return [calendar dateFromComponents:tomorrowComponents];
 }
 
 @end
