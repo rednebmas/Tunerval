@@ -52,6 +52,20 @@
                                                object:nil];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.enableReminderSwitchOnViewDidAppear)
+    {
+        [self.remindersEnabledSwitch setOn:YES animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3 * NSEC_PER_SEC),
+                       dispatch_get_main_queue(), ^{
+            [self remindersEnabledValueChanged:self.remindersEnabledSwitch];
+        });
+    }
+}
+
 /**
  * If user enables push notifications after being taken to settings if they are disabled,
  * this will hide the push notifications are disabled message.
@@ -59,6 +73,11 @@
 - (void) applicationWillEnterForeground:(NSNotification*)notification
 {
     self.notificationsDisabledView.hidden = [self localNotificationsEnabled];
+    if (self.notificationsDisabledView.hidden == YES)
+    {
+        [self createNotification];
+    }
+    
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 }

@@ -713,6 +713,19 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // record segues AWS analytics
+    // note: this looks stupid. for some reason xcode gave me a code will never be executed warning.
+    // when using &&. must be something to do with the debug macro.
+    if (DEBUGMODE == NO)
+    {
+        if (segue.identifier != nil)
+        {
+            id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
+            id<AWSMobileAnalyticsEvent> segueEvent = [eventClient createEventWithEventType:segue.identifier];
+            [eventClient recordEvent:segueEvent];
+        }
+    }
+    
     if ([segue.identifier isEqualToString:@"SettingsSegue"])
     {
         // app delegate is sender if practice reminder is shown first

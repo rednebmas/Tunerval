@@ -13,6 +13,7 @@
 #import "NSAttributedString+Utilities.h"
 #import "SettingsNumberPickerTableViewController.h"
 #import "SecondsPickerView.h"
+#import "PracticeReminderTableViewController.h"
 
 @interface SettingsTableViewController ()
 {
@@ -285,6 +286,11 @@
         vc.numberPicker.settingsKey = @"note-duration-variation";
         
         [vc.numberPicker generateSecondsList];
+    }
+    else if ([segue.identifier isEqualToString:@"PracticeRemindersSegue"])
+    {
+        PracticeReminderTableViewController *vc = (PracticeReminderTableViewController*)segue.destinationViewController;
+        vc.enableReminderSwitchOnViewDidAppear = YES;
     }
 }
 
