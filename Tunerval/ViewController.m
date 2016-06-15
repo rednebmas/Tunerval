@@ -63,6 +63,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
     [self theme:[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]]];
+    
+    [SBNote setDefaultInstrumenType:InstrumentTypePiano];
 }
 
 - (void) viewWillAppear:(BOOL)animated
