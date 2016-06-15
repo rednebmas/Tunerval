@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -487,13 +487,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="±25c" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGW-rB-CCq">
-                                <rect key="frame" x="531.5" y="288.5" width="46.5" height="24"/>
+                                <rect key="frame" x="532" y="288.5" width="46.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-4K-fmF">
-                                <rect key="frame" x="508" y="268" width="69.5" height="19.5"/>
+                                <rect key="frame" x="508.5" y="268" width="69.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -530,6 +530,7 @@
                             <constraint firstItem="XSq-hc-bFe" firstAttribute="height" secondItem="K9p-jY-efI" secondAttribute="height" id="Mya-Qv-rbp"/>
                             <constraint firstItem="qIY-n3-AHC" firstAttribute="centerY" secondItem="OIS-SA-4R9" secondAttribute="centerY" id="Nk7-oD-3pc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xgp-Oh-lgV" secondAttribute="leading" id="OxT-rc-WGC"/>
+                            <constraint firstAttribute="trailing" secondItem="K9p-jY-efI" secondAttribute="trailing" constant="15" id="Qdb-y9-MY4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OWx-yW-gdZ" secondAttribute="bottom" constant="28.5" id="ThH-p5-IXc"/>
                             <constraint firstItem="Khp-Xz-c4E" firstAttribute="leading" secondItem="L5y-0H-ZFI" secondAttribute="trailing" constant="8" id="WFF-3N-qQr"/>
                             <constraint firstItem="DCM-KJ-d5J" firstAttribute="centerY" secondItem="kOU-BR-FGo" secondAttribute="centerY" id="XU6-ib-9t8"/>
@@ -597,6 +598,7 @@
                                 <exclude reference="q5E-OH-Dx4"/>
                                 <exclude reference="tcQ-yz-gHJ"/>
                                 <exclude reference="4nZ-l9-UyQ"/>
+                                <exclude reference="seQ-mn-8wV"/>
                                 <exclude reference="qYf-cS-hyr"/>
                             </mask>
                         </variation>

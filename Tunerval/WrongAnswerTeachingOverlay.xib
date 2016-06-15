@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WrongAnswerTeachingOverlayView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk4-ie-6Ic">
+                    <rect key="frame" x="509" y="500" width="76" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="vYf-oZ-MDD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="76"/>
+                    <state key="normal" title="⇩">
+                        <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dimButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="RWz-Ie-Oi1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-AF-FUh">
+                    <rect key="frame" x="511" y="411" width="72" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="81" id="tKw-FC-zaK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="76"/>
+                    <state key="normal" title="⦿">
+                        <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dimButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1KK-nB-gbG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lct-a1-WjJ">
+                    <rect key="frame" x="509" y="323" width="76" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="76"/>
+                    <state key="normal" title="⇧">
+                        <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dimButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="czH-47-Noz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fix-DI-d5g">
+                    <rect key="frame" x="565" y="321" width="17" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4s-f2-RCS">
+                    <rect key="frame" x="568" y="556" width="14" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-GT-aKn">
+                    <rect key="frame" x="25" y="410.5" width="455" height="81"/>
+                    <attributedString key="attributedText">
+                        <fragment content="If you answer a question incorrectly, you can hear what the ">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="sharp">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=",">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" in tune">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=",">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="and">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" flat">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content"> answers would have sounded like.
+
+</string>
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Give it a try!">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="lct-a1-WjJ" firstAttribute="top" secondItem="fix-DI-d5g" secondAttribute="bottom" constant="-20" id="8Mh-mJ-u8e"/>
+                <constraint firstItem="Z4s-f2-RCS" firstAttribute="leading" secondItem="bk4-ie-6Ic" secondAttribute="trailing" constant="-17" id="8kE-pC-gQq"/>
+                <constraint firstItem="bk4-ie-6Ic" firstAttribute="top" secondItem="yOf-AF-FUh" secondAttribute="bottom" constant="8" id="B1b-XR-apo"/>
+                <constraint firstItem="wpD-GT-aKn" firstAttribute="centerY" secondItem="yOf-AF-FUh" secondAttribute="centerY" id="Dvw-Dn-tqf"/>
+                <constraint firstItem="lct-a1-WjJ" firstAttribute="top" secondItem="wpD-GT-aKn" secondAttribute="bottom" constant="70" id="KaV-af-eV0"/>
+                <constraint firstItem="Z4s-f2-RCS" firstAttribute="top" secondItem="bk4-ie-6Ic" secondAttribute="bottom" constant="-24" id="Vj8-IR-0xm"/>
+                <constraint firstAttribute="bottom" secondItem="bk4-ie-6Ic" secondAttribute="bottom" constant="20" id="Wrc-kA-lCm"/>
+                <constraint firstItem="yOf-AF-FUh" firstAttribute="centerX" secondItem="bk4-ie-6Ic" secondAttribute="centerX" id="Xuf-xs-4Pd"/>
+                <constraint firstAttribute="trailing" secondItem="wpD-GT-aKn" secondAttribute="trailing" constant="120" id="cq6-yh-73c"/>
+                <constraint firstItem="lct-a1-WjJ" firstAttribute="height" secondItem="bk4-ie-6Ic" secondAttribute="height" id="eVk-sg-uuA"/>
+                <constraint firstAttribute="trailing" secondItem="bk4-ie-6Ic" secondAttribute="trailing" constant="15" id="fwn-Mk-TuT"/>
+                <constraint firstItem="wpD-GT-aKn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="kgn-im-yyL"/>
+                <constraint firstItem="wpD-GT-aKn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="mMh-p4-V1T"/>
+                <constraint firstItem="fix-DI-d5g" firstAttribute="leading" secondItem="lct-a1-WjJ" secondAttribute="trailing" constant="-20" id="r1E-V8-hrg"/>
+                <constraint firstItem="yOf-AF-FUh" firstAttribute="top" secondItem="lct-a1-WjJ" secondAttribute="bottom" constant="8" id="tjB-Ys-vHO"/>
+                <constraint firstItem="wpD-GT-aKn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="tpJ-i9-087"/>
+                <constraint firstItem="lct-a1-WjJ" firstAttribute="centerX" secondItem="bk4-ie-6Ic" secondAttribute="centerX" id="wI4-Gh-LN3"/>
+                <constraint firstAttribute="trailing" secondItem="wpD-GT-aKn" secondAttribute="trailing" constant="40" id="wSJ-mQ-aWo"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="mMh-p4-V1T"/>
+                    <exclude reference="tpJ-i9-087"/>
+                    <exclude reference="wSJ-mQ-aWo"/>
+                    <exclude reference="KaV-af-eV0"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="flatButton" destination="bk4-ie-6Ic" id="56o-Zt-idv"/>
+                <outlet property="inTuneButton" destination="yOf-AF-FUh" id="kY3-wH-IBe"/>
+                <outlet property="sharpButton" destination="lct-a1-WjJ" id="b1D-jC-nt2"/>
+            </connections>
+        </view>
+    </objects>
+</document>

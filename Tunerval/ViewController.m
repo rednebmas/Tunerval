@@ -19,13 +19,14 @@
 #import "AppDelegate.h"
 #import "SettingsTableViewController.h"
 #import "Constants.h"
+#import "WrongAnswerTeachingOverlayView.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
 #define MAX_DIFF_TWO_OR_MORE_INTERVALS 100.0
 static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
-@interface ViewController ()
+@interface ViewController () 
 {
     int answer;
     NSInteger dailyProgressGoal;
@@ -300,7 +301,9 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) playNote:(SBNote*)firstNote thenPlay:(SBNote*)secondNote
 {
     SBAudioPlayer *audioPlayer = [SBAudioPlayer sharedInstance];
-    if (audioPlayer.notes.count != 0) return; // return if there are already notes playing
+    if (audioPlayer.notes.count != 0
+        && self.currentQuestion.referenceNote.instrumentType == InstrumentTypeSineWave)
+        return; // return if there are already notes playing
 
     [audioPlayer play:firstNote];
     
@@ -312,11 +315,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (Question*) generateQuestion
 {
-    SBNote *referenceNote = [self.randomNoteGenerator nextNote];
+    IntervalType interval = [self randomIntervalForWeightedDistribution];
+    SBNote *referenceNote = [self.randomNoteGenerator nextNoteWithinRangeForInterval:interval];
     referenceNote.duration = 1.0;
     
     SBNote *smallDiff;
-    IntervalType interval = [self randomIntervalForWeightedDistribution];
     [self loadScoreForInterval:interval];
     int random = arc4random_uniform(3);
     answer = random;
@@ -414,8 +417,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     else
     {
         [self incorrect:value];
+        if ([defaults integerForKey:@"wrong-answer-overlay-shown"] == 0)
+        {
+            [self showWrongAnswerOverlay];
+            [defaults setInteger:1 forKey:@"wrong-answer-overlay-shown"];
+        }
     }
-    
     
     NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
     [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
@@ -565,6 +572,30 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [synthesizer speakUtterance:utterance];
 }
 
+- (void) showWrongAnswerOverlay
+{
+    WrongAnswerTeachingOverlayView *view = [[NSBundle mainBundle]
+                                         loadNibNamed:@"WrongAnswerTeachingOverlay"
+                                         owner:self
+                                         options:nil][0];
+    
+    // make the buttons play sounds
+    [view.sharpButton addTarget:self
+                      action:@selector(playSharpAnswer)
+            forControlEvents:UIControlEventTouchUpInside];
+    [view.flatButton addTarget:self
+                     action:@selector(playFlatAnswer)
+           forControlEvents:UIControlEventTouchUpInside];
+    [view.inTuneButton addTarget:self
+                       action:@selector(playInTuneAnswer)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    view.hidden = YES;
+    view.frame = self.view.frame;
+    [self.view addSubview:view];
+    [view setHidden:NO animatedWithDuration:1.0];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -657,11 +688,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        double difference = self.currentQuestion.interval * 100.0 + self.differenceInCents;
-        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
-        up.loudness = self.currentQuestion.questionNote.loudness;
-        up.duration = self.currentQuestion.questionNote.duration;
-        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+        [self playSharpAnswer];
     }
 }
 
@@ -672,11 +699,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        double difference = self.currentQuestion.interval * 100.0;
-        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
-        up.loudness = self.currentQuestion.questionNote.loudness;
-        up.duration = self.currentQuestion.questionNote.duration;
-        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+        [self playInTuneAnswer];
     }
 }
 
@@ -687,12 +710,34 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        double difference = self.currentQuestion.interval * 100.0 - self.differenceInCents;
-        SBNote *up = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
-        up.loudness = self.currentQuestion.questionNote.loudness;
-        up.duration = self.currentQuestion.questionNote.duration;
-        [self playNote:self.currentQuestion.referenceNote thenPlay:up];
+        [self playFlatAnswer];
     }
+}
+
+- (void) playSharpAnswer
+{
+    double difference = self.currentQuestion.interval * 100.0 + self.differenceInCents;
+    [self playAnswerWithCentsDifference:difference];
+}
+
+- (void) playInTuneAnswer
+{
+    double difference = self.currentQuestion.interval * 100.0;
+    [self playAnswerWithCentsDifference:difference];
+}
+
+- (void) playFlatAnswer
+{
+    double difference = self.currentQuestion.interval * 100.0 - self.differenceInCents;
+    [self playAnswerWithCentsDifference:difference];
+}
+
+- (void) playAnswerWithCentsDifference:(double)difference
+{
+    SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+    second.loudness = self.currentQuestion.questionNote.loudness;
+    second.duration = self.currentQuestion.questionNote.duration;
+    [self playNote:self.currentQuestion.referenceNote thenPlay:second];
 }
 
 - (IBAction)nextButtonPressed:(UIButton*)sender
