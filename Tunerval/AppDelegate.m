@@ -243,7 +243,7 @@
         notifyAlarm.fireDate = practiceReminderTime;
         notifyAlarm.timeZone = [NSTimeZone defaultTimeZone];
         notifyAlarm.repeatInterval = NSCalendarUnitDay;
-        notifyAlarm.alertBody = @"Daily practice is needed to improve your ear!";
+        notifyAlarm.alertBody = @"Short doses of daily practice is the key to improving your musical ear!";
         
         // create notification
         [[UIApplication sharedApplication] cancelAllLocalNotifications];

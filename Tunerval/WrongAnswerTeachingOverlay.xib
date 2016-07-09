@@ -60,9 +60,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-GT-aKn">
-                    <rect key="frame" x="25" y="410.5" width="455" height="81"/>
+                    <rect key="frame" x="25" y="390.5" width="455" height="121"/>
                     <attributedString key="attributedText">
-                        <fragment content="If you answer a question incorrectly, you can hear what the ">
+                        <fragment content="If you answer a question incorrectly, you can always hear what the ">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -119,7 +119,7 @@
                             </attributes>
                         </fragment>
                         <fragment>
-                            <string key="content"> answers would have sounded like.
+                            <string key="content"> answers would have sounded like by tapping the answer buttons before you move onto the next question.
 
 </string>
                             <attributes>
