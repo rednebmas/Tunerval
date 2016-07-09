@@ -53,7 +53,7 @@
         [defaults setObject:@"A4" forKey:@"from-note"];
         [defaults setObject:@"A5" forKey:@"to-note"];
         
-        [defaults setObject:@100 forKey:@"daily-goal"];
+        [defaults setObject:@50 forKey:@"daily-goal"];
     }
     
     double noteDuration = [defaults doubleForKey:@"note-duration"];

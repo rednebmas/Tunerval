@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -464,14 +464,14 @@
                                 </constraints>
                                 <state key="normal" image="question-circle"/>
                                 <connections>
-                                    <segue destination="9Fb-Oh-Mn8" kind="presentation" id="aQI-Yw-JeV"/>
+                                    <segue destination="9Fb-Oh-Mn8" kind="presentation" identifier="HelpSegue" id="aQI-Yw-JeV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BU0-cO-pL1">
                                 <rect key="frame" x="455" y="32" width="36" height="36"/>
                                 <state key="normal" image="graph-icon"/>
                                 <connections>
-                                    <segue destination="z6j-CT-g8O" kind="presentation" id="3QR-JR-J7r"/>
+                                    <segue destination="z6j-CT-g8O" kind="presentation" identifier="GraphSegue" id="3QR-JR-J7r"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e07-1z-psH">
