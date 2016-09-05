@@ -15,6 +15,8 @@
 		221949591C80E956004D0155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221949571C80E956004D0155 /* Main.storyboard */; };
 		2219495B1C80E956004D0155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2219495A1C80E956004D0155 /* Assets.xcassets */; };
 		2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219495C1C80E956004D0155 /* LaunchScreen.storyboard */; };
+		221A03221D7C792400A3225B /* InstrumentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A03211D7C792400A3225B /* InstrumentsTableViewCell.m */; };
+		221B38781D7C7F6E006D94CC /* InstrumentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B38771D7C7F6E006D94CC /* InstrumentTableViewCell.m */; };
 		221CBBDB1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */; };
 		221CBBDE1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBBDD1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m */; };
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
@@ -27,6 +29,7 @@
 		2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED4C1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
 		22A302E51CCFC8A900340DE9 /* PracticeReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */; };
+		22C5BDF41D596C4600947272 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C5BDF31D596C4600947272 /* StoreKit.framework */; };
 		22C9F7E41CE24E8600A7DA2A /* Piano.ff.A#2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B71CE24E8500A7DA2A /* Piano.ff.A#2.mp3 */; };
 		22C9F7E51CE24E8600A7DA2A /* Piano.ff.A#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B81CE24E8500A7DA2A /* Piano.ff.A#3.mp3 */; };
 		22C9F7E61CE24E8600A7DA2A /* Piano.ff.A#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B91CE24E8500A7DA2A /* Piano.ff.A#4.mp3 */; };
@@ -72,6 +75,7 @@
 		22C9F80E1CE24E8600A7DA2A /* Piano.ff.G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E11CE24E8500A7DA2A /* Piano.ff.G3.mp3 */; };
 		22C9F80F1CE24E8600A7DA2A /* Piano.ff.G4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E21CE24E8500A7DA2A /* Piano.ff.G4.mp3 */; };
 		22C9F8101CE24E8600A7DA2A /* Piano.ff.G5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E31CE24E8500A7DA2A /* Piano.ff.G5.mp3 */; };
+		22CD5E4A1D319211000F386F /* SettingsInstrumentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5E491D319211000F386F /* SettingsInstrumentTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
 		22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */; };
@@ -100,6 +104,10 @@
 		2219495A1C80E956004D0155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2219495D1C80E956004D0155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2219495F1C80E956004D0155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221A03201D7C792400A3225B /* InstrumentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentsTableViewCell.h; sourceTree = "<group>"; };
+		221A03211D7C792400A3225B /* InstrumentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentsTableViewCell.m; sourceTree = "<group>"; };
+		221B38761D7C7F6E006D94CC /* InstrumentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentTableViewCell.h; sourceTree = "<group>"; };
+		221B38771D7C7F6E006D94CC /* InstrumentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentTableViewCell.m; sourceTree = "<group>"; };
 		221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PracticeRemindersNotificationsDisabledView.xib; sourceTree = "<group>"; };
 		221CBBDC1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeRemindersNotificationsDisabledView.h; sourceTree = "<group>"; };
 		221CBBDD1CD31A360032B655 /* PracticeRemindersNotificationsDisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeRemindersNotificationsDisabledView.m; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 		229641141C858E200010F740 /* SettingsIntervalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsIntervalsTableViewController.h; sourceTree = "<group>"; };
 		22A302E31CCFC8A900340DE9 /* PracticeReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeReminderTableViewController.h; sourceTree = "<group>"; };
 		22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeReminderTableViewController.m; sourceTree = "<group>"; };
+		22C5BDF31D596C4600947272 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		22C9F7B71CE24E8500A7DA2A /* Piano.ff.A#2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#2.mp3"; sourceTree = "<group>"; };
 		22C9F7B81CE24E8500A7DA2A /* Piano.ff.A#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#3.mp3"; sourceTree = "<group>"; };
 		22C9F7B91CE24E8500A7DA2A /* Piano.ff.A#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#4.mp3"; sourceTree = "<group>"; };
@@ -167,6 +176,8 @@
 		22C9F7E11CE24E8500A7DA2A /* Piano.ff.G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G3.mp3; sourceTree = "<group>"; };
 		22C9F7E21CE24E8500A7DA2A /* Piano.ff.G4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G4.mp3; sourceTree = "<group>"; };
 		22C9F7E31CE24E8500A7DA2A /* Piano.ff.G5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G5.mp3; sourceTree = "<group>"; };
+		22CD5E481D319211000F386F /* SettingsInstrumentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsInstrumentTableViewController.h; sourceTree = "<group>"; };
+		22CD5E491D319211000F386F /* SettingsInstrumentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsInstrumentTableViewController.m; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
 		22D178CA1C86B5F000B204C1 /* NotePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotePickerView.m; sourceTree = "<group>"; };
 		22D178D41C86C2BD00B204C1 /* NSAttributedString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Utilities.h"; sourceTree = "<group>"; };
@@ -198,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E72F7CEE80BA5F79B1ABD6 /* Pods_Tunerval.framework in Frameworks */,
+				22C5BDF41D596C4600947272 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +275,25 @@
 				2219494F1C80E956004D0155 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		221A03191D7B57F600A3225B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				221B38751D7C7F5C006D94CC /* Instruments */,
+				221A03201D7C792400A3225B /* InstrumentsTableViewCell.h */,
+				221A03211D7C792400A3225B /* InstrumentsTableViewCell.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		221B38751D7C7F5C006D94CC /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				221B38761D7C7F6E006D94CC /* InstrumentTableViewCell.h */,
+				221B38771D7C7F6E006D94CC /* InstrumentTableViewCell.m */,
+			);
+			name = Instruments;
 			sourceTree = "<group>";
 		};
 		22C9F7B61CE24E6D00A7DA2A /* Samples */ = {
@@ -333,6 +364,7 @@
 		22D178C81C86B5E100B204C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				221A03191D7B57F600A3225B /* Settings */,
 				221949571C80E956004D0155 /* Main.storyboard */,
 				2219495C1C80E956004D0155 /* LaunchScreen.storyboard */,
 				221CBBDA1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib */,
@@ -373,6 +405,8 @@
 				22D178D91C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m */,
 				22A302E31CCFC8A900340DE9 /* PracticeReminderTableViewController.h */,
 				22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */,
+				22CD5E481D319211000F386F /* SettingsInstrumentTableViewController.h */,
+				22CD5E491D319211000F386F /* SettingsInstrumentTableViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -413,6 +447,7 @@
 		FD32B24027F848E86F4F215E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C5BDF31D596C4600947272 /* StoreKit.framework */,
 				C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */,
 			);
 			name = Frameworks;
@@ -452,7 +487,12 @@
 				TargetAttributes = {
 					2219494A1C80E956004D0155 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 98D5PKHV7Y;
+						DevelopmentTeam = 2VJY2AJVXJ;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -591,15 +631,18 @@
 				2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */,
 				22E3C7471C9E397F00CD11C5 /* ScoresData.m in Sources */,
 				221949531C80E956004D0155 /* AppDelegate.m in Sources */,
+				221B38781D7C7F6E006D94CC /* InstrumentTableViewCell.m in Sources */,
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
 				224747671C92AA45004E41D7 /* Constants.m in Sources */,
 				2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
+				221A03221D7C792400A3225B /* InstrumentsTableViewCell.m in Sources */,
 				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,
 				22D178DA1C86C3B800B204C1 /* SettingsNoteRangeTableViewController.m in Sources */,
 				22A302E51CCFC8A900340DE9 /* PracticeReminderTableViewController.m in Sources */,
 				220CC9D51C89608A00EFF7DA /* Animation.m in Sources */,
+				22CD5E4A1D319211000F386F /* SettingsInstrumentTableViewController.m in Sources */,
 				22E3C7441C9E278F00CD11C5 /* ChartViewController.m in Sources */,
 				22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */,
 				22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */,
@@ -676,6 +719,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "cf225e5b-4e4a-4144-ac27-a1db0a7edc36";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -713,6 +757,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "cf225e5b-4e4a-4144-ac27-a1db0a7edc36";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

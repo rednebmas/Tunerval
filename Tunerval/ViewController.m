@@ -65,7 +65,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.intervalNameLabel setText:@""];
     [self theme:[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]]];
     
-    [SBNote setDefaultInstrumenType:InstrumentTypePiano];
+//    [SBNote setDefaultInstrumenType:InstrumentTypePiano];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -319,23 +319,23 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     SBNote *referenceNote = [self.randomNoteGenerator nextNoteWithinRangeForInterval:interval];
     referenceNote.duration = 1.0;
     
-    SBNote *smallDiff;
+    SBNote *questionNote;
     [self loadScoreForInterval:interval];
     int random = arc4random_uniform(3);
     answer = random;
     if (random == 0)
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents];
         NSLog(@"higher");
     }
     else if (random == 1)
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0];
         NSLog(@"on it");
     }
     else
     {
-        smallDiff = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents];
         NSLog(@"lower");
     }
     
@@ -347,20 +347,32 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        smallDiff.loudness = 1.0 - .4 * drand48();
+        questionNote.loudness = 1.0 - .4 * drand48();
     }
     double duration = [defaults doubleForKey:@"note-duration"];
     double durationVariation = [defaults doubleForKey:@"note-duration-variation"];
-    smallDiff.duration = duration + (drand48() * durationVariation - durationVariation/2);
+    questionNote.duration = duration + (drand48() * durationVariation - durationVariation/2);
     referenceNote.duration = duration + (drand48() * durationVariation - durationVariation/2);
+    
+    // set instrument
+    InstrumentType instrumentType = [self instrumentType];
+    referenceNote.instrumentType = instrumentType;
+    questionNote.instrumentType = instrumentType;
     
     // create question object
     Question *question = [[Question alloc] init];
     question.referenceNote = referenceNote;
-    question.questionNote = smallDiff;
+    question.questionNote = questionNote;
     question.interval = interval;
     
     return question;
+}
+
+- (InstrumentType)instrumentType
+{
+    NSArray *instruments = [defaults objectForKey:@"instruments"];
+    NSUInteger randomIndex = arc4random() % [instruments count];
+    return [instruments[randomIndex] integerValue];
 }
 
 - (void) setDirectionLabelTextForInterval:(IntervalType)interval

@@ -6,8 +6,9 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import "MigrationManager.h"
 #import <FMDB/FMDB.h>
+#import <SBMusicUtilities/SBNote.h>
+#import "MigrationManager.h"
 #import "Constants.h"
 
 @interface MigrationManager()
@@ -32,6 +33,9 @@
             
         case 0:
             [MigrationManager firstMigration];
+        
+        case 1:
+            [MigrationManager secondMigration];
             
         default:
             break;
@@ -40,7 +44,7 @@
              
 + (void) firstMigration
 {
-    // created tables
+    // create history table
     NSString *createTable =
     @"CREATE TABLE answer_history"
     "("
@@ -65,6 +69,14 @@
     [db close];
     
     [MigrationManager updateMigrationsCompletedTo:1];
+}
+
++ (void)secondMigration
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@[@(InstrumentTypeSineWave)] forKey:@"instruments"];
+    
+    [MigrationManager updateMigrationsCompletedTo:2];
 }
 
 + (void) updateMigrationsCompletedTo:(NSInteger)migrationsCompleted

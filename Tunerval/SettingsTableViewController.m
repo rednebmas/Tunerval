@@ -14,6 +14,7 @@
 #import "SettingsNumberPickerTableViewController.h"
 #import "SecondsPickerView.h"
 #import "PracticeReminderTableViewController.h"
+#import "InstrumentsTableViewCell.h"
 
 @interface SettingsTableViewController ()
 {
@@ -22,7 +23,8 @@
 
 @property (nonatomic, retain) NSMutableArray *intervals;
 @property (nonatomic, retain) UILabel *usageLabel;
-
+@property (weak, nonatomic) IBOutlet InstrumentsTableViewCell *instrumentsCell;
+@property (weak, nonatomic) IBOutlet UILabel *instrumentsNewLabel;
 
 @end
 
@@ -41,6 +43,7 @@
     [self addDoneButtonToTextField];
     
     [self.speakIntervalSwitch setOn:[[defaults objectForKey:@"speak-interval-on"] boolValue]];
+    self.instrumentsCell.instrumentsNewLabel = self.instrumentsNewLabel;
 }
 
 - (void) viewWillAppear:(BOOL)animated
