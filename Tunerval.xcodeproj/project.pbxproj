@@ -24,57 +24,13 @@
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
+		2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255A2211D7E520E00123363 /* KeychainUserPass.m */; };
 		2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */; };
 		2285ED4A1D11EBEA000B8856 /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED491D11EBEA000B8856 /* UIView+Helpers.m */; };
 		2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED4C1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m */; };
 		229641151C858E200010F740 /* SettingsIntervalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229641131C858E200010F740 /* SettingsIntervalsTableViewController.m */; };
 		22A302E51CCFC8A900340DE9 /* PracticeReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */; };
 		22C5BDF41D596C4600947272 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C5BDF31D596C4600947272 /* StoreKit.framework */; };
-		22C9F7E41CE24E8600A7DA2A /* Piano.ff.A#2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B71CE24E8500A7DA2A /* Piano.ff.A#2.mp3 */; };
-		22C9F7E51CE24E8600A7DA2A /* Piano.ff.A#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B81CE24E8500A7DA2A /* Piano.ff.A#3.mp3 */; };
-		22C9F7E61CE24E8600A7DA2A /* Piano.ff.A#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7B91CE24E8500A7DA2A /* Piano.ff.A#4.mp3 */; };
-		22C9F7E71CE24E8600A7DA2A /* Piano.ff.A#5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BA1CE24E8500A7DA2A /* Piano.ff.A#5.mp3 */; };
-		22C9F7E81CE24E8600A7DA2A /* Piano.ff.A2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BB1CE24E8500A7DA2A /* Piano.ff.A2.mp3 */; };
-		22C9F7E91CE24E8600A7DA2A /* Piano.ff.A3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BC1CE24E8500A7DA2A /* Piano.ff.A3.mp3 */; };
-		22C9F7EA1CE24E8600A7DA2A /* Piano.ff.A4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BD1CE24E8500A7DA2A /* Piano.ff.A4.mp3 */; };
-		22C9F7EB1CE24E8600A7DA2A /* Piano.ff.A5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BE1CE24E8500A7DA2A /* Piano.ff.A5.mp3 */; };
-		22C9F7EC1CE24E8600A7DA2A /* Piano.ff.B2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7BF1CE24E8500A7DA2A /* Piano.ff.B2.mp3 */; };
-		22C9F7ED1CE24E8600A7DA2A /* Piano.ff.B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C01CE24E8500A7DA2A /* Piano.ff.B3.mp3 */; };
-		22C9F7EE1CE24E8600A7DA2A /* Piano.ff.B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C11CE24E8500A7DA2A /* Piano.ff.B4.mp3 */; };
-		22C9F7EF1CE24E8600A7DA2A /* Piano.ff.B5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C21CE24E8500A7DA2A /* Piano.ff.B5.mp3 */; };
-		22C9F7F01CE24E8600A7DA2A /* Piano.ff.C#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C31CE24E8500A7DA2A /* Piano.ff.C#3.mp3 */; };
-		22C9F7F11CE24E8600A7DA2A /* Piano.ff.C#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C41CE24E8500A7DA2A /* Piano.ff.C#4.mp3 */; };
-		22C9F7F21CE24E8600A7DA2A /* Piano.ff.C#5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C51CE24E8500A7DA2A /* Piano.ff.C#5.mp3 */; };
-		22C9F7F31CE24E8600A7DA2A /* Piano.ff.C3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C61CE24E8500A7DA2A /* Piano.ff.C3.mp3 */; };
-		22C9F7F41CE24E8600A7DA2A /* Piano.ff.C4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C71CE24E8500A7DA2A /* Piano.ff.C4.mp3 */; };
-		22C9F7F51CE24E8600A7DA2A /* Piano.ff.C5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C81CE24E8500A7DA2A /* Piano.ff.C5.mp3 */; };
-		22C9F7F61CE24E8600A7DA2A /* Piano.ff.C6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7C91CE24E8500A7DA2A /* Piano.ff.C6.mp3 */; };
-		22C9F7F71CE24E8600A7DA2A /* Piano.ff.D#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CA1CE24E8500A7DA2A /* Piano.ff.D#3.mp3 */; };
-		22C9F7F81CE24E8600A7DA2A /* Piano.ff.D#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CB1CE24E8500A7DA2A /* Piano.ff.D#4.mp3 */; };
-		22C9F7F91CE24E8600A7DA2A /* Piano.ff.D#5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CC1CE24E8500A7DA2A /* Piano.ff.D#5.mp3 */; };
-		22C9F7FA1CE24E8600A7DA2A /* Piano.ff.D3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CD1CE24E8500A7DA2A /* Piano.ff.D3.mp3 */; };
-		22C9F7FB1CE24E8600A7DA2A /* Piano.ff.D4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CE1CE24E8500A7DA2A /* Piano.ff.D4.mp3 */; };
-		22C9F7FC1CE24E8600A7DA2A /* Piano.ff.D5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7CF1CE24E8500A7DA2A /* Piano.ff.D5.mp3 */; };
-		22C9F7FD1CE24E8600A7DA2A /* Piano.ff.E2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D01CE24E8500A7DA2A /* Piano.ff.E2.mp3 */; };
-		22C9F7FE1CE24E8600A7DA2A /* Piano.ff.E3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D11CE24E8500A7DA2A /* Piano.ff.E3.mp3 */; };
-		22C9F7FF1CE24E8600A7DA2A /* Piano.ff.E4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D21CE24E8500A7DA2A /* Piano.ff.E4.mp3 */; };
-		22C9F8001CE24E8600A7DA2A /* Piano.ff.E5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D31CE24E8500A7DA2A /* Piano.ff.E5.mp3 */; };
-		22C9F8011CE24E8600A7DA2A /* Piano.ff.F#2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D41CE24E8500A7DA2A /* Piano.ff.F#2.mp3 */; };
-		22C9F8021CE24E8600A7DA2A /* Piano.ff.F#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D51CE24E8500A7DA2A /* Piano.ff.F#3.mp3 */; };
-		22C9F8031CE24E8600A7DA2A /* Piano.ff.F#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D61CE24E8500A7DA2A /* Piano.ff.F#4.mp3 */; };
-		22C9F8041CE24E8600A7DA2A /* Piano.ff.F#5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D71CE24E8500A7DA2A /* Piano.ff.F#5.mp3 */; };
-		22C9F8051CE24E8600A7DA2A /* Piano.ff.F2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D81CE24E8500A7DA2A /* Piano.ff.F2.mp3 */; };
-		22C9F8061CE24E8600A7DA2A /* Piano.ff.F3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7D91CE24E8500A7DA2A /* Piano.ff.F3.mp3 */; };
-		22C9F8071CE24E8600A7DA2A /* Piano.ff.F4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DA1CE24E8500A7DA2A /* Piano.ff.F4.mp3 */; };
-		22C9F8081CE24E8600A7DA2A /* Piano.ff.F5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DB1CE24E8500A7DA2A /* Piano.ff.F5.mp3 */; };
-		22C9F8091CE24E8600A7DA2A /* Piano.ff.G#2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DC1CE24E8500A7DA2A /* Piano.ff.G#2.mp3 */; };
-		22C9F80A1CE24E8600A7DA2A /* Piano.ff.G#3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DD1CE24E8500A7DA2A /* Piano.ff.G#3.mp3 */; };
-		22C9F80B1CE24E8600A7DA2A /* Piano.ff.G#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DE1CE24E8500A7DA2A /* Piano.ff.G#4.mp3 */; };
-		22C9F80C1CE24E8600A7DA2A /* Piano.ff.G#5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7DF1CE24E8500A7DA2A /* Piano.ff.G#5.mp3 */; };
-		22C9F80D1CE24E8600A7DA2A /* Piano.ff.G2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E01CE24E8500A7DA2A /* Piano.ff.G2.mp3 */; };
-		22C9F80E1CE24E8600A7DA2A /* Piano.ff.G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E11CE24E8500A7DA2A /* Piano.ff.G3.mp3 */; };
-		22C9F80F1CE24E8600A7DA2A /* Piano.ff.G4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E21CE24E8500A7DA2A /* Piano.ff.G4.mp3 */; };
-		22C9F8101CE24E8600A7DA2A /* Piano.ff.G5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22C9F7E31CE24E8500A7DA2A /* Piano.ff.G5.mp3 */; };
 		22CD5E4A1D319211000F386F /* SettingsInstrumentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5E491D319211000F386F /* SettingsInstrumentTableViewController.m */; };
 		22D178CB1C86B5F000B204C1 /* NotePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178CA1C86B5F000B204C1 /* NotePickerView.m */; };
 		22D178D61C86C2BD00B204C1 /* NSAttributedString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */; };
@@ -121,6 +77,8 @@
 		224747661C92AA45004E41D7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		2253CD771CA36A37001630FE /* ChartPickIntervalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPickIntervalTableViewController.h; sourceTree = "<group>"; };
 		2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPickIntervalTableViewController.m; sourceTree = "<group>"; };
+		2255A2201D7E520E00123363 /* KeychainUserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainUserPass.h; sourceTree = "<group>"; };
+		2255A2211D7E520E00123363 /* KeychainUserPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainUserPass.m; sourceTree = "<group>"; };
 		2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WrongAnswerTeachingOverlay.xib; sourceTree = "<group>"; };
 		2285ED481D11EBEA000B8856 /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helpers.h"; sourceTree = "<group>"; };
 		2285ED491D11EBEA000B8856 /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helpers.m"; sourceTree = "<group>"; };
@@ -131,51 +89,6 @@
 		22A302E31CCFC8A900340DE9 /* PracticeReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeReminderTableViewController.h; sourceTree = "<group>"; };
 		22A302E41CCFC8A900340DE9 /* PracticeReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeReminderTableViewController.m; sourceTree = "<group>"; };
 		22C5BDF31D596C4600947272 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		22C9F7B71CE24E8500A7DA2A /* Piano.ff.A#2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#2.mp3"; sourceTree = "<group>"; };
-		22C9F7B81CE24E8500A7DA2A /* Piano.ff.A#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#3.mp3"; sourceTree = "<group>"; };
-		22C9F7B91CE24E8500A7DA2A /* Piano.ff.A#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#4.mp3"; sourceTree = "<group>"; };
-		22C9F7BA1CE24E8500A7DA2A /* Piano.ff.A#5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.A#5.mp3"; sourceTree = "<group>"; };
-		22C9F7BB1CE24E8500A7DA2A /* Piano.ff.A2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.A2.mp3; sourceTree = "<group>"; };
-		22C9F7BC1CE24E8500A7DA2A /* Piano.ff.A3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.A3.mp3; sourceTree = "<group>"; };
-		22C9F7BD1CE24E8500A7DA2A /* Piano.ff.A4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.A4.mp3; sourceTree = "<group>"; };
-		22C9F7BE1CE24E8500A7DA2A /* Piano.ff.A5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.A5.mp3; sourceTree = "<group>"; };
-		22C9F7BF1CE24E8500A7DA2A /* Piano.ff.B2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.B2.mp3; sourceTree = "<group>"; };
-		22C9F7C01CE24E8500A7DA2A /* Piano.ff.B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.B3.mp3; sourceTree = "<group>"; };
-		22C9F7C11CE24E8500A7DA2A /* Piano.ff.B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.B4.mp3; sourceTree = "<group>"; };
-		22C9F7C21CE24E8500A7DA2A /* Piano.ff.B5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.B5.mp3; sourceTree = "<group>"; };
-		22C9F7C31CE24E8500A7DA2A /* Piano.ff.C#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.C#3.mp3"; sourceTree = "<group>"; };
-		22C9F7C41CE24E8500A7DA2A /* Piano.ff.C#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.C#4.mp3"; sourceTree = "<group>"; };
-		22C9F7C51CE24E8500A7DA2A /* Piano.ff.C#5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.C#5.mp3"; sourceTree = "<group>"; };
-		22C9F7C61CE24E8500A7DA2A /* Piano.ff.C3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.C3.mp3; sourceTree = "<group>"; };
-		22C9F7C71CE24E8500A7DA2A /* Piano.ff.C4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.C4.mp3; sourceTree = "<group>"; };
-		22C9F7C81CE24E8500A7DA2A /* Piano.ff.C5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.C5.mp3; sourceTree = "<group>"; };
-		22C9F7C91CE24E8500A7DA2A /* Piano.ff.C6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.C6.mp3; sourceTree = "<group>"; };
-		22C9F7CA1CE24E8500A7DA2A /* Piano.ff.D#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.D#3.mp3"; sourceTree = "<group>"; };
-		22C9F7CB1CE24E8500A7DA2A /* Piano.ff.D#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.D#4.mp3"; sourceTree = "<group>"; };
-		22C9F7CC1CE24E8500A7DA2A /* Piano.ff.D#5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.D#5.mp3"; sourceTree = "<group>"; };
-		22C9F7CD1CE24E8500A7DA2A /* Piano.ff.D3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.D3.mp3; sourceTree = "<group>"; };
-		22C9F7CE1CE24E8500A7DA2A /* Piano.ff.D4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.D4.mp3; sourceTree = "<group>"; };
-		22C9F7CF1CE24E8500A7DA2A /* Piano.ff.D5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.D5.mp3; sourceTree = "<group>"; };
-		22C9F7D01CE24E8500A7DA2A /* Piano.ff.E2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.E2.mp3; sourceTree = "<group>"; };
-		22C9F7D11CE24E8500A7DA2A /* Piano.ff.E3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.E3.mp3; sourceTree = "<group>"; };
-		22C9F7D21CE24E8500A7DA2A /* Piano.ff.E4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.E4.mp3; sourceTree = "<group>"; };
-		22C9F7D31CE24E8500A7DA2A /* Piano.ff.E5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.E5.mp3; sourceTree = "<group>"; };
-		22C9F7D41CE24E8500A7DA2A /* Piano.ff.F#2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.F#2.mp3"; sourceTree = "<group>"; };
-		22C9F7D51CE24E8500A7DA2A /* Piano.ff.F#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.F#3.mp3"; sourceTree = "<group>"; };
-		22C9F7D61CE24E8500A7DA2A /* Piano.ff.F#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.F#4.mp3"; sourceTree = "<group>"; };
-		22C9F7D71CE24E8500A7DA2A /* Piano.ff.F#5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.F#5.mp3"; sourceTree = "<group>"; };
-		22C9F7D81CE24E8500A7DA2A /* Piano.ff.F2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.F2.mp3; sourceTree = "<group>"; };
-		22C9F7D91CE24E8500A7DA2A /* Piano.ff.F3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.F3.mp3; sourceTree = "<group>"; };
-		22C9F7DA1CE24E8500A7DA2A /* Piano.ff.F4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.F4.mp3; sourceTree = "<group>"; };
-		22C9F7DB1CE24E8500A7DA2A /* Piano.ff.F5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.F5.mp3; sourceTree = "<group>"; };
-		22C9F7DC1CE24E8500A7DA2A /* Piano.ff.G#2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.G#2.mp3"; sourceTree = "<group>"; };
-		22C9F7DD1CE24E8500A7DA2A /* Piano.ff.G#3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.G#3.mp3"; sourceTree = "<group>"; };
-		22C9F7DE1CE24E8500A7DA2A /* Piano.ff.G#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.G#4.mp3"; sourceTree = "<group>"; };
-		22C9F7DF1CE24E8500A7DA2A /* Piano.ff.G#5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Piano.ff.G#5.mp3"; sourceTree = "<group>"; };
-		22C9F7E01CE24E8500A7DA2A /* Piano.ff.G2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G2.mp3; sourceTree = "<group>"; };
-		22C9F7E11CE24E8500A7DA2A /* Piano.ff.G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G3.mp3; sourceTree = "<group>"; };
-		22C9F7E21CE24E8500A7DA2A /* Piano.ff.G4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G4.mp3; sourceTree = "<group>"; };
-		22C9F7E31CE24E8500A7DA2A /* Piano.ff.G5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.ff.G5.mp3; sourceTree = "<group>"; };
 		22CD5E481D319211000F386F /* SettingsInstrumentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsInstrumentTableViewController.h; sourceTree = "<group>"; };
 		22CD5E491D319211000F386F /* SettingsInstrumentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsInstrumentTableViewController.m; sourceTree = "<group>"; };
 		22D178C91C86B5F000B204C1 /* NotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotePickerView.h; sourceTree = "<group>"; };
@@ -262,7 +175,6 @@
 				221949511C80E956004D0155 /* AppDelegate.h */,
 				221949521C80E956004D0155 /* AppDelegate.m */,
 				2219495A1C80E956004D0155 /* Assets.xcassets */,
-				22C9F7B61CE24E6D00A7DA2A /* Samples */,
 				2219495F1C80E956004D0155 /* Info.plist */,
 				2219494E1C80E956004D0155 /* Supporting Files */,
 			);
@@ -294,58 +206,6 @@
 				221B38771D7C7F6E006D94CC /* InstrumentTableViewCell.m */,
 			);
 			name = Instruments;
-			sourceTree = "<group>";
-		};
-		22C9F7B61CE24E6D00A7DA2A /* Samples */ = {
-			isa = PBXGroup;
-			children = (
-				22C9F7B71CE24E8500A7DA2A /* Piano.ff.A#2.mp3 */,
-				22C9F7B81CE24E8500A7DA2A /* Piano.ff.A#3.mp3 */,
-				22C9F7B91CE24E8500A7DA2A /* Piano.ff.A#4.mp3 */,
-				22C9F7BA1CE24E8500A7DA2A /* Piano.ff.A#5.mp3 */,
-				22C9F7BB1CE24E8500A7DA2A /* Piano.ff.A2.mp3 */,
-				22C9F7BC1CE24E8500A7DA2A /* Piano.ff.A3.mp3 */,
-				22C9F7BD1CE24E8500A7DA2A /* Piano.ff.A4.mp3 */,
-				22C9F7BE1CE24E8500A7DA2A /* Piano.ff.A5.mp3 */,
-				22C9F7BF1CE24E8500A7DA2A /* Piano.ff.B2.mp3 */,
-				22C9F7C01CE24E8500A7DA2A /* Piano.ff.B3.mp3 */,
-				22C9F7C11CE24E8500A7DA2A /* Piano.ff.B4.mp3 */,
-				22C9F7C21CE24E8500A7DA2A /* Piano.ff.B5.mp3 */,
-				22C9F7C31CE24E8500A7DA2A /* Piano.ff.C#3.mp3 */,
-				22C9F7C41CE24E8500A7DA2A /* Piano.ff.C#4.mp3 */,
-				22C9F7C51CE24E8500A7DA2A /* Piano.ff.C#5.mp3 */,
-				22C9F7C61CE24E8500A7DA2A /* Piano.ff.C3.mp3 */,
-				22C9F7C71CE24E8500A7DA2A /* Piano.ff.C4.mp3 */,
-				22C9F7C81CE24E8500A7DA2A /* Piano.ff.C5.mp3 */,
-				22C9F7C91CE24E8500A7DA2A /* Piano.ff.C6.mp3 */,
-				22C9F7CA1CE24E8500A7DA2A /* Piano.ff.D#3.mp3 */,
-				22C9F7CB1CE24E8500A7DA2A /* Piano.ff.D#4.mp3 */,
-				22C9F7CC1CE24E8500A7DA2A /* Piano.ff.D#5.mp3 */,
-				22C9F7CD1CE24E8500A7DA2A /* Piano.ff.D3.mp3 */,
-				22C9F7CE1CE24E8500A7DA2A /* Piano.ff.D4.mp3 */,
-				22C9F7CF1CE24E8500A7DA2A /* Piano.ff.D5.mp3 */,
-				22C9F7D01CE24E8500A7DA2A /* Piano.ff.E2.mp3 */,
-				22C9F7D11CE24E8500A7DA2A /* Piano.ff.E3.mp3 */,
-				22C9F7D21CE24E8500A7DA2A /* Piano.ff.E4.mp3 */,
-				22C9F7D31CE24E8500A7DA2A /* Piano.ff.E5.mp3 */,
-				22C9F7D41CE24E8500A7DA2A /* Piano.ff.F#2.mp3 */,
-				22C9F7D51CE24E8500A7DA2A /* Piano.ff.F#3.mp3 */,
-				22C9F7D61CE24E8500A7DA2A /* Piano.ff.F#4.mp3 */,
-				22C9F7D71CE24E8500A7DA2A /* Piano.ff.F#5.mp3 */,
-				22C9F7D81CE24E8500A7DA2A /* Piano.ff.F2.mp3 */,
-				22C9F7D91CE24E8500A7DA2A /* Piano.ff.F3.mp3 */,
-				22C9F7DA1CE24E8500A7DA2A /* Piano.ff.F4.mp3 */,
-				22C9F7DB1CE24E8500A7DA2A /* Piano.ff.F5.mp3 */,
-				22C9F7DC1CE24E8500A7DA2A /* Piano.ff.G#2.mp3 */,
-				22C9F7DD1CE24E8500A7DA2A /* Piano.ff.G#3.mp3 */,
-				22C9F7DE1CE24E8500A7DA2A /* Piano.ff.G#4.mp3 */,
-				22C9F7DF1CE24E8500A7DA2A /* Piano.ff.G#5.mp3 */,
-				22C9F7E01CE24E8500A7DA2A /* Piano.ff.G2.mp3 */,
-				22C9F7E11CE24E8500A7DA2A /* Piano.ff.G3.mp3 */,
-				22C9F7E21CE24E8500A7DA2A /* Piano.ff.G4.mp3 */,
-				22C9F7E31CE24E8500A7DA2A /* Piano.ff.G5.mp3 */,
-			);
-			name = Samples;
 			sourceTree = "<group>";
 		};
 		22D178C71C86ABE000B204C1 /* Controllers */ = {
@@ -388,6 +248,8 @@
 			children = (
 				22D178D41C86C2BD00B204C1 /* NSAttributedString+Utilities.h */,
 				22D178D51C86C2BD00B204C1 /* NSAttributedString+Utilities.m */,
+				2255A2201D7E520E00123363 /* KeychainUserPass.h */,
+				2255A2211D7E520E00123363 /* KeychainUserPass.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -519,56 +381,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22C9F80A1CE24E8600A7DA2A /* Piano.ff.G#3.mp3 in Resources */,
-				22C9F8101CE24E8600A7DA2A /* Piano.ff.G5.mp3 in Resources */,
-				22C9F7FB1CE24E8600A7DA2A /* Piano.ff.D4.mp3 in Resources */,
-				22C9F7FD1CE24E8600A7DA2A /* Piano.ff.E2.mp3 in Resources */,
-				22C9F8031CE24E8600A7DA2A /* Piano.ff.F#4.mp3 in Resources */,
 				221CBBDB1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib in Resources */,
-				22C9F7F41CE24E8600A7DA2A /* Piano.ff.C4.mp3 in Resources */,
-				22C9F7E81CE24E8600A7DA2A /* Piano.ff.A2.mp3 in Resources */,
-				22C9F80F1CE24E8600A7DA2A /* Piano.ff.G4.mp3 in Resources */,
-				22C9F7FF1CE24E8600A7DA2A /* Piano.ff.E4.mp3 in Resources */,
-				22C9F7E61CE24E8600A7DA2A /* Piano.ff.A#4.mp3 in Resources */,
-				22C9F7EF1CE24E8600A7DA2A /* Piano.ff.B5.mp3 in Resources */,
 				2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */,
-				22C9F8081CE24E8600A7DA2A /* Piano.ff.F5.mp3 in Resources */,
-				22C9F7EC1CE24E8600A7DA2A /* Piano.ff.B2.mp3 in Resources */,
-				22C9F80D1CE24E8600A7DA2A /* Piano.ff.G2.mp3 in Resources */,
-				22C9F7FE1CE24E8600A7DA2A /* Piano.ff.E3.mp3 in Resources */,
-				22C9F7ED1CE24E8600A7DA2A /* Piano.ff.B3.mp3 in Resources */,
-				22C9F8041CE24E8600A7DA2A /* Piano.ff.F#5.mp3 in Resources */,
-				22C9F7F21CE24E8600A7DA2A /* Piano.ff.C#5.mp3 in Resources */,
-				22C9F8021CE24E8600A7DA2A /* Piano.ff.F#3.mp3 in Resources */,
 				2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */,
-				22C9F7E51CE24E8600A7DA2A /* Piano.ff.A#3.mp3 in Resources */,
-				22C9F7EA1CE24E8600A7DA2A /* Piano.ff.A4.mp3 in Resources */,
-				22C9F7FC1CE24E8600A7DA2A /* Piano.ff.D5.mp3 in Resources */,
-				22C9F8061CE24E8600A7DA2A /* Piano.ff.F3.mp3 in Resources */,
-				22C9F8001CE24E8600A7DA2A /* Piano.ff.E5.mp3 in Resources */,
 				2219495B1C80E956004D0155 /* Assets.xcassets in Resources */,
-				22C9F8091CE24E8600A7DA2A /* Piano.ff.G#2.mp3 in Resources */,
-				22C9F8071CE24E8600A7DA2A /* Piano.ff.F4.mp3 in Resources */,
-				22C9F7E41CE24E8600A7DA2A /* Piano.ff.A#2.mp3 in Resources */,
-				22C9F7F11CE24E8600A7DA2A /* Piano.ff.C#4.mp3 in Resources */,
-				22C9F7EE1CE24E8600A7DA2A /* Piano.ff.B4.mp3 in Resources */,
-				22C9F7F91CE24E8600A7DA2A /* Piano.ff.D#5.mp3 in Resources */,
-				22C9F8011CE24E8600A7DA2A /* Piano.ff.F#2.mp3 in Resources */,
-				22C9F80B1CE24E8600A7DA2A /* Piano.ff.G#4.mp3 in Resources */,
-				22C9F7F31CE24E8600A7DA2A /* Piano.ff.C3.mp3 in Resources */,
-				22C9F7F51CE24E8600A7DA2A /* Piano.ff.C5.mp3 in Resources */,
-				22C9F7E71CE24E8600A7DA2A /* Piano.ff.A#5.mp3 in Resources */,
-				22C9F7FA1CE24E8600A7DA2A /* Piano.ff.D3.mp3 in Resources */,
-				22C9F7F81CE24E8600A7DA2A /* Piano.ff.D#4.mp3 in Resources */,
-				22C9F7E91CE24E8600A7DA2A /* Piano.ff.A3.mp3 in Resources */,
-				22C9F80C1CE24E8600A7DA2A /* Piano.ff.G#5.mp3 in Resources */,
-				22C9F8051CE24E8600A7DA2A /* Piano.ff.F2.mp3 in Resources */,
-				22C9F7EB1CE24E8600A7DA2A /* Piano.ff.A5.mp3 in Resources */,
-				22C9F7F01CE24E8600A7DA2A /* Piano.ff.C#3.mp3 in Resources */,
 				221949591C80E956004D0155 /* Main.storyboard in Resources */,
-				22C9F7F61CE24E8600A7DA2A /* Piano.ff.C6.mp3 in Resources */,
-				22C9F80E1CE24E8600A7DA2A /* Piano.ff.G3.mp3 in Resources */,
-				22C9F7F71CE24E8600A7DA2A /* Piano.ff.D#3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +452,7 @@
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
 				224747671C92AA45004E41D7 /* Constants.m in Sources */,
+				2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */,
 				2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
 				221A03221D7C792400A3225B /* InstrumentsTableViewCell.m in Sources */,

@@ -10,6 +10,7 @@
 #import <SBMusicUtilities/SBNote.h>
 #import "MigrationManager.h"
 #import "Constants.h"
+#import "KeychainUserPass.h"
 
 @interface MigrationManager()
 {
@@ -75,6 +76,8 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@[@(InstrumentTypeSineWave)] forKey:@"instruments"];
+    
+    [KeychainUserPass save:@"PianoPurchased" data:@(NO)];
     
     [MigrationManager updateMigrationsCompletedTo:2];
 }

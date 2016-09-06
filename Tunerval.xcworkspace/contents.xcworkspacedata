@@ -5,6 +5,9 @@
       location = "group:Tunerval.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:InstrumentTypePiano/InstrumentTypePiano.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
