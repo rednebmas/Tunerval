@@ -10,6 +10,7 @@
   "homepage": "https://github.com/rednebmas/SBMusicUtilities",
   "social_media_url": "https://www.facebook.com/sambndr",
   "platforms": {
+    "osx": "10.8",
     "ios": "8.0"
   },
   "source": {

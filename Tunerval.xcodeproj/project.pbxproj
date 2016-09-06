@@ -25,6 +25,7 @@
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255A2211D7E520E00123363 /* KeychainUserPass.m */; };
+		2255A2281D7E643900123363 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2255A2271D7E643900123363 /* libz.tbd */; };
 		2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */; };
 		2285ED4A1D11EBEA000B8856 /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED491D11EBEA000B8856 /* UIView+Helpers.m */; };
 		2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED4C1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m */; };
@@ -42,10 +43,11 @@
 		22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C5CE1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m */; };
 		22F68EDE1C813D7B0040541F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F68EDD1C813D7B0040541F /* Question.m */; };
 		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
-		E7E72F7CEE80BA5F79B1ABD6 /* Pods_Tunerval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */; };
+		303FB5ACE3AD97776652E25B /* Pods_Tunerval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ADF68B976B15368BF821AA /* Pods_Tunerval.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6E42034094C01C192724CE /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
 		220CC9D31C89608A00EFF7DA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		220CC9D41C89608A00EFF7DA /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
 		220CC9D71C8A1CE800EFF7DA /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPickIntervalTableViewController.m; sourceTree = "<group>"; };
 		2255A2201D7E520E00123363 /* KeychainUserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainUserPass.h; sourceTree = "<group>"; };
 		2255A2211D7E520E00123363 /* KeychainUserPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainUserPass.m; sourceTree = "<group>"; };
+		2255A2271D7E643900123363 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WrongAnswerTeachingOverlay.xib; sourceTree = "<group>"; };
 		2285ED481D11EBEA000B8856 /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helpers.h"; sourceTree = "<group>"; };
 		2285ED491D11EBEA000B8856 /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helpers.m"; sourceTree = "<group>"; };
@@ -111,9 +114,8 @@
 		22F68EDD1C813D7B0040541F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		22FF37DC1C90D6DD0040C8AA /* MigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationManager.h; sourceTree = "<group>"; };
 		22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationManager.m; sourceTree = "<group>"; };
-		B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
-		C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
+		A091A4913F5CD41487BF2C3B /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
+		B1ADF68B976B15368BF821AA /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7E72F7CEE80BA5F79B1ABD6 /* Pods_Tunerval.framework in Frameworks */,
+				2255A2281D7E643900123363 /* libz.tbd in Frameworks */,
 				22C5BDF41D596C4600947272 /* StoreKit.framework in Frameworks */,
+				303FB5ACE3AD97776652E25B /* Pods_Tunerval.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +154,8 @@
 			children = (
 				2219494D1C80E956004D0155 /* Tunerval */,
 				2219494C1C80E956004D0155 /* Products */,
-				F7DB47371C1FB60DC26A151A /* Pods */,
 				FD32B24027F848E86F4F215E /* Frameworks */,
+				62E7E1835FB51BD13D79F46B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,11 +300,11 @@
 			name = Imported;
 			sourceTree = "<group>";
 		};
-		F7DB47371C1FB60DC26A151A /* Pods */ = {
+		62E7E1835FB51BD13D79F46B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */,
-				B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */,
+				A091A4913F5CD41487BF2C3B /* Pods-Tunerval.debug.xcconfig */,
+				0E6E42034094C01C192724CE /* Pods-Tunerval.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -309,8 +312,9 @@
 		FD32B24027F848E86F4F215E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2255A2271D7E643900123363 /* libz.tbd */,
 				22C5BDF31D596C4600947272 /* StoreKit.framework */,
-				C0E474BB228CA0CC8A63D2AD /* Pods_Tunerval.framework */,
+				B1ADF68B976B15368BF821AA /* Pods_Tunerval.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -322,12 +326,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221949621C80E956004D0155 /* Build configuration list for PBXNativeTarget "Tunerval" */;
 			buildPhases = (
-				FC5E32C3EC0BE8FABC18FAA0 /* Check Pods Manifest.lock */,
+				613DD9E9E0D32C5F71396A5A /* [CP] Check Pods Manifest.lock */,
 				221949471C80E956004D0155 /* Sources */,
 				221949481C80E956004D0155 /* Frameworks */,
 				221949491C80E956004D0155 /* Resources */,
-				3DE1A90A2C1DB501CA847C0A /* Embed Pods Frameworks */,
-				8B3F5A16691B043BDD17FBE8 /* Copy Pods Resources */,
+				E55CF4764290F68FF298CC1F /* [CP] Embed Pods Frameworks */,
+				A600A5C33459D47121F0632D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -392,29 +396,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3DE1A90A2C1DB501CA847C0A /* Embed Pods Frameworks */ = {
+		613DD9E9E0D32C5F71396A5A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8B3F5A16691B043BDD17FBE8 /* Copy Pods Resources */ = {
+		A600A5C33459D47121F0632D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,19 +426,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC5E32C3EC0BE8FABC18FAA0 /* Check Pods Manifest.lock */ = {
+		E55CF4764290F68FF298CC1F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,6 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -573,6 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "cf225e5b-4e4a-4144-ac27-a1db0a7edc36";
@@ -584,7 +590,7 @@
 		};
 		221949631C80E956004D0155 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1600EEA5E2EAF7C27FE835D /* Pods-Tunerval.debug.xcconfig */;
+			baseConfigurationReference = A091A4913F5CD41487BF2C3B /* Pods-Tunerval.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -600,7 +606,7 @@
 		};
 		221949641C80E956004D0155 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B18771B10619E9816151C4A0 /* Pods-Tunerval.release.xcconfig */;
+			baseConfigurationReference = 0E6E42034094C01C192724CE /* Pods-Tunerval.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

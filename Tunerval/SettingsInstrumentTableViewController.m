@@ -8,6 +8,7 @@
 
 @import StoreKit;
 #import <SBMusicUtilities/SBNote.h>
+#import <SSZipArchive/SSZipArchive.h>
 #import "SettingsInstrumentTableViewController.h"
 #import "InstrumentTableViewCell.h"
 #import "KeychainUserPass.h"

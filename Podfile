@@ -9,5 +9,6 @@ target 'Tunerval' do
 	pod 'SBGraph', :path => '~/code/iOS/SBGraph'
 	pod 'FMDB'
 	pod 'AWSMobileAnalytics', '~> 2.3.2'
+	pod 'SSZipArchive'
 end
 

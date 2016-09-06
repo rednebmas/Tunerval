@@ -14,6 +14,7 @@ PODS:
   - SBGraph (0.1.0)
   - SBMusicUtilities (0.0.1):
     - EZAudio
+  - SSZipArchive (1.5)
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - FMDB
   - SBGraph (from `~/code/iOS/SBGraph`)
   - SBMusicUtilities (from `~/code/iOS/SBMusicUtilities`)
+  - SSZipArchive
 
 EXTERNAL SOURCES:
   EZAudio:
@@ -41,8 +43,11 @@ SPEC CHECKSUMS:
   AWSMobileAnalytics: 56ce9e671640fbd702f8ce52b0f128e525f3e51c
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  SBGraph: 0875adebf1d22d2bdc452bf2f88695a42d5b004b
-  SBMusicUtilities: a409977dd4f260175fb27eb691caf2f0a5ae0cfd
+  SBGraph: 7c00a0ad4f4aeb499c15911c649a83586b54805e
+  SBMusicUtilities: 8b31730fd0214fc8bd5bcbaaff9d6afb1eff1a31
+  SSZipArchive: 29daace2bccb90a47de2837744da397728ff9207
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 75b66b33b226549b13519f52eeb89efc6475f50b
+
+COCOAPODS: 1.0.1

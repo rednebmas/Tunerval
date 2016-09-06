@@ -2,7 +2,7 @@
   "name": "SBGraph",
   "version": "0.1.0",
   "summary": "A short description of SBGraph.",
-  "description": "",
+  "description": "A light-weight line graphing library",
   "homepage": "https://github.com/<GITHUB_USERNAME>/SBGraph",
   "license": "MIT",
   "authors": {
