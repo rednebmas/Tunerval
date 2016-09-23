@@ -15,6 +15,7 @@
 #import "SecondsPickerView.h"
 #import "PracticeReminderTableViewController.h"
 #import "InstrumentsTableViewCell.h"
+#import "SBEventTracker.h"
 
 @interface SettingsTableViewController ()
 {
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) UILabel *usageLabel;
 @property (weak, nonatomic) IBOutlet InstrumentsTableViewCell *instrumentsCell;
 @property (weak, nonatomic) IBOutlet UILabel *instrumentsNewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *instrumentsSelectedLabel;
 
 @end
 
@@ -33,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [SBEventTracker trackScreenViewForScreenName:@"Settings"];
     self.tableView.delegate = self;
     defaults = [NSUserDefaults standardUserDefaults];
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
@@ -54,6 +57,7 @@
     [self setContentForDailyProgressTextField];
     [self setNoteDurationAndVariationValueLabels];
     [self setPracticeRemindersLabelValue];
+    [self setSelectedInstrumentsLabel];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -161,7 +165,22 @@
     }
 }
 
-- (void) createFooter
+- (void)setSelectedInstrumentsLabel
+{
+    NSArray *instruments = [defaults objectForKey:@"instruments"];
+    NSMutableString *instrumentsString = [[NSMutableString alloc] init];
+    for (NSNumber *instrumentNumber in instruments)
+    {
+        InstrumentType instrumentType = [instrumentNumber integerValue];
+        [instrumentsString appendFormat:@"%@, ", [SBNote instrumentNameForInstrumentType:instrumentType]];
+    }
+    
+    [instrumentsString deleteCharactersInRange:NSMakeRange(instrumentsString.length-2, 2)];
+    
+    [self.instrumentsSelectedLabel setText:instrumentsString];
+}
+
+- (void)createFooter
 {
     // create info section
     UIView *footerView = [[UIView alloc] init];

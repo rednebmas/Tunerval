@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <SBMusicUtilities/SBNote.h>
+#import <SBMusicUtilities/SBPlayableNote.h>
 #import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import "MigrationManager.h"
 #import "Constants.h"
@@ -25,6 +26,7 @@
     {
         // Start mobile analytics
         MOBILE_ANALYTICS;
+        NSLog(@"Analytics started");
     }
     
     // seed randomness only once
@@ -53,7 +55,7 @@
         [defaults setObject:@"A4" forKey:@"from-note"];
         [defaults setObject:@"A5" forKey:@"to-note"];
         
-        [defaults setObject:@50 forKey:@"daily-goal"];
+        [defaults setObject:@30 forKey:@"daily-goal"];
     }
     
     double noteDuration = [defaults doubleForKey:@"note-duration"];
@@ -106,13 +108,12 @@
         [defaults setObject:dateToFire forKey:@"practice-reminder-time"];
         
         // ask user for practice reminders
+        /*
         UIAlertController *alert = [UIAlertController
                                     alertControllerWithTitle:@"New feature: Practice Reminders"
                                     message:@"Daily practice is essential to improve your ear. Tunerval can now remind you to hit your daily goal."
                                     preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction
-                             actionWithTitle:@"Remind me!"
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Remind me!"
                              style:UIAlertActionStyleDefault
                              handler:^(UIAlertAction * action)
                              {
@@ -169,6 +170,7 @@
         
         [self.window makeKeyAndVisible]; // hacky?
         [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+         */
     }
     
     if ([defaults integerForKey:@"last-build-number"] == 0)
@@ -186,6 +188,9 @@
     
     // database stuff
     [MigrationManager checkForAndPerformPendingMigrations];
+    
+    // set samples base directory
+    [SBPlayableNote setSamplesBaseFilePath:[self applicationDocumentsDirectory].path];
     
     return YES;
 }
@@ -243,7 +248,7 @@
         notifyAlarm.fireDate = practiceReminderTime;
         notifyAlarm.timeZone = [NSTimeZone defaultTimeZone];
         notifyAlarm.repeatInterval = NSCalendarUnitDay;
-        notifyAlarm.alertBody = @"Short doses of daily practice is the key to improving your musical ear!";
+        notifyAlarm.alertBody = @"Practice Reminder! Short doses of daily practice are the key to improving your musical ear!";
         
         // create notification
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -269,6 +274,11 @@
     [tomorrowComponents setMinute:timeComponents.minute];
     
     return [calendar dateFromComponents:tomorrowComponents];
+}
+
+- (NSURL*)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end

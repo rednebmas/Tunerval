@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buyButtonWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkMarkTraillingToBuyButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -25,6 +26,7 @@
     [super awakeFromNib];
     self.checkMarkImageView.hidden = YES;
     self.buyButtonOriginalBG = self.buyButton.backgroundColor;
+    [self.buyButton addTarget:self action:@selector(buyButtonTouchUp) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -55,9 +57,37 @@
     self.checkMarkTraillingToBuyButton.constant = 0;
 }
 
+- (void)hideBuyButtonAnimated
+{
+    [self layoutIfNeeded];
+    
+    self.buyButtonWidthConstraint.constant = 0;
+    self.checkMarkTraillingToBuyButton.constant = 0;
+    [UIView animateWithDuration:.25 animations:^{
+        [self layoutIfNeeded];
+    }];
+}
+
+- (void)startDownloadingIndicator
+{
+    [self.activityIndicator startAnimating];
+}
+
+- (void)stopDownloadingIndicator
+{
+    [self.activityIndicator stopAnimating];
+}
+
 - (BOOL)isSelected
 {
     return !self.checkMarkImageView.hidden;
+}
+
+#pragma mark - Actions
+
+- (void)buyButtonTouchUp
+{
+    [self.delegate buyButtonPressedForCellAtIndex:self.tag];
 }
 
 @end

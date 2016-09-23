@@ -9,7 +9,6 @@
 #import <SBMusicUtilities/SBNote.h>
 #import <SBMusicUtilities/SBAudioPlayer.h>
 #import <SBMusicUtilities/SBRandomNoteGenerator.h>
-#import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import "ViewController.h"
 #import "UIView+Helpers.h"
 #import "Question.h"
@@ -20,6 +19,7 @@
 #import "SettingsTableViewController.h"
 #import "Constants.h"
 #import "WrongAnswerTeachingOverlayView.h"
+#import "SBEventTracker.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -64,8 +64,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
     [self theme:[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]]];
-    
-//    [SBNote setDefaultInstrumenType:InstrumentTypePiano];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -106,14 +104,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
         
         // record amazon event
-        if (DEBUGMODE == NO)
-        {
-            id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
-            id<AWSMobileAnalyticsEvent> dailyGoalEvent = [eventClient
-                                                          createEventWithEventType:@"DailyGoalComplete"];
-            [dailyGoalEvent addMetric:@(dailyProgressGoal) forKey:@"DailyQuestionGoal"];
-            [eventClient recordEvent:dailyGoalEvent];
-        }
+        [SBEventTracker trackDailyGoalComplete];
         
         __weak id weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -148,7 +139,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
     return [NSString stringWithFormat:@"questions-answered-%f", beginningOfDay.timeIntervalSince1970];
 }
-
 
 - (void) reloadNoteRange
 {
@@ -749,6 +739,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
     second.loudness = self.currentQuestion.questionNote.loudness;
     second.duration = self.currentQuestion.questionNote.duration;
+    second.instrumentType = self.currentQuestion.questionNote.instrumentType;
     [self playNote:self.currentQuestion.referenceNote thenPlay:second];
 }
 
@@ -770,21 +761,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 #pragma mark - Navigation
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // record segues AWS analytics
-    // note: this looks stupid. for some reason xcode gave me a code will never be executed warning.
-    // when using &&. must be something to do with the debug macro.
-    if (DEBUGMODE == NO)
-    {
-        if (segue.identifier != nil)
-        {
-            id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
-            id<AWSMobileAnalyticsEvent> segueEvent = [eventClient createEventWithEventType:segue.identifier];
-            [eventClient recordEvent:segueEvent];
-        }
-    }
-    
     if ([segue.identifier isEqualToString:@"SettingsSegue"])
     {
         // app delegate is sender if practice reminder is shown first

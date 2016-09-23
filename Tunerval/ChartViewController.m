@@ -11,6 +11,7 @@
 #import "ScoresData.h"
 #import "Constants.h"
 #import "Colors.h"
+#import "SBEventTracker.h"
 
 @interface ChartViewController () <SBGraphViewDelegate>
 
@@ -26,6 +27,7 @@
 {
     [super viewDidLoad];
     
+    [SBEventTracker trackScreenViewForScreenName:@"Chart"];
     [self configureLineGraph];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -22,6 +22,7 @@
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
+		224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 224571AF1D827ECA00DEDA93 /* SBEventTracker.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255A2211D7E520E00123363 /* KeychainUserPass.m */; };
@@ -75,6 +76,8 @@
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2235BDDF1C8A363700285EA9 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		224571AE1D827ECA00DEDA93 /* SBEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEventTracker.h; sourceTree = "<group>"; };
+		224571AF1D827ECA00DEDA93 /* SBEventTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEventTracker.m; sourceTree = "<group>"; };
 		224747651C92AA45004E41D7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		224747661C92AA45004E41D7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		2253CD771CA36A37001630FE /* ChartPickIntervalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPickIntervalTableViewController.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				22F68EDD1C813D7B0040541F /* Question.m */,
 				22E3C7451C9E397F00CD11C5 /* ScoresData.h */,
 				22E3C7461C9E397F00CD11C5 /* ScoresData.m */,
+				224571AE1D827ECA00DEDA93 /* SBEventTracker.h */,
+				224571AF1D827ECA00DEDA93 /* SBEventTracker.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				224747671C92AA45004E41D7 /* Constants.m in Sources */,
 				2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */,
 				2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */,
+				224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */,
 				221949501C80E956004D0155 /* main.m in Sources */,
 				221A03221D7C792400A3225B /* InstrumentsTableViewCell.m in Sources */,
 				22F0C5C91C882DB8002C6F1C /* SecondsPickerView.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "InformationViewController.h"
+#import "SBEventTracker.h"
 
 @interface InformationViewController ()
 
@@ -14,21 +15,18 @@
 
 @implementation InformationViewController
 
-- (void) viewDidLoad {
+- (void) viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSString *urlString = @"https://dl.dropboxusercontent.com/u/5301042/tunerval/tunerval.html";
+    
+    [SBEventTracker trackScreenViewForScreenName:@"Information"];
+    
+    NSString *urlString = @"https://s3-us-west-2.amazonaws.com/sam-bender-public/tunerval/tunerval.html";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:url];
     
     self.webView.delegate = self;
     [self.webView loadRequest:httpRequest];
-}
-
-
-- (void) didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Web view delegate
@@ -44,15 +42,5 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

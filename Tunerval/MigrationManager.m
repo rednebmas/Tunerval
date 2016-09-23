@@ -76,8 +76,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@[@(InstrumentTypeSineWave)] forKey:@"instruments"];
-    
-    [KeychainUserPass save:@"PianoPurchased" data:@(NO)];
+    [defaults setObject:@(NO) forKey:@"com.sambender.InstrumentTypePianoPurchased"];
     
     [MigrationManager updateMigrationsCompletedTo:2];
 }

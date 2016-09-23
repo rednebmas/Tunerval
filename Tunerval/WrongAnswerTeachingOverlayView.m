@@ -13,6 +13,21 @@
 
 @implementation WrongAnswerTeachingOverlayView
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.sharpButton.enabled = NO;
+    self.inTuneButton.enabled = NO;
+    self.flatButton.enabled = NO;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.sharpButton.enabled = YES;
+        self.inTuneButton.enabled = YES;
+        self.flatButton.enabled = YES;
+    });
+}
+
 - (IBAction)dimButton:(UIButton *)sender
 {
     [UIView transitionWithView:self
