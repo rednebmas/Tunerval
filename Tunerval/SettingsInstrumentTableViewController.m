@@ -283,6 +283,10 @@
                  finishTransaction:transaction];
                 break;
                 
+            case SKPaymentTransactionStateRestored:
+                [self handleTransactionStateRestored:transaction];
+                break;
+                
             default:
                 break;
         }
@@ -292,6 +296,16 @@
 - (void)handleTransactionStatePurchased:(SKPaymentTransaction*)transaction
 {
     [SBEventTracker trackInstrumentPurchaseWithTransaction:transaction productCatalog:self.productCatalog];
+    [self deliverPurchaseForTransaction:transaction];
+}
+
+- (void)handleTransactionStateRestored:(SKPaymentTransaction*)transaction
+{
+    [self deliverPurchaseForTransaction:transaction];
+}
+
+- (void)deliverPurchaseForTransaction:(SKPaymentTransaction*)transaction
+{
     if (transaction.downloads)
     {
         [[SKPaymentQueue defaultQueue]
@@ -314,6 +328,9 @@
     InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     [cell hideBuyButtonAnimated];
     [cell startDownloadingIndicator];
+    
+    // hide "new" on Instruments in settings
+    [self.defaults setObject:@(YES) forKey:@"hide-new-label-in-settings-for-instruments"];
 }
 
 - (void)paymentQueue:(SKPaymentQueue*)queue updatedDownloads:(NSArray*)downloads
@@ -349,6 +366,13 @@
     if ([self moveDownloadedFilesFrom:download]) {
         [self addInstrumentToSelectedInstrumetForInstrumentWithIAPID:download.contentIdentifier];
         [[SKPaymentQueue defaultQueue] finishTransaction:download.transaction];
+        [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+        
+        // stop downloading indicator
+        NSUInteger IAPIDIndex = [self.instrumentIAPIDs indexOfObject:download.contentIdentifier];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:IAPIDIndex inSection:0];
+        InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell stopDownloadingIndicator];
     }
 }
 
@@ -392,7 +416,8 @@
 
 - (void) restorePurchases
 {
-    
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 #pragma mark - Helper 
@@ -419,7 +444,6 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:IAPIDIndex inSection:0];
         InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [cell setCheckMarkHidden:NO];
-        [cell stopDownloadingIndicator];
     }
 }
 

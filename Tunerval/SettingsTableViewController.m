@@ -47,6 +47,7 @@
     
     [self.speakIntervalSwitch setOn:[[defaults objectForKey:@"speak-interval-on"] boolValue]];
     self.instrumentsCell.instrumentsNewLabel = self.instrumentsNewLabel;
+    self.instrumentsNewLabel.hidden = [[defaults objectForKey:@"hide-new-label-in-settings-for-instruments"] boolValue];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -58,6 +59,10 @@
     [self setNoteDurationAndVariationValueLabels];
     [self setPracticeRemindersLabelValue];
     [self setSelectedInstrumentsLabel];
+    
+    for (NSIndexPath *selectedIndexPath in self.tableView.indexPathsForSelectedRows) {
+        [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:YES];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated

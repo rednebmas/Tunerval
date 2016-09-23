@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buyButtonWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkMarkTraillingToBuyButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *downloadingLabel;
 
 @end
 
@@ -71,11 +72,13 @@
 - (void)startDownloadingIndicator
 {
     [self.activityIndicator startAnimating];
+    self.downloadingLabel.hidden = NO;
 }
 
 - (void)stopDownloadingIndicator
 {
     [self.activityIndicator stopAnimating];
+    self.downloadingLabel.hidden = YES;
 }
 
 - (BOOL)isSelected

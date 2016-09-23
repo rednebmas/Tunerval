@@ -1086,9 +1086,16 @@
                                                 <constraint firstAttribute="height" constant="16" id="orn-JU-dXM"/>
                                             </constraints>
                                         </activityIndicatorView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm1-gb-eq7">
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZCa-er-MWA" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="6MF-aj-0vr"/>
+                                        <constraint firstItem="Zr7-XM-kJ1" firstAttribute="leading" secondItem="Wm1-gb-eq7" secondAttribute="trailing" constant="8" id="EXZ-wJ-F00"/>
+                                        <constraint firstItem="Wm1-gb-eq7" firstAttribute="centerY" secondItem="Zr7-XM-kJ1" secondAttribute="centerY" id="aju-yj-iuf"/>
                                         <constraint firstItem="7Kb-df-Mdr" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="dzs-Wb-wqm"/>
                                         <constraint firstItem="2gV-SA-1QZ" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="eGP-Yp-5ID"/>
                                         <constraint firstItem="Zr7-XM-kJ1" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="gIa-q6-I3D"/>
@@ -1104,6 +1111,7 @@
                                     <outlet property="buyButtonWidthConstraint" destination="MtO-Yb-tCA" id="2AT-tj-ZfV"/>
                                     <outlet property="checkMarkImageView" destination="2gV-SA-1QZ" id="hb1-sr-u2A"/>
                                     <outlet property="checkMarkTraillingToBuyButton" destination="zmd-Kj-z9u" id="xT1-Sn-9rh"/>
+                                    <outlet property="downloadingLabel" destination="Wm1-gb-eq7" id="5Xg-Te-2mt"/>
                                     <outlet property="instrumentNameLabel" destination="7Kb-df-Mdr" id="0lf-Cq-Puq"/>
                                 </connections>
                             </tableViewCell>
