@@ -37,19 +37,19 @@
 {
     self.notesAttributed = [[NSMutableArray alloc] init];
     self.notes = [[NSMutableArray alloc] init];
-    NSArray *noteNames = [SBNote noteNames];
     
-    for (int octave = 1; octave < 8; octave++)
-    {
-        NSString *octaveString = [NSString stringWithFormat:@"%d", octave];
-        for (NSString *note in noteNames)
-        {
-            NSAttributedString *str = [NSAttributedString attributedStringForText:note
-                                                                     andSubscript:octaveString
-                                                                     withFontSize:22.0];
-            [self.notesAttributed addObject:str];
-            [self.notes addObject:[NSString stringWithFormat:@"%@%@", note, octaveString]];
-        }
+    SBNote *E2 = [SBNote noteWithName:@"F#2"]; // Lowest available is E2
+    SBNote *C6 = [SBNote noteWithName:@"B5"]; // Highest available is C6
+    SBNote *currentNote = [E2 noteWithDifferenceInHalfSteps:0];
+    while (currentNote.halfStepsFromA4 <= C6.halfStepsFromA4) {
+        NSString *octaveString = [NSString stringWithFormat:@"%d", currentNote.octave];
+        NSAttributedString *str = [NSAttributedString attributedStringForText:currentNote.nameWithoutOctave
+                                                                 andSubscript:octaveString
+                                                                 withFontSize:22.0];
+        [self.notesAttributed addObject:str];
+        [self.notes addObject:currentNote.nameWithOctave];
+        
+        currentNote = [currentNote noteWithDifferenceInHalfSteps:1];
     }
 }
 
@@ -62,7 +62,7 @@
 
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 12 * 7;
+    return self.notesAttributed.count;
 }
 
 #pragma mark - Pickerview delegate
