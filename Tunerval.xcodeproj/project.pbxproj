@@ -27,6 +27,7 @@
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255A2211D7E520E00123363 /* KeychainUserPass.m */; };
 		2255A2281D7E643900123363 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2255A2271D7E643900123363 /* libz.tbd */; };
+		226C7E1A1D983CF8009E3446 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 226C7E191D983CF7009E3446 /* Settings.bundle */; };
 		2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */; };
 		2285ED4A1D11EBEA000B8856 /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED491D11EBEA000B8856 /* UIView+Helpers.m */; };
 		2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285ED4C1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m */; };
@@ -85,6 +86,7 @@
 		2255A2201D7E520E00123363 /* KeychainUserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainUserPass.h; sourceTree = "<group>"; };
 		2255A2211D7E520E00123363 /* KeychainUserPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainUserPass.m; sourceTree = "<group>"; };
 		2255A2271D7E643900123363 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		226C7E191D983CF7009E3446 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2285ED461D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WrongAnswerTeachingOverlay.xib; sourceTree = "<group>"; };
 		2285ED481D11EBEA000B8856 /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helpers.h"; sourceTree = "<group>"; };
 		2285ED491D11EBEA000B8856 /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helpers.m"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				2219494F1C80E956004D0155 /* main.m */,
+				226C7E191D983CF7009E3446 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildConfigurationList = 221949621C80E956004D0155 /* Build configuration list for PBXNativeTarget "Tunerval" */;
 			buildPhases = (
 				613DD9E9E0D32C5F71396A5A /* [CP] Check Pods Manifest.lock */,
+				226C7E1B1D98403C009E3446 /* ShellScript */,
 				221949471C80E956004D0155 /* Sources */,
 				221949481C80E956004D0155 /* Frameworks */,
 				221949491C80E956004D0155 /* Resources */,
@@ -394,6 +398,7 @@
 				2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */,
 				2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */,
 				2219495B1C80E956004D0155 /* Assets.xcassets in Resources */,
+				226C7E1A1D983CF8009E3446 /* Settings.bundle in Resources */,
 				221949591C80E956004D0155 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +406,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		226C7E1B1D98403C009E3446 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT/licenses\npython gen-attributions.py";
+		};
 		613DD9E9E0D32C5F71396A5A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
