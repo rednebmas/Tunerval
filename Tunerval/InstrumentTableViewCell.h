@@ -23,7 +23,7 @@
 - (void)setCheckMarkHidden:(BOOL)hidden;
 - (void)hideBuyButton;
 - (void)hideBuyButtonAnimated;
-- (void)startDownloadingIndicator;
-- (void)stopDownloadingIndicator;
+- (void)setDownloadProgress:(float)progress;
+- (void)showCheckMarkAnimated;
 
 @end

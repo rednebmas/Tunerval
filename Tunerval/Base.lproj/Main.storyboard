@@ -1049,7 +1049,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstrumentTableViewCell" id="7xC-7S-5Uk" customClass="InstrumentTableViewCell">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7xC-7S-5Uk" id="jag-Xc-5W5">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -1065,7 +1065,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="85" id="MtO-Yb-tCA"/>
                                             </constraints>
-                                            <state key="normal" title="Buy">
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <state key="normal" title="$0.99">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -1080,37 +1081,45 @@
                                                 <constraint firstAttribute="height" constant="16" id="Xg4-KP-eJ6"/>
                                             </constraints>
                                         </imageView>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zr7-XM-kJ1">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="16" id="YMt-be-AyS"/>
-                                                <constraint firstAttribute="height" constant="16" id="orn-JU-dXM"/>
-                                            </constraints>
-                                        </activityIndicatorView>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm1-gb-eq7">
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veT-Lw-AQc" customClass="MBRoundProgressView">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="gJi-hg-wDm"/>
+                                                <constraint firstAttribute="width" constant="16" id="pQg-Am-pJs"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="progressTintColor">
+                                                    <color key="value" red="0.66666666666666663" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="annular" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZCa-er-MWA" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="6MF-aj-0vr"/>
-                                        <constraint firstItem="Zr7-XM-kJ1" firstAttribute="leading" secondItem="Wm1-gb-eq7" secondAttribute="trailing" constant="8" id="EXZ-wJ-F00"/>
-                                        <constraint firstItem="Wm1-gb-eq7" firstAttribute="centerY" secondItem="Zr7-XM-kJ1" secondAttribute="centerY" id="aju-yj-iuf"/>
+                                        <constraint firstItem="veT-Lw-AQc" firstAttribute="leading" secondItem="Wm1-gb-eq7" secondAttribute="trailing" constant="8" id="DSZ-k3-jXX"/>
+                                        <constraint firstItem="veT-Lw-AQc" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="Mgo-Oq-iXe"/>
+                                        <constraint firstItem="veT-Lw-AQc" firstAttribute="centerX" secondItem="2gV-SA-1QZ" secondAttribute="centerX" id="aaS-a8-jmz"/>
                                         <constraint firstItem="7Kb-df-Mdr" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="dzs-Wb-wqm"/>
                                         <constraint firstItem="2gV-SA-1QZ" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="eGP-Yp-5ID"/>
-                                        <constraint firstItem="Zr7-XM-kJ1" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="gIa-q6-I3D"/>
-                                        <constraint firstItem="ZCa-er-MWA" firstAttribute="leading" secondItem="Zr7-XM-kJ1" secondAttribute="trailing" constant="12" id="miC-Ii-e6M"/>
+                                        <constraint firstItem="Wm1-gb-eq7" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="myI-uK-Xlz"/>
                                         <constraint firstAttribute="trailing" secondItem="ZCa-er-MWA" secondAttribute="trailing" constant="15" id="ofm-AU-2Lc"/>
                                         <constraint firstItem="7Kb-df-Mdr" firstAttribute="leading" secondItem="jag-Xc-5W5" secondAttribute="leading" constant="15" id="v3h-S6-vl1"/>
                                         <constraint firstItem="ZCa-er-MWA" firstAttribute="leading" secondItem="2gV-SA-1QZ" secondAttribute="trailing" constant="12" id="zmd-Kj-z9u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="activityIndicator" destination="Zr7-XM-kJ1" id="tOZ-6o-Lcw"/>
                                     <outlet property="buyButton" destination="ZCa-er-MWA" id="ruH-Oz-n4J"/>
                                     <outlet property="buyButtonWidthConstraint" destination="MtO-Yb-tCA" id="2AT-tj-ZfV"/>
                                     <outlet property="checkMarkImageView" destination="2gV-SA-1QZ" id="hb1-sr-u2A"/>
                                     <outlet property="checkMarkTraillingToBuyButton" destination="zmd-Kj-z9u" id="xT1-Sn-9rh"/>
+                                    <outlet property="downloadProgressView" destination="veT-Lw-AQc" id="tnh-57-NgV"/>
                                     <outlet property="downloadingLabel" destination="Wm1-gb-eq7" id="5Xg-Te-2mt"/>
                                     <outlet property="instrumentNameLabel" destination="7Kb-df-Mdr" id="0lf-Cq-Puq"/>
                                 </connections>
@@ -1125,7 +1134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvp-zm-7tJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="1217"/>
+            <point key="canvasLocation" x="1876" y="1216.6416791604199"/>
         </scene>
         <!--Interval-->
         <scene sceneID="XpA-Dp-uTB">

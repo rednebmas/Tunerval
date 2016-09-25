@@ -122,7 +122,7 @@
     
     if (![self isInstrumentAtIndexPurchased:indexPath.row])
     {
-        [self askBeforeInitiatingPurchaseOfInstrumentAtIndex:indexPath.row];
+        [self initiatePurchaseForInstrumentAtIndex:indexPath.row];
         return;
     }
     
@@ -327,7 +327,7 @@
     NSInteger index = [self.instrumentIAPIDs indexOfObject:transaction.payment.productIdentifier];
     InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     [cell hideBuyButtonAnimated];
-    [cell startDownloadingIndicator];
+    [cell setDownloadProgress:0.0];
     
     // hide "new" on Instruments in settings
     [self.defaults setObject:@(YES) forKey:@"hide-new-label-in-settings-for-instruments"];
@@ -339,18 +339,11 @@
     {
         switch (download.downloadState) {
             case SKDownloadStateActive:
-                NSLog(@"Download progress = %f",
-                      download.progress);
-                NSLog(@"Download time = %f",
-                      download.timeRemaining);
+                [self handleDownloadStateActive:download];
                 break;
-            case SKDownloadStateFinished:
-                // Download is complete. Content file URL is at
-                // path referenced by download.contentURL. Move
-                // it somewhere safe, unpack it and give the user
-                // access to it
-                [self handleFinishedDownload:download];
                 
+            case SKDownloadStateFinished:
+                [self handleFinishedDownload:download];
                 break;
                 
             default:
@@ -361,19 +354,27 @@
 
 #pragma mark - SKPaymentTransactionObserverDelegate helper
 
+- (void)handleDownloadStateActive:(SKDownload*)download
+{
+    InstrumentTableViewCell *cell = [self cellForIAPID:download.contentIdentifier];
+    [cell setDownloadProgress:download.progress];
+    NSLog(@"Download progress = %f",
+          download.progress);
+//    NSLog(@"Download time = %f",
+//          download.timeRemaining);
+}
+
 - (void)handleFinishedDownload:(SKDownload*)download
 {
     if ([self moveDownloadedFilesFrom:download]) {
         [self addInstrumentToSelectedInstrumetForInstrumentWithIAPID:download.contentIdentifier];
-        [[SKPaymentQueue defaultQueue] finishTransaction:download.transaction];
-        [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
         
-        // stop downloading indicator
-        NSUInteger IAPIDIndex = [self.instrumentIAPIDs indexOfObject:download.contentIdentifier];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:IAPIDIndex inSection:0];
-        InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        [cell stopDownloadingIndicator];
+        InstrumentTableViewCell *cell = [self cellForIAPID:download.contentIdentifier];
+        [cell setDownloadProgress:1.0];
     }
+    
+    [[SKPaymentQueue defaultQueue] finishTransaction:download.transaction];
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
 }
 
 /**
@@ -443,8 +444,16 @@
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:IAPIDIndex inSection:0];
         InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        [cell setCheckMarkHidden:NO];
+        [cell showCheckMarkAnimated];
     }
+}
+
+- (InstrumentTableViewCell*)cellForIAPID:(NSString*)IAPID
+{
+    NSUInteger IAPIDIndex = [self.instrumentIAPIDs indexOfObject:IAPID];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:IAPIDIndex inSection:0];
+    InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    return cell;
 }
 
 #pragma mark - Properties

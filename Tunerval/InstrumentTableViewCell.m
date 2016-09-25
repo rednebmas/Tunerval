@@ -7,6 +7,7 @@
 //
 
 #import "InstrumentTableViewCell.h"
+#import "MBRoundProgressView.h"
 
 @interface InstrumentTableViewCell()
 
@@ -15,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buyButtonWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkMarkTraillingToBuyButton;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet MBRoundProgressView *downloadProgressView;
 @property (weak, nonatomic) IBOutlet UILabel *downloadingLabel;
 
 @end
@@ -47,6 +48,15 @@
     [self setCheckMarkHidden:!self.checkMarkImageView.hidden];
 }
 
+- (void)showCheckMarkAnimated
+{
+    self.checkMarkImageView.alpha = 0.0;
+    self.checkMarkImageView.hidden = NO;
+    [UIView animateWithDuration:.25 animations:^{
+        self.checkMarkImageView.alpha = 1.0;
+    }];
+}
+
 - (void)setCheckMarkHidden:(BOOL)hidden
 {
     self.checkMarkImageView.hidden = hidden;
@@ -69,16 +79,24 @@
     }];
 }
 
-- (void)startDownloadingIndicator
+- (void)setDownloadProgress:(float)progress
 {
-    [self.activityIndicator startAnimating];
-    self.downloadingLabel.hidden = NO;
-}
-
-- (void)stopDownloadingIndicator
-{
-    [self.activityIndicator stopAnimating];
-    self.downloadingLabel.hidden = YES;
+    if (progress == 0.0) {
+        self.downloadingLabel.hidden = NO;
+        self.downloadProgressView.hidden = NO;
+    } else if (progress == 1.0) {
+        [UIView animateWithDuration:.25 animations:^{
+            self.downloadingLabel.alpha = 0.0;
+            self.downloadProgressView.alpha = 0.0;
+        } completion:^(BOOL finished){
+            self.downloadingLabel.hidden = YES;
+            self.downloadProgressView.hidden = YES;
+            self.downloadingLabel.alpha = 1.0;
+            self.downloadProgressView.alpha = 1.0;
+        }];
+    }
+    
+    self.downloadProgressView.progress = progress;
 }
 
 - (BOOL)isSelected
