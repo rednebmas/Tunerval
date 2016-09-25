@@ -1,3 +1,4 @@
+# http://stackoverflow.com/a/21326485/337934
 import os
 import sys
 import plistlib

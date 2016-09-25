@@ -44,11 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SSZipArchive.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>TPCircularBuffer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2336192B1613881AC2F3158241D7503E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>29E8FE0B316EE83946F48C4684185D90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A8260938502F21CC0496B4A8DC41C5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,27 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71277F50985E4AF9CA27B6E3D08D4EBD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>93DA18B142747BC72067F7FEF36B8034</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9774E45E77BF9ECB6274634369A75EAA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1BDA84C2D68951863192A4EB04355E1</key>
+		<key>AC449E6454C64068F0C641331C328450</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B998D1794C76C66865824BD5511C74FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7F12FE54953F6A94B78C9FBB60C8638</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D927A13AD3165FDAAC510B71F72B6D81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
