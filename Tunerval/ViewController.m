@@ -42,6 +42,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @property (nonatomic, retain) NSString *highScoreKey;
 @property (nonatomic, retain) NSString *answerDifferentialKey;
 @property (nonatomic, retain) NSArray *intervals;
+@property (nonatomic, retain) NSArray *instruments;
 @property (nonatomic, retain) Question *currentQuestion;
 @property (nonatomic, retain) SBRandomNoteGenerator *randomNoteGenerator;
 
@@ -154,9 +155,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
     intervals = [intervals sortedArrayUsingSelector:@selector(compare:)];
     
-    if (![self.intervals isEqual:intervals])
+    if (![self.intervals isEqual:intervals] || ![self.instruments isEqual:[defaults objectForKey:@"instruments"]])
     {
         self.intervals = intervals;
+        self.instruments = [defaults objectForKey:@"instruments"];
         [self.centsDifference setText:@""];
         [self.highScoreLabel setText:@""];
         [self.intervalDirectionLabel setText:@""];
