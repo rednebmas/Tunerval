@@ -9,6 +9,7 @@
 #import <SBMusicUtilities/SBNote.h>
 #import "SettingsIntervalsTableViewController.h"
 #import "ViewController.h"
+#import "SBEventTracker.h"
 
 @interface SettingsIntervalsTableViewController ()
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     self.intervals = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"] mutableCopy];
     [self.navigationItem setTitle:@"Intervals"];
+    [SBEventTracker trackScreenViewForScreenName:@"Settings>Intervals"];
 }
 
 - (void)didReceiveMemoryWarning {

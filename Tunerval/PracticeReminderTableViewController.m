@@ -24,6 +24,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
+    [SBEventTracker trackScreenViewForScreenName:@"Settings>PracticeReminders"];
     defaults = [NSUserDefaults standardUserDefaults];
     [self setupView];
 }
