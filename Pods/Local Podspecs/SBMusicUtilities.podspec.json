@@ -22,6 +22,9 @@
     "SBMusicUtilities/*.{h,m}"
   ],
   "exclude_files": "Classes/Exclude",
+  "resource_bundles": {
+    "SBMusicUtilities": "SBMusicUtilities/*.{lproj,strings}"
+  },
   "requires_arc": true,
   "dependencies": {
     "EZAudio": [

@@ -393,7 +393,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     if (interval > 0)
     {
-        return @"ascending";
+        return NSLocalizedString(@"ascending", nil);
     }
     else if (interval == 0)
     {
@@ -401,7 +401,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
     else
     {
-        return @"descending";
+        return NSLocalizedString(@"descending", nil);
     }
 }
 

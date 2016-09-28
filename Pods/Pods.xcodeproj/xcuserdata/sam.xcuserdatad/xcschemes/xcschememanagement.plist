@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SBMusicUtilities-SBMusicUtilities.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SBMusicUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -63,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>3A8260938502F21CC0496B4A8DC41C5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58FB4C628D0B07A02270C1368BC5E693</key>
 		<dict>
 			<key>primary</key>
 			<true/>

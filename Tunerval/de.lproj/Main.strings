@@ -1,0 +1,198 @@
+
+/* Class = "UILabel"; text = "+100 this week"; ObjectID = "15A-uY-fW2"; */
+"15A-uY-fW2.text" = "+100 this week";
+
+/* Class = "UIButton"; normalTitle = "⦿"; ObjectID = "1aF-ce-DWW"; */
+"1aF-ce-DWW.normalTitle" = "⦿";
+
+/* Class = "UILabel"; text = "Enabled"; ObjectID = "2F4-PT-er7"; */
+"2F4-PT-er7.text" = "Enabled";
+
+/* Class = "UILabel"; text = "Daily Question Goal"; ObjectID = "31Y-eg-VTj"; */
+"31Y-eg-VTj.text" = "Daily Question Goal";
+
+/* Class = "UILabel"; text = "Piano"; ObjectID = "7Kb-df-Mdr"; */
+"7Kb-df-Mdr.text" = "Piano";
+
+/* Class = "UILabel"; text = "Disabled"; ObjectID = "8fB-YD-izU"; */
+"8fB-YD-izU.text" = "Disabled";
+
+/* Class = "UISegmentedControl"; 9QZ-k0-0Gb.segmentTitles[0] = "Today"; ObjectID = "9QZ-k0-0Gb"; */
+"9QZ-k0-0Gb.segmentTitles[0]" = "Today";
+
+/* Class = "UISegmentedControl"; 9QZ-k0-0Gb.segmentTitles[1] = "Week"; ObjectID = "9QZ-k0-0Gb"; */
+"9QZ-k0-0Gb.segmentTitles[1]" = "Week";
+
+/* Class = "UISegmentedControl"; 9QZ-k0-0Gb.segmentTitles[2] = "Month"; ObjectID = "9QZ-k0-0Gb"; */
+"9QZ-k0-0Gb.segmentTitles[2]" = "Month";
+
+/* Class = "UISegmentedControl"; 9QZ-k0-0Gb.segmentTitles[3] = "All"; ObjectID = "9QZ-k0-0Gb"; */
+"9QZ-k0-0Gb.segmentTitles[3]" = "All";
+
+/* Class = "UILabel"; text = "Questions Answered"; ObjectID = "9w2-yQ-2P0"; */
+"9w2-yQ-2P0.text" = "Questions Answered";
+
+/* Class = "UILabel"; text = "Graphs & Data"; ObjectID = "Ak7-UO-PI9"; */
+"Ak7-UO-PI9.text" = "Graphs & Data";
+
+/* Class = "UILabel"; text = "Major Second"; ObjectID = "BVd-IG-fpt"; */
+"BVd-IG-fpt.text" = "Major Second";
+
+/* Class = "UILabel"; text = "Answer spread"; ObjectID = "Bbg-15-1vb"; */
+"Bbg-15-1vb.text" = "Answer spread";
+
+/* Class = "UILabel"; text = "Scores"; ObjectID = "DCx-te-v3l"; */
+"DCx-te-v3l.text" = "Scores";
+
+/* Class = "UILabel"; text = "All interval average ±25c"; ObjectID = "E2Y-DY-7Du"; */
+"E2Y-DY-7Du.text" = "All interval average ±25c";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "EwF-De-ieD"; */
+"EwF-De-ieD.text" = "From";
+
+/* Class = "UIButton"; normalTitle = "Replay"; ObjectID = "FQX-a8-Iyj"; */
+"FQX-a8-Iyj.normalTitle" = "Replay";
+
+/* Class = "UINavigationItem"; title = "Information"; ObjectID = "FuN-8u-JSD"; */
+"FuN-8u-JSD.title" = "Information";
+
+/* Class = "UILabel"; text = "Intervals"; ObjectID = "G8i-bZ-dOY"; */
+"G8i-bZ-dOY.text" = "Intervals";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "Gll-r2-lMp"; */
+"Gll-r2-lMp.title" = "Done";
+
+/* Class = "UILabel"; text = "Note Range"; ObjectID = "JKT-20-udy"; */
+"JKT-20-udy.text" = "Note Range";
+
+/* Class = "UITableViewSection"; headerTitle = "When do you want to be reminded?"; ObjectID = "JN8-qg-lh3"; */
+"JN8-qg-lh3.headerTitle" = "When do you want to be reminded?";
+
+/* Class = "UIButton"; normalTitle = "⇩"; ObjectID = "K9p-jY-efI"; */
+"K9p-jY-efI.normalTitle" = "⇩";
+
+/* Class = "UILabel"; text = "Piano"; ObjectID = "M1o-bB-qtl"; */
+"M1o-bB-qtl.text" = "Piano";
+
+/* Class = "UILabel"; text = "0.1s"; ObjectID = "MLF-xp-dJQ"; */
+"MLF-xp-dJQ.text" = "0.1s";
+
+/* Class = "UILabel"; text = "Interval High Score"; ObjectID = "OIS-SA-4R9"; */
+"OIS-SA-4R9.text" = "Interval High Score";
+
+/* Class = "UILabel"; text = "To hear the correct interval, press the target button."; ObjectID = "OWx-yW-gdZ"; */
+"OWx-yW-gdZ.text" = "To hear the correct interval, press the target button.";
+
+/* Class = "UILabel"; text = "Note Duration Variation"; ObjectID = "ReA-zl-dDk"; */
+"ReA-zl-dDk.text" = "Note Duration Variation";
+
+/* Class = "UILabel"; text = "Practice Reminders"; ObjectID = "TBK-z9-Qsg"; */
+"TBK-z9-Qsg.text" = "Practice Reminders";
+
+/* Class = "UILabel"; text = "Downloading"; ObjectID = "Wm1-gb-eq7"; */
+"Wm1-gb-eq7.text" = "Downloading";
+
+/* Class = "UILabel"; text = "Start"; ObjectID = "X9f-Au-4Jb"; */
+"X9f-Au-4Jb.text" = "Start";
+
+/* Class = "UIButton"; normalTitle = "⇧"; ObjectID = "XSq-hc-bFe"; */
+"XSq-hc-bFe.normalTitle" = "⇧";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "Z1d-5S-DF7"; */
+"Z1d-5S-DF7.normalTitle" = "X";
+
+/* Class = "UIButton"; normalTitle = "$0.99"; ObjectID = "ZCa-er-MWA"; */
+"ZCa-er-MWA.normalTitle" = "$0.99";
+
+/* Class = "UILabel"; text = "Difficulty"; ObjectID = "Zdu-4K-fmF"; */
+"Zdu-4K-fmF.text" = "Difficulty";
+
+/* Class = "UITextField"; text = "250"; ObjectID = "a8N-34-flc"; */
+"a8N-34-flc.text" = "250";
+
+/* Class = "UINavigationItem"; title = "Interval"; ObjectID = "bA3-9N-9Xm"; */
+"bA3-9N-9Xm.title" = "Interval";
+
+/* Class = "UINavigationItem"; title = "Graphs & Data"; ObjectID = "c4h-yc-a4Q"; */
+"c4h-yc-a4Q.title" = "Graphs & Data";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "cNy-yV-kyR"; */
+"cNy-yV-kyR.title" = "Item";
+
+/* Class = "UILabel"; text = "♭"; ObjectID = "e07-1z-psH"; */
+"e07-1z-psH.text" = "♭";
+
+/* Class = "UITableViewController"; title = "Practice Reminders"; ObjectID = "ebf-Bf-Z9B"; */
+"ebf-Bf-Z9B.title" = "Practice Reminders";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "f7u-Cb-GJu"; */
+"f7u-Cb-GJu.text" = "Feedback";
+
+/* Class = "UILabel"; text = "m2"; ObjectID = "fK0-TT-nEy"; */
+"fK0-TT-nEy.text" = "m2";
+
+/* Class = "UILabel"; text = "♯"; ObjectID = "gKd-fV-pIc"; */
+"gKd-fV-pIc.text" = "♯";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "imk-kA-b97"; */
+"imk-kA-b97.normalTitle" = "X";
+
+/* Class = "UILabel"; text = "A4-C7"; ObjectID = "jAi-vF-2gJ"; */
+"jAi-vF-2gJ.text" = "A4-C7";
+
+/* Class = "UILabel"; text = "1.0s"; ObjectID = "k8c-lJ-wlr"; */
+"k8c-lJ-wlr.text" = "1.0s";
+
+/* Class = "UILabel"; text = "±200.0c"; ObjectID = "kOU-BR-FGo"; */
+"kOU-BR-FGo.text" = "±200.0c";
+
+/* Class = "UILabel"; text = "Instruments"; ObjectID = "maG-z0-BoV"; */
+"maG-z0-BoV.text" = "Instruments";
+
+/* Class = "UILabel"; text = "Progress Graph"; ObjectID = "nbM-zh-mUC"; */
+"nbM-zh-mUC.text" = "Progress Graph";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "oKg-M7-YkJ"; */
+"oKg-M7-YkJ.text" = "To";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "q1z-NZ-kGQ"; */
+"q1z-NZ-kGQ.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Daily Goal Progress"; ObjectID = "qIY-n3-AHC"; */
+"qIY-n3-AHC.text" = "Daily Goal Progress";
+
+/* Class = "UISegmentedControl"; qJ5-4S-5yt.segmentTitles[0] = "Today"; ObjectID = "qJ5-4S-5yt"; */
+"qJ5-4S-5yt.segmentTitles[0]" = "Today";
+
+/* Class = "UISegmentedControl"; qJ5-4S-5yt.segmentTitles[1] = "Week"; ObjectID = "qJ5-4S-5yt"; */
+"qJ5-4S-5yt.segmentTitles[1]" = "Week";
+
+/* Class = "UISegmentedControl"; qJ5-4S-5yt.segmentTitles[2] = "Month"; ObjectID = "qJ5-4S-5yt"; */
+"qJ5-4S-5yt.segmentTitles[2]" = "Month";
+
+/* Class = "UISegmentedControl"; qJ5-4S-5yt.segmentTitles[3] = "All"; ObjectID = "qJ5-4S-5yt"; */
+"qJ5-4S-5yt.segmentTitles[3]" = "All";
+
+/* Class = "UILabel"; text = "500 this week"; ObjectID = "rFD-52-ZPf"; */
+"rFD-52-ZPf.text" = "500 this week";
+
+/* Class = "UILabel"; text = "±25c"; ObjectID = "vGW-rB-CCq"; */
+"vGW-rB-CCq.text" = "±25c";
+
+/* Class = "UILabel"; text = "Interval:"; ObjectID = "vd8-2y-G0O"; */
+"vd8-2y-G0O.text" = "Interval:";
+
+/* Class = "UILabel"; text = "Note Duration"; ObjectID = "vxv-ph-5nf"; */
+"vxv-ph-5nf.text" = "Note Duration";
+
+/* Class = "UILabel"; text = "New!"; ObjectID = "x0V-Ol-gan"; */
+"x0V-Ol-gan.text" = "New!";
+
+/* Class = "UIButton"; normalTitle = "Descending Perfect Fifth"; ObjectID = "xNq-qb-4iq"; */
+"xNq-qb-4iq.normalTitle" = "Descending Perfect Fifth";
+
+/* Class = "UILabel"; text = "ascending"; ObjectID = "xgp-Oh-lgV"; */
+"xgp-Oh-lgV.text" = "ascending";
+
+/* Class = "UILabel"; text = "Speak interval"; ObjectID = "zhA-hk-jtG"; */
+"zhA-hk-jtG.text" = "Speak interval";

@@ -22,6 +22,7 @@
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
+		224518751D9C5C6C00B98371 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 224518771D9C5C6C00B98371 /* Localizable.strings */; };
 		224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 224571AF1D827ECA00DEDA93 /* SBEventTracker.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
@@ -77,6 +78,13 @@
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2235BDDF1C8A363700285EA9 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		224518731D9C5C3400B98371 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		224518741D9C5C3500B98371 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		224518761D9C5C6C00B98371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		224518781D9C5C7400B98371 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2245187A1D9C684B00B98371 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		2245187B1D9C684B00B98371 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2245187C1D9C684C00B98371 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		224571AE1D827ECA00DEDA93 /* SBEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEventTracker.h; sourceTree = "<group>"; };
 		224571AF1D827ECA00DEDA93 /* SBEventTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEventTracker.m; sourceTree = "<group>"; };
 		224747651C92AA45004E41D7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 			children = (
 				2219494F1C80E956004D0155 /* main.m */,
 				226C7E191D983CF7009E3446 /* Settings.bundle */,
+				224518771D9C5C6C00B98371 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -378,6 +387,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				"zh-Hans",
 			);
 			mainGroup = 221949421C80E956004D0155;
 			productRefGroup = 2219494C1C80E956004D0155 /* Products */;
@@ -397,6 +408,7 @@
 				221CBBDB1CD311040032B655 /* PracticeRemindersNotificationsDisabledView.xib in Resources */,
 				2219495E1C80E956004D0155 /* LaunchScreen.storyboard in Resources */,
 				2285ED471D11E33F000B8856 /* WrongAnswerTeachingOverlay.xib in Resources */,
+				224518751D9C5C6C00B98371 /* Localizable.strings in Resources */,
 				2219495B1C80E956004D0155 /* Assets.xcassets in Resources */,
 				226C7E1A1D983CF8009E3446 /* Settings.bundle in Resources */,
 				221949591C80E956004D0155 /* Main.storyboard in Resources */,
@@ -511,6 +523,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				221949581C80E956004D0155 /* Base */,
+				224518731D9C5C3400B98371 /* de */,
+				2245187A1D9C684B00B98371 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -519,8 +533,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				2219495D1C80E956004D0155 /* Base */,
+				224518741D9C5C3500B98371 /* de */,
+				2245187B1D9C684B00B98371 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		224518771D9C5C6C00B98371 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224518761D9C5C6C00B98371 /* en */,
+				224518781D9C5C7400B98371 /* de */,
+				2245187C1D9C684C00B98371 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -530,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -576,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

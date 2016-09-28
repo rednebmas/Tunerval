@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Tunerval
+
+  Created by Sam Bender on 9/28/16.
+  Copyright © 2016 Sam Bender. All rights reserved.
+*/
+
+"Tunerval" = "Tunerval";
+
+"Ascending" = "上升";
+"ascending" = "上升";
+
+"Descending" = "降";
+"descending" = "降";
