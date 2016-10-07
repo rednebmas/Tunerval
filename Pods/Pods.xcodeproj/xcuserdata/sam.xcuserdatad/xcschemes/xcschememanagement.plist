@@ -49,6 +49,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SBRatePrompt-SBRatePrompt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SBRatePrompt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TPCircularBuffer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A8260938502F21CC0496B4A8DC41C5A</key>
+		<key>2BB78969ADB6914114D000B0A47D3CE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58FB4C628D0B07A02270C1368BC5E693</key>
+		<key>483EC10B4B1F0CC4DD166965C06AE2FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49A09B0AD04F29D7C1424F62105FDFCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC449E6454C64068F0C641331C328450</key>
+		<key>7D136418089B72672C74B84E11683FEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B844C028EAEB34AF39E836F7AA639AC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7F12FE54953F6A94B78C9FBB60C8638</key>
+		<key>BF8498A424A89A0DF271897A726295AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D927A13AD3165FDAAC510B71F72B6D81</key>
+		<key>E677E5EEDC3BF5F51572E63B5983C1DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

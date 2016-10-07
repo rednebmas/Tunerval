@@ -1,0 +1,6 @@
+framework module SBRatePrompt {
+  umbrella header "SBRatePrompt-umbrella.h"
+
+  export *
+  module * { export * }
+}

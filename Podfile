@@ -7,6 +7,7 @@ target 'Tunerval' do
 	pod 'EZAudio', :git => 'https://github.com/rednebmas/EZAudio.git'
 	pod 'SBMusicUtilities', :path => '~/code/iOS/SBMusicUtilities'
 	pod 'SBGraph', :path => '~/code/iOS/SBGraph'
+	pod 'SBRatePrompt', :path => '~/code/iOS/SBRatePrompt'
 	pod 'FMDB'
 	pod 'AWSMobileAnalytics', '~> 2.3.2'
 end

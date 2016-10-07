@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '483EC10B4B1F0CC4DD166965C06AE2FA'
-               BlueprintName = 'SBMusicUtilities-SBMusicUtilities'
+               BlueprintIdentifier = '2BB78969ADB6914114D000B0A47D3CE0'
+               BlueprintName = 'SBRatePrompt-SBRatePrompt'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SBMusicUtilities.bundle'>
+               BuildableName = 'SBRatePrompt.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

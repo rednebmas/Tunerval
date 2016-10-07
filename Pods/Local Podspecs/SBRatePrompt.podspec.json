@@ -1,0 +1,27 @@
+{
+  "name": "SBRatePrompt",
+  "version": "0.1.0",
+  "summary": "A short description of SBRatePrompt.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SBRatePrompt",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Sam Bender": "rednebmas@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SBRatePrompt.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SBRatePrompt/*.{h,m}",
+  "resource_bundles": {
+    "SBRatePrompt": [
+      "SBRatePrompt/*.{xib,png}"
+    ]
+  }
+}
