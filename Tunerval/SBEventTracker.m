@@ -91,6 +91,7 @@
     
     // add any additional metrics/attributes and record
     [eventClient recordEvent:purchaseEvent];
+    [eventClient submitEvents];
 }
 
 @end

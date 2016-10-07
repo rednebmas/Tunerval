@@ -10,6 +10,7 @@
 #import <SBMusicUtilities/SBNote.h>
 #import <SBMusicUtilities/SBPlayableNote.h>
 #import <AWSMobileAnalytics/AWSMobileAnalytics.h>
+#import <SBRatePrompt/SBRatePrompt.h>
 #import "MigrationManager.h"
 #import "Constants.h"
 

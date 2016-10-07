@@ -9,6 +9,7 @@
 #import "PracticeReminderTableViewController.h"
 #import "PracticeRemindersNotificationsDisabledView.h"
 #import "AppDelegate.h"
+#import "SBEventTracker.h"
 
 @interface PracticeReminderTableViewController ()
 {

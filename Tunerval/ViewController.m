@@ -721,18 +721,21 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) playSharpAnswer
 {
     double difference = self.currentQuestion.interval * 100.0 + self.differenceInCents;
+    [self.currentQuestion incrementOnIncorrectAnswerListens];
     [self playAnswerWithCentsDifference:difference];
 }
 
 - (void) playInTuneAnswer
 {
     double difference = self.currentQuestion.interval * 100.0;
+    [self.currentQuestion incrementOnIncorrectAnswerListens];
     [self playAnswerWithCentsDifference:difference];
 }
 
 - (void) playFlatAnswer
 {
     double difference = self.currentQuestion.interval * 100.0 - self.differenceInCents;
+    [self.currentQuestion incrementOnIncorrectAnswerListens];
     [self playAnswerWithCentsDifference:difference];
 }
 

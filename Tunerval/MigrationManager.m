@@ -38,6 +38,9 @@
         case 1:
             [MigrationManager secondMigration];
             
+        case 2:
+            [MigrationManager thirdMigration];
+            
         default:
             break;
     }
@@ -77,6 +80,23 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@[@(InstrumentTypeSineWave)] forKey:@"instruments"];
     [defaults setObject:@(NO) forKey:@"com.sambender.InstrumentTypePianoPurchased"];
+    
+    [MigrationManager updateMigrationsCompletedTo:2];
+}
+
++ (void)thirdMigration
+{
+    NSString *addColumnOnIncorrectAnswerListens =
+    @"ALTER TABLE answer_history"
+    "ADD on_incorrect_answer_listens INTEGER";
+    NSString *addColumnInstrument =
+    @"ALTER TABLE answer_history"
+    "ADD instrument VARCHAR(255)";
+    
+    FMDatabase *db = [Constants dbConnection];
+    [db executeUpdate:addColumnOnIncorrectAnswerListens];
+    [db executeUpdate:addColumnInstrument];
+    [db close];
     
     [MigrationManager updateMigrationsCompletedTo:2];
 }

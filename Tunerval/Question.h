@@ -30,4 +30,6 @@
                  noteRangeFrom:(int)noteRangeFrom
                    noteRangeTo:(int)noteRangeTo;
 
+- (void)incrementOnIncorrectAnswerListens;
+
 @end

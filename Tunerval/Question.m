@@ -16,6 +16,8 @@
     NSDate *start;
 }
 
+@property (nonatomic, assign) int onIncorrectAnswerListens;
+
 @end
 
 @implementation Question
@@ -26,6 +28,9 @@
                  noteRangeFrom:(int)noteRangeFrom
                    noteRangeTo:(int)noteRangeTo
 {
+    NSTimeInterval timeToAnswer = [[NSDate date] timeIntervalSinceDate:start];
+    NSString *instrument = [SBNote instrumentNameForInstrumentType:self.questionNote.instrumentType];
+    
     // record to AWS analytics
     if (DEBUGMODE == NO)
     {
@@ -35,6 +40,13 @@
         
         [questionEvent addMetric:@((int)self.interval) forKey:@"Interval"];
         [questionEvent addMetric:@(difficulty) forKey:@"Difficulty"];
+        [questionEvent addMetric:@(self.referenceNote.halfStepsFromA4) forKey:@"HalfStepsFromA4"];
+        [questionEvent addMetric:@(timeToAnswer) forKey:@"TimeToAnswer"];
+        [questionEvent addMetric:@(self.onIncorrectAnswerListens) forKey:@"OnIncorrectAnswerListens"];
+        [questionEvent addMetric:@(correctAnswer) forKey:@"CorrectAnswer"];
+        [questionEvent addMetric:@(userAnswer) forKey:@"UserAnswer"];
+        [questionEvent addAttribute:instrument forKey:@"Instrument"];
+        
         [eventClient recordEvent:questionEvent];
     }
 
@@ -53,8 +65,10 @@
         "question_note_loudness,"     // note loudness
         "reference_note_loudness,"
         "created_at,"                // unix epoch
+        "on_incorrect_answer_listens,"
         /// game settings ///
-        "note_range_span"
+        "note_range_span,"
+        "instrument"
     ")"
     "VALUES"
     "("
@@ -70,8 +84,10 @@
         "%f,"  // question note loudness
         "%f,"  // reference note loudness
         "%f," // created at
+        "%d," // created at
         /// game settings ///
-        "%d"   // note range span
+        "%d,"   // note range span
+        "'%@'"   // instrument
     ");"
     ,
         (int)self.interval,
@@ -80,13 +96,15 @@
         userAnswer,
         correctAnswer,
         difficulty,
-        [[NSDate date] timeIntervalSinceDate:start],
+        timeToAnswer,
         self.questionNote.duration,
         self.referenceNote.duration,
         self.questionNote.loudness,
         self.referenceNote.loudness,
         [[NSDate date] timeIntervalSince1970],
-        noteRangeTo - noteRangeFrom
+        self.onIncorrectAnswerListens,
+        noteRangeTo - noteRangeFrom,
+        instrument
     ];
     
     // NSLog(@"%@", query);
@@ -105,6 +123,11 @@
     {
         start = [NSDate date];
     }
+}
+
+- (void)incrementOnIncorrectAnswerListens
+{
+    self.onIncorrectAnswerListens++;
 }
 
 @end

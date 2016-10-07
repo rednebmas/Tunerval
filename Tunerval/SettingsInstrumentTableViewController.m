@@ -93,15 +93,10 @@
     cell.tag = indexPath.row;
     cell.delegate = self;
     
-    if (indexPath.row == 0)
+    if (indexPath.row == 0 || [self isInstrumentAtIndexPurchased:indexPath.row])
     {
         [cell hideBuyButton];
     }
-    else if ([self isInstrumentAtIndexPurchased:indexPath.row])
-    {
-        [cell hideBuyButton];
-    }
-    
     
     NSNumber *instrument = self.instrumentValues[indexPath.row];
     [cell setCheckMarkHidden:![self.selectedInstruments containsObject:instrument]];
@@ -231,38 +226,11 @@
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
     // Purchase
-    SKProduct *product = response.products[0];
-    [self addProductToCatalog:product];
-    SKPayment *payment = [SKPayment paymentWithProduct:product];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
-}
-
-
-- (void)confirmPurchaseForProduct:(SKProduct*)product
-{
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@"Purchase"
-                                message:@"Would you like to purchase this instrument?"
-                                preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *ok = [UIAlertAction
-                         actionWithTitle:@"Yes"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                         }];
-    UIAlertAction *no = [UIAlertAction
-                         actionWithTitle:@"No"
-                         style:UIAlertActionStyleCancel
-                         handler:^(UIAlertAction *action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                         }];
-    
-    [alert addAction:ok];
-    [alert addAction:no];
-    [self presentViewController:alert animated:YES completion:nil];
+    for (SKProduct *product in response.products) {
+        [self addProductToCatalog:product];
+        SKPayment *payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+    }
 }
 
 #pragma mark - SKPaymentTransactionObserver delegate
