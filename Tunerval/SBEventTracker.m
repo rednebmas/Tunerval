@@ -32,6 +32,19 @@
     return sharedInstance;
 }
 
++ (void)trackAppOpenFromPushNotificationWithLaunchOptions:(NSDictionary*)dict
+{
+    if (DEBUGMODE == YES) {
+        return;
+    }
+    
+    if ([dict valueForKey:UIApplicationLaunchOptionsLocalNotificationKey]) {
+        id<AWSMobileAnalyticsEventClient> eventClient = [SBEventTracker sharedInstance].eventClient;
+        id<AWSMobileAnalyticsEvent> screenViewEvent = [eventClient createEventWithEventType:@"OpenFromReminder"];
+        [eventClient recordEvent:screenViewEvent];
+    }
+}
+
 + (void)trackScreenViewForScreenName:(NSString*)screenName
 {
     if (!screenName || DEBUGMODE == YES) {

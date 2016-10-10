@@ -87,10 +87,10 @@
 + (void)thirdMigration
 {
     NSString *addColumnOnIncorrectAnswerListens =
-    @"ALTER TABLE answer_history"
+    @"ALTER TABLE answer_history "
     "ADD on_incorrect_answer_listens INTEGER";
     NSString *addColumnInstrument =
-    @"ALTER TABLE answer_history"
+    @"ALTER TABLE answer_history "
     "ADD instrument VARCHAR(255)";
     
     FMDatabase *db = [Constants dbConnection];
