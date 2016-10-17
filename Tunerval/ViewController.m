@@ -317,17 +317,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     answer = random;
     if (random == 0)
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents
+                                                     adjustName:YES];
         NSLog(@"higher");
     }
     else if (random == 1)
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0
+                                                     adjustName:YES];
         NSLog(@"on it");
     }
     else
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents];
+        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents
+                                                     adjustName:YES];
         NSLog(@"lower");
     }
     
@@ -621,7 +624,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     if (self.intervals.count == 1) return [self.intervals[0] integerValue];
     
-    float learningSpeed = 5.0;
+    float learningSpeed = 3.5;
     float scoreSum = 0.0;
     NSMutableArray *scores = [[NSMutableArray alloc] init];
     for (NSNumber *interval in self.intervals)
@@ -741,7 +744,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) playAnswerWithCentsDifference:(double)difference
 {
-    SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference];
+    SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference
+                                                                        adjustName:YES];
     second.loudness = self.currentQuestion.questionNote.loudness;
     second.duration = self.currentQuestion.questionNote.duration;
     second.instrumentType = self.currentQuestion.questionNote.instrumentType;
