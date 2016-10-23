@@ -318,19 +318,19 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     if (random == 0)
     {
         questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents
-                                                     adjustName:YES];
+                                                     ];
         NSLog(@"higher");
     }
     else if (random == 1)
     {
         questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0
-                                                     adjustName:YES];
+                                                     ];
         NSLog(@"on it");
     }
     else
     {
         questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents
-                                                     adjustName:YES];
+                                                     ];
         NSLog(@"lower");
     }
     
@@ -745,7 +745,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) playAnswerWithCentsDifference:(double)difference
 {
     SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference
-                                                                        adjustName:YES];
+                                                                        ];
     second.loudness = self.currentQuestion.questionNote.loudness;
     second.duration = self.currentQuestion.questionNote.duration;
     second.instrumentType = self.currentQuestion.questionNote.instrumentType;
