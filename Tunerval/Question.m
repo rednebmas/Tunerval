@@ -16,11 +16,56 @@
     NSDate *start;
 }
 
-@property (nonatomic, assign) int onIncorrectAnswerListens;
+@property (nonatomic, assign) NSInteger onIncorrectAnswerListens;
 
 @end
 
 @implementation Question
+
+static const NSInteger ERROR_INTEGER_VALUE = -112358;
+- (NSInteger)cleanInteger:(NSInteger)integer
+{
+    if (isnan(integer)) {
+        return ERROR_INTEGER_VALUE;
+    } else if (integer == INFINITY) {
+        return ERROR_INTEGER_VALUE;
+    }
+    
+    return integer;
+}
+
+static const double ERROR_DOUBLE_VALUE = -112358.13;
+- (double)cleanDouble:(double)value
+{
+    if (isnan(value)) {
+        return ERROR_DOUBLE_VALUE;
+    } else if (value == INFINITY) {
+        return ERROR_DOUBLE_VALUE;
+    }
+    
+    return value;
+}
+
+static const int ERROR_INT_VALUE = -112358;
+- (int)cleanInt:(int)value
+{
+    if (isnan(value)) {
+        return ERROR_INT_VALUE;
+    } else if (value == INFINITY) {
+        return ERROR_INT_VALUE;
+    }
+    
+    return value;
+}
+
+- (NSString*)cleanString:(NSString*)string
+{
+    if (string == nil || [string isEqualToString:@""]) {
+        return @"ERROR";
+    }
+    
+    return string;
+}
 
 - (void) logToDBWithUserAnswer:(int)userAnswer
                  correctAnswer:(int)correctAnswer
@@ -38,14 +83,14 @@
         id<AWSMobileAnalyticsEvent> questionEvent = [eventClient
                                                       createEventWithEventType:@"QuestionAnswered"];
         
-        [questionEvent addMetric:@((int)self.interval) forKey:@"Interval"];
-        [questionEvent addMetric:@(difficulty) forKey:@"Difficulty"];
-        [questionEvent addMetric:@(self.referenceNote.halfStepsFromA4) forKey:@"HalfStepsFromA4"];
-        [questionEvent addMetric:@(timeToAnswer) forKey:@"TimeToAnswer"];
-        [questionEvent addMetric:@(self.onIncorrectAnswerListens) forKey:@"OnIncorrectAnswerListens"];
-        [questionEvent addMetric:@(correctAnswer) forKey:@"CorrectAnswer"];
-        [questionEvent addMetric:@(userAnswer) forKey:@"UserAnswer"];
-        [questionEvent addAttribute:instrument forKey:@"Instrument"];
+        [questionEvent addMetric:@([self cleanInteger:self.interval]) forKey:@"Interval"];
+        [questionEvent addMetric:@([self cleanDouble:difficulty]) forKey:@"Difficulty"];
+        [questionEvent addMetric:@([self cleanInt:self.referenceNote.halfStepsFromA4]) forKey:@"HalfStepsFromA4"];
+        [questionEvent addMetric:@([self cleanDouble:timeToAnswer]) forKey:@"TimeToAnswer"];
+        [questionEvent addMetric:@([self cleanInteger:self.onIncorrectAnswerListens]) forKey:@"OnIncorrectAnswerListens"];
+        [questionEvent addMetric:@([self cleanInt:correctAnswer]) forKey:@"CorrectAnswer"];
+        [questionEvent addMetric:@([self cleanInt:userAnswer]) forKey:@"UserAnswer"];
+        [questionEvent addAttribute:[self cleanString:instrument] forKey:@"Instrument"];
         
         [eventClient recordEvent:questionEvent];
     }
@@ -102,7 +147,7 @@
         self.questionNote.loudness,
         self.referenceNote.loudness,
         [[NSDate date] timeIntervalSince1970],
-        self.onIncorrectAnswerListens,
+        (int)self.onIncorrectAnswerListens,
         noteRangeTo - noteRangeFrom,
         instrument
     ];

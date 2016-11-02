@@ -18,7 +18,7 @@
 		07750258937039F834BC41459DCB399A /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C800DC7DAB4CCE05F81D3965E9719285 /* zh-Hans.lproj */; };
 		07E6F2C77AD68D8DD6625A44B263D695 /* AWSSynchronizedMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 7791C131E87D5FE2C671236F4AC12D68 /* AWSSynchronizedMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07FCE4196FC154CF293BB59C2692D2BA /* AWSGZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2633C681485FBADD1BA85EFD90CEF /* AWSGZIP.m */; };
-		0830A3E9DD2313212259DBDA0963A0E7 /* SBGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C7C2B87F82A00F86CEEDD95A3B5A98 /* SBGraphView.m */; };
+		0830A3E9DD2313212259DBDA0963A0E7 /* SBGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D05C598D6A475302465FA10521DFBC /* SBGraphView.m */; };
 		08CDB4B38CEE818AA5D6D8F5EDAE0DD3 /* AWSMobileAnalyticsDefaultContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 49D044E67ED718BBE11D73ABD1C26026 /* AWSMobileAnalyticsDefaultContext.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0A2AA88E67C5C6124B83C78FA85C2F7C /* AWSMobileAnalyticsDeliveryPolicyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 099A6EF341EAEAE0046056DD0D99024E /* AWSMobileAnalyticsDeliveryPolicyFactory.m */; };
 		0A7B18DE5D05F31C69059D6CD2ADBA78 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A82DF175130017E8F953BDEDF304A3 /* AudioToolbox.framework */; };
@@ -61,7 +61,7 @@
 		25D4E639D71608B93E4FD6BD6D0095C1 /* SBAutoLayoutUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9779330A52B37816CE6012E1971A4CD3 /* SBAutoLayoutUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		262C74601B8419B42FFF98BDA799AF92 /* AWSMobileAnalyticsDefaultDeliveryClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED7CFB26DED8D12A51E485BB8A3D2E /* AWSMobileAnalyticsDefaultDeliveryClient.m */; };
 		26F000D694F55B4AD2F926B82F4E5198 /* AWSMobileAnalyticsCountDownLatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B84931E78D2ED131CE02AAE9E140285 /* AWSMobileAnalyticsCountDownLatch.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		279EA2AFB0C97A0FD6609F59C8ED0437 /* SBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CB11D0E5E0E926D9F9A3AD54B36DB8A3 /* SBLine.m */; };
+		279EA2AFB0C97A0FD6609F59C8ED0437 /* SBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1E4F13B24550CE520AEA9C1B1968F5 /* SBLine.m */; };
 		27EED608F4924725D77FF916023FCEDD /* AWSExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D205719F9901997337CFAFA9460752 /* AWSExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28025A93EE99F4F64788D60BEF3F0E7E /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 39FBE110067F9EEEB132A4EE8DF102F7 /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2911E06CE8248C125EEA9A38CECC4A0A /* AWSTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A3D96C8AE97797EF0C9527516B2778 /* AWSTask.m */; };
@@ -187,7 +187,7 @@
 		7503D7941E4AEFA63E87F14198F35145 /* SBRatePrompt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DED95295B55DA9C48632DB6EDB730A7B /* SBRatePrompt-dummy.m */; };
 		7525FD789FE0010C035E8D6569B071E9 /* SBPlayableNote.h in Headers */ = {isa = PBXBuildFile; fileRef = A562DD6CB0EC5A3762F3D5B75E6221D0 /* SBPlayableNote.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		763B5D8139ED1036E5DEAFC014BBC5F2 /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5CD4B2BE22EFAD5743BA6EE1A35350 /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7658DF8C6D0D4D09151AF88FF0C5E9E9 /* SBGraph-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B17A4D12A355CAD606DEB0A53E021E2 /* SBGraph-dummy.m */; };
+		7658DF8C6D0D4D09151AF88FF0C5E9E9 /* SBGraph-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 373080F909F79184F717C5FA3BAFED6C /* SBGraph-dummy.m */; };
 		775DB59B3E447768C8128AAD68BA22AD /* AWSCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9F33C598A098E005A76FF4E38F503 /* AWSCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C4394FE4E6932F00FF0C1C857FF137 /* AWSMobileAnalyticsClientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9215421471333C181812B8DA44EE7 /* AWSMobileAnalyticsClientContext.m */; };
 		780FC9C47C4F35E990B3F4290ECBAF42 /* AWSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C9D9BF1F6BA325EB2396FF9A95D4AB /* AWSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -235,7 +235,7 @@
 		9951D55DFCA91501C59938CB3D8CF16D /* TPCircularBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D5C5192F27E88F307A0006B8B72E95 /* TPCircularBuffer.framework */; };
 		995E7C02DAC410DEA0261CD9C1789454 /* AWSMobileAnalyticsIOSLifeCycleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 376E47C5AA0AE53691B262D29E9A932E /* AWSMobileAnalyticsIOSLifeCycleManager.m */; };
 		99C158E1C5C43E87641955FC6DE69AE3 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 4155C79C7B08752AEAED2D081D7638B4 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A6A1336FBE8FB6FA6C1FD53061A3B1F /* SBGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 091C0A812B4D9D36DF69644A9CF8E14B /* SBGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A6A1336FBE8FB6FA6C1FD53061A3B1F /* SBGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A5054593D2A26B721AA9A0482C8D3D /* SBGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AB5DEDAD078694D31E3A49AB01DE989 /* AWSCredentialsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 428704870DEE3770275038FBB6E178CF /* AWSCredentialsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BDFBC6023C56FEDA1A8284DA4BEEF69 /* NSError+AWSMTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = 949D895A7A09E4910D854EAA1210A855 /* NSError+AWSMTLModelException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D290463508A50CCD0E60BB63505084B /* AWSMobileAnalyticsContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E993BD0FBE295A4F8A6A77665E34DA5 /* AWSMobileAnalyticsContext.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -269,7 +269,7 @@
 		AF7C9645E35EB31BAD2410178E33390B /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = D515E0C27369FCFFD8EC1AE69B7C8C03 /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFCF5E9E6DB1ED645DA0E6AAFD6A89BE /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F17B716CD639B1D5380B0F6378180C47 /* AWSMTLModel.m */; };
 		B0A1D7088410C3E525D10E11E7B899E6 /* AWSMobileAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 951B274DB8677F89353E01B6769BFADE /* AWSMobileAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0F504BA5E94AFF3E26C4488DE1F6826 /* SBMusicUtilities.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAE8D12973721FC32ED2522180D1EB06 /* SBMusicUtilities.bundle */; };
+		B0F504BA5E94AFF3E26C4488DE1F6826 /* SBMusicUtilities.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5303963AFA95F093DDDBFBEDD914BF83 /* SBMusicUtilities.bundle */; };
 		B110EF74C681E34CC104B351E95F5B31 /* AWSFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0921DE2683FC1C757D870FF7055FEA6A /* AWSFMDatabaseQueue.m */; };
 		B22CB7415E8FC3D4DF4AF7F9E9823439 /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD5F7D984A058801A4DBF6ABB7A924C /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2871737A1705D34F28985CDC275E2F4 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AC890F104440F0C2CB48C6321F4D47D /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -281,7 +281,7 @@
 		BA72A450B9DAD49DB12FFF82E9B184E7 /* SBNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D1969B8D28498D783ABB7AE3C3FA75EF /* SBNote.m */; };
 		BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DA6C7FC1AC03846A277C9E1D178418 /* FMDB-dummy.m */; };
 		BB5554D4622592CB1FB04DCBCAF987DF /* AWSUICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C200AB54C51055EE50A1278F79988D1 /* AWSUICKeyChainStore.m */; };
-		BB653BBF83E55C6056173B3606918C1A /* SBGraph-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25A45D5CF814C9A51F63AE6233816037 /* SBGraph-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB653BBF83E55C6056173B3606918C1A /* SBGraph-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD89D6ADB666FE141CE0F94E0E59E86A /* SBGraph-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCECE507D58C653DB0E0068EA2163198 /* AWSMobileAnalyticsEncryptedBufferedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CC91702B0FA5A7BA156B92A346FE04E9 /* AWSMobileAnalyticsEncryptedBufferedReader.m */; };
 		BD0090276E9F2ABFC51EDAEF4D0D97C4 /* AWSMobileAnalyticsIOSPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 162BDFE5BC0F49C57FFB90E460BA5087 /* AWSMobileAnalyticsIOSPreferences.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD88F566F536ED768CF1C5BA1A9E6D1B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3054E2BE7BEE20507EEFC34C01F8E3CF /* en.lproj */; };
@@ -304,7 +304,7 @@
 		C907C2678AD063B3992FC6303F92EA04 /* AWSMobileAnalyticsIOSSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8401DEA79747803AFA252A9A470B32 /* AWSMobileAnalyticsIOSSystem.m */; };
 		C98749A9A88B5950A6C7AA81ABC77F7A /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D14E07A2F72BC61A7F19C2677E8E47 /* EZPlot.m */; };
 		C9B2354D621AD2CA62F27144271C9560 /* AWSURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCB3B02DAE630F6EF27A4C53F1A7796 /* AWSURLRequestSerialization.m */; };
-		CA94FD2EC98AF04A2A82E6C3AEC618B0 /* SBLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7A6B7266B8F5621F7CCC97018F1E0 /* SBLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA94FD2EC98AF04A2A82E6C3AEC618B0 /* SBLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 263B5C66D76DA3F0CD7231E37EDA4B6D /* SBLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAD13ACF636D02D8CADCFF48F79764FB /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F8043DF0E3CBB0476810304742106387 /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCCE042E1D45A86008389BE3BB0E8992 /* AWSURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7987512A281CEBDBC0C4D229067F171 /* AWSURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD0A78F89A133D3FB9310EEF997B2BC3 /* AWSMobileAnalyticsSessionStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF61E49E6D6F2016C7B2CF149105653 /* AWSMobileAnalyticsSessionStore.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -329,13 +329,13 @@
 		D9E5E91115F0C69C5FAE0ABD1AA36E66 /* AWSMobileAnalyticsConnectivityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6ED17A5E03AE99B665072338C7BB74 /* AWSMobileAnalyticsConnectivityPolicy.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DA07F43E9026AA0750DC71258A5ADFDF /* AWSMobileAnalyticsIOSSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 35B76644B735D3639D9E76CAB4F05E26 /* AWSMobileAnalyticsIOSSystem.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DA541796E7E68354C75A940318B8CB68 /* AWSXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 305C3E5B84B5DD1403BA6B31F8207D36 /* AWSXMLDictionary.m */; };
-		DCF439D1A69A4A6B75F5E35F476781AC /* SBCoordinateMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C7C6551E80F105D8136BE0DF5A4C /* SBCoordinateMapper.m */; };
-		DF4F6C18D8683AB669CF92E841E09D9A /* SBGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E10096F61B70F17518A8A2BB15454BF /* SBGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCF439D1A69A4A6B75F5E35F476781AC /* SBCoordinateMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2C5E46C1BD934D6E73548F00C267E /* SBCoordinateMapper.m */; };
+		DF4F6C18D8683AB669CF92E841E09D9A /* SBGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = 70FB3BEC01771E7249E0B58E60554DC8 /* SBGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFC45240140C730D6670A2FD07DD2434 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB314C269879A4EE4B8710F4946AB1D /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E005BFA853FBB91788EA18D8807FC5D0 /* SBCoordinateMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC31A09AACA3B4AAE0E2EEF15B909EC /* SBCoordinateMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E005BFA853FBB91788EA18D8807FC5D0 /* SBCoordinateMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 498E9146A7B7CB82E394B06250C24428 /* SBCoordinateMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E05B3F7F02099D5A89EF3485699B48BC /* AWSMobileAnalyticsMonetizationEventBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E06AA1D2A0684DDC781F1394C6FD8 /* AWSMobileAnalyticsMonetizationEventBuilder.m */; };
 		E125734398C4862046170CB86217807B /* AWSXMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = D320CB885609811612047084C8BFFDDD /* AWSXMLDictionary.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		E1C9E8402A54082118E269435473469B /* SBRatePrompt.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5733401D7C2894512D2A9FCBF3E0544D /* SBRatePrompt.bundle */; };
+		E1C9E8402A54082118E269435473469B /* SBRatePrompt.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 959A739D590CFF8363999D7D3EBFA5F4 /* SBRatePrompt.bundle */; };
 		E2D64D21F8354C5B415F9F4E8CCC7EF2 /* AWSCognitoIdentityResources.m in Sources */ = {isa = PBXBuildFile; fileRef = B999AF5361D7E0F77B8EEF732D26B530 /* AWSCognitoIdentityResources.m */; };
 		E330886E0E7C450E9669C4BD025D9ABD /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 149A4D01CE200AF49905199C7CBC4CB6 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3F438C175F7E781144A14F8EC727B2B /* AWSMobileAnalyticsPausedSessionState.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD1A45E5FACFA63DB117286C09752F9 /* AWSMobileAnalyticsPausedSessionState.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -393,7 +393,6 @@
 		FCC86673588E4DE4ECBF2DCDA1F6E5F5 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B923324120C2337C28F2FD015EEB4F2 /* EZAudioUtilities.m */; };
 		FE9DB2A8B48E4FDF415A5EFD4354DE22 /* NSObject+AWSMTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FDEF3E8B604FCE253C9CA9FDC441DA6 /* NSObject+AWSMTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF0520D97A53D4A5D5303364EC85D633 /* AWSMobileAnalyticsIOSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA1888FBC79265652A3349CCFEE409D /* AWSMobileAnalyticsIOSPreferences.m */; };
-		FF0B961DDB87AE94D186C6DB704E154C /* SBGraph.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E3C40B43C8641ACD055FB592628326F /* SBGraph.bundle */; };
 		FF597A89A09E97BEDC4BDBB8FB2673DB /* AWSMobileAnalyticsSubmissionTimePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC884E0B8A0659F57AB12DBD657C56 /* AWSMobileAnalyticsSubmissionTimePolicy.m */; };
 		FF890BE2599AB2B25D01F8F04D88D369 /* AWSMobileAnalyticsFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 925265A3F891DE472AE8F04EF80B37D8 /* AWSMobileAnalyticsFile.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
@@ -426,13 +425,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 29E8FE0B316EE83946F48C4684185D90;
 			remoteInfo = AWSCore;
-		};
-		579BA3C89CC84C15935142348E3D85FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49A09B0AD04F29D7C1424F62105FDFCB;
-			remoteInfo = "SBGraph-SBGraph";
 		};
 		6A0B14F9D309418F7D71B9ED55A6CA79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -510,18 +502,17 @@
 		04BF2BC8C85737F9B91535D7800E4434 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
 		06B11D560DE5BEB58023FAA111F24621 /* AWSMTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLValueTransformer.h; path = AWSCore/Mantle/AWSMTLValueTransformer.h; sourceTree = "<group>"; };
 		07AD8274B97675647D212162086C2A97 /* AWSSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSignature.h; path = AWSCore/Authentication/AWSSignature.h; sourceTree = "<group>"; };
-		091C0A812B4D9D36DF69644A9CF8E14B /* SBGraph.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBGraph.h; sourceTree = "<group>"; };
 		0921DE2683FC1C757D870FF7055FEA6A /* AWSFMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseQueue.m; path = AWSCore/FMDB/AWSFMDatabaseQueue.m; sourceTree = "<group>"; };
 		092C627EAFBC8D091C17D3095382DD79 /* AWSMobileAnalyticsEventObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsEventObserver.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventObserver.h; sourceTree = "<group>"; };
 		099A6EF341EAEAE0046056DD0D99024E /* AWSMobileAnalyticsDeliveryPolicyFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsDeliveryPolicyFactory.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryPolicyFactory.m; sourceTree = "<group>"; };
 		09A1EE9A6A08623775D9B14B3399BB2C /* AWSMTLManagedObjectAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLManagedObjectAdapter.m; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.m; sourceTree = "<group>"; };
-		0A902AAE7D0C83BD742189C7309A3CD1 /* ResourceBundle-SBGraph-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SBGraph-Info.plist"; sourceTree = "<group>"; };
 		0B84931E78D2ED131CE02AAE9E140285 /* AWSMobileAnalyticsCountDownLatch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsCountDownLatch.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsCountDownLatch.h; sourceTree = "<group>"; };
 		0C0AE27DB61C5C2DDE3AE5C30474D111 /* SBAutoLayoutUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBAutoLayoutUtility.m; sourceTree = "<group>"; };
 		0C200AB54C51055EE50A1278F79988D1 /* AWSUICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSUICKeyChainStore.m; path = AWSCore/UICKeyChainStore/AWSUICKeyChainStore.m; sourceTree = "<group>"; };
 		0C4086EB84D4FCCB476A98CEB6E8227B /* AWSMobileAnalyticsERS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsERS.h; path = AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERS.h; sourceTree = "<group>"; };
 		0C5AA1DABFED2C9D0B6F7D0BEF115DD6 /* SBNote.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBNote.h; sourceTree = "<group>"; };
 		0E4B1744DCDEF7066247DA18A6052F16 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = AWSCore/Fabric/Fabric.h; sourceTree = "<group>"; };
+		0E4B8648B07489BD1A6F0464E918189C /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBC884E0B8A0659F57AB12DBD657C56 /* AWSMobileAnalyticsSubmissionTimePolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsSubmissionTimePolicy.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSubmissionTimePolicy.m; sourceTree = "<group>"; };
 		0F9A816897EDCD9E7E82C608F39F2154 /* NSDictionary+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
 		0FB73450BC2DCD48F6D3B095202EA86B /* AWSMobileAnalyticsDefaultEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultEvent.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEvent.h; sourceTree = "<group>"; };
@@ -539,15 +530,15 @@
 		17BD61D2F3F808673C8F6140F7B742A9 /* AWSEXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSEXTRuntimeExtensions.m; path = AWSCore/Mantle/extobjc/AWSEXTRuntimeExtensions.m; sourceTree = "<group>"; };
 		17D205719F9901997337CFAFA9460752 /* AWSExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSExecutor.h; path = AWSCore/Bolts/AWSExecutor.h; sourceTree = "<group>"; };
 		1897D13816FC691632329850801B05F1 /* AWSFMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseAdditions.m; path = AWSCore/FMDB/AWSFMDatabaseAdditions.m; sourceTree = "<group>"; };
+		18A996D874FA971CC66DFE7F063ECF86 /* SBRatePrompt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBRatePrompt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B629B7F2C8BF796BAAC7D9E0A5084E /* AWSMobileAnalyticsInactiveSessionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsInactiveSessionState.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsInactiveSessionState.h; sourceTree = "<group>"; };
+		19F2C5E46C1BD934D6E73548F00C267E /* SBCoordinateMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBCoordinateMapper.m; sourceTree = "<group>"; };
 		19F32D86E33C26987CB16688174F3882 /* TPCircularBuffer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.xcconfig; sourceTree = "<group>"; };
 		19F44D3755E1A44DDD4DF41DE5EB9F58 /* AWSMobileAnalyticsCountDownLatch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsCountDownLatch.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsCountDownLatch.m; sourceTree = "<group>"; };
 		1A6A03CFE319E0304045D081F32DE0EA /* AWSFMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMResultSet.h; path = AWSCore/FMDB/AWSFMResultSet.h; sourceTree = "<group>"; };
 		1BE7AF375A776482429310C2CFAD60BB /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
 		1BF8F1B2DCF7F0B53FB99C78ACC42FF5 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
 		1C7673F005032B72B1CACA64A8B6CB58 /* SBRatePrompt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBRatePrompt-umbrella.h"; sourceTree = "<group>"; };
-		1D4798C3DA63F2E03463EA4381705815 /* SBMusicUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBMusicUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4B58CD760E534983A55A2674D871B4 /* SBRatePrompt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBRatePrompt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC24B07768342975BC68EED4DD7D447 /* AWSMobileAnalyticsEventStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsEventStore.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventStore.h; sourceTree = "<group>"; };
 		1DE3AD8601CDE31E1A14C1FD3B70E709 /* AWSMobileAnalyticsDefaultContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsDefaultContext.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultContext.m; sourceTree = "<group>"; };
 		1E7931CF1310DFD5BE677F0CF784EE2E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -562,9 +553,9 @@
 		253F9138435A1C8A1A93DA60112A7680 /* AWSTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTaskCompletionSource.m; path = AWSCore/Bolts/AWSTaskCompletionSource.m; sourceTree = "<group>"; };
 		2555016BD8C6E75F0A3EC6123EF1E22D /* AWSMobileAnalyticsSessionClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsSessionClient.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSessionClient.h; sourceTree = "<group>"; };
 		2586059DD6E4095AC4DB68D48445B0AB /* AWSMobileAnalyticsAppleMonetizationEventBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsAppleMonetizationEventBuilder.h; path = AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h; sourceTree = "<group>"; };
-		25A45D5CF814C9A51F63AE6233816037 /* SBGraph-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBGraph-umbrella.h"; sourceTree = "<group>"; };
 		25EB4DF68BA991E39358536A7F0DB3A3 /* AWSMobileAnalyticsEventConstraintDecorator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsEventConstraintDecorator.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventConstraintDecorator.m; sourceTree = "<group>"; };
 		26154CD2F0EB1FF4527E99094354D1F8 /* AWSMobileAnalyticsSystem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsSystem.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSystem.h; sourceTree = "<group>"; };
+		263B5C66D76DA3F0CD7231E37EDA4B6D /* SBLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBLine.h; sourceTree = "<group>"; };
 		26863E7D537A168888D19B28AB345A2F /* AWSMobileAnalyticsDeliveryPolicyFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDeliveryPolicyFactory.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryPolicyFactory.h; sourceTree = "<group>"; };
 		26A9BCF6D3F80F992B16B0669F7DB0E5 /* SBRatePromptFlowController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptFlowController.h; sourceTree = "<group>"; };
 		26E0D676D03CD7C9390A78A7252DF9AB /* AWSMobileAnalyticsDefaultOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultOptions.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultOptions.h; sourceTree = "<group>"; };
@@ -595,18 +586,20 @@
 		36ACF3C42554091C16E76ABE3F2473BF /* AWSCognitoIdentityService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityService.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityService.h; sourceTree = "<group>"; };
 		36AF7C00DAE20744F3DBCF346F5AF9A3 /* AWSMobileAnalyticsSerializerFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsSerializerFactory.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSerializerFactory.m; sourceTree = "<group>"; };
 		3721E33C5913D3AD937110B8454F7F8F /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = AWSCore/Fabric/FABAttributes.h; sourceTree = "<group>"; };
+		373080F909F79184F717C5FA3BAFED6C /* SBGraph-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SBGraph-dummy.m"; sourceTree = "<group>"; };
 		376E47C5AA0AE53691B262D29E9A932E /* AWSMobileAnalyticsIOSLifeCycleManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsIOSLifeCycleManager.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSLifeCycleManager.m; sourceTree = "<group>"; };
 		37B25AFC094E3C9AFF6117A94CB9643F /* Pods-Tunerval-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tunerval-resources.sh"; sourceTree = "<group>"; };
 		380770E73E5D31CFBFBAF0AEEC8B39BA /* AWSMobileAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsConfiguration.m; path = AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.m; sourceTree = "<group>"; };
 		39BE01C8B98A587A90D622958F7AD194 /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
+		39D05C598D6A475302465FA10521DFBC /* SBGraphView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBGraphView.m; sourceTree = "<group>"; };
 		39E19A0D9F628086AB65E15B9DCA834D /* AWSTMCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMCache.m; path = AWSCore/TMCache/AWSTMCache.m; sourceTree = "<group>"; };
 		39FBE110067F9EEEB132A4EE8DF102F7 /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
+		3ABB8B2591B9F37858C7706431DC85BE /* SBGraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBGraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0687D38EE72DC1562272E2FCC852FC /* AWSMobileAnalyticsDefaultEventClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultEventClient.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEventClient.h; sourceTree = "<group>"; };
-		3B17A4D12A355CAD606DEB0A53E021E2 /* SBGraph-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SBGraph-dummy.m"; sourceTree = "<group>"; };
 		3B58756689EBA71355E45D0AC8F89E9A /* AWSTMMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMMemoryCache.m; path = AWSCore/TMCache/AWSTMMemoryCache.m; sourceTree = "<group>"; };
 		3D4870B40E539B042A356215E21FE519 /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
-		3E10096F61B70F17518A8A2BB15454BF /* SBGraphView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBGraphView.h; sourceTree = "<group>"; };
 		3EE5CCE7A6426C006898F62F74D4EFB3 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		3F0ED4C757449AE5362627A9B8D3B5F3 /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSMobileAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4D3B80348AA95A642B2E35E816F032 /* AWSMobileAnalyticsErrorUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsErrorUtils.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsErrorUtils.m; sourceTree = "<group>"; };
 		4093D371BB5D5A0D6A3C9CB3B6794B1F /* AWSMobileAnalyticsFileEventStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsFileEventStore.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsFileEventStore.h; sourceTree = "<group>"; };
 		41476686FFBEDD814696911023626092 /* EZAudioOSX.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioOSX.h; path = EZAudio/EZAudioOSX.h; sourceTree = "<group>"; };
@@ -614,7 +607,6 @@
 		41AB3DF11FAC30287CB727333A9ED821 /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
 		41AB7AB4CD7CDFE21BF9CDB4483472DA /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
 		428704870DEE3770275038FBB6E178CF /* AWSCredentialsProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCredentialsProvider.h; path = AWSCore/Authentication/AWSCredentialsProvider.h; sourceTree = "<group>"; };
-		430F61A675F76A71CCF2091BB06BE48D /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436F4FD7438B1D129799D9F87CB04F29 /* SBRatePromptWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePromptWindow.m; sourceTree = "<group>"; };
 		4370156CC363DA8B629A5C4F7B6707DC /* AWSTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTaskCompletionSource.h; path = AWSCore/Bolts/AWSTaskCompletionSource.h; sourceTree = "<group>"; };
 		43A2EB6C0B1E69C834732AC93D11FB4C /* SBRatePromptConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptConstants.h; sourceTree = "<group>"; };
@@ -622,6 +614,7 @@
 		4467A3280EA7574758F9C969EC3566FB /* AWSEXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEXTKeyPathCoding.h; path = AWSCore/Mantle/extobjc/AWSEXTKeyPathCoding.h; sourceTree = "<group>"; };
 		4477D581F2B3E98F1E2AFAFDD78DCE91 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FMDB.modulemap; sourceTree = "<group>"; };
 		44E93DA5696B1E73BB93A7C918D07522 /* AWSEXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSEXTScope.m; path = AWSCore/Mantle/extobjc/AWSEXTScope.m; sourceTree = "<group>"; };
+		459424724EA9D985146C9F44AA1E1607 /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C61E351324EF724080ECA94EE82124 /* AWSMobileAnalyticsDeliveryClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDeliveryClient.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryClient.h; sourceTree = "<group>"; };
 		46589378289D3768BF35E49BE829ADFA /* AWSSTS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTS.h; path = AWSCore/STS/AWSSTS.h; sourceTree = "<group>"; };
 		46C7DC7926A3595A5C58DAE6DB9CC976 /* AWSMobileAnalyticsDefaultConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultConfiguration.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultConfiguration.h; sourceTree = "<group>"; };
@@ -629,12 +622,14 @@
 		47D6598E06882CD8D4EAF619A83F99AA /* TPCircularBuffer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPCircularBuffer-dummy.m"; sourceTree = "<group>"; };
 		48A186534F6EFE0A85A664D23B470815 /* SBPitchEstimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBPitchEstimator.h; sourceTree = "<group>"; };
 		48F28F9E1356B176842AFFB24F87E50F /* AWSMantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMantle.h; path = AWSCore/Mantle/AWSMantle.h; sourceTree = "<group>"; };
+		498E9146A7B7CB82E394B06250C24428 /* SBCoordinateMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBCoordinateMapper.h; sourceTree = "<group>"; };
 		49ABA6AA343EFB299E8EFA5F47013D1A /* TPCircularBuffer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-umbrella.h"; sourceTree = "<group>"; };
 		49D044E67ED718BBE11D73ABD1C26026 /* AWSMobileAnalyticsDefaultContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultContext.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultContext.h; sourceTree = "<group>"; };
 		49DA6C7FC1AC03846A277C9E1D178418 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
 		4A174E69170C7B8E0E7549B08010E101 /* AWSCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCore.h; path = AWSCore/AWSCore.h; sourceTree = "<group>"; };
 		4BD95877767A54D298827134B86CA1E7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4312F4C746BD04792F6458EDB318BB /* SBRatePromptStarsDialogViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptStarsDialogViewController.h; sourceTree = "<group>"; };
+		4CFC76B89DC2688F7E6CAFC15B729D2A /* SBGraph.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SBGraph.modulemap; sourceTree = "<group>"; };
 		4D1577010BD86DDDA05314EC85B7233D /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
 		4DA84EDDEF997789A9FDA51D49D6B424 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E00423DC323C785EBAD6B6791DA8EAD /* NSArray+AWSMTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AWSMTLManipulationAdditions.h"; path = "AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.h"; sourceTree = "<group>"; };
@@ -645,23 +640,23 @@
 		522CE7A67BFFB6307B874AA4354965D6 /* AWSXMLWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLWriter.h; path = AWSCore/XMLWriter/AWSXMLWriter.h; sourceTree = "<group>"; };
 		52B1BC0493DFD6C2FE05BB60A49BAA8C /* AWSSTSModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSModel.m; path = AWSCore/STS/AWSSTSModel.m; sourceTree = "<group>"; };
 		52D2A110B25736FC4F0B5A6AFC9153FE /* AWSMobileAnalyticsMonetizationEventBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsMonetizationEventBuilder.h; path = AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h; sourceTree = "<group>"; };
+		5303963AFA95F093DDDBFBEDD914BF83 /* SBMusicUtilities.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBMusicUtilities.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D9BF1F6BA325EB2396FF9A95D4AB /* AWSNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSNetworking.h; path = AWSCore/Networking/AWSNetworking.h; sourceTree = "<group>"; };
 		55B7B0426120F26FDF26C3C863A4778D /* AWSSTSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSService.h; path = AWSCore/STS/AWSSTSService.h; sourceTree = "<group>"; };
 		55E5CC58E146040700079E8FC2022681 /* SBCircular.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBCircular.h; sourceTree = "<group>"; };
 		56141E9EDC10EF050C1837C08C7983B7 /* SBCircularFloat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBCircularFloat.h; sourceTree = "<group>"; };
-		5733401D7C2894512D2A9FCBF3E0544D /* SBRatePrompt.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBRatePrompt.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		570DA7797FC71EAADA4452AAE9F5AEDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		573AB4AA564FCD39CF8F6B95CC2781CF /* AWSMobileAnalyticsLifeCycleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsLifeCycleManager.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsLifeCycleManager.h; sourceTree = "<group>"; };
 		5789EA63B7A28023BCA8CF7CCC0E2A30 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		578B55C3FEDE115126E764A7D5E4F9BE /* AWSTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTask.h; path = AWSCore/Bolts/AWSTask.h; sourceTree = "<group>"; };
 		57B486A925FAE82F2223D72276CBCA54 /* AWSMobileAnalyticsClientContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsClientContext.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsClientContext.h; sourceTree = "<group>"; };
 		58C6D661C818DA6110C72A25673BD002 /* SBMusicUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBMusicUtilities.h; sourceTree = "<group>"; };
 		5A8B9D68F8F51D43A541A673112B152D /* AWSMobileAnalyticsPreferences.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsPreferences.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsPreferences.h; sourceTree = "<group>"; };
-		5AC664DDA57F02E584F4E19521A21C09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B923324120C2337C28F2FD015EEB4F2 /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
 		5BE797A804E6970139E7FF4F373107C7 /* SBRatePromptFlowController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePromptFlowController.m; sourceTree = "<group>"; };
 		5EBF6BBE9D828510960276FCDE205DFF /* SBRatePrompt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePrompt.h; sourceTree = "<group>"; };
 		5ECA0091783392A1EC7626DA962AF48E /* AWSCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCore-umbrella.h"; sourceTree = "<group>"; };
-		5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SBGraph.xcconfig; sourceTree = "<group>"; };
+		609B36803DDA516ED1D78C98CDF4883B /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C877688F7CCB5AB9AEE9ECD733F96A /* SBRatePromptConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePromptConstants.m; sourceTree = "<group>"; };
 		622B89C76E27188CF30147101E2672AE /* SBRatePromptWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptWindow.h; sourceTree = "<group>"; };
 		626A642DDFE23750DFCE3C4004F0C2AB /* AWSMobileAnalyticsFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsFile.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsFile.m; sourceTree = "<group>"; };
@@ -678,13 +673,11 @@
 		68BCD6C773C69A13611C69E9A9DD5F4F /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
 		68E9215421471333C181812B8DA44EE7 /* AWSMobileAnalyticsClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsClientContext.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsClientContext.m; sourceTree = "<group>"; };
 		6A116762E3C6B20342944635263E68B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A6123E5A32F4D1E5EF4C53C6DD053E6 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC890F104440F0C2CB48C6321F4D47D /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
 		6AEAC46D19D85C60FE07EE73B37BF74E /* AWSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSService.h; path = AWSCore/Service/AWSService.h; sourceTree = "<group>"; };
 		6AFA7BB15C48E36CB130B31F01FBA9A0 /* AWSModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSModel.h; path = AWSCore/Utility/AWSModel.h; sourceTree = "<group>"; };
 		6B45191D292D79F25DDF70FF132ED021 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
 		6CD8EE75BCF10F8C9875A9ECE2C3D789 /* AWSMobileAnalyticsVirtualMonetizationEventBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsVirtualMonetizationEventBuilder.h; path = AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h; sourceTree = "<group>"; };
-		6E3C40B43C8641ACD055FB592628326F /* SBGraph.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBGraph.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E65FE6126E906120DF93FA3715DF197 /* AWSMobileAnalyticsSerializable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsSerializable.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSerializable.h; sourceTree = "<group>"; };
 		6E6F519DBAAB3E3683EF62DF69AB6411 /* AWSMobileAnalyticsDelayedBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDelayedBlock.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDelayedBlock.h; sourceTree = "<group>"; };
 		6E95A6634035FDA0D67EBB9528014C65 /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
@@ -692,6 +685,7 @@
 		702C6D668829CED6EDE6010009CB513B /* SBRatePromptEventCounter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptEventCounter.h; sourceTree = "<group>"; };
 		70B6C7344292C63503F27B2350E8358E /* AWSMobileAnalyticsIOSConnectivity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsIOSConnectivity.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSConnectivity.m; sourceTree = "<group>"; };
 		70BC99B6975789BFB44BDD38C3572FD9 /* AWSMobileAnalyticsIOSLifeCycleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsIOSLifeCycleManager.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSLifeCycleManager.h; sourceTree = "<group>"; };
+		70FB3BEC01771E7249E0B58E60554DC8 /* SBGraphView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBGraphView.h; sourceTree = "<group>"; };
 		71BDC4B6FD552C827D9B4B63BF23D8D0 /* AWSIdentityProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSIdentityProvider.m; path = AWSCore/Authentication/AWSIdentityProvider.m; sourceTree = "<group>"; };
 		722DDDCAE937FB8177CB3A7EB3DDA19F /* AWSMobileAnalyticsDefaultConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsDefaultConfiguration.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultConfiguration.m; sourceTree = "<group>"; };
 		723C979AE2A8F354F62491E65CD4B9EE /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
@@ -709,8 +703,8 @@
 		7ACDE7D111BDE9B1B30C408BC8E18550 /* SBRatePromptActionDialogViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePromptActionDialogViewController.m; sourceTree = "<group>"; };
 		7B7FB4D0310A94C57CB3C192E2E284EA /* AWSSTSResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSResources.m; path = AWSCore/STS/AWSSTSResources.m; sourceTree = "<group>"; };
 		7C2BBE0AE3CABE9189ADDA3378C415B1 /* AWSMTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLJSONAdapter.h; path = AWSCore/Mantle/AWSMTLJSONAdapter.h; sourceTree = "<group>"; };
-		7CA024A6387111EAB00C854E09867F5D /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA1E84D3FDE7CBDAA7F4AD2716DE2CD /* SBRatePrompt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SBRatePrompt.modulemap; sourceTree = "<group>"; };
+		7CBF7C27586BE2C174E398F19F1DC0AD /* SBGraph-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBGraph-prefix.pch"; sourceTree = "<group>"; };
 		7E4FF07818F9CCA67B5C64C052790B8E /* AWSMTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSMTLModel+NSCoding.h"; path = "AWSCore/Mantle/AWSMTLModel+NSCoding.h"; sourceTree = "<group>"; };
 		7E993BD0FBE295A4F8A6A77665E34DA5 /* AWSMobileAnalyticsContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsContext.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsContext.h; sourceTree = "<group>"; };
 		8073A082BA433DBCA76CE7D354B41880 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
@@ -719,10 +713,11 @@
 		852FCE1843FD14EB48A0C1D907372C6F /* AWSMTLManagedObjectAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLManagedObjectAdapter.h; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.h; sourceTree = "<group>"; };
 		86A3D96C8AE97797EF0C9527516B2778 /* AWSTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTask.m; path = AWSCore/Bolts/AWSTask.m; sourceTree = "<group>"; };
 		887246AFA0CE00A138C6701B24F22BD6 /* AWSNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSNetworking.m; path = AWSCore/Networking/AWSNetworking.m; sourceTree = "<group>"; };
+		88A5054593D2A26B721AA9A0482C8D3D /* SBGraph.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBGraph.h; sourceTree = "<group>"; };
 		89E84BE8E745B43A126A89D1C283FA20 /* AWSMobileAnalyticsPrefsUniqueIdService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsPrefsUniqueIdService.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsPrefsUniqueIdService.m; sourceTree = "<group>"; };
+		8B04F1B02A646199F86AC5D6F8811F99 /* SBGraph.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SBGraph.xcconfig; sourceTree = "<group>"; };
 		8C1BB779DD06660AA4733830E7F6981E /* AWSTMDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTMDiskCache.m; path = AWSCore/TMCache/AWSTMDiskCache.m; sourceTree = "<group>"; };
 		8C23896177303BFD37A61815AA4BE09A /* AWSGZIP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGZIP.h; path = AWSCore/GZIP/AWSGZIP.h; sourceTree = "<group>"; };
-		8C52394A69E3C0D587F52B3B6A8FD8A1 /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSMobileAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7448BF37908CE0A82F649077D30BCF /* AWSMobileAnalyticsVirtualMonetizationEventBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsVirtualMonetizationEventBuilder.m; path = AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.m; sourceTree = "<group>"; };
 		8CF36153397E8E23A5D838C7F6894539 /* AWSMTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLReflection.h; path = AWSCore/Mantle/AWSMTLReflection.h; sourceTree = "<group>"; };
 		8D5471909B0C46BDA32146E3B2AFE070 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -744,12 +739,11 @@
 		925265A3F891DE472AE8F04EF80B37D8 /* AWSMobileAnalyticsFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsFile.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsFile.h; sourceTree = "<group>"; };
 		9322FB28933FDD64A1CFF53DE184697F /* AWSXMLWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSXMLWriter.m; path = AWSCore/XMLWriter/AWSXMLWriter.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93D7A6B7266B8F5621F7CCC97018F1E0 /* SBLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBLine.h; sourceTree = "<group>"; };
 		949D895A7A09E4910D854EAA1210A855 /* NSError+AWSMTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+AWSMTLModelException.h"; path = "AWSCore/Mantle/NSError+AWSMTLModelException.h"; sourceTree = "<group>"; };
 		951B274DB8677F89353E01B6769BFADE /* AWSMobileAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalytics.h; path = AWSMobileAnalytics/AWSMobileAnalytics.h; sourceTree = "<group>"; };
+		959A739D590CFF8363999D7D3EBFA5F4 /* SBRatePrompt.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBRatePrompt.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		961406E0AC7A1C6FC4D53CAAA9B0FB72 /* star.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		967805FAB3041EDD7875A2F5983B220B /* AWSMobileAnalyticsDefaultSessionClient+SessionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSMobileAnalyticsDefaultSessionClient+SessionState.h"; path = "AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultSessionClient+SessionState.h"; sourceTree = "<group>"; };
-		97559A9EC1B993EEA15187B2B6D7633D /* SBGraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBGraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976D450E6BBADFD0EEE20D2BB094C0C4 /* ResourceBundle-SBRatePrompt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SBRatePrompt-Info.plist"; sourceTree = "<group>"; };
 		97754698F2E04BF8EC038E5DAA277132 /* AWSMobileAnalyticsERSModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsERSModel.m; path = AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSModel.m; sourceTree = "<group>"; };
 		9779330A52B37816CE6012E1971A4CD3 /* SBAutoLayoutUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBAutoLayoutUtility.h; sourceTree = "<group>"; };
@@ -770,7 +764,6 @@
 		A13107F1617CEA3CD5432D5A5DF19C38 /* AWSExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSExecutor.m; path = AWSCore/Bolts/AWSExecutor.m; sourceTree = "<group>"; };
 		A19D2C6BE6E6A8BDCDFA9EC9DF0AC8E4 /* SBRatePrompt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBRatePrompt-prefix.pch"; sourceTree = "<group>"; };
 		A1AC127CEDEDD82576998846B3FE4641 /* AWSSTSService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSService.m; path = AWSCore/STS/AWSSTSService.m; sourceTree = "<group>"; };
-		A1B1765F797D57D3B779992AD6F71C5B /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B082B1AB51FE5FDBA942AF6B92FF14 /* SBAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBAudioPlayer.m; sourceTree = "<group>"; };
 		A30C95030288FF95A0FBA93B3CF62CE2 /* SBRatePrompt.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SBRatePrompt.xcconfig; sourceTree = "<group>"; };
 		A35E9B12F0D2C787203253E359997481 /* AWSMobileAnalyticsConfiguring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsConfiguring.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsConfiguring.h; sourceTree = "<group>"; };
@@ -778,7 +771,6 @@
 		A453F79B39A4AC5E941A356357679F3A /* AWSFMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabasePool.h; path = AWSCore/FMDB/AWSFMDatabasePool.h; sourceTree = "<group>"; };
 		A494CCC9F8DBC6BA80CAD54D1BE8A9A2 /* AWSMobileAnalyticsActiveSessionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsActiveSessionState.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsActiveSessionState.h; sourceTree = "<group>"; };
 		A49DA6FBB857D3E883710AE80F88633F /* SBAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBAnimation.m; sourceTree = "<group>"; };
-		A4E040AB53C41AFFC557493C014304DD /* SBGraph-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBGraph-prefix.pch"; sourceTree = "<group>"; };
 		A50F5E26DA473F4ED35134ED1DC93977 /* SBMusicUtilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBMusicUtilities-umbrella.h"; sourceTree = "<group>"; };
 		A562DD6CB0EC5A3762F3D5B75E6221D0 /* SBPlayableNote.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBPlayableNote.h; sourceTree = "<group>"; };
 		A5AD9DAA5433FF6D1386CC85E375AA93 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -804,7 +796,6 @@
 		AE237DF22008F4686987917E6502AC3A /* AWSMobileAnalyticsConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsConstants.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsConstants.h; sourceTree = "<group>"; };
 		AF8A88401B924ABE7B7CC2D19E2E6F73 /* AWSCognitoIdentity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentity.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentity.h; sourceTree = "<group>"; };
 		AFB3719203B2074D7FCA6A3674F4004E /* AWSMobileAnalyticsUniqueIdService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsUniqueIdService.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsUniqueIdService.h; sourceTree = "<group>"; };
-		AFC31A09AACA3B4AAE0E2EEF15B909EC /* SBCoordinateMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBCoordinateMapper.h; sourceTree = "<group>"; };
 		B0A392C29BE282787FAA311DBF9D8281 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
 		B2D97248922232FFDE7747AABB746F40 /* AWSMobileAnalyticsDeliveryPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDeliveryPolicy.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryPolicy.h; sourceTree = "<group>"; };
 		B3BE8F47C254D2BCB8F3E84DD0F8464E /* Pods-Tunerval.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tunerval.modulemap"; sourceTree = "<group>"; };
@@ -825,11 +816,11 @@
 		BC578D8AF617F449533A7AE8861E351A /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
 		BCF1D48D730F2908DED4D9A762D6E6B9 /* AWSSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSerialization.h; path = AWSCore/Serialization/AWSSerialization.h; sourceTree = "<group>"; };
 		BD25BD818CC114A2B55D00460410221B /* AWSCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCancellationTokenRegistration.h; path = AWSCore/Bolts/AWSCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		BF1E4F13B24550CE520AEA9C1B1968F5 /* SBLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBLine.m; sourceTree = "<group>"; };
 		BF7E5194D7AAE4642765B473ACDF43EE /* AWSURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLSessionManager.m; path = AWSCore/Networking/AWSURLSessionManager.m; sourceTree = "<group>"; };
 		BF89F18B95F0CE5ABEF691E543AD1063 /* AWSMobileAnalyticsSDKInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsSDKInfo.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSDKInfo.m; sourceTree = "<group>"; };
 		BF8D4B873E743C1EBAFD5C2AE7DDCA9B /* AWSFMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabase.h; path = AWSCore/FMDB/AWSFMDatabase.h; sourceTree = "<group>"; };
 		BF9C9DF22CABE08C51F0553CC6602D9F /* AWSMobileAnalyticsERSResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsERSResources.m; path = AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSResources.m; sourceTree = "<group>"; };
-		C0C7C2B87F82A00F86CEEDD95A3B5A98 /* SBGraphView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBGraphView.m; sourceTree = "<group>"; };
 		C1393845D665FA5D52D5FC149F619682 /* Pods-Tunerval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tunerval.debug.xcconfig"; sourceTree = "<group>"; };
 		C2956CF430B80E2346300C6B0C5D77FA /* AWSMobileAnalyticsSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsSession.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSession.h; sourceTree = "<group>"; };
 		C304707248B8C6436EBD0650FBE3A57D /* SBRatePromptStarsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SBRatePromptStarsView.h; sourceTree = "<group>"; };
@@ -840,11 +831,11 @@
 		C6305A9D04B1508EE5739E272867098E /* AWSMobileAnalyticsIOSConnectivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsIOSConnectivity.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSConnectivity.h; sourceTree = "<group>"; };
 		C653AE1ACBDEA0D0EC35C9353B1A8C8B /* Pods-Tunerval-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tunerval-frameworks.sh"; sourceTree = "<group>"; };
 		C6641345F66515743E26F680AE8FBE2E /* AWSFMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDB.h; path = AWSCore/FMDB/AWSFMDB.h; sourceTree = "<group>"; };
+		C713988ED036BD1333FE5605B8EEC769 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C800DC7DAB4CCE05F81D3965E9719285 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
 		C842B41EA3D1380068D54D6257374E79 /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
 		CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SBMusicUtilities.xcconfig; sourceTree = "<group>"; };
 		CB07AE9FD4B25800EFB330DA4C814D08 /* AWSMobileAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsConfiguration.h; path = AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h; sourceTree = "<group>"; };
-		CB11D0E5E0E926D9F9A3AD54B36DB8A3 /* SBLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBLine.m; sourceTree = "<group>"; };
 		CB1FC7D84409A3E571AD6133467EEF33 /* AWSFMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabase.m; path = AWSCore/FMDB/AWSFMDatabase.m; sourceTree = "<group>"; };
 		CBC7431111A7B61B0B49C3016875FE3C /* AWSMobileAnalyticsERSResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsERSResources.h; path = AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSResources.h; sourceTree = "<group>"; };
 		CC481BC14E69E86CCEAB53B47387C584 /* SBRatePrompt.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePrompt.m; sourceTree = "<group>"; };
@@ -874,11 +865,10 @@
 		D940883D115CB6268EB787AFCE6AAC8A /* AWSMobileAnalyticsConnectivityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsConnectivityPolicy.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsConnectivityPolicy.m; sourceTree = "<group>"; };
 		D9E69F1ED997AB5768B97A11E7E35D52 /* NSValueTransformer+AWSMTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+AWSMTLInversionAdditions.m"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLInversionAdditions.m"; sourceTree = "<group>"; };
 		DA0983B033A879DD390448380875900A /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
-		DA8257E68F6ABFBAFBDE01A906E337A7 /* SBGraph.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SBGraph.modulemap; sourceTree = "<group>"; };
-		DAE8D12973721FC32ED2522180D1EB06 /* SBMusicUtilities.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBMusicUtilities.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAF5763D3DA13C5946BB4C32995077DD /* Pods_Tunerval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunerval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1BCED0D76233DC962D2428DE302C85 /* SBRatePromptStarsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBRatePromptStarsView.m; sourceTree = "<group>"; };
+		DBABB3F97AD50708941F2649636DDAE7 /* SBMusicUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBMusicUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD451BA5821C1892B09D7CDC379127C6 /* AWSmetamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSmetamacros.h; path = AWSCore/Mantle/extobjc/AWSmetamacros.h; sourceTree = "<group>"; };
+		DD89D6ADB666FE141CE0F94E0E59E86A /* SBGraph-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBGraph-umbrella.h"; sourceTree = "<group>"; };
 		DED95295B55DA9C48632DB6EDB730A7B /* SBRatePrompt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SBRatePrompt-dummy.m"; sourceTree = "<group>"; };
 		DF373237E69A2405E33E43BF6A443519 /* AWSIdentityProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSIdentityProvider.h; path = AWSCore/Authentication/AWSIdentityProvider.h; sourceTree = "<group>"; };
 		DF740ABC11AE29D42A59D4278C5E6BDE /* AWSMobileAnalyticsDefaultEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsDefaultEvent.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEvent.m; sourceTree = "<group>"; };
@@ -894,6 +884,7 @@
 		E46B58E26271A256B36E4C6C23BA5946 /* AWSMobileAnalyticsAppleMonetizationEventBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsAppleMonetizationEventBuilder.m; path = AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.m; sourceTree = "<group>"; };
 		E5C7E58340B974B367A117E6EF3493F8 /* AWSMobileAnalytics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSMobileAnalytics-prefix.pch"; sourceTree = "<group>"; };
 		E5D422841ED35CFA99BF668F19D83890 /* AWSMTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLReflection.m; path = AWSCore/Mantle/AWSMTLReflection.m; sourceTree = "<group>"; };
+		E62CFB443BA7A85080D1C996CA61A868 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73ED05E624BE4DC718AFB588F40E5E7 /* AWSMobileAnalyticsSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsSession.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSession.m; sourceTree = "<group>"; };
 		E74DC9B835B0A747D99398AE01FC4AC2 /* AWSMobileAnalytics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSMobileAnalytics.modulemap; sourceTree = "<group>"; };
 		E7987512A281CEBDBC0C4D229067F171 /* AWSURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLSessionManager.h; path = AWSCore/Networking/AWSURLSessionManager.h; sourceTree = "<group>"; };
@@ -911,7 +902,6 @@
 		F013D2018DCDADBC2C7347F315A27FCE /* FABKitProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABKitProtocol.h; path = AWSCore/Fabric/FABKitProtocol.h; sourceTree = "<group>"; };
 		F033D35D91799CDC8AA1150A403BF8F9 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
 		F08AD730896D826CF72F9C4D7D79A494 /* Pods-Tunerval-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tunerval-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F0C4C7C6551E80F105D8136BE0DF5A4C /* SBCoordinateMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SBCoordinateMapper.m; sourceTree = "<group>"; };
 		F17B716CD639B1D5380B0F6378180C47 /* AWSMTLModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLModel.m; path = AWSCore/Mantle/AWSMTLModel.m; sourceTree = "<group>"; };
 		F20D97D9AEBA06CCC4E0EBD6C9611714 /* AWSMobileAnalytics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSMobileAnalytics-umbrella.h"; sourceTree = "<group>"; };
 		F44D7020C4801683650FC0A2FBC564CB /* AWSMobileAnalyticsSessionClientState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsSessionClientState.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSessionClientState.h; sourceTree = "<group>"; };
@@ -941,13 +931,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FD0B67D285B107A1CE37F2F4301CF24 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0AE52E73ABA3AC08F519A3F17ED4A2FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,16 +1111,6 @@
 			path = "../Tunerval/Pods/Target Support Files/SBMusicUtilities";
 			sourceTree = "<group>";
 		};
-		24CF9F774529BACB39AA2986360A3B82 /* SBGraph */ = {
-			isa = PBXGroup;
-			children = (
-				6DFED1B96B16FBD95DD6BFC6D6D2BD24 /* SBGraph */,
-				4C9AF6F65F97315DA7CE58EBA185D518 /* Support Files */,
-			);
-			name = SBGraph;
-			path = /Users/sam/code/iOS/SBGraph;
-			sourceTree = "<absolute>";
-		};
 		2D5086A65107DC2A71E518D25BB7A3DD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1301,21 +1274,6 @@
 			path = AWSMobileAnalytics;
 			sourceTree = "<group>";
 		};
-		4C9AF6F65F97315DA7CE58EBA185D518 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5AC664DDA57F02E584F4E19521A21C09 /* Info.plist */,
-				0A902AAE7D0C83BD742189C7309A3CD1 /* ResourceBundle-SBGraph-Info.plist */,
-				DA8257E68F6ABFBAFBDE01A906E337A7 /* SBGraph.modulemap */,
-				5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */,
-				3B17A4D12A355CAD606DEB0A53E021E2 /* SBGraph-dummy.m */,
-				A4E040AB53C41AFFC557493C014304DD /* SBGraph-prefix.pch */,
-				25A45D5CF814C9A51F63AE6233816037 /* SBGraph-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Tunerval/Pods/Target Support Files/SBGraph";
-			sourceTree = "<group>";
-		};
 		61047D03EC17131DBF138AD9787564E6 /* Pods-Tunerval */ = {
 			isa = PBXGroup;
 			children = (
@@ -1334,24 +1292,24 @@
 			path = "Target Support Files/Pods-Tunerval";
 			sourceTree = "<group>";
 		};
-		6DFED1B96B16FBD95DD6BFC6D6D2BD24 /* SBGraph */ = {
+		7382D69ED784A65B64501C802D266550 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFC31A09AACA3B4AAE0E2EEF15B909EC /* SBCoordinateMapper.h */,
-				F0C4C7C6551E80F105D8136BE0DF5A4C /* SBCoordinateMapper.m */,
-				091C0A812B4D9D36DF69644A9CF8E14B /* SBGraph.h */,
-				3E10096F61B70F17518A8A2BB15454BF /* SBGraphView.h */,
-				C0C7C2B87F82A00F86CEEDD95A3B5A98 /* SBGraphView.m */,
-				93D7A6B7266B8F5621F7CCC97018F1E0 /* SBLine.h */,
-				CB11D0E5E0E926D9F9A3AD54B36DB8A3 /* SBLine.m */,
+				570DA7797FC71EAADA4452AAE9F5AEDF /* Info.plist */,
+				4CFC76B89DC2688F7E6CAFC15B729D2A /* SBGraph.modulemap */,
+				8B04F1B02A646199F86AC5D6F8811F99 /* SBGraph.xcconfig */,
+				373080F909F79184F717C5FA3BAFED6C /* SBGraph-dummy.m */,
+				7CBF7C27586BE2C174E398F19F1DC0AD /* SBGraph-prefix.pch */,
+				DD89D6ADB666FE141CE0F94E0E59E86A /* SBGraph-umbrella.h */,
 			);
-			path = SBGraph;
+			name = "Support Files";
+			path = "../Tunerval/Pods/Target Support Files/SBGraph";
 			sourceTree = "<group>";
 		};
 		73C154EB4BD7E471B0D4A5CEB12032DD /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				24CF9F774529BACB39AA2986360A3B82 /* SBGraph */,
+				8FF27EDB3F351EF35912347743146602 /* SBGraph */,
 				DEE8146943DB3FF04A08FA60C8CF07F5 /* SBMusicUtilities */,
 				1C433FA3DDD31933E80C8BDDB055FA8D /* SBRatePrompt */,
 			);
@@ -1370,6 +1328,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7B79DE1DE2390C2012497A1C04898F33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E62CFB443BA7A85080D1C996CA61A868 /* AWSCore.framework */,
+				3F0ED4C757449AE5362627A9B8D3B5F3 /* AWSMobileAnalytics.framework */,
+				C713988ED036BD1333FE5605B8EEC769 /* EZAudio.framework */,
+				609B36803DDA516ED1D78C98CDF4883B /* FMDB.framework */,
+				0E4B8648B07489BD1A6F0464E918189C /* Pods_Tunerval.framework */,
+				3ABB8B2591B9F37858C7706431DC85BE /* SBGraph.framework */,
+				5303963AFA95F093DDDBFBEDD914BF83 /* SBMusicUtilities.bundle */,
+				DBABB3F97AD50708941F2649636DDAE7 /* SBMusicUtilities.framework */,
+				959A739D590CFF8363999D7D3EBFA5F4 /* SBRatePrompt.bundle */,
+				18A996D874FA971CC66DFE7F063ECF86 /* SBRatePrompt.framework */,
+				459424724EA9D985146C9F44AA1E1607 /* TPCircularBuffer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -1377,28 +1353,9 @@
 				73C154EB4BD7E471B0D4A5CEB12032DD /* Development Pods */,
 				1740B7529D00D7DB6D39D82E256E6EC3 /* Frameworks */,
 				77FA923464BDDC2A63FFE5B56CAC6690 /* Pods */,
-				7ECF8D8F5672DF4390E610EA83E928FE /* Products */,
+				7B79DE1DE2390C2012497A1C04898F33 /* Products */,
 				15B1C887D03CF7A8FC015D5C464774E2 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		7ECF8D8F5672DF4390E610EA83E928FE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				430F61A675F76A71CCF2091BB06BE48D /* AWSCore.framework */,
-				8C52394A69E3C0D587F52B3B6A8FD8A1 /* AWSMobileAnalytics.framework */,
-				6A6123E5A32F4D1E5EF4C53C6DD053E6 /* EZAudio.framework */,
-				A1B1765F797D57D3B779992AD6F71C5B /* FMDB.framework */,
-				DAF5763D3DA13C5946BB4C32995077DD /* Pods_Tunerval.framework */,
-				6E3C40B43C8641ACD055FB592628326F /* SBGraph.bundle */,
-				97559A9EC1B993EEA15187B2B6D7633D /* SBGraph.framework */,
-				DAE8D12973721FC32ED2522180D1EB06 /* SBMusicUtilities.bundle */,
-				1D4798C3DA63F2E03463EA4381705815 /* SBMusicUtilities.framework */,
-				5733401D7C2894512D2A9FCBF3E0544D /* SBRatePrompt.bundle */,
-				1D4B58CD760E534983A55A2674D871B4 /* SBRatePrompt.framework */,
-				7CA024A6387111EAB00C854E09867F5D /* TPCircularBuffer.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8291C73CA2734500E8D5B3D7584003CD /* Support Files */ = {
@@ -1456,6 +1413,16 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		8FF27EDB3F351EF35912347743146602 /* SBGraph */ = {
+			isa = PBXGroup;
+			children = (
+				9A7B95686D28C342D203FB2F6D4973B7 /* SBGraph */,
+				7382D69ED784A65B64501C802D266550 /* Support Files */,
+			);
+			name = SBGraph;
+			path = /Users/sam/code/iOS/SBGraph;
+			sourceTree = "<absolute>";
+		};
 		951E012DBE16F19DE627C8B0C3DAE753 /* standard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1472,6 +1439,20 @@
 				ADDF254FEE4EA6D60A4D808F7E3620DB /* FMResultSet.m */,
 			);
 			name = standard;
+			sourceTree = "<group>";
+		};
+		9A7B95686D28C342D203FB2F6D4973B7 /* SBGraph */ = {
+			isa = PBXGroup;
+			children = (
+				498E9146A7B7CB82E394B06250C24428 /* SBCoordinateMapper.h */,
+				19F2C5E46C1BD934D6E73548F00C267E /* SBCoordinateMapper.m */,
+				88A5054593D2A26B721AA9A0482C8D3D /* SBGraph.h */,
+				70FB3BEC01771E7249E0B58E60554DC8 /* SBGraphView.h */,
+				39D05C598D6A475302465FA10521DFBC /* SBGraphView.m */,
+				263B5C66D76DA3F0CD7231E37EDA4B6D /* SBLine.h */,
+				BF1E4F13B24550CE520AEA9C1B1968F5 /* SBLine.m */,
+			);
+			path = SBGraph;
 			sourceTree = "<group>";
 		};
 		BFC19AF8601158F69306BE0FD1272795 /* SBMusicUtilities */ = {
@@ -2035,7 +2016,7 @@
 			);
 			name = FMDB;
 			productName = FMDB;
-			productReference = A1B1765F797D57D3B779992AD6F71C5B /* FMDB.framework */;
+			productReference = 609B36803DDA516ED1D78C98CDF4883B /* FMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		29E8FE0B316EE83946F48C4684185D90 /* AWSCore */ = {
@@ -2052,7 +2033,7 @@
 			);
 			name = AWSCore;
 			productName = AWSCore;
-			productReference = 430F61A675F76A71CCF2091BB06BE48D /* AWSCore.framework */;
+			productReference = E62CFB443BA7A85080D1C996CA61A868 /* AWSCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2BB78969ADB6914114D000B0A47D3CE0 /* SBRatePrompt-SBRatePrompt */ = {
@@ -2069,7 +2050,7 @@
 			);
 			name = "SBRatePrompt-SBRatePrompt";
 			productName = "SBRatePrompt-SBRatePrompt";
-			productReference = 5733401D7C2894512D2A9FCBF3E0544D /* SBRatePrompt.bundle */;
+			productReference = 959A739D590CFF8363999D7D3EBFA5F4 /* SBRatePrompt.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		483EC10B4B1F0CC4DD166965C06AE2FA /* SBMusicUtilities-SBMusicUtilities */ = {
@@ -2086,24 +2067,7 @@
 			);
 			name = "SBMusicUtilities-SBMusicUtilities";
 			productName = "SBMusicUtilities-SBMusicUtilities";
-			productReference = DAE8D12973721FC32ED2522180D1EB06 /* SBMusicUtilities.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		49A09B0AD04F29D7C1424F62105FDFCB /* SBGraph-SBGraph */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8A8989DB4E4AC172327D52A9CB867BDF /* Build configuration list for PBXNativeTarget "SBGraph-SBGraph" */;
-			buildPhases = (
-				F48E913AD483B499404F0863B0DC5122 /* Sources */,
-				0AE52E73ABA3AC08F519A3F17ED4A2FA /* Frameworks */,
-				5E41923500A050BE3671233683C07AC4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SBGraph-SBGraph";
-			productName = "SBGraph-SBGraph";
-			productReference = 6E3C40B43C8641ACD055FB592628326F /* SBGraph.bundle */;
+			productReference = 5303963AFA95F093DDDBFBEDD914BF83 /* SBMusicUtilities.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		630A3F469E1A8B405B5870DD8091D195 /* TPCircularBuffer */ = {
@@ -2120,7 +2084,7 @@
 			);
 			name = TPCircularBuffer;
 			productName = TPCircularBuffer;
-			productReference = 7CA024A6387111EAB00C854E09867F5D /* TPCircularBuffer.framework */;
+			productReference = 459424724EA9D985146C9F44AA1E1607 /* TPCircularBuffer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		63A2B70CD13FFB7C60AF5BEB9EB2CE03 /* AWSMobileAnalytics */ = {
@@ -2138,7 +2102,7 @@
 			);
 			name = AWSMobileAnalytics;
 			productName = AWSMobileAnalytics;
-			productReference = 8C52394A69E3C0D587F52B3B6A8FD8A1 /* AWSMobileAnalytics.framework */;
+			productReference = 3F0ED4C757449AE5362627A9B8D3B5F3 /* AWSMobileAnalytics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7D136418089B72672C74B84E11683FEE /* Pods-Tunerval */ = {
@@ -2163,7 +2127,7 @@
 			);
 			name = "Pods-Tunerval";
 			productName = "Pods-Tunerval";
-			productReference = DAF5763D3DA13C5946BB4C32995077DD /* Pods_Tunerval.framework */;
+			productReference = 0E4B8648B07489BD1A6F0464E918189C /* Pods_Tunerval.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B844C028EAEB34AF39E836F7AA639AC9 /* SBRatePrompt */ = {
@@ -2182,7 +2146,7 @@
 			);
 			name = SBRatePrompt;
 			productName = SBRatePrompt;
-			productReference = 1D4B58CD760E534983A55A2674D871B4 /* SBRatePrompt.framework */;
+			productReference = 18A996D874FA971CC66DFE7F063ECF86 /* SBRatePrompt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B998D1794C76C66865824BD5511C74FF /* EZAudio */ = {
@@ -2200,7 +2164,7 @@
 			);
 			name = EZAudio;
 			productName = EZAudio;
-			productReference = 6A6123E5A32F4D1E5EF4C53C6DD053E6 /* EZAudio.framework */;
+			productReference = C713988ED036BD1333FE5605B8EEC769 /* EZAudio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BF8498A424A89A0DF271897A726295AA /* SBGraph */ = {
@@ -2209,17 +2173,15 @@
 			buildPhases = (
 				6148F81539F3B25A138CFD5A310E5375 /* Sources */,
 				56869815F88D9A69F86B1360F7A19FB5 /* Frameworks */,
-				0519955ED339B705FB88124DCDA9CD09 /* Resources */,
 				33C9079E35E84AB3ED411598BC0AE07E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3A0728F646B0C28DEDAF631609E22038 /* PBXTargetDependency */,
 			);
 			name = SBGraph;
 			productName = SBGraph;
-			productReference = 97559A9EC1B993EEA15187B2B6D7633D /* SBGraph.framework */;
+			productReference = 3ABB8B2591B9F37858C7706431DC85BE /* SBGraph.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E677E5EEDC3BF5F51572E63B5983C1DD /* SBMusicUtilities */ = {
@@ -2239,7 +2201,7 @@
 			);
 			name = SBMusicUtilities;
 			productName = SBMusicUtilities;
-			productReference = 1D4798C3DA63F2E03463EA4381705815 /* SBMusicUtilities.framework */;
+			productReference = DBABB3F97AD50708941F2649636DDAE7 /* SBMusicUtilities.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2259,7 +2221,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7ECF8D8F5672DF4390E610EA83E928FE /* Products */;
+			productRefGroup = 7B79DE1DE2390C2012497A1C04898F33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -2269,7 +2231,6 @@
 				23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */,
 				7D136418089B72672C74B84E11683FEE /* Pods-Tunerval */,
 				BF8498A424A89A0DF271897A726295AA /* SBGraph */,
-				49A09B0AD04F29D7C1424F62105FDFCB /* SBGraph-SBGraph */,
 				E677E5EEDC3BF5F51572E63B5983C1DD /* SBMusicUtilities */,
 				483EC10B4B1F0CC4DD166965C06AE2FA /* SBMusicUtilities-SBMusicUtilities */,
 				B844C028EAEB34AF39E836F7AA639AC9 /* SBRatePrompt */,
@@ -2280,14 +2241,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0519955ED339B705FB88124DCDA9CD09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF0B961DDB87AE94D186C6DB704E154C /* SBGraph.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1945BEC6915EB7763C1F60E6AA66B59C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2303,13 +2256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F504BA5E94AFF3E26C4488DE1F6826 /* SBMusicUtilities.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E41923500A050BE3671233683C07AC4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2535,13 +2481,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F48E913AD483B499404F0863B0DC5122 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F6DE6411F8275CED89F23332630262BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2603,12 +2542,6 @@
 			target = E677E5EEDC3BF5F51572E63B5983C1DD /* SBMusicUtilities */;
 			targetProxy = D567EC032BC5A64FD848BAA7274213E9 /* PBXContainerItemProxy */;
 		};
-		3A0728F646B0C28DEDAF631609E22038 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SBGraph-SBGraph";
-			target = 49A09B0AD04F29D7C1424F62105FDFCB /* SBGraph-SBGraph */;
-			targetProxy = 579BA3C89CC84C15935142348E3D85FE /* PBXContainerItemProxy */;
-		};
 		3FDCBDE9095A97F245928617A8644392 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TPCircularBuffer;
@@ -2666,11 +2599,88 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		22462CA7EFF47994333C995651FF4268 /* Debug */ = {
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0494411B3B0AFDFAD0A83050D93669D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901BE9C656932DDBFC9C5326D6A5C7BF /* FMDB.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		05B7221E2C0FB6B8EC9CBFB321BFBEE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDD69D998930AB215D8FC9C69347CF73 /* EZAudio.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2695,11 +2705,13 @@
 			};
 			name = Debug;
 		};
-		2730F42C60778D97AD4077CE744AB2D6 /* Release */ = {
+		18A973AF49C141A85808B78511CD5D53 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F32D86E33C26987CB16688174F3882 /* TPCircularBuffer.xcconfig */;
+			baseConfigurationReference = 41AB3DF11FAC30287CB727333A9ED821 /* Pods-Tunerval.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -2708,14 +2720,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tunerval/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tunerval/Pods-Tunerval.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = TPCircularBuffer;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tunerval;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2724,11 +2740,44 @@
 			};
 			name = Release;
 		};
-		2B0C9B9DB8AC569AA8C4C414FA4D546B /* Debug */ = {
+		1A4D3CC624250D8110211B5A10FE13EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */;
+			baseConfigurationReference = CDD69D998930AB215D8FC9C69347CF73 /* EZAudio.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1B78A8EA7A80BFF2FFA13B4E6C8B8EE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B04F1B02A646199F86AC5D6F8811F99 /* SBGraph.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2753,11 +2802,13 @@
 			};
 			name = Debug;
 		};
-		2BE00B587420762B91FE86360F3B772A /* Debug */ = {
+		2CDCC27511B5F4A5B8D0F3C26259C655 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1393845D665FA5D52D5FC149F619682 /* Pods-Tunerval.debug.xcconfig */;
+			baseConfigurationReference = 901BE9C656932DDBFC9C5326D6A5C7BF /* FMDB.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2766,18 +2817,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Tunerval/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Tunerval/Pods-Tunerval.modulemap";
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Tunerval;
+				PRODUCT_NAME = FMDB;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2803,278 +2850,13 @@
 			};
 			name = Release;
 		};
-		332BB50E62C9ED613D6BD6754B44B8C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SBGraph";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/SBGraph/ResourceBundle-SBGraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = SBGraph;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		3606871B814C53A835D7AEF48F29747B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 901BE9C656932DDBFC9C5326D6A5C7BF /* FMDB.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4403886F6FC8276075B96CBBB91504BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A30C95030288FF95A0FBA93B3CF62CE2 /* SBRatePrompt.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SBRatePrompt/SBRatePrompt-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SBRatePrompt/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SBRatePrompt/SBRatePrompt.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SBRatePrompt;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		4BAB404B1771F24A46170CB68FD49D7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SBMusicUtilities";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/SBMusicUtilities/ResourceBundle-SBMusicUtilities-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = SBMusicUtilities;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		5605E8B37BA604CA149CE2906260285F /* Release */ = {
+		30A58A384A15A1A51B1B010F270C44F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6452C2574A316552B30EA170FC4746F8 /* AWSMobileAnalytics.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AWSMobileAnalytics/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AWSMobileAnalytics;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5619B880BCDC5D5E39F35255934A1F9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 901BE9C656932DDBFC9C5326D6A5C7BF /* FMDB.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5F9ED68B85C7FB25E34DFFF346A575FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A30C95030288FF95A0FBA93B3CF62CE2 /* SBRatePrompt.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SBRatePrompt/SBRatePrompt-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SBRatePrompt/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SBRatePrompt/SBRatePrompt.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SBRatePrompt;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		627CD393713EB0556148EE489C6BC7C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SBGraph";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/SBGraph/ResourceBundle-SBGraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = SBGraph;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		644EFE7EA1CB38B08C4A3A838490AD9D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SBMusicUtilities/SBMusicUtilities-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SBMusicUtilities/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SBMusicUtilities/SBMusicUtilities.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SBMusicUtilities;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		746FED6E1E6F4FE8FED346E10EAE3D05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6452C2574A316552B30EA170FC4746F8 /* AWSMobileAnalytics.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -3099,11 +2881,13 @@
 			};
 			name = Debug;
 		};
-		772EA4131C528F6C148CC35A7784501B /* Release */ = {
+		32C79724F169C1306433976ABD8A82ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F212CEC632463F21DFA8E527922A7B0 /* SBGraph.xcconfig */;
+			baseConfigurationReference = 8B04F1B02A646199F86AC5D6F8811F99 /* SBGraph.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -3128,11 +2912,194 @@
 			};
 			name = Release;
 		};
-		836FA64C16199024EC6CEC3207353984 /* Release */ = {
+		33D2DFF7C69CFE22DD1222404B49B9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA3F43B2FE3B5C8BB60F77FEF68E957 /* AWSCore.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AWSCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3905810C84E2990F875C6B92E8C9FC5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA3F43B2FE3B5C8BB60F77FEF68E957 /* AWSCore.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AWSCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BAB404B1771F24A46170CB68FD49D7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SBMusicUtilities";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/SBMusicUtilities/ResourceBundle-SBMusicUtilities-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = SBMusicUtilities;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		4E73714AC2BAE5840E051F98A3680A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SBMusicUtilities/SBMusicUtilities-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SBMusicUtilities/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SBMusicUtilities/SBMusicUtilities.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SBMusicUtilities;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		515CBE6DF1D79042440C3F200D903FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A30C95030288FF95A0FBA93B3CF62CE2 /* SBRatePrompt.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SBRatePrompt/SBRatePrompt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SBRatePrompt/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SBRatePrompt/SBRatePrompt.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SBRatePrompt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8D393F059FEF61159774C68B6E7A4711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAE57F31D506C37C8A85A63638DEB9F6 /* SBMusicUtilities.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -3157,49 +3124,44 @@
 			};
 			name = Release;
 		};
-		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+		8F4178F8CA947D2E453FCC31237BE9BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6452C2574A316552B30EA170FC4746F8 /* AWSMobileAnalytics.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AWSMobileAnalytics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AWSMobileAnalytics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		B2667F61CA5E9A80468A04FF02FBB27F /* Debug */ = {
+		B8267DB18DD125EB1B8623954EFAF09B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F32D86E33C26987CB16688174F3882 /* TPCircularBuffer.xcconfig */;
+			baseConfigurationReference = A30C95030288FF95A0FBA93B3CF62CE2 /* SBRatePrompt.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -3208,14 +3170,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SBRatePrompt/SBRatePrompt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SBRatePrompt/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SBRatePrompt/SBRatePrompt.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TPCircularBuffer;
+				PRODUCT_NAME = SBRatePrompt;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3223,97 +3185,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		B40CEC383FF5A467B268518DCB92DDAC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDD69D998930AB215D8FC9C69347CF73 /* EZAudio.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = EZAudio;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B7D06B61B194CDB3F99EBFD3C3F59A9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41AB3DF11FAC30287CB727333A9ED821 /* Pods-Tunerval.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Tunerval/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Tunerval/Pods-Tunerval.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Tunerval;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BE02B4FF9A54B8064511DBE899839F4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FA3F43B2FE3B5C8BB60F77FEF68E957 /* AWSCore.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AWSCore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		C168268DC12B120A0330DA25871F9104 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3332,11 +3203,13 @@
 			};
 			name = Debug;
 		};
-		CA24874010544EE29C6D38783B349AD1 /* Debug */ = {
+		D8D73C659FF9B41EE8F232EC9F30B625 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FA3F43B2FE3B5C8BB60F77FEF68E957 /* AWSCore.xcconfig */;
+			baseConfigurationReference = C1393845D665FA5D52D5FC149F619682 /* Pods-Tunerval.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -3345,14 +3218,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AWSCore/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tunerval/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AWSCore/AWSCore.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tunerval/Pods-Tunerval.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AWSCore;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tunerval;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3378,14 +3255,76 @@
 			};
 			name = Debug;
 		};
+		E53A0ED5EE298BB2BF5A83F479142564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F32D86E33C26987CB16688174F3882 /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F30FD22D97EA39DC7DE51D1FA0D7BB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F32D86E33C26987CB16688174F3882 /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47BEF9D903506B003EA5C2B249729489 /* Debug */,
-				AAF678CED40D3499169D10F63CA0719E /* Release */,
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3393,8 +3332,8 @@
 		4B75356D2F6AD9CE4DFC8ABDFA168CC2 /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B2667F61CA5E9A80468A04FF02FBB27F /* Debug */,
-				2730F42C60778D97AD4077CE744AB2D6 /* Release */,
+				F30FD22D97EA39DC7DE51D1FA0D7BB74 /* Debug */,
+				E53A0ED5EE298BB2BF5A83F479142564 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3402,8 +3341,8 @@
 		57FF62EAFE0E66393F0C261AF96A4EEA /* Build configuration list for PBXNativeTarget "SBGraph" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B0C9B9DB8AC569AA8C4C414FA4D546B /* Debug */,
-				772EA4131C528F6C148CC35A7784501B /* Release */,
+				1B78A8EA7A80BFF2FFA13B4E6C8B8EE2 /* Debug */,
+				32C79724F169C1306433976ABD8A82ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3411,8 +3350,8 @@
 		61BCCCE04A1A574FDFF0EFAB1C50E3FA /* Build configuration list for PBXNativeTarget "SBMusicUtilities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				644EFE7EA1CB38B08C4A3A838490AD9D /* Debug */,
-				836FA64C16199024EC6CEC3207353984 /* Release */,
+				4E73714AC2BAE5840E051F98A3680A49 /* Debug */,
+				8D393F059FEF61159774C68B6E7A4711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3420,8 +3359,8 @@
 		640D2401940B4BDFE23775E54973FECB /* Build configuration list for PBXNativeTarget "SBRatePrompt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F9ED68B85C7FB25E34DFFF346A575FA /* Debug */,
-				4403886F6FC8276075B96CBBB91504BE /* Release */,
+				B8267DB18DD125EB1B8623954EFAF09B /* Debug */,
+				515CBE6DF1D79042440C3F200D903FED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3429,8 +3368,8 @@
 		679C28CD658F557FCF5662479238B3FE /* Build configuration list for PBXNativeTarget "AWSCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA24874010544EE29C6D38783B349AD1 /* Debug */,
-				BE02B4FF9A54B8064511DBE899839F4D /* Release */,
+				3905810C84E2990F875C6B92E8C9FC5C /* Debug */,
+				33D2DFF7C69CFE22DD1222404B49B9FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3444,20 +3383,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A8989DB4E4AC172327D52A9CB867BDF /* Build configuration list for PBXNativeTarget "SBGraph-SBGraph" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				627CD393713EB0556148EE489C6BC7C9 /* Debug */,
-				332BB50E62C9ED613D6BD6754B44B8C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		912FB307BFDBF9BEB3007B64CE3FEC95 /* Build configuration list for PBXNativeTarget "AWSMobileAnalytics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				746FED6E1E6F4FE8FED346E10EAE3D05 /* Debug */,
-				5605E8B37BA604CA149CE2906260285F /* Release */,
+				30A58A384A15A1A51B1B010F270C44F9 /* Debug */,
+				8F4178F8CA947D2E453FCC31237BE9BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3465,8 +3395,8 @@
 		C34EDE9F05E6C63F281D3006041C5C2B /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				22462CA7EFF47994333C995651FF4268 /* Debug */,
-				B40CEC383FF5A467B268518DCB92DDAC /* Release */,
+				05B7221E2C0FB6B8EC9CBFB321BFBEE7 /* Debug */,
+				1A4D3CC624250D8110211B5A10FE13EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3483,8 +3413,8 @@
 		E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5619B880BCDC5D5E39F35255934A1F9A /* Debug */,
-				3606871B814C53A835D7AEF48F29747B /* Release */,
+				2CDCC27511B5F4A5B8D0F3C26259C655 /* Debug */,
+				0494411B3B0AFDFAD0A83050D93669D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3492,8 +3422,8 @@
 		ED3654690F493043893B5D21A9E35658 /* Build configuration list for PBXNativeTarget "Pods-Tunerval" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2BE00B587420762B91FE86360F3B772A /* Debug */,
-				B7D06B61B194CDB3F99EBFD3C3F59A9F /* Release */,
+				D8D73C659FF9B41EE8F232EC9F30B625 /* Debug */,
+				18A973AF49C141A85808B78511CD5D53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

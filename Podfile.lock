@@ -11,7 +11,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - SBGraph (0.1.0)
+  - SBGraph (1.0.1)
   - SBMusicUtilities (0.0.1):
     - EZAudio
   - SBRatePrompt (0.1.0)
@@ -29,11 +29,11 @@ EXTERNAL SOURCES:
   EZAudio:
     :git: https://github.com/rednebmas/EZAudio.git
   SBGraph:
-    :path: "~/code/iOS/SBGraph"
+    :path: ~/code/iOS/SBGraph
   SBMusicUtilities:
-    :path: "~/code/iOS/SBMusicUtilities"
+    :path: ~/code/iOS/SBMusicUtilities
   SBRatePrompt:
-    :path: "~/code/iOS/SBRatePrompt"
+    :path: ~/code/iOS/SBRatePrompt
 
 CHECKOUT OPTIONS:
   EZAudio:
@@ -45,11 +45,11 @@ SPEC CHECKSUMS:
   AWSMobileAnalytics: 56ce9e671640fbd702f8ce52b0f128e525f3e51c
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  SBGraph: 7c00a0ad4f4aeb499c15911c649a83586b54805e
+  SBGraph: d33e54a560a3295abab9f9d781c8e1c209f5deef
   SBMusicUtilities: 055b3951a82f29ff2e4357763caa332e8004207d
   SBRatePrompt: 3a0786770d63735acfb381a8f337f936d0483518
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
 PODFILE CHECKSUM: 18aa41a12cdff2601e364201ea28f4e908be9b94
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.3

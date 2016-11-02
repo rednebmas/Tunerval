@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SBGraph-SBGraph.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SBGraph.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -83,11 +78,6 @@
 			<true/>
 		</dict>
 		<key>483EC10B4B1F0CC4DD166965C06AE2FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>49A09B0AD04F29D7C1424F62105FDFCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
