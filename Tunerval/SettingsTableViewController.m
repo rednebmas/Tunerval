@@ -260,6 +260,14 @@
 
 #pragma mark - Table view
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 4) {
+        return 0.0;
+    }
+    return 44.0;
+}
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 2 && indexPath.row == 0)
