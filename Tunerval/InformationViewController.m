@@ -21,7 +21,7 @@
     
     [SBEventTracker trackScreenViewForScreenName:@"Information"];
     
-    NSString *urlString = @"https://s3-us-west-2.amazonaws.com/sam-bender-public/tunerval/tunerval.html";
+    NSString *urlString = @"https://s3-us-west-2.amazonaws.com/sambender.com/tunerval/index.html";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:url];
     

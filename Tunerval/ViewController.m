@@ -308,7 +308,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (Question*) generateQuestion
 {
     IntervalType interval = [self randomIntervalForWeightedDistribution];
-    SBNote *referenceNote = [self.randomNoteGenerator nextNoteWithinRangeForInterval:interval];
+    SBNote *referenceNote = [self.randomNoteGenerator nextNote];
     referenceNote.duration = 1.0;
     
     SBNote *questionNote;
@@ -317,21 +317,24 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     answer = random;
     if (random == 0)
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents
-                                                     ];
-        NSLog(@"higher");
+        questionNote = [referenceNote
+                        noteWithDifferenceInCents:(double)interval * 100.0 + self.differenceInCents
+                        adjustName:YES];
+        NSLog(@"higher by %f", self.differenceInCents);
     }
     else if (random == 1)
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0
-                                                     ];
+        questionNote = [referenceNote
+                        noteWithDifferenceInCents:(double)interval * 100.0
+                        adjustName:YES];
         NSLog(@"on it");
     }
     else
     {
-        questionNote = [referenceNote noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents
-                                                     ];
-        NSLog(@"lower");
+        questionNote = [referenceNote
+                        noteWithDifferenceInCents:(double)interval * 100.0 - self.differenceInCents
+                        adjustName:YES];
+        NSLog(@"lower by %f", self.differenceInCents);
     }
     
     // randomly change loudness to be between .7 and 1.0 and always have one note at 1.0
@@ -745,7 +748,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) playAnswerWithCentsDifference:(double)difference
 {
     SBNote *second = [self.currentQuestion.referenceNote noteWithDifferenceInCents:difference
-                                                                        ];
+                                                                        adjustName:YES];
     second.loudness = self.currentQuestion.questionNote.loudness;
     second.duration = self.currentQuestion.questionNote.duration;
     second.instrumentType = self.currentQuestion.questionNote.instrumentType;

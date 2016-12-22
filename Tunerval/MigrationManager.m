@@ -98,7 +98,7 @@
     [db executeUpdate:addColumnInstrument];
     [db close];
     
-    [MigrationManager updateMigrationsCompletedTo:2];
+    [MigrationManager updateMigrationsCompletedTo:3];
 }
 
 + (void) updateMigrationsCompletedTo:(NSInteger)migrationsCompleted
