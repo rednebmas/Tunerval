@@ -41,6 +41,9 @@
         case 2:
             [MigrationManager thirdMigration];
             
+        case 3:
+            [MigrationManager fourthMigration];
+            
         default:
             break;
     }
@@ -99,6 +102,14 @@
     [db close];
     
     [MigrationManager updateMigrationsCompletedTo:3];
+}
+
++ (void)fourthMigration
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@[@(InstrumentTypeSineWave)] forKey:@"instruments"];
+    
+    [MigrationManager updateMigrationsCompletedTo:4];
 }
 
 + (void) updateMigrationsCompletedTo:(NSInteger)migrationsCompleted

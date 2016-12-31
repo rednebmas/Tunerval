@@ -29,6 +29,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @interface ViewController () 
 {
     int answer;
+    int userAnswer;
     NSInteger dailyProgressGoal;
     NSUserDefaults *defaults;
     BOOL previousAnswerWasCorrect;
@@ -65,6 +66,18 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.intervalDirectionLabel setText:@""];
     [self.intervalNameLabel setText:@""];
     [self theme:[Colors colorSetForDay:[defaults integerForKey:@"total-days-goal-met"]]];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillTerminate)
+                                                 name:UIApplicationWillTerminateNotification
+                                               object:app];
+}
+
+- (void)applicationWillTerminate {
+    if (self.nextButton.hidden == NO) {
+        [self logAnswer];
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -413,12 +426,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) answer:(int)value {
     previousAnswerWasCorrect = value == answer;
-    
-    [self.currentQuestion logToDBWithUserAnswer:value
-                                  correctAnswer:answer
-                                     difficulty:self.differenceInCents
-                                  noteRangeFrom:self.randomNoteGenerator.fromNote.halfStepsFromA4
-                                    noteRangeTo:self.randomNoteGenerator.toNote.halfStepsFromA4];
+    userAnswer = value;
     
     if (previousAnswerWasCorrect)
     {
@@ -654,6 +662,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     return 0;
 }
 
+- (void)logAnswer
+{
+    [self.currentQuestion logToDBWithUserAnswer:userAnswer
+                                  correctAnswer:answer
+                                     difficulty:self.differenceInCents
+                                  noteRangeFrom:self.randomNoteGenerator.fromNote.halfStepsFromA4
+                                    noteRangeTo:self.randomNoteGenerator.toNote.halfStepsFromA4];
+}
+
 #pragma mark - Game logic
 
 #pragma mark - Animations
@@ -757,6 +774,8 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (IBAction)nextButtonPressed:(UIButton*)sender
 {
+    [self logAnswer];
+    
     // [Animation rotateOverXAxis:self.centsDifference forwards:NO];
     loopAnimateTarget = NO;
     
@@ -778,7 +797,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     if ([segue.identifier isEqualToString:@"SettingsSegue"])
     {
         // app delegate is sender if practice reminder is shown first
-        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
         if (sender == appDelegate)
         {
             SettingsTableViewController *stvc = (SettingsTableViewController*)[segue.destinationViewController topViewController];

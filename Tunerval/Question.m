@@ -14,6 +14,7 @@
 @interface Question()
 {
     NSDate *start;
+    BOOL logged;
 }
 
 @property (nonatomic, assign) NSInteger onIncorrectAnswerListens;
@@ -73,6 +74,11 @@ static const int ERROR_INT_VALUE = -112358;
                  noteRangeFrom:(int)noteRangeFrom
                    noteRangeTo:(int)noteRangeTo
 {
+    if (logged)
+        return;
+    else
+        logged = YES;
+    
     NSTimeInterval timeToAnswer = [[NSDate date] timeIntervalSinceDate:start];
     NSString *instrument = [SBNote instrumentNameForInstrumentType:self.questionNote.instrumentType];
     
