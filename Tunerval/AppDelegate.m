@@ -13,6 +13,7 @@
 #import <SBRatePrompt/SBRatePrompt.h>
 #import "MigrationManager.h"
 #import "Constants.h"
+#import "PushNotificationHandler.h"
 
 @interface AppDelegate ()
 
@@ -242,7 +243,7 @@
                                 beginningOfDay.timeIntervalSince1970];
         if ([defaults boolForKey:goalMetKey])
         {
-            practiceReminderTime = [self dateTomorrowForTime:practiceReminderTime];
+            practiceReminderTime = [PushNotificationHandler dateTomorrowForTime:practiceReminderTime];
         }
         
         // configure notification
@@ -258,24 +259,6 @@
 }
 
 #pragma mark - Misc
-
-- (NSDate*) dateTomorrowForTime:(NSDate*)dateTime
-{
-    // time components
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
-    NSDateComponents *timeComponents = [calendar components:NSUIntegerMax fromDate:dateTime];
-    
-    // tomorrow components
-    NSDate *tomorrow = [[NSDate date] dateByAddingTimeInterval:60*60*24];
-    NSDateComponents *tomorrowComponents = [calendar components:NSUIntegerMax fromDate:tomorrow];
-    
-    // change time of tomorrow components
-    [tomorrowComponents setHour:timeComponents.hour];
-    [tomorrowComponents setMinute:timeComponents.minute];
-    
-    return [calendar dateFromComponents:tomorrowComponents];
-}
 
 - (NSURL*)applicationDocumentsDirectory
 {

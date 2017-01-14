@@ -22,6 +22,7 @@
 		221E41B21C863DD8008A6255 /* MBRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221E41B11C863DD8008A6255 /* MBRoundProgressView.m */; };
 		221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F245B1C82424500DA4950 /* SettingsTableViewController.m */; };
 		2235BDE11C8A363700285EA9 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235BDE01C8A363700285EA9 /* InformationViewController.m */; };
+		2238FAA31E1765BD002678DF /* PushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238FAA21E1765BD002678DF /* PushNotificationHandler.m */; };
 		224518751D9C5C6C00B98371 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 224518771D9C5C6C00B98371 /* Localizable.strings */; };
 		224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 224571AF1D827ECA00DEDA93 /* SBEventTracker.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
@@ -78,6 +79,8 @@
 		221F245B1C82424500DA4950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2235BDDF1C8A363700285EA9 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		2235BDE01C8A363700285EA9 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		2238FAA11E1765BD002678DF /* PushNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationHandler.h; sourceTree = "<group>"; };
+		2238FAA21E1765BD002678DF /* PushNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationHandler.m; sourceTree = "<group>"; };
 		224518731D9C5C3400B98371 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		224518741D9C5C3500B98371 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		224518761D9C5C6C00B98371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				22E3C7461C9E397F00CD11C5 /* ScoresData.m */,
 				224571AE1D827ECA00DEDA93 /* SBEventTracker.h */,
 				224571AF1D827ECA00DEDA93 /* SBEventTracker.m */,
+				2238FAA11E1765BD002678DF /* PushNotificationHandler.h */,
+				2238FAA21E1765BD002678DF /* PushNotificationHandler.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				22F0C5CF1C8835B5002C6F1C /* SettingsNumberPickerTableViewController.m in Sources */,
 				221F245C1C82424500DA4950 /* SettingsTableViewController.m in Sources */,
 				224747671C92AA45004E41D7 /* Constants.m in Sources */,
+				2238FAA31E1765BD002678DF /* PushNotificationHandler.m in Sources */,
 				2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */,
 				2285ED4D1D11EDB6000B8856 /* WrongAnswerTeachingOverlayView.m in Sources */,
 				224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */,
