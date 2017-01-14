@@ -35,8 +35,8 @@
 
 #pragma mark - Pickerview delegate
 
-- (void) notePickerView:(NotePickerView *)pickerView
-             pickedNote:(SBNote *)note
+- (void) notePickerView:(NotePickerView*)pickerView
+             pickedNote:(SBNote*)note
 {
     if (pickerView == self.fromPickerView)
     {
@@ -51,7 +51,7 @@
         {
             NSString *fromNoteName = [[NSUserDefaults standardUserDefaults] objectForKey:@"from-note"];
             SBNote *fromNote = [SBNote noteWithName:fromNoteName];
-            [self.toPickerView selectNote:fromNote animated:YES];
+            [self.fromPickerView selectNote:fromNote animated:YES];
         }
     }
     else

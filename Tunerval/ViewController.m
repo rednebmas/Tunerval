@@ -360,10 +360,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         questionNote.loudness = 1.0 - .4 * drand48();
     }
+    
     double duration = [defaults doubleForKey:@"note-duration"];
     double durationVariation = [defaults doubleForKey:@"note-duration-variation"];
-    questionNote.duration = duration + (drand48() * durationVariation - durationVariation/2);
-    referenceNote.duration = duration + (drand48() * durationVariation - durationVariation/2);
+    questionNote.duration = MAX(duration + (drand48() * durationVariation - durationVariation/2), .1);
+    referenceNote.duration = MAX(duration + (drand48() * durationVariation - durationVariation/2), .1);
     
     // set instrument
     InstrumentType instrumentType = [self instrumentType];
