@@ -38,8 +38,8 @@
     self.notesAttributed = [[NSMutableArray alloc] init];
     self.notes = [[NSMutableArray alloc] init];
     
-    SBNote *E2 = [SBNote noteWithName:@"F#2"]; // Lowest available is E2
-    SBNote *C6 = [SBNote noteWithName:@"B5"]; // Highest available is C6
+    SBNote *E2 = [SBNote noteWithName:@"A1"]; // Lowest available is E2
+    SBNote *C6 = [SBNote noteWithName:@"A6"]; // Highest available is C6
     SBNote *currentNote = [E2 noteWithDifferenceInHalfSteps:0];
     while (currentNote.halfStepsFromA4 <= C6.halfStepsFromA4) {
         NSString *octaveString = [NSString stringWithFormat:@"%d", currentNote.octave];

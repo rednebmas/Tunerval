@@ -6,10 +6,96 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
-#import "PushNotificationHandler.h"
 #import <UIKit/UIKit.h>
+#import "PushNotificationHandler.h"
+#import "SBEventTracker.h"
 
 @implementation PushNotificationHandler
+
+#pragma mark - Public
+
++ (void) askForReminderFrom:(UIViewController*)viewController completion:(void(^)(BOOL accepted))completion
+{
+    __weak UIViewController* weakViewController = viewController;
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Congrats on completing your daily goal!"
+                                message:@"Daily practice is essential to improving your ear. Would you like Tunerval to send you daily practice reminders?"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Remind me!"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action)
+                         {
+                             // record to AWS analytics
+                             [SBEventTracker trackAskForReminderWithValue:YES];
+                             
+                             if (completion) {
+                                 completion(YES);
+                             }
+                             
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                         }];
+    
+    UIAlertAction *noThanks = [UIAlertAction
+                               actionWithTitle:@"No thanks"
+                               style:UIAlertActionStyleDestructive
+                               
+                               handler:^(UIAlertAction * action)
+                               {
+                                   [SBEventTracker trackAskForReminderWithValue:NO];
+                                   [PushNotificationHandler
+                                    tellUserHowToEnablePracticeReminders:weakViewController
+                                    handler:^{
+                                        if (completion) {
+                                            completion(NO);
+                                        }
+                                    }];
+                               }];
+    
+    [alert addAction:noThanks];
+    [alert addAction:ok];
+    
+    [viewController presentViewController:alert animated:YES completion:nil];
+}
+
++ (void)tellUserHowToEnablePracticeReminders:(UIViewController*)viewController handler:(void(^)(void))handler
+{
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"That's quite alright!"
+                                message:@"You can enable practice reminders in settings at any time."
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction
+                         actionWithTitle:@"Ok"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             if (handler) handler();
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                         }];
+    [alert addAction:ok];
+    [viewController presentViewController:alert animated:YES completion:nil];
+}
+
++ (NSDate*) dateTomorrowForTime:(NSDate*)dateTime
+{
+    // time components
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSDateComponents *timeComponents = [calendar components:NSUIntegerMax fromDate:dateTime];
+    
+    // tomorrow components
+    NSDate *tomorrow = [[NSDate date] dateByAddingTimeInterval:60*60*24];
+    NSDateComponents *tomorrowComponents = [calendar components:NSUIntegerMax fromDate:tomorrow];
+    
+    // change time of tomorrow components
+    [tomorrowComponents setHour:timeComponents.hour];
+    [tomorrowComponents setMinute:timeComponents.minute];
+    
+    return [calendar dateFromComponents:tomorrowComponents];
+}
+
+#pragma mark - Private
 
 - (void)generateNotification 
 {
@@ -42,7 +128,6 @@
     NSDate *nextDay = [self dateTomorrowForTime:date];
     [self scheduleStreakReminderOn:nextDay notification:[UILocalNotification new]]
     
-    
     notification.fireDate = date;
     notification.timeZone = [NSTimeZone defaultTimeZone];
     notification.alertBody = @"Practice reminder! Short doses of daily practice are the key to improving your ear!";
@@ -67,24 +152,6 @@
     // create notification
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-}
-
-+ (NSDate*) dateTomorrowForTime:(NSDate*)dateTime
-{
-    // time components
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
-    NSDateComponents *timeComponents = [calendar components:NSUIntegerMax fromDate:dateTime];
-    
-    // tomorrow components
-    NSDate *tomorrow = [[NSDate date] dateByAddingTimeInterval:60*60*24];
-    NSDateComponents *tomorrowComponents = [calendar components:NSUIntegerMax fromDate:tomorrow];
-    
-    // change time of tomorrow components
-    [tomorrowComponents setHour:timeComponents.hour];
-    [tomorrowComponents setMinute:timeComponents.minute];
-    
-    return [calendar dateFromComponents:tomorrowComponents];
 }
 
 @end

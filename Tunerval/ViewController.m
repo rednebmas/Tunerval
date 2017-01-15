@@ -20,6 +20,7 @@
 #import "Constants.h"
 #import "WrongAnswerTeachingOverlayView.h"
 #import "SBEventTracker.h"
+#import "PushNotificationHandler.h"
 
 #define ASK_QUESTION_DELAY 1.0
 #define MAX_DIFF_ONE_INTERVAL 100.0
@@ -36,6 +37,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     BOOL loopAnimateTarget;
 }
 
+@property (nonatomic) BOOL paused;
 @property (nonatomic) BOOL speakInterval;
 @property (nonatomic) NSInteger answerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
@@ -114,18 +116,28 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         [defaults setBool:YES forKey:goalMetKey];
         NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
+        if (daysGoalMet == 0) {
+            self.paused = YES;
+            [PushNotificationHandler askForReminderFrom:self completion:^(BOOL accepted)
+            {
+                self.paused = accepted;
+                [self themeAfterDelay:.25];
+                
+                if (accepted == NO) {
+                    [self askQuestion:0.25]; // Animation duration
+                } else {
+                    [self performSegueWithIdentifier:@"SettingsSegue" sender:@"enable notifications"];
+                }
+            }];
+        } else {
+            [self themeAfterDelay:.75];
+        }
+        
         daysGoalMet++;
         [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
         
         // record amazon event
         [SBEventTracker trackDailyGoalComplete];
-        
-        __weak id weakSelf = self;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .75 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:1.0 animations:^(void){
-                [weakSelf theme:[Colors colorSetForDay:daysGoalMet]];
-            }];
-        });
     }
     
     // cancel notifications if we just completed our daily progress goal
@@ -134,6 +146,16 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         [appDelegate createNotification];
     }
+}
+
+- (void)themeAfterDelay:(double)delay {
+    NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:1.0 animations:^(void){
+            [self theme:[Colors colorSetForDay:daysGoalMet]];
+        }];
+    });
 }
 
 /**
@@ -168,8 +190,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
     intervals = [intervals sortedArrayUsingSelector:@selector(compare:)];
     
-    if (![self.intervals isEqual:intervals] || ![self.instruments isEqual:[defaults objectForKey:@"instruments"]])
+    if (![self.intervals isEqual:intervals]
+        || ![self.instruments isEqual:[defaults objectForKey:@"instruments"]]
+        || self.paused)
     {
+        self.paused = NO;
         self.intervals = intervals;
         self.instruments = [defaults objectForKey:@"instruments"];
         [self.centsDifference setText:@""];
@@ -199,6 +224,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) askQuestion:(double)delayTimeInSeconds
 {
+    if (self.paused) return;
     loopAnimateTarget = NO;
     IntervalType oldInterval = self.currentQuestion.interval;
     self.currentQuestion = [self generateQuestion];
@@ -429,6 +455,10 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     previousAnswerWasCorrect = value == answer;
     userAnswer = value;
     
+    NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
+    [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
+    [self incrementDailyProgress];
+    
     if (previousAnswerWasCorrect)
     {
         [self correct];
@@ -442,10 +472,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
             [defaults setInteger:1 forKey:@"wrong-answer-overlay-shown"];
         }
     }
-    
-    NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
-    [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
-    [self incrementDailyProgress];
 }
 
 - (void) incorrect:(int)value {
@@ -797,9 +823,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     if ([segue.identifier isEqualToString:@"SettingsSegue"])
     {
-        // app delegate is sender if practice reminder is shown first
-        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-        if (sender == appDelegate)
+        if ([sender isKindOfClass:[NSString class]] && [sender isEqualToString:@"enable notifications"])
         {
             SettingsTableViewController *stvc = (SettingsTableViewController*)[segue.destinationViewController topViewController];
             stvc.selectPracticeRemindersOnLoad = YES;

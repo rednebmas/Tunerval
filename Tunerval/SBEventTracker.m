@@ -72,6 +72,20 @@
     [eventClient recordEvent:dailyGoalEvent];
 }
 
++ (void)trackAskForReminderWithValue:(BOOL)accepted
+{
+    if (DEBUGMODE == YES) {
+        return;
+    }
+    
+    id<AWSMobileAnalyticsEventClient> eventClient = [SBEventTracker sharedInstance].eventClient;
+    id<AWSMobileAnalyticsEvent> askForReminderEvent = [eventClient
+                                                       createEventWithEventType:@"AskForReminder"];
+    
+    [askForReminderEvent addMetric:@(accepted ? 1.0 : 0.0) forKey:@"Answer"];
+    [eventClient recordEvent:askForReminderEvent];
+}
+
 + (void)trackInstrumentPurchaseWithTransaction:(SKPaymentTransaction*)transaction productCatalog:(NSMutableDictionary<NSString*,SKProduct*>*)productCatalog;
 {
     if (DEBUGMODE == YES) {

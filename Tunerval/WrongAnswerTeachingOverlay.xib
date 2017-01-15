@@ -51,9 +51,9 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-GT-aKn">
-                    <rect key="frame" x="25" y="427.5" width="230" height="182"/>
+                    <rect key="frame" x="25" y="437" width="230" height="163"/>
                     <attributedString key="attributedText">
-                        <fragment content="If you answer a question incorrectly, you can always hear what the ">
+                        <fragment content="If you answer a question incorrectly, you can always hear the ">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -74,7 +74,7 @@
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
-                        <fragment content=" in tune">
+                        <fragment content=" in-tune">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
@@ -110,7 +110,7 @@
                             </attributes>
                         </fragment>
                         <fragment>
-                            <string key="content"> answers would have sounded like by tapping the answer buttons before you move onto the next question.
+                            <string key="content"> answers by tapping the symbols before you move onto the next question.
 
 </string>
                             <attributes>
@@ -122,7 +122,7 @@
                         <fragment content="Give it a try!">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue-Italic"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

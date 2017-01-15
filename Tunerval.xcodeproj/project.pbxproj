@@ -25,6 +25,9 @@
 		2238FAA31E1765BD002678DF /* PushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238FAA21E1765BD002678DF /* PushNotificationHandler.m */; };
 		224518751D9C5C6C00B98371 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 224518771D9C5C6C00B98371 /* Localizable.strings */; };
 		224571B01D827ECA00DEDA93 /* SBEventTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 224571AF1D827ECA00DEDA93 /* SBEventTracker.m */; };
+		2245ADFD1E2AF0F100DE730E /* TunervalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245ADFC1E2AF0F100DE730E /* TunervalTests.m */; };
+		2245AE051E2AF11700DE730E /* PushNotificationHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245AE041E2AF11700DE730E /* PushNotificationHandlerTests.m */; };
+		2245AE061E2AF13300DE730E /* PushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238FAA21E1765BD002678DF /* PushNotificationHandler.m */; };
 		224747671C92AA45004E41D7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 224747661C92AA45004E41D7 /* Constants.m */; };
 		2253CD791CA36A37001630FE /* ChartPickIntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253CD781CA36A37001630FE /* ChartPickIntervalTableViewController.m */; };
 		2255A2221D7E520E00123363 /* KeychainUserPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255A2211D7E520E00123363 /* KeychainUserPass.m */; };
@@ -49,6 +52,16 @@
 		22FF37DE1C90D6DD0040C8AA /* MigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FF37DD1C90D6DD0040C8AA /* MigrationManager.m */; };
 		303FB5ACE3AD97776652E25B /* Pods_Tunerval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ADF68B976B15368BF821AA /* Pods_Tunerval.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2245ADFF1E2AF0F100DE730E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 221949431C80E956004D0155 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2219494A1C80E956004D0155;
+			remoteInfo = Tunerval;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E6E42034094C01C192724CE /* Pods-Tunerval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunerval.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunerval/Pods-Tunerval.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +103,10 @@
 		2245187C1D9C684C00B98371 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		224571AE1D827ECA00DEDA93 /* SBEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEventTracker.h; sourceTree = "<group>"; };
 		224571AF1D827ECA00DEDA93 /* SBEventTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEventTracker.m; sourceTree = "<group>"; };
+		2245ADFA1E2AF0F100DE730E /* TunervalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunervalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2245ADFC1E2AF0F100DE730E /* TunervalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunervalTests.m; sourceTree = "<group>"; };
+		2245ADFE1E2AF0F100DE730E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2245AE041E2AF11700DE730E /* PushNotificationHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationHandlerTests.m; sourceTree = "<group>"; };
 		224747651C92AA45004E41D7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		224747661C92AA45004E41D7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		2253CD771CA36A37001630FE /* ChartPickIntervalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPickIntervalTableViewController.h; sourceTree = "<group>"; };
@@ -145,6 +162,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2245ADF71E2AF0F100DE730E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -173,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				2219494D1C80E956004D0155 /* Tunerval */,
+				2245ADFB1E2AF0F100DE730E /* TunervalTests */,
 				2219494C1C80E956004D0155 /* Products */,
 				FD32B24027F848E86F4F215E /* Frameworks */,
 				62E7E1835FB51BD13D79F46B /* Pods */,
@@ -183,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				2219494B1C80E956004D0155 /* Tunerval.app */,
+				2245ADFA1E2AF0F100DE730E /* TunervalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +257,16 @@
 				221B38771D7C7F6E006D94CC /* InstrumentTableViewCell.m */,
 			);
 			name = Instruments;
+			sourceTree = "<group>";
+		};
+		2245ADFB1E2AF0F100DE730E /* TunervalTests */ = {
+			isa = PBXGroup;
+			children = (
+				2245ADFC1E2AF0F100DE730E /* TunervalTests.m */,
+				2245ADFE1E2AF0F100DE730E /* Info.plist */,
+				2245AE041E2AF11700DE730E /* PushNotificationHandlerTests.m */,
+			);
+			path = TunervalTests;
 			sourceTree = "<group>";
 		};
 		22D178C71C86ABE000B204C1 /* Controllers */ = {
@@ -365,6 +401,24 @@
 			productReference = 2219494B1C80E956004D0155 /* Tunerval.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2245ADF91E2AF0F100DE730E /* TunervalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2245AE031E2AF0F100DE730E /* Build configuration list for PBXNativeTarget "TunervalTests" */;
+			buildPhases = (
+				2245ADF61E2AF0F100DE730E /* Sources */,
+				2245ADF71E2AF0F100DE730E /* Frameworks */,
+				2245ADF81E2AF0F100DE730E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2245AE001E2AF0F100DE730E /* PBXTargetDependency */,
+			);
+			name = TunervalTests;
+			productName = TunervalTests;
+			productReference = 2245ADFA1E2AF0F100DE730E /* TunervalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -382,6 +436,12 @@
 								enabled = 1;
 							};
 						};
+					};
+					2245ADF91E2AF0F100DE730E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2VJY2AJVXJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2219494A1C80E956004D0155;
 					};
 				};
 			};
@@ -401,6 +461,7 @@
 			projectRoot = "";
 			targets = (
 				2219494A1C80E956004D0155 /* Tunerval */,
+				2245ADF91E2AF0F100DE730E /* TunervalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,6 +478,13 @@
 				2219495B1C80E956004D0155 /* Assets.xcassets in Resources */,
 				226C7E1A1D983CF8009E3446 /* Settings.bundle in Resources */,
 				221949591C80E956004D0155 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2245ADF81E2AF0F100DE730E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +590,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2245ADF61E2AF0F100DE730E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2245ADFD1E2AF0F100DE730E /* TunervalTests.m in Sources */,
+				2245AE061E2AF13300DE730E /* PushNotificationHandler.m in Sources */,
+				2245AE051E2AF11700DE730E /* PushNotificationHandlerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2245AE001E2AF0F100DE730E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2219494A1C80E956004D0155 /* Tunerval */;
+			targetProxy = 2245ADFF1E2AF0F100DE730E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		221949571C80E956004D0155 /* Main.storyboard */ = {
@@ -680,6 +766,42 @@
 			};
 			name = Release;
 		};
+		2245AE011E2AF0F100DE730E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 2VJY2AJVXJ;
+				INFOPLIST_FILE = TunervalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sambender.TunervalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tunerval.app/Tunerval";
+			};
+			name = Debug;
+		};
+		2245AE021E2AF0F100DE730E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 2VJY2AJVXJ;
+				INFOPLIST_FILE = TunervalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sambender.TunervalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tunerval.app/Tunerval";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -700,6 +822,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2245AE031E2AF0F100DE730E /* Build configuration list for PBXNativeTarget "TunervalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2245AE011E2AF0F100DE730E /* Debug */,
+				2245AE021E2AF0F100DE730E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,7 @@
 
 + (void)trackScreenViewForScreenName:(NSString*)screenName;
 + (void)trackDailyGoalComplete;
++ (void)trackAskForReminderWithValue:(BOOL)accepted;
 + (void)trackInstrumentPurchaseWithTransaction:(SKPaymentTransaction*)transaction productCatalog:(NSMutableDictionary<NSString*,SKProduct*>*)productCatalog;
 
 @end

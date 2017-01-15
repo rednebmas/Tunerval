@@ -10,6 +10,7 @@
 
 @interface PushNotificationHandler : NSObject
 
++ (void) askForReminderFrom:(UIViewController*)viewController completion:(void(^)(BOOL accepted))completion;
 + (NSDate*) dateTomorrowForTime:(NSDate*)dateTime;
 
 @end

@@ -57,7 +57,7 @@
         [defaults setObject:@"A4" forKey:@"from-note"];
         [defaults setObject:@"A5" forKey:@"to-note"];
         
-        [defaults setObject:@30 forKey:@"daily-goal"];
+        [defaults setObject:@25 forKey:@"daily-goal"];
     }
     
     double noteDuration = [defaults doubleForKey:@"note-duration"];
@@ -101,78 +101,13 @@
         // set default practice reminder time
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *components = [[NSDateComponents alloc] init];
-        [components setHour:18];
+        [components setHour:9];
         [components setMinute:0];
         [components setSecond:0];
         [calendar setTimeZone:[NSTimeZone defaultTimeZone]];
         NSDate *dateToFire = [calendar dateFromComponents:components];
         
         [defaults setObject:dateToFire forKey:@"practice-reminder-time"];
-        
-        // ask user for practice reminders
-        /*
-        UIAlertController *alert = [UIAlertController
-                                    alertControllerWithTitle:@"New feature: Practice Reminders"
-                                    message:@"Daily practice is essential to improve your ear. Tunerval can now remind you to hit your daily goal."
-                                    preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Remind me!"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 // record to AWS analytics
-                                 if (DEBUGMODE == NO)
-                                 {
-                                     id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
-                                     id<AWSMobileAnalyticsEvent> askForReminderEvent = [eventClient
-                                                                                  createEventWithEventType:@"AskForReminder"];
-                                     
-                                     [askForReminderEvent addMetric:@(1.0) forKey:@"Answer"];
-                                     [eventClient recordEvent:askForReminderEvent];
-                                 }
-
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 [self.window.rootViewController performSegueWithIdentifier:@"SettingsSegue" sender:self];
-                             }];
-        
-        UIAlertAction *noThanks = [UIAlertAction
-                             actionWithTitle:@"No thanks"
-                             style:UIAlertActionStyleDestructive
-                                   
-                             handler:^(UIAlertAction * action)
-                             {
-                                 // record to AWS analytics
-                                 if (DEBUGMODE == NO)
-                                 {
-                                     id<AWSMobileAnalyticsEventClient> eventClient = [MOBILE_ANALYTICS eventClient];
-                                     id<AWSMobileAnalyticsEvent> askForReminderEvent = [eventClient
-                                                                                        createEventWithEventType:@"AskForReminder"];
-                                     
-                                     [askForReminderEvent addMetric:@(0.0) forKey:@"Answer"];
-                                     [eventClient recordEvent:askForReminderEvent];
-                                 }
-
-                                 UIAlertController *alert = [UIAlertController
-                                                             alertControllerWithTitle:@"That's quite alright!"
-                                                             message:@"You can enable practice reminders in settings at any time."
-                                                             preferredStyle:UIAlertControllerStyleAlert];
-                                 
-                                 UIAlertAction *ok = [UIAlertAction
-                                                      actionWithTitle:@"Ok"
-                                                      style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action)
-                                                      {
-                                                          [alert dismissViewControllerAnimated:YES completion:nil];
-                                                      }];
-                                 [alert addAction:ok];
-                                 [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-                             }];
-        
-        [alert addAction:noThanks];
-        [alert addAction:ok];
-        
-        [self.window makeKeyAndVisible]; // hacky?
-        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-         */
     }
     
     if ([defaults integerForKey:@"last-build-number"] == 0)
