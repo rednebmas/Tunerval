@@ -42,6 +42,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 @property (nonatomic) NSInteger answerDifferential; // positive values means you got x more correct than incorrect
 @property (nonatomic) int correctStreak; // positive values means you got x more correct than incorrect
 @property (nonatomic) float differenceInCents;
+@property (nonatomic) float differenceInCentsToLog;
 @property (nonatomic, retain) NSString *highScoreKey;
 @property (nonatomic, retain) NSString *answerDifferentialKey;
 @property (nonatomic, retain) NSArray *intervals;
@@ -195,6 +196,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         || self.paused)
     {
         self.paused = NO;
+        [self animateAlpha:1.0 ofButtons:@[self.flatButton, self.spotOnButton, self.sharpButton]];
         self.intervals = intervals;
         self.instruments = [defaults objectForKey:@"instruments"];
         [self.centsDifference setText:@""];
@@ -454,6 +456,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) answer:(int)value {
     previousAnswerWasCorrect = value == answer;
     userAnswer = value;
+    self.differenceInCentsToLog = self.differenceInCents;
     
     NSInteger questionsAnsweredTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"questions-answered-total"];
     [[NSUserDefaults standardUserDefaults] setInteger:++questionsAnsweredTotal forKey:@"questions-answered-total"];
@@ -484,20 +487,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     {
         case 0:
             correctAnswer = @"sharp";
-            // [Animation scalePop:self.sharpButton toScale:1.2];
-            [self loopScalePop:self.sharpButton toScale:1.1];
+            [self loopScalePop:self.sharpButton toScale:1.15];
+            [self animateAlpha:.7 ofButtons:@[self.flatButton, self.spotOnButton]];
             break;
             
         case 1:
-            correctAnswer = @"in tune";
-            // [Animation scalePop:self.spotOnButton toScale:1.2];
-            [self loopScalePop:self.spotOnButton toScale:1.1];
+            correctAnswer = @"in-tune";
+            [self loopScalePop:self.spotOnButton toScale:1.15];
+            [self animateAlpha:.7 ofButtons:@[self.flatButton, self.sharpButton]];
             break;
             
         case 2:
             correctAnswer = @"flat";
-            // [Animation scalePop:self.flatButton toScale:1.2];
-            [self loopScalePop:self.flatButton toScale:1.1];
+            [self loopScalePop:self.flatButton toScale:1.15];
+            [self animateAlpha:.7 ofButtons:@[self.spotOnButton, self.sharpButton]];
             break;
             
         default:
@@ -519,6 +522,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     [self.label setAttributedText:[self correctAnswerBolded:correctAnswer]];
     [Animation flashBackgroundColor:[UIColor redColor] ofView:self.view];
     [self hideHearAnswersLabel:NO];
+}
+
+- (void) animateAlpha:(CGFloat)alpha ofButtons:(NSArray*)buttons
+{
+    [UIView animateWithDuration:.25 animations:^{
+        for (UIButton *button in buttons) {
+            button.alpha = alpha;
+        }
+    }];
 }
 
 - (NSAttributedString*) correctAnswerBolded:(NSString*)correctAnswer
@@ -693,7 +705,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     [self.currentQuestion logToDBWithUserAnswer:userAnswer
                                   correctAnswer:answer
-                                     difficulty:self.differenceInCents
+                                     difficulty:self.differenceInCentsToLog
                                   noteRangeFrom:self.randomNoteGenerator.fromNote.halfStepsFromA4
                                     noteRangeTo:self.randomNoteGenerator.toNote.halfStepsFromA4];
 }
@@ -803,6 +815,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 {
     [self logAnswer];
     
+    [self animateAlpha:1.0 ofButtons:@[self.flatButton, self.spotOnButton, self.sharpButton]];
     // [Animation rotateOverXAxis:self.centsDifference forwards:NO];
     loopAnimateTarget = NO;
     
