@@ -465,6 +465,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     if (previousAnswerWasCorrect)
     {
         [self correct];
+        [self logAnswer];
     }
     else
     {

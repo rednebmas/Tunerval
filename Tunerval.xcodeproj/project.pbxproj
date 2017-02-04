@@ -830,6 +830,7 @@
 				2245AE021E2AF0F100DE730E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
