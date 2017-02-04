@@ -84,6 +84,7 @@
     
     [askForReminderEvent addMetric:@(accepted ? 1.0 : 0.0) forKey:@"Answer"];
     [eventClient recordEvent:askForReminderEvent];
+    [eventClient submitEvents];
 }
 
 + (void)trackInstrumentPurchaseWithTransaction:(SKPaymentTransaction*)transaction productCatalog:(NSMutableDictionary<NSString*,SKProduct*>*)productCatalog;
