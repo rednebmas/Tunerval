@@ -113,11 +113,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
     NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
                             beginningOfDay.timeIntervalSince1970];
+    [defaults setBool:NO forKey:goalMetKey]; // uncomment to change color every question
     if (progress >= 1.0 && [defaults boolForKey:goalMetKey] == NO)
     {
         [defaults setBool:YES forKey:goalMetKey];
         NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
-        if (daysGoalMet == 0) {
+        daysGoalMet++;
+        [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
+        
+        if (daysGoalMet == 1) {
             self.paused = YES;
             [PushNotificationHandler askForReminderFrom:self completion:^(BOOL accepted)
             {
@@ -133,9 +137,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         } else {
             [self themeAfterDelay:.75];
         }
-        
-        daysGoalMet++;
-        [defaults setInteger:daysGoalMet forKey:@"total-days-goal-met"];
         
         // record amazon event
         [SBEventTracker trackDailyGoalComplete];
@@ -622,6 +623,12 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 
 - (void) speak:(NSString*)text
 {
+    if ([text isEqualToString:@"ascending Tritone"]) {
+        text = @"ascending tri-tone";
+    } else if ([text isEqualToString:@"descending Tritone"]) {
+        text = @"descending tri-tone";
+    }
+    
     AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
     AVSpeechUtterance *utterance = [AVSpeechUtterance
                                     speechUtteranceWithString:text];

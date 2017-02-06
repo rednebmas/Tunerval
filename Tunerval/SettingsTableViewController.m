@@ -92,7 +92,7 @@
 {
     NSNumber *goal = [[NSUserDefaults standardUserDefaults] objectForKey:@"daily-goal"];
     NSInteger goalInteger = [goal integerValue];
-    [self.dailyGoalProgressTextField setText:[NSString stringWithFormat:@"%lu", goalInteger]];
+    [self.dailyGoalProgressTextField setText:[NSString stringWithFormat:@"%lu", (long)goalInteger]];
 }
 
 - (void) setNoteRangeSelectedLabelText
