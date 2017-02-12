@@ -113,7 +113,6 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSDate *beginningOfDay = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
     NSString *goalMetKey = [NSString stringWithFormat:@"daily-goal-met-%f",
                             beginningOfDay.timeIntervalSince1970];
-    [defaults setBool:NO forKey:goalMetKey]; // uncomment to change color every question
     if (progress >= 1.0 && [defaults boolForKey:goalMetKey] == NO)
     {
         [defaults setBool:YES forKey:goalMetKey];
