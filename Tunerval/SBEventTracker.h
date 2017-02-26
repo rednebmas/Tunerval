@@ -16,5 +16,7 @@
 + (void)trackDailyGoalComplete;
 + (void)trackAskForReminderWithValue:(BOOL)accepted;
 + (void)trackInstrumentPurchaseWithTransaction:(SKPaymentTransaction*)transaction productCatalog:(NSMutableDictionary<NSString*,SKProduct*>*)productCatalog;
++ (void)trackError:(NSError*)error;
++ (void)trackEvent:(NSString*)eventName attributeName:(NSString*)name attributeMsg:(NSString*)msg;
 
 @end

@@ -160,6 +160,13 @@
         return;
     }
     
+    InstrumentTableViewCell *cell = [self.tableView
+                                     cellForRowAtIndexPath:[NSIndexPath
+                                                            indexPathForRow:instrumentIndex
+                                                            inSection:0]];
+    [cell hideBuyButtonAnimated];
+    [cell startSpinner];
+    
     SKProductsRequest *request = [[SKProductsRequest alloc]
                                   initWithProductIdentifiers:
                                   [NSSet setWithObject:self.instrumentIAPIDs[instrumentIndex]]];
@@ -220,7 +227,12 @@
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-    if (response.products.count < 1) return;
+    if (response.products.count < 1) {
+        [SBEventTracker trackEvent:@"Error-NoProductsReturned" attributeName:@"InvalidIDs" attributeMsg:[response.invalidProductIdentifiers componentsJoinedByString:@","]];
+        [self displayErrorDialogWithMessage:@"Error retrieving valid product identifiers from the store"];
+        
+        return;
+    }
     
     // Subscribe to observer
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
@@ -231,6 +243,11 @@
         SKPayment *payment = [SKPayment paymentWithProduct:product];
         [[SKPaymentQueue defaultQueue] addPayment:payment];
     }
+}
+
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error
+{
+    [self displayDialogWithError:error];
 }
 
 #pragma mark - SKPaymentTransactionObserver delegate
@@ -246,8 +263,7 @@
                 break;
                 
             case SKPaymentTransactionStateFailed:
-                [[SKPaymentQueue defaultQueue]
-                 finishTransaction:transaction];
+                [self handleTransactionStateFailed:transaction];
                 break;
                 
             case SKPaymentTransactionStateRestored:
@@ -293,11 +309,18 @@
     // hide buy button and start downloading
     NSInteger index = [self.instrumentIAPIDs indexOfObject:transaction.payment.productIdentifier];
     InstrumentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [cell hideBuyButtonAnimated];
+    [cell stopSpinner];
     [cell setDownloadProgress:0.0];
     
     // hide "new" on Instruments in settings
     [self.defaults setObject:@(YES) forKey:@"hide-new-label-in-settings-for-instruments"];
+}
+
+- (void)handleTransactionStateFailed:(SKPaymentTransaction*)transaction
+{
+    [[SKPaymentQueue defaultQueue]
+     finishTransaction:transaction];
+    [self displayDialogWithError:transaction.error];
 }
 
 - (void)paymentQueue:(SKPaymentQueue*)queue updatedDownloads:(NSArray*)downloads
@@ -433,5 +456,34 @@
     
     return _productCatalog;
 }
+
+#pragma mark - Error handling
+
+- (void)displayDialogWithError:(NSError*)error
+{
+    [SBEventTracker trackError:error];
+    [self displayErrorDialogWithMessage:[error localizedDescription]];
+}
+
+- (void)displayErrorDialogWithMessage:(NSString*)message
+{
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Error"
+                                message:message
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *yes = [UIAlertAction
+                          actionWithTitle:@"Ok"
+                          style:UIAlertActionStyleDefault
+                          handler:^(UIAlertAction * action)
+                          {
+                              [alert dismissViewControllerAnimated:YES completion:nil];
+                              [self dismissViewControllerAnimated:YES completion:nil];
+                          }];
+    
+    [alert addAction:yes];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 @end

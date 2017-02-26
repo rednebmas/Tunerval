@@ -122,4 +122,34 @@
     [eventClient submitEvents];
 }
 
++ (void)trackError:(NSError*)error
+{
+    if (DEBUGMODE == YES) {
+        return;
+    }
+    
+    id<AWSMobileAnalyticsEventClient> eventClient = [SBEventTracker sharedInstance].eventClient;
+    id<AWSMobileAnalyticsEvent> errorEvent = [eventClient
+                                              createEventWithEventType:@"Error"];
+    
+    [errorEvent addAttribute:[error localizedDescription] forKey:@"description"];
+    [eventClient recordEvent:errorEvent];
+    [eventClient submitEvents];
+}
+
++ (void)trackEvent:(NSString*)eventName attributeName:(NSString*)name attributeMsg:(NSString*)msg;
+{
+    if (DEBUGMODE == YES) {
+        return;
+    }
+    
+    id<AWSMobileAnalyticsEventClient> eventClient = [SBEventTracker sharedInstance].eventClient;
+    id<AWSMobileAnalyticsEvent> errorEvent = [eventClient
+                                              createEventWithEventType:eventName];
+    
+    [errorEvent addAttribute:msg forKey:name];
+    [eventClient recordEvent:errorEvent];
+    [eventClient submitEvents];
+}
+
 @end

@@ -1118,6 +1118,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dfh-tr-nMg">
+                                            <rect key="frame" x="339" y="11.5" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kb-df-Mdr">
                                             <rect key="frame" x="15" y="11.5" width="42.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1173,16 +1176,19 @@
                                         <constraint firstItem="ZCa-er-MWA" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="6MF-aj-0vr"/>
                                         <constraint firstItem="veT-Lw-AQc" firstAttribute="leading" secondItem="Wm1-gb-eq7" secondAttribute="trailing" constant="8" id="DSZ-k3-jXX"/>
                                         <constraint firstItem="veT-Lw-AQc" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="Mgo-Oq-iXe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Dfh-tr-nMg" secondAttribute="trailing" constant="8" id="Rg4-jj-14Q"/>
                                         <constraint firstItem="veT-Lw-AQc" firstAttribute="centerX" secondItem="2gV-SA-1QZ" secondAttribute="centerX" id="aaS-a8-jmz"/>
                                         <constraint firstItem="7Kb-df-Mdr" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="dzs-Wb-wqm"/>
                                         <constraint firstItem="2gV-SA-1QZ" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="eGP-Yp-5ID"/>
                                         <constraint firstItem="Wm1-gb-eq7" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="myI-uK-Xlz"/>
                                         <constraint firstAttribute="trailing" secondItem="ZCa-er-MWA" secondAttribute="trailing" constant="15" id="ofm-AU-2Lc"/>
+                                        <constraint firstItem="Dfh-tr-nMg" firstAttribute="centerY" secondItem="jag-Xc-5W5" secondAttribute="centerY" id="u7t-x8-SEd"/>
                                         <constraint firstItem="7Kb-df-Mdr" firstAttribute="leading" secondItem="jag-Xc-5W5" secondAttribute="leading" constant="15" id="v3h-S6-vl1"/>
                                         <constraint firstItem="ZCa-er-MWA" firstAttribute="leading" secondItem="2gV-SA-1QZ" secondAttribute="trailing" constant="12" id="zmd-Kj-z9u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="Dfh-tr-nMg" id="8sy-zt-kRb"/>
                                     <outlet property="buyButton" destination="ZCa-er-MWA" id="ruH-Oz-n4J"/>
                                     <outlet property="buyButtonWidthConstraint" destination="MtO-Yb-tCA" id="2AT-tj-ZfV"/>
                                     <outlet property="checkMarkImageView" destination="2gV-SA-1QZ" id="hb1-sr-u2A"/>

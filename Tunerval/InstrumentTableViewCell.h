@@ -25,5 +25,7 @@
 - (void)hideBuyButtonAnimated;
 - (void)setDownloadProgress:(float)progress;
 - (void)showCheckMarkAnimated;
+- (void)startSpinner;
+- (void)stopSpinner;
 
 @end

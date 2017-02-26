@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkMarkTraillingToBuyButton;
 @property (weak, nonatomic) IBOutlet MBRoundProgressView *downloadProgressView;
 @property (weak, nonatomic) IBOutlet UILabel *downloadingLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -102,6 +103,16 @@
 - (BOOL)isSelected
 {
     return !self.checkMarkImageView.hidden;
+}
+
+- (void)startSpinner
+{
+    [self.activityIndicator startAnimating];
+}
+
+- (void)stopSpinner
+{
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark - Actions
