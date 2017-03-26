@@ -70,6 +70,7 @@
                                                   createEventWithEventType:@"DailyGoalComplete"];
     [dailyGoalEvent addMetric:@(dailyQuestionGoal) forKey:@"DailyQuestionGoal"];
     [eventClient recordEvent:dailyGoalEvent];
+    [eventClient submitEvents];
 }
 
 + (void)trackAskForReminderWithValue:(BOOL)accepted
