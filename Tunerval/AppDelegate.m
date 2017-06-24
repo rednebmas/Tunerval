@@ -39,6 +39,10 @@
     // get defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [SBRatePrompt debugShow];
+//    });
+    
     // if there is no set of selected intervals, set it.
     NSMutableArray *intervals = [defaults objectForKey:@"selected_intervals"];
     

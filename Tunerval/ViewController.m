@@ -7,6 +7,7 @@
 //
 
 #import <SBMusicUtilities/SBNote.h>
+#import <SBMusicUtilities/SBPlayableNote.h>
 #import <SBMusicUtilities/SBAudioPlayer.h>
 #import <SBMusicUtilities/SBRandomNoteGenerator.h>
 #import "ViewController.h"
@@ -399,6 +400,30 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     referenceNote.instrumentType = instrumentType;
     questionNote.instrumentType = instrumentType;
     
+    // Make sure we have a sample for this instrumenttype
+    if (instrumentType != InstrumentTypeSineWave && instrumentType != InstrumentTypeSineWaveDrone) {
+        SBPlayableNote *playableReferenceNote = [[SBPlayableNote alloc] initWithName:referenceNote.nameWithOctave];
+        SBPlayableNote *playableQuestionNote = [[SBPlayableNote alloc] initWithName:questionNote.nameWithOctave];
+        
+        // if there is no possible sample to play, reset range
+        SBNote *lowestSample = [SBNote noteWithName:@"A#2"];
+        SBNote *highestSample = [SBNote noteWithName:@"A5"];
+        if (self.randomNoteGenerator.toNote.halfStepsFromA4 < lowestSample.halfStepsFromA4) {
+            [self.randomNoteGenerator setRangeFrom:lowestSample to:highestSample];
+            [self setNoteRangeFrom:lowestSample to:highestSample];
+            return [self generateQuestion];
+        }
+        else if (self.randomNoteGenerator.fromNote.halfStepsFromA4 > highestSample.halfStepsFromA4) {
+            [self.randomNoteGenerator setRangeFrom:lowestSample to:highestSample];
+            [self setNoteRangeFrom:lowestSample to:highestSample];
+            return [self generateQuestion];
+        }
+        // otherwise check if sample exists
+        else if ([playableReferenceNote sampleExists] == NO || [playableQuestionNote sampleExists] == NO) {
+            return [self generateQuestion];
+        }
+    }
+    
     // create question object
     Question *question = [[Question alloc] init];
     question.referenceNote = referenceNote;
@@ -406,6 +431,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     question.interval = interval;
     
     return question;
+}
+
+- (void)setNoteRangeFrom:(SBNote*)from to:(SBNote*)to {
+    [[NSUserDefaults standardUserDefaults] setObject:from.nameWithOctave forKey:@"from-note"];
+    [[NSUserDefaults standardUserDefaults] setObject:to.nameWithOctave forKey:@"to-note"];
 }
 
 - (InstrumentType)instrumentType
