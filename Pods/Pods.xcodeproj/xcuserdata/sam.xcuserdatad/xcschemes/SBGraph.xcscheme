@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BF8498A424A89A0DF271897A726295AA'
+               BlueprintIdentifier = '1801811E9B92EC2DA1CC1842FAD51CB6'
                BlueprintName = 'SBGraph'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SBGraph.framework'>

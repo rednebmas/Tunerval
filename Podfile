@@ -10,5 +10,7 @@ target 'Tunerval' do
 	pod 'SBRatePrompt', :path => '~/code/iOS/SBRatePrompt'
 	pod 'FMDB'
 	pod 'AWSMobileAnalytics', '~> 2.3.2'
+	pod 'Fabric'
+	pod 'Crashlytics'
 end
 

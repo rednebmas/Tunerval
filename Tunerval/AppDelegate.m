@@ -11,6 +11,8 @@
 #import <SBMusicUtilities/SBPlayableNote.h>
 #import <AWSMobileAnalytics/AWSMobileAnalytics.h>
 #import <SBRatePrompt/SBRatePrompt.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "MigrationManager.h"
 #import "Constants.h"
 #import "PushNotificationHandler.h"
@@ -28,6 +30,7 @@
     {
         // Start mobile analytics
         MOBILE_ANALYTICS;
+        [Fabric with:@[[Crashlytics class]]];
         NSLog(@"Analytics started");
     }
     

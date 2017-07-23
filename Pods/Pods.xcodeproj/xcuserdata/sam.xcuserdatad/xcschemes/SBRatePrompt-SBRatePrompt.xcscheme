@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2BB78969ADB6914114D000B0A47D3CE0'
+               BlueprintIdentifier = 'E41492B969211243CAF8BCC85BAB181E'
                BlueprintName = 'SBRatePrompt-SBRatePrompt'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SBRatePrompt.bundle'>
