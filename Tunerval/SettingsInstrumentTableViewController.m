@@ -41,6 +41,12 @@
     [self initializeConstants];
 }
 
+- (void)dealloc {
+    if ([SKPaymentQueue canMakePayments]) {
+        [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+    }
+}
+
 - (void)loadDefaults
 {
     self.defaults = [NSUserDefaults standardUserDefaults];
@@ -300,6 +306,7 @@
         // transaction
         [[SKPaymentQueue defaultQueue]
          finishTransaction:transaction];
+        [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
     }
     
     // mark instrument as purchased
@@ -320,6 +327,7 @@
 {
     [[SKPaymentQueue defaultQueue]
      finishTransaction:transaction];
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
     [self displayDialogWithError:transaction.error];
 }
 
