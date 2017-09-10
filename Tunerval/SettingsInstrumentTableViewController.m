@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSMutableArray *selectedInstruments;
 @property (nonatomic, strong) NSMutableDictionary<NSString*, SKProduct*> *productCatalog;
 @property (nonatomic, strong) NSUserDefaults *defaults;
+@property (nonatomic, strong) NSMutableArray<SKProductsRequest *> *productRequests;
 
 @end
 
@@ -45,12 +46,32 @@
     if ([SKPaymentQueue canMakePayments]) {
         [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
     }
+    
+    for (SKProductsRequest *productRequest in self.productRequests) {
+        if (productRequest) {
+            productRequest.delegate = nil;
+        }
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if ([SKPaymentQueue canMakePayments]) {
+        [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([SKPaymentQueue canMakePayments]) {
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    }
 }
 
 - (void)loadDefaults
 {
     self.defaults = [NSUserDefaults standardUserDefaults];
     self.selectedInstruments = [[self.defaults objectForKey:@"instruments"] mutableCopy];
+    self.productRequests = [NSMutableArray<SKProductsRequest *> new];
 }
 
 - (void)initializeConstants
@@ -173,12 +194,14 @@
     [cell hideBuyButtonAnimated];
     [cell startSpinner];
     
-    SKProductsRequest *request = [[SKProductsRequest alloc]
-                                  initWithProductIdentifiers:
-                                  [NSSet setWithObject:self.instrumentIAPIDs[instrumentIndex]]];
+    SKProductsRequest *productRequest = [[SKProductsRequest alloc]
+                                        initWithProductIdentifiers:
+                                        [NSSet setWithObject:self.instrumentIAPIDs[instrumentIndex]]];
     
-    request.delegate = self;
-    [request start];
+    productRequest.delegate = self;
+    [productRequest start];
+    
+    [self.productRequests addObject:productRequest];
 }
 
 - (void)tellUserInAppPurchasesAreDisabled
@@ -239,9 +262,6 @@
         
         return;
     }
-    
-    // Subscribe to observer
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
     // Purchase
     for (SKProduct *product in response.products) {
@@ -415,7 +435,6 @@
 
 - (void) restorePurchases
 {
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 

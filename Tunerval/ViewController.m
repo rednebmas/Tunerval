@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
+#import <Crashlytics/Crashlytics.h>
 #import <SBMusicUtilities/SBNote.h>
 #import <SBMusicUtilities/SBPlayableNote.h>
 #import <SBMusicUtilities/SBAudioPlayer.h>
@@ -409,17 +410,20 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
         SBNote *lowestSample = [SBNote noteWithName:@"A#2"];
         SBNote *highestSample = [SBNote noteWithName:@"A5"];
         if (self.randomNoteGenerator.toNote.halfStepsFromA4 < lowestSample.halfStepsFromA4) {
+            CLS_LOG(@"<1> fromNote: %@, toNote: %@", self.randomNoteGenerator.fromNote.nameWithOctave, self.randomNoteGenerator.toNote.nameWithOctave);
             [self.randomNoteGenerator setRangeFrom:lowestSample to:highestSample];
             [self setNoteRangeFrom:lowestSample to:highestSample];
             return [self generateQuestion];
         }
         else if (self.randomNoteGenerator.fromNote.halfStepsFromA4 > highestSample.halfStepsFromA4) {
+            CLS_LOG(@"<2> fromNote: %@, toNote: %@", self.randomNoteGenerator.fromNote.nameWithOctave, self.randomNoteGenerator.toNote.nameWithOctave);
             [self.randomNoteGenerator setRangeFrom:lowestSample to:highestSample];
             [self setNoteRangeFrom:lowestSample to:highestSample];
             return [self generateQuestion];
         }
         // otherwise check if sample exists
         else if ([playableReferenceNote sampleExists] == NO || [playableQuestionNote sampleExists] == NO) {
+            CLS_LOG(@"<3> referenceNote: %@, questionNote: %@", referenceNote.nameWithOctave, questionNote.nameWithOctave);
             return [self generateQuestion];
         }
     }
