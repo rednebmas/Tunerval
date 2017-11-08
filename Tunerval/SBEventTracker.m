@@ -63,12 +63,15 @@
         return;
     }
     
-    NSInteger dailyQuestionGoal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"daily-goal"] integerValue];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger dailyQuestionGoal = [[defaults objectForKey:@"daily-goal"] integerValue];
+    NSInteger daysGoalMet = [defaults integerForKey:@"total-days-goal-met"];
     
     id<AWSMobileAnalyticsEventClient> eventClient = [SBEventTracker sharedInstance].eventClient;
     id<AWSMobileAnalyticsEvent> dailyGoalEvent = [eventClient
                                                   createEventWithEventType:@"DailyGoalComplete"];
     [dailyGoalEvent addMetric:@(dailyQuestionGoal) forKey:@"DailyQuestionGoal"];
+    [dailyGoalEvent addMetric:@(daysGoalMet) forKey:@"total-days-goal-met"];
     [eventClient recordEvent:dailyGoalEvent];
     [eventClient submitEvents];
 }

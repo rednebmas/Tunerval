@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
+#import <StoreKit/StoreKit.h>
 #import <Crashlytics/Crashlytics.h>
 #import <SBMusicUtilities/SBNote.h>
 #import <SBMusicUtilities/SBPlayableNote.h>
@@ -135,6 +136,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
                     [self performSegueWithIdentifier:@"SettingsSegue" sender:@"enable notifications"];
                 }
             }];
+        } else if (daysGoalMet == 5) {
+            [self themeAfterDelay:0.15];
+            if ([SKStoreReviewController class]) {
+                [SKStoreReviewController requestReview];
+            }
         } else {
             [self themeAfterDelay:.75];
         }
