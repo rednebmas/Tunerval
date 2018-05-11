@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '63C8E3717D7B678B35AEB913A38C452A'
-               BlueprintName = 'SBMusicUtilities'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SBMusicUtilities.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "813D946DDF895580A0DF74E7547AB6D4"
+               BlueprintName = "SBMusicUtilities"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SBMusicUtilities.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

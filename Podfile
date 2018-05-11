@@ -12,5 +12,6 @@ target 'Tunerval' do
 	pod 'AWSMobileAnalytics', '~> 2.3.2'
 	pod 'Fabric'
 	pod 'Crashlytics'
+	pod 'SVProgressHUD'
 end
 

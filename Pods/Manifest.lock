@@ -18,6 +18,7 @@ PODS:
   - SBMusicUtilities (0.0.1):
     - EZAudio
   - SBRatePrompt (0.1.0)
+  - SVProgressHUD (2.2.5)
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
@@ -29,16 +30,27 @@ DEPENDENCIES:
   - SBGraph (from `~/code/iOS/SBGraph`)
   - SBMusicUtilities (from `~/code/iOS/SBMusicUtilities`)
   - SBRatePrompt (from `~/code/iOS/SBRatePrompt`)
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AWSCore
+    - AWSMobileAnalytics
+    - Crashlytics
+    - Fabric
+    - FMDB
+    - SVProgressHUD
+    - TPCircularBuffer
 
 EXTERNAL SOURCES:
   EZAudio:
     :git: https://github.com/rednebmas/EZAudio.git
   SBGraph:
-    :path: ~/code/iOS/SBGraph
+    :path: "~/code/iOS/SBGraph"
   SBMusicUtilities:
-    :path: ~/code/iOS/SBMusicUtilities
+    :path: "~/code/iOS/SBMusicUtilities"
   SBRatePrompt:
-    :path: ~/code/iOS/SBRatePrompt
+    :path: "~/code/iOS/SBRatePrompt"
 
 CHECKOUT OPTIONS:
   EZAudio:
@@ -52,11 +64,12 @@ SPEC CHECKSUMS:
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  SBGraph: d33e54a560a3295abab9f9d781c8e1c209f5deef
-  SBMusicUtilities: 055b3951a82f29ff2e4357763caa332e8004207d
-  SBRatePrompt: 3a0786770d63735acfb381a8f337f936d0483518
+  SBGraph: 1b426fe0038b3f9c733f77a2dc3e2e60cd83269d
+  SBMusicUtilities: 0551b60a7907d0dd47fedefb86192fc1e3e98ece
+  SBRatePrompt: 9f4b84c73cc48838b2f2f547e111e820f4e06d1c
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: aa789e273e92e421f7731767fff3e4d038e58f82
+PODFILE CHECKSUM: dfc3a025f0d536ca4914cd893a4c7fe00817d1d3
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.0

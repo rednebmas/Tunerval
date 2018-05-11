@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2753D802B211BD0E9D272FD39076D19A'
-               BlueprintName = 'AWSMobileAnalytics'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AWSMobileAnalytics.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2753D802B211BD0E9D272FD39076D19A"
+               BlueprintName = "AWSMobileAnalytics"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "AWSMobileAnalytics.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

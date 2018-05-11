@@ -25,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sharpButton;
 @property (weak, nonatomic) IBOutlet MBRoundProgressView *dailyProgressView;
 
++ (NSString *) defaultsKeyForInterval:(IntervalType)intervalType;
+
 @end
 

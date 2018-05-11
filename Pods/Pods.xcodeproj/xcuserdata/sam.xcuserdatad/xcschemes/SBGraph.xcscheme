@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1801811E9B92EC2DA1CC1842FAD51CB6'
-               BlueprintName = 'SBGraph'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SBGraph.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A18224ABC2DE8CB4D29385950F4C4A56"
+               BlueprintName = "SBGraph"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SBGraph.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

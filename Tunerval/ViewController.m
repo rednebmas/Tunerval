@@ -199,11 +199,15 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSArray *intervals = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected_intervals"];
     intervals = [intervals sortedArrayUsingSelector:@selector(compare:)];
     
+    BOOL forceReload = [[NSUserDefaults standardUserDefaults] boolForKey:FORCE_RELOAD_ON_VIEW_WILL_APPEAR_KEY];
+    
     if (![self.intervals isEqual:intervals]
         || ![self.instruments isEqual:[defaults objectForKey:@"instruments"]]
-        || self.paused)
+        || self.paused
+        || forceReload)
     {
         self.paused = NO;
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FORCE_RELOAD_ON_VIEW_WILL_APPEAR_KEY];
         [self animateAlpha:1.0 ofButtons:@[self.flatButton, self.spotOnButton, self.sharpButton]];
         self.intervals = intervals;
         self.instruments = [defaults objectForKey:@"instruments"];
@@ -216,7 +220,11 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     }
 }
 
-- (NSInteger) intervalSetHash:(NSArray*)intervalSet
++ (NSString *) defaultsKeyForInterval:(IntervalType)interval {
+    return [NSString stringWithFormat:@"answer-differential-%ld", (long)[self intervalSetHash:@[@(interval)]]];
+}
+
++ (NSInteger) intervalSetHash:(NSArray*)intervalSet
 {
     NSArray *sorted = [intervalSet sortedArrayUsingSelector:@selector(compare:)];
     NSInteger hash = 17;
@@ -306,7 +314,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
 - (void) loadScoreForInterval:(IntervalType)interval
 {
     // high score is unique to interval
-    NSInteger hash = [self intervalSetHash:@[@(interval)]];
+    NSInteger hash = [[self class] intervalSetHash:@[@(interval)]];
     self.highScoreKey = [NSString stringWithFormat:@"highscore-%ld", (long)hash];
     float highScoreFloat = [defaults floatForKey:self.highScoreKey];
     
@@ -726,7 +734,7 @@ static float MAX_DIFFERENCE = MAX_DIFF_ONE_INTERVAL;
     NSMutableArray *scores = [[NSMutableArray alloc] init];
     for (NSNumber *interval in self.intervals)
     {
-        NSInteger hash = [self intervalSetHash:@[interval]];
+        NSInteger hash = [[self class] intervalSetHash:@[interval]];
         NSString *answerDifferentialKey = [NSString stringWithFormat:@"answer-differential-%ld", (long)hash];
         float intervalScore = [self differenceInCentsForAnswerDifferential:[defaults integerForKey:answerDifferentialKey]];
         scoreSum += powf(intervalScore, learningSpeed);

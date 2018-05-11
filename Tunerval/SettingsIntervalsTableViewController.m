@@ -6,10 +6,12 @@
 //  Copyright © 2016 Sam Bender. All rights reserved.
 //
 
+#import <SVProgressHUD/SVProgressHUD.h>
 #import <SBMusicUtilities/SBNote.h>
 #import "SettingsIntervalsTableViewController.h"
 #import "ViewController.h"
 #import "SBEventTracker.h"
+#import "Constants.h"
 
 @interface SettingsIntervalsTableViewController ()
 
@@ -127,6 +129,41 @@
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:self.intervals forKey:@"selected_intervals"];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        //add code here for when you hit delete
+//    }
+//}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    __weak typeof(self) weakSelf = self;
+    UITableViewRowAction *deleteAction = [UITableViewRowAction
+                                          rowActionWithStyle:UITableViewRowActionStyleNormal
+                                          title:@"Reset"
+                                          handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+                                              [weakSelf resetIntervalAtIndexPath:indexPath];
+
+    }];
+    deleteAction.backgroundColor = [UIColor redColor];
+    return @[deleteAction];
+}
+
+- (void)resetIntervalAtIndexPath:(NSIndexPath *)indexPath {
+    NSNumber *interval = [self intervalForIndexPath:indexPath];
+    NSString *key = [ViewController defaultsKeyForInterval:[interval integerValue]];
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:key];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FORCE_RELOAD_ON_VIEW_WILL_APPEAR_KEY];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD showSuccessWithStatus:@"Interval reset"];
+    [SVProgressHUD dismissWithDelay:1.0];
 }
 
 #pragma mark - Helper

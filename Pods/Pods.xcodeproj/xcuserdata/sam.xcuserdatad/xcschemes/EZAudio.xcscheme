@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '68E504159A95438F18EAACAB7BBD121C'
-               BlueprintName = 'EZAudio'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'EZAudio.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "68E504159A95438F18EAACAB7BBD121C"
+               BlueprintName = "EZAudio"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "EZAudio.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
