@@ -27,7 +27,7 @@ DEPENDENCIES:
   - Fabric
   - FMDB
   - SBGraph (from `~/code/iOS/SBGraph`)
-  - SBMusicUtilities (from `~/code/iOS/SBMusicUtilities`)
+  - SBMusicUtilities (from `https://github.com/rednebmas/SBMusicUtilities.git`)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -46,12 +46,15 @@ EXTERNAL SOURCES:
   SBGraph:
     :path: "~/code/iOS/SBGraph"
   SBMusicUtilities:
-    :path: "~/code/iOS/SBMusicUtilities"
+    :git: https://github.com/rednebmas/SBMusicUtilities.git
 
 CHECKOUT OPTIONS:
   EZAudio:
     :commit: 217eb92c38bca97d4726bab733f153ed9f8da7f5
     :git: https://github.com/rednebmas/EZAudio.git
+  SBMusicUtilities:
+    :commit: 311275b40e1bb4370302664c85dd334915592413
+    :git: https://github.com/rednebmas/SBMusicUtilities.git
 
 SPEC CHECKSUMS:
   AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
@@ -61,10 +64,10 @@ SPEC CHECKSUMS:
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   SBGraph: 1b426fe0038b3f9c733f77a2dc3e2e60cd83269d
-  SBMusicUtilities: 0551b60a7907d0dd47fedefb86192fc1e3e98ece
+  SBMusicUtilities: 055b3951a82f29ff2e4357763caa332e8004207d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: 98482d532589e217997b74790c3fec6ce97c048a
+PODFILE CHECKSUM: 4b3b17420ede6c360e4d5e14750eb6599847af7b
 
 COCOAPODS: 1.5.3

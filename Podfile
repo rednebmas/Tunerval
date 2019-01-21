@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'Tunerval' do
 	pod 'EZAudio', :git => 'https://github.com/rednebmas/EZAudio.git'
-	pod 'SBMusicUtilities', :path => '~/code/iOS/SBMusicUtilities'
+	pod 'SBMusicUtilities', :git => 'https://github.com/rednebmas/SBMusicUtilities.git'
 	pod 'SBGraph', :path => '~/code/iOS/SBGraph'
 	pod 'FMDB'
 	pod 'AWSMobileAnalytics', '~> 2.3.2'
