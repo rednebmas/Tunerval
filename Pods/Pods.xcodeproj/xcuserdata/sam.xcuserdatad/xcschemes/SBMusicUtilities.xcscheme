@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "813D946DDF895580A0DF74E7547AB6D4"
+               BlueprintIdentifier = "9B43224214D82138A5D7B69933CE5993"
                BlueprintName = "SBMusicUtilities"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SBMusicUtilities.framework">

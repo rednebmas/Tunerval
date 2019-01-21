@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04501F28E4696B1480C1C81D19C04F2C"
+               BlueprintIdentifier = "0AEBF3DDB86D355962B909966AC9D4AC"
                BuildableName = "Pods_Tunerval.framework"
                BlueprintName = "Pods-Tunerval"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04501F28E4696B1480C1C81D19C04F2C"
+            BlueprintIdentifier = "0AEBF3DDB86D355962B909966AC9D4AC"
             BuildableName = "Pods_Tunerval.framework"
             BlueprintName = "Pods-Tunerval"
             ReferencedContainer = "container:Pods.xcodeproj">

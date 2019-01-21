@@ -44,16 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SBRatePrompt-SBRatePrompt.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SBRatePrompt.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>

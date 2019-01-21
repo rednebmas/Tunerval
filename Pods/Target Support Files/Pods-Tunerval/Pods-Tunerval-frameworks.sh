@@ -149,7 +149,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SBGraph/SBGraph.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SBMusicUtilities/SBMusicUtilities.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SBRatePrompt/SBRatePrompt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework"
 fi
@@ -160,7 +159,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SBGraph/SBGraph.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SBMusicUtilities/SBMusicUtilities.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SBRatePrompt/SBRatePrompt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework"
 fi
